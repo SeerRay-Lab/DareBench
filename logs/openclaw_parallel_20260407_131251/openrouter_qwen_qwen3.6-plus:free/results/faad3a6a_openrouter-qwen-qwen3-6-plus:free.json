@@ -1,0 +1,81 @@
+{
+  "model": "openrouter/qwen/qwen3.6-plus:free",
+  "executor": "openclaw",
+  "benchmark_version": "c6da2ea",
+  "run_id": "faad3a6a",
+  "timestamp": 1775567666.4641154,
+  "suite": "task_tmp",
+  "runs_per_task": 1,
+  "tasks": [
+    {
+      "task_id": "task_tmp",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 59.91441607475281,
+      "transcript_length": 15,
+      "usage": {
+        "input_tokens": 51959,
+        "output_tokens": 1204,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 53163,
+        "cost_usd": 0.0,
+        "request_count": 7
+      },
+      "workspace": "/tmp/pinchbench/faad3a6a/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_tmp",
+            "score": 0.0,
+            "max_score": 1.0,
+            "grading_type": "llm_judge",
+            "breakdown": {
+              "Answer Correctness": 0.0
+            },
+            "notes": "The agent failed to extract or interpret the chart content; it only confirmed reading the image file but never produced an answer to the question. No answer was written to answer.txt or provided in the transcript."
+          }
+        ],
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "frontmatter": {
+        "id": "task_tmp",
+        "name": "CharXiv - Cs Chart (20)",
+        "category": "visual_qa",
+        "grading_type": "llm_judge",
+        "timeout_seconds": 300,
+        "workspace_files": [
+          {
+            "source": "charxiv/0.jpg",
+            "dest": "chart.jpg"
+          }
+        ]
+      }
+    }
+  ],
+  "efficiency": {
+    "total_tokens": 53163,
+    "total_input_tokens": 51959,
+    "total_output_tokens": 1204,
+    "total_cost_usd": 0.0,
+    "total_requests": 7,
+    "total_execution_time_seconds": 59.91,
+    "tasks_with_usage_data": 1,
+    "tokens_per_task": 53163.0,
+    "cost_per_task_usd": 0.0,
+    "score_per_1k_tokens": 0.0,
+    "score_per_dollar": null,
+    "per_task": [
+      {
+        "task_id": "task_tmp",
+        "score": 0.0,
+        "total_tokens": 53163,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": null
+      }
+    ]
+  }
+}

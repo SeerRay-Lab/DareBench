@@ -1,0 +1,1353 @@
+2026-04-04 03:44:14,518 - INFO - 🦞🦀🦐 PinchBench - OpenClaw Benchmarking
+
+░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░
+▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒
+▓       ▓▓▓▓▓▓  ▓▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓▓       ▓▓▓      ▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓
+█  ███████████  █████  ██    ██  ████  ██  ████  ██  ████  ██  ████████  ██    ██  ████  ██  ████  █
+█  ████████        ██  ███   ███      ███  ████  ██       ███        ██  ███   ███      ███  ████  █
+
+                                                           @%@%%@                       
+                                             %*+#++#@   %+-=-....=@                     
+                                    @@%%%##%--+.....:# @=-=.:-.:-.=                     
+                  #%###%##++=---------+#==+-:+.+%++%==-+:-=-#####+.@                    
+            %+----------------------*%%@@@%-:=:#####+-=+--=.+####.-+=#@                 
+            %+====+*##+=====--------------=--=.-###+.=++##=-..+=.:+--=@                 
+            %+================+*##*+++++**+==+=.....==----=*=---+----=@                 
+            #+========================--------=#=-==-----------------=@                 
+            #+========================-------------------------------=@                 
+            **========================---------------------------++--+@                 
+            @%*+======================------++--=#+--------------==-=#@                 
+            @%%%%%###*+===============------#%--=#+--------=++++#%%###%%@               
+             @@@%@%%%%%%@%###+========------==--=+**+*#%%#######%%%%%%%%%%%@            
+             @@%%@@@%%@@@%%%%%%%%%####+++**#%%########%%%%%%@@%%@  @@@@###%%@@          
+            @@%#%@@%%@@@@%%@@@@@@%%%%%#####%%%%%%@@@@@@@@%%@@%%#%     @@%%#####%@       
+            @%#%%@%##@ @%#%@  @@%%@@@%%%%@@     @@@ @%@ @@%@@@%#%     @@%#######%@      
+            @%%@@%##%@@%##%@ @@%#% @@%#%%@@         @@  @%%@ @%%@     @@%########%@     
+            @@%%@@%%@ @%##%@ @%###@ @@%#####%@@@@       @@  @%%@      @%%#%#######%     
+             @%%@%#%@ @@%%@  @%###@  @@%###%######%%##%%@   @@@       @%#%@%######%     
+              @@ @%%@  @%%@  @@%%@    @@%%%########%######%@          @%%%@@#####%@     
+                  @@@  @@%%@  @%#%      @@%#########@@@@@@%%@         @@%@ %####%@      
+                        @@%@   @%#@       @%###########@@@@%@             @%##%@        
+                                @%%        @%%##############%@            @@            
+                                            @@%%%########%@@                            
+                                               @@@%%%%%@@@                              
+                                                                                        
+                                                                                        
+                                                                                        
+
+2026-04-04 03:44:14,519 - INFO - 🦞🦀🦐 Starting PinchBench 🦐🦀🦞
+2026-04-04 03:44:19,523 - INFO - 🔧 Initializing BenchmarkRunner...
+2026-04-04 03:44:19,523 - INFO - Initialized TaskLoader with directory: /root/workspace/skill/tasks
+2026-04-04 03:44:19,523 - INFO - Initialized BenchmarkRunner
+2026-04-04 03:44:19,523 - INFO - 📂 Loading tasks from directory...
+2026-04-04 03:44:19,523 - INFO - Loading tasks...
+2026-04-04 03:44:19,526 - INFO - Found 210 task files
+2026-04-04 03:44:19,527 - INFO - Successfully loaded task: task_advancedif_00
+2026-04-04 03:44:19,528 - INFO - Successfully loaded task: task_advancedif_01
+2026-04-04 03:44:19,529 - INFO - Successfully loaded task: task_advancedif_02
+2026-04-04 03:44:19,530 - INFO - Successfully loaded task: task_advancedif_03
+2026-04-04 03:44:19,531 - INFO - Successfully loaded task: task_advancedif_04
+2026-04-04 03:44:19,532 - INFO - Successfully loaded task: task_advancedif_05
+2026-04-04 03:44:19,533 - INFO - Successfully loaded task: task_advancedif_06
+2026-04-04 03:44:19,533 - INFO - Successfully loaded task: task_advancedif_07
+2026-04-04 03:44:19,534 - INFO - Successfully loaded task: task_advancedif_08
+2026-04-04 03:44:19,535 - INFO - Successfully loaded task: task_advancedif_09
+2026-04-04 03:44:19,536 - INFO - Successfully loaded task: task_bamboogle_00
+2026-04-04 03:44:19,538 - INFO - Successfully loaded task: task_bamboogle_01
+2026-04-04 03:44:19,539 - INFO - Successfully loaded task: task_bamboogle_02
+2026-04-04 03:44:19,540 - INFO - Successfully loaded task: task_bamboogle_03
+2026-04-04 03:44:19,541 - INFO - Successfully loaded task: task_bamboogle_04
+2026-04-04 03:44:19,543 - INFO - Successfully loaded task: task_bamboogle_05
+2026-04-04 03:44:19,544 - INFO - Successfully loaded task: task_bamboogle_06
+2026-04-04 03:44:19,545 - INFO - Successfully loaded task: task_bamboogle_07
+2026-04-04 03:44:19,546 - INFO - Successfully loaded task: task_bamboogle_08
+2026-04-04 03:44:19,548 - INFO - Successfully loaded task: task_bamboogle_09
+2026-04-04 03:44:19,548 - INFO - Successfully loaded task: task_charxiv_00
+2026-04-04 03:44:19,549 - INFO - Successfully loaded task: task_charxiv_01
+2026-04-04 03:44:19,550 - INFO - Successfully loaded task: task_charxiv_02
+2026-04-04 03:44:19,551 - INFO - Successfully loaded task: task_charxiv_03
+2026-04-04 03:44:19,552 - INFO - Successfully loaded task: task_charxiv_04
+2026-04-04 03:44:19,553 - INFO - Successfully loaded task: task_charxiv_05
+2026-04-04 03:44:19,554 - INFO - Successfully loaded task: task_charxiv_06
+2026-04-04 03:44:19,555 - INFO - Successfully loaded task: task_charxiv_07
+2026-04-04 03:44:19,555 - INFO - Successfully loaded task: task_charxiv_08
+2026-04-04 03:44:19,556 - INFO - Successfully loaded task: task_charxiv_09
+2026-04-04 03:44:19,557 - INFO - Successfully loaded task: task_deepsearchqa_00
+2026-04-04 03:44:19,559 - INFO - Successfully loaded task: task_deepsearchqa_01
+2026-04-04 03:44:19,563 - INFO - Successfully loaded task: task_deepsearchqa_02
+2026-04-04 03:44:19,564 - INFO - Successfully loaded task: task_deepsearchqa_03
+2026-04-04 03:44:19,568 - INFO - Successfully loaded task: task_deepsearchqa_04
+2026-04-04 03:44:19,570 - INFO - Successfully loaded task: task_deepsearchqa_05
+2026-04-04 03:44:19,571 - INFO - Successfully loaded task: task_deepsearchqa_06
+2026-04-04 03:44:19,575 - INFO - Successfully loaded task: task_deepsearchqa_07
+2026-04-04 03:44:19,576 - INFO - Successfully loaded task: task_deepsearchqa_08
+2026-04-04 03:44:19,581 - INFO - Successfully loaded task: task_deepsearchqa_09
+2026-04-04 03:44:19,582 - INFO - Successfully loaded task: task_finqa_00
+2026-04-04 03:44:19,583 - INFO - Successfully loaded task: task_finqa_01
+2026-04-04 03:44:19,587 - INFO - Successfully loaded task: task_finqa_02
+2026-04-04 03:44:19,588 - INFO - Successfully loaded task: task_finqa_03
+2026-04-04 03:44:19,589 - INFO - Successfully loaded task: task_finqa_04
+2026-04-04 03:44:19,593 - INFO - Successfully loaded task: task_finqa_05
+2026-04-04 03:44:19,594 - INFO - Successfully loaded task: task_finqa_06
+2026-04-04 03:44:19,595 - INFO - Successfully loaded task: task_finqa_07
+2026-04-04 03:44:19,599 - INFO - Successfully loaded task: task_finqa_08
+2026-04-04 03:44:19,600 - INFO - Successfully loaded task: task_finqa_09
+2026-04-04 03:44:19,601 - INFO - Successfully loaded task: task_gpqa_00
+2026-04-04 03:44:19,606 - INFO - Successfully loaded task: task_gpqa_01
+2026-04-04 03:44:19,608 - INFO - Successfully loaded task: task_gpqa_02
+2026-04-04 03:44:19,612 - INFO - Successfully loaded task: task_gpqa_03
+2026-04-04 03:44:19,613 - INFO - Successfully loaded task: task_gpqa_04
+2026-04-04 03:44:19,616 - INFO - Successfully loaded task: task_gpqa_05
+2026-04-04 03:44:19,617 - INFO - Successfully loaded task: task_gpqa_06
+2026-04-04 03:44:19,618 - INFO - Successfully loaded task: task_gpqa_07
+2026-04-04 03:44:19,626 - INFO - Successfully loaded task: task_gpqa_08
+2026-04-04 03:44:19,627 - INFO - Successfully loaded task: task_gpqa_09
+2026-04-04 03:44:19,628 - INFO - Successfully loaded task: task_hle_00
+2026-04-04 03:44:19,631 - INFO - Successfully loaded task: task_hle_01
+2026-04-04 03:44:19,632 - INFO - Successfully loaded task: task_hle_02
+2026-04-04 03:44:19,633 - INFO - Successfully loaded task: task_hle_03
+2026-04-04 03:44:19,634 - INFO - Successfully loaded task: task_hle_04
+2026-04-04 03:44:19,637 - INFO - Successfully loaded task: task_hle_05
+2026-04-04 03:44:19,638 - INFO - Successfully loaded task: task_hle_06
+2026-04-04 03:44:19,639 - INFO - Successfully loaded task: task_hle_07
+2026-04-04 03:44:19,640 - INFO - Successfully loaded task: task_hle_08
+2026-04-04 03:44:19,643 - INFO - Successfully loaded task: task_hle_09
+2026-04-04 03:44:19,645 - INFO - Successfully loaded task: task_lexeval_00
+2026-04-04 03:44:19,646 - INFO - Successfully loaded task: task_lexeval_01
+2026-04-04 03:44:19,647 - INFO - Successfully loaded task: task_lexeval_02
+2026-04-04 03:44:19,649 - INFO - Successfully loaded task: task_lexeval_03
+2026-04-04 03:44:19,650 - INFO - Successfully loaded task: task_lexeval_04
+2026-04-04 03:44:19,651 - INFO - Successfully loaded task: task_lexeval_05
+2026-04-04 03:44:19,652 - INFO - Successfully loaded task: task_lexeval_06
+2026-04-04 03:44:19,653 - INFO - Successfully loaded task: task_lexeval_07
+2026-04-04 03:44:19,655 - INFO - Successfully loaded task: task_lexeval_08
+2026-04-04 03:44:19,656 - INFO - Successfully loaded task: task_lexeval_09
+2026-04-04 03:44:19,657 - INFO - Successfully loaded task: task_lexeval_10
+2026-04-04 03:44:19,658 - INFO - Successfully loaded task: task_lexeval_11
+2026-04-04 03:44:19,660 - INFO - Successfully loaded task: task_lexeval_12
+2026-04-04 03:44:19,661 - INFO - Successfully loaded task: task_lexeval_13
+2026-04-04 03:44:19,662 - INFO - Successfully loaded task: task_lexeval_14
+2026-04-04 03:44:19,663 - INFO - Successfully loaded task: task_lexeval_15
+2026-04-04 03:44:19,664 - INFO - Successfully loaded task: task_lexeval_16
+2026-04-04 03:44:19,666 - INFO - Successfully loaded task: task_lexeval_17
+2026-04-04 03:44:19,667 - INFO - Successfully loaded task: task_lexeval_18
+2026-04-04 03:44:19,668 - INFO - Successfully loaded task: task_lexeval_19
+2026-04-04 03:44:19,670 - INFO - Successfully loaded task: task_logiqa_00
+2026-04-04 03:44:19,672 - INFO - Successfully loaded task: task_logiqa_01
+2026-04-04 03:44:19,674 - INFO - Successfully loaded task: task_logiqa_02
+2026-04-04 03:44:19,675 - INFO - Successfully loaded task: task_logiqa_03
+2026-04-04 03:44:19,677 - INFO - Successfully loaded task: task_logiqa_04
+2026-04-04 03:44:19,679 - INFO - Successfully loaded task: task_logiqa_05
+2026-04-04 03:44:19,681 - INFO - Successfully loaded task: task_logiqa_06
+2026-04-04 03:44:19,682 - INFO - Successfully loaded task: task_logiqa_07
+2026-04-04 03:44:19,684 - INFO - Successfully loaded task: task_logiqa_08
+2026-04-04 03:44:19,686 - INFO - Successfully loaded task: task_logiqa_09
+2026-04-04 03:44:19,687 - INFO - Successfully loaded task: task_longbench_00
+2026-04-04 03:44:19,688 - INFO - Successfully loaded task: task_longbench_01
+2026-04-04 03:44:19,689 - INFO - Successfully loaded task: task_longbench_02
+2026-04-04 03:44:19,690 - INFO - Successfully loaded task: task_longbench_03
+2026-04-04 03:44:19,691 - INFO - Successfully loaded task: task_longbench_04
+2026-04-04 03:44:19,692 - INFO - Successfully loaded task: task_longbench_05
+2026-04-04 03:44:19,693 - INFO - Successfully loaded task: task_longbench_06
+2026-04-04 03:44:19,694 - INFO - Successfully loaded task: task_longbench_07
+2026-04-04 03:44:19,695 - INFO - Successfully loaded task: task_longbench_08
+2026-04-04 03:44:19,696 - INFO - Successfully loaded task: task_longbench_09
+2026-04-04 03:44:19,697 - INFO - Successfully loaded task: task_medxpertqa_00
+2026-04-04 03:44:19,698 - INFO - Successfully loaded task: task_medxpertqa_01
+2026-04-04 03:44:19,699 - INFO - Successfully loaded task: task_medxpertqa_02
+2026-04-04 03:44:19,700 - INFO - Successfully loaded task: task_medxpertqa_03
+2026-04-04 03:44:19,701 - INFO - Successfully loaded task: task_medxpertqa_04
+2026-04-04 03:44:19,702 - INFO - Successfully loaded task: task_medxpertqa_05
+2026-04-04 03:44:19,703 - INFO - Successfully loaded task: task_medxpertqa_06
+2026-04-04 03:44:19,704 - INFO - Successfully loaded task: task_medxpertqa_07
+2026-04-04 03:44:19,705 - INFO - Successfully loaded task: task_medxpertqa_08
+2026-04-04 03:44:19,706 - INFO - Successfully loaded task: task_medxpertqa_09
+2026-04-04 03:44:19,707 - INFO - Successfully loaded task: task_medxpertqa_10
+2026-04-04 03:44:19,708 - INFO - Successfully loaded task: task_medxpertqa_11
+2026-04-04 03:44:19,708 - INFO - Successfully loaded task: task_medxpertqa_12
+2026-04-04 03:44:19,709 - INFO - Successfully loaded task: task_medxpertqa_13
+2026-04-04 03:44:19,710 - INFO - Successfully loaded task: task_medxpertqa_14
+2026-04-04 03:44:19,711 - INFO - Successfully loaded task: task_medxpertqa_15
+2026-04-04 03:44:19,717 - INFO - Successfully loaded task: task_openagentsafety_00
+2026-04-04 03:44:19,719 - INFO - Successfully loaded task: task_openagentsafety_02
+2026-04-04 03:44:19,720 - INFO - Successfully loaded task: task_openagentsafety_03
+2026-04-04 03:44:19,722 - INFO - Successfully loaded task: task_openagentsafety_04
+2026-04-04 03:44:19,724 - INFO - Successfully loaded task: task_openagentsafety_05
+2026-04-04 03:44:19,732 - INFO - Successfully loaded task: task_openagentsafety_06
+2026-04-04 03:44:19,735 - INFO - Successfully loaded task: task_openagentsafety_07
+2026-04-04 03:44:19,740 - INFO - Successfully loaded task: task_openagentsafety_08
+2026-04-04 03:44:19,741 - INFO - Successfully loaded task: task_osworld_03
+2026-04-04 03:44:19,744 - INFO - Successfully loaded task: task_osworld_07
+2026-04-04 03:44:19,747 - INFO - Successfully loaded task: task_osworld_10
+2026-04-04 03:44:19,749 - INFO - Successfully loaded task: task_osworld_11
+2026-04-04 03:44:19,751 - INFO - Successfully loaded task: task_osworld_12
+2026-04-04 03:44:19,754 - INFO - Successfully loaded task: task_osworld_18
+2026-04-04 03:44:19,755 - INFO - Successfully loaded task: task_osworld_31
+2026-04-04 03:44:19,757 - INFO - Successfully loaded task: task_osworld_33
+2026-04-04 03:44:19,758 - INFO - Successfully loaded task: task_osworld_38
+2026-04-04 03:44:19,759 - INFO - Successfully loaded task: task_seal0_00
+2026-04-04 03:44:19,761 - INFO - Successfully loaded task: task_seal0_01
+2026-04-04 03:44:19,762 - INFO - Successfully loaded task: task_seal0_02
+2026-04-04 03:44:19,765 - INFO - Successfully loaded task: task_seal0_03
+2026-04-04 03:44:19,767 - INFO - Successfully loaded task: task_seal0_04
+2026-04-04 03:44:19,768 - INFO - Successfully loaded task: task_seal0_05
+2026-04-04 03:44:19,770 - INFO - Successfully loaded task: task_seal0_06
+2026-04-04 03:44:19,772 - INFO - Successfully loaded task: task_seal0_07
+2026-04-04 03:44:19,773 - INFO - Successfully loaded task: task_seal0_08
+2026-04-04 03:44:19,774 - INFO - Successfully loaded task: task_seal0_09
+2026-04-04 03:44:19,776 - INFO - Successfully loaded task: task_simpleqa_00
+2026-04-04 03:44:19,778 - INFO - Successfully loaded task: task_simpleqa_01
+2026-04-04 03:44:19,780 - INFO - Successfully loaded task: task_simpleqa_02
+2026-04-04 03:44:19,781 - INFO - Successfully loaded task: task_simpleqa_03
+2026-04-04 03:44:19,783 - INFO - Successfully loaded task: task_simpleqa_04
+2026-04-04 03:44:19,784 - INFO - Successfully loaded task: task_simpleqa_05
+2026-04-04 03:44:19,786 - INFO - Successfully loaded task: task_simpleqa_06
+2026-04-04 03:44:19,788 - INFO - Successfully loaded task: task_simpleqa_07
+2026-04-04 03:44:19,789 - INFO - Successfully loaded task: task_simpleqa_08
+2026-04-04 03:44:19,790 - INFO - Successfully loaded task: task_simpleqa_09
+2026-04-04 03:44:19,792 - INFO - Successfully loaded task: task_simplevqa_00
+2026-04-04 03:44:19,793 - INFO - Successfully loaded task: task_simplevqa_01
+2026-04-04 03:44:19,795 - INFO - Successfully loaded task: task_simplevqa_02
+2026-04-04 03:44:19,796 - INFO - Successfully loaded task: task_simplevqa_03
+2026-04-04 03:44:19,798 - INFO - Successfully loaded task: task_simplevqa_04
+2026-04-04 03:44:19,799 - INFO - Successfully loaded task: task_simplevqa_05
+2026-04-04 03:44:19,801 - INFO - Successfully loaded task: task_simplevqa_06
+2026-04-04 03:44:19,802 - INFO - Successfully loaded task: task_simplevqa_07
+2026-04-04 03:44:19,803 - INFO - Successfully loaded task: task_simplevqa_08
+2026-04-04 03:44:19,804 - INFO - Successfully loaded task: task_simplevqa_09
+2026-04-04 03:44:19,805 - INFO - Successfully loaded task: task_tablebench_00
+2026-04-04 03:44:19,806 - INFO - Successfully loaded task: task_tablebench_01
+2026-04-04 03:44:19,808 - INFO - Successfully loaded task: task_tablebench_02
+2026-04-04 03:44:19,809 - INFO - Successfully loaded task: task_tablebench_03
+2026-04-04 03:44:19,810 - INFO - Successfully loaded task: task_tablebench_04
+2026-04-04 03:44:19,811 - INFO - Successfully loaded task: task_tablebench_05
+2026-04-04 03:44:19,812 - INFO - Successfully loaded task: task_tablebench_06
+2026-04-04 03:44:19,812 - INFO - Successfully loaded task: task_tablebench_07
+2026-04-04 03:44:19,813 - INFO - Successfully loaded task: task_tablebench_08
+2026-04-04 03:44:19,814 - INFO - Successfully loaded task: task_tablebench_09
+2026-04-04 03:44:19,815 - INFO - Successfully loaded task: task_tablebench_10
+2026-04-04 03:44:19,816 - INFO - Successfully loaded task: task_tablebench_11
+2026-04-04 03:44:19,818 - INFO - Successfully loaded task: task_tablebench_12
+2026-04-04 03:44:19,819 - INFO - Successfully loaded task: task_tablebench_13
+2026-04-04 03:44:19,821 - INFO - Successfully loaded task: task_tablebench_14
+2026-04-04 03:44:19,823 - INFO - Successfully loaded task: task_tablebench_15
+2026-04-04 03:44:19,824 - INFO - Successfully loaded task: task_tablebench_16
+2026-04-04 03:44:19,826 - INFO - Successfully loaded task: task_terminalbench2_00
+2026-04-04 03:44:19,829 - INFO - Successfully loaded task: task_terminalbench2_01
+2026-04-04 03:44:19,831 - INFO - Successfully loaded task: task_terminalbench2_02
+2026-04-04 03:44:19,832 - INFO - Successfully loaded task: task_terminalbench2_03
+2026-04-04 03:44:19,834 - INFO - Successfully loaded task: task_terminalbench2_04
+2026-04-04 03:44:19,836 - INFO - Successfully loaded task: task_terminalbench2_05
+2026-04-04 03:44:19,839 - INFO - Successfully loaded task: task_terminalbench2_06
+2026-04-04 03:44:19,841 - INFO - Successfully loaded task: task_terminalbench2_07
+2026-04-04 03:44:19,843 - INFO - Successfully loaded task: task_terminalbench2_08
+2026-04-04 03:44:19,846 - INFO - Successfully loaded task: task_terminalbench2_09
+2026-04-04 03:44:19,848 - INFO - Successfully loaded task: task_widesearch_00
+2026-04-04 03:44:19,850 - INFO - Successfully loaded task: task_widesearch_01
+2026-04-04 03:44:19,851 - INFO - Successfully loaded task: task_widesearch_02
+2026-04-04 03:44:19,854 - INFO - Successfully loaded task: task_widesearch_03
+2026-04-04 03:44:19,856 - INFO - Successfully loaded task: task_widesearch_04
+2026-04-04 03:44:19,858 - INFO - Successfully loaded task: task_widesearch_05
+2026-04-04 03:44:19,860 - INFO - Successfully loaded task: task_widesearch_06
+2026-04-04 03:44:19,861 - INFO - Successfully loaded task: task_widesearch_07
+2026-04-04 03:44:19,863 - INFO - Successfully loaded task: task_widesearch_08
+2026-04-04 03:44:19,864 - INFO - Successfully loaded task: task_widesearch_09
+2026-04-04 03:44:19,865 - INFO - Successfully loaded 210 tasks
+2026-04-04 03:44:19,865 - INFO - Loaded 210 tasks
+2026-04-04 03:44:42,633 - INFO - Agent bench-custom-api-shubiaobiao-cn-gpt-5-2 exists with stale workspace (/tmp/pinchbench/c3fe0d9e/agent_workspace != /tmp/pinchbench/8b69845a/agent_workspace), recreating
+2026-04-04 03:44:45,376 - INFO - Creating OpenClaw agent bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 03:44:47,859 - INFO - 
+================================================================================
+2026-04-04 03:44:47,859 - INFO - 📋 Task 1/210 (Run 1/1)
+2026-04-04 03:44:47,859 - INFO - ================================================================================
+2026-04-04 03:44:47,859 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_00
+2026-04-04 03:44:47,859 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 03:44:47,859 - INFO -    Category: instruction_following
+2026-04-04 03:50:46,673 - INFO - Found transcript via sessions.json: 0c91907e-af4f-4fc7-9415-05a7f6b1854c.jsonl (attempt 1)
+2026-04-04 03:50:51,670 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 03:50:51,671 - INFO - Removed 2 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 03:52:29,402 - INFO - Found transcript via sessions.json: ede959a7-9eaf-4c77-86db-12057a000b7e.jsonl (attempt 1)
+2026-04-04 03:52:29,403 - INFO -    💾 Session backup saved: task_advancedif_00_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 03:52:29,403 - INFO - ✅ Task task_advancedif_00: 1.0/1.0 (100%) - llm_judge
+2026-04-04 03:52:29,403 - INFO -    Notes: All 7 requirements met: (1) fairytale themes present (kingdom, lantern wish, wolves of frost, Winter Gate), (2) tone is young-adult appropriate (mature but accessible prose, emotional depth without ch
+2026-04-04 03:52:29,403 - INFO - 
+================================================================================
+2026-04-04 03:52:29,403 - INFO - 📋 Task 2/210 (Run 1/1)
+2026-04-04 03:52:29,403 - INFO - ================================================================================
+2026-04-04 03:52:29,403 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_01
+2026-04-04 03:52:29,403 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 03:52:29,403 - INFO -    Category: instruction_following
+2026-04-04 03:52:29,404 - INFO - Removed 3 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 03:54:44,808 - INFO - Found transcript via sessions.json: 519caea4-7430-4c8b-86d2-572e437f25e4.jsonl (attempt 1)
+2026-04-04 03:54:49,219 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 03:54:49,219 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 03:57:49,311 - INFO - Found transcript via sessions.json: f8df4bc0-dec7-49bc-9bd5-b77a2aebda94.jsonl (attempt 1)
+2026-04-04 03:57:49,315 - INFO -    💾 Session backup saved: task_advancedif_01_run_8b69845a-1.jsonl (52 entries, status=success)
+2026-04-04 03:57:49,316 - INFO - ⚠️ Task task_advancedif_01: 0.9/1.0 (92%) - llm_judge
+2026-04-04 03:57:49,316 - INFO -    Notes: The response correctly follows all structural requirements: begins with a short paragraph on US cancer survival, lists 5 uncommon cancers ordered by ascending annual cases (with approximate US inciden
+2026-04-04 03:57:49,316 - INFO - 
+================================================================================
+2026-04-04 03:57:49,316 - INFO - 📋 Task 3/210 (Run 1/1)
+2026-04-04 03:57:49,316 - INFO - ================================================================================
+2026-04-04 03:57:49,316 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_02
+2026-04-04 03:57:49,316 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 03:57:49,316 - INFO -    Category: instruction_following
+2026-04-04 03:57:49,316 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:00:12,463 - INFO - Found transcript via sessions.json: 1a98dd90-5667-45e0-a806-d554e099c6b1.jsonl (attempt 1)
+2026-04-04 04:00:16,505 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:00:16,506 - INFO - Removed 2 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:03:16,611 - INFO - Found transcript via sessions.json: f8df4bc0-dec7-49bc-9bd5-b77a2aebda94.jsonl (attempt 1)
+2026-04-04 04:03:16,612 - WARNING - Failed to parse judge JSON response
+2026-04-04 04:03:16,612 - INFO -    💾 Session backup saved: task_advancedif_02_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:03:16,612 - INFO - ❌ Task task_advancedif_02: 0.0/1.0 (0%) - llm_judge
+2026-04-04 04:03:16,613 - INFO - 
+================================================================================
+2026-04-04 04:03:16,613 - INFO - 📋 Task 4/210 (Run 1/1)
+2026-04-04 04:03:16,613 - INFO - ================================================================================
+2026-04-04 04:03:16,613 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_03
+2026-04-04 04:03:16,613 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 04:03:16,613 - INFO -    Category: instruction_following
+2026-04-04 04:03:16,613 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:05:26,414 - INFO - Found transcript via sessions.json: fd03171a-33da-43c4-bb83-79c8bc56373f.jsonl (attempt 1)
+2026-04-04 04:05:30,526 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:05:30,527 - INFO - Removed 2 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:06:51,994 - INFO - Found transcript via sessions.json: c9c9ee04-b02a-4ceb-a545-09c2b1443011.jsonl (attempt 1)
+2026-04-04 04:06:51,995 - INFO -    💾 Session backup saved: task_advancedif_03_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:06:51,995 - INFO - ✅ Task task_advancedif_03: 1.0/1.0 (100%) - llm_judge
+2026-04-04 04:06:51,995 - INFO -    Notes: All 7 requirements fully satisfied: hobbies facilitate meeting non-birders, all have outdoor aspects, no birdwatching-adjacent hobbies (e.g., no butterfly/nest box), ordered high-to-low start-up cost,
+2026-04-04 04:06:51,995 - INFO - 
+================================================================================
+2026-04-04 04:06:51,995 - INFO - 📋 Task 5/210 (Run 1/1)
+2026-04-04 04:06:51,995 - INFO - ================================================================================
+2026-04-04 04:06:51,995 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_04
+2026-04-04 04:06:51,995 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 04:06:51,995 - INFO -    Category: instruction_following
+2026-04-04 04:06:51,995 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:07:30,068 - INFO - Found transcript via sessions.json: 3bed1563-ac03-441d-9c99-93403333e8a5.jsonl (attempt 1)
+2026-04-04 04:07:34,149 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:07:34,150 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:09:52,116 - INFO - Found transcript via sessions.json: 6f433d54-cee7-4f2c-b04f-c9ea971ab76c.jsonl (attempt 1)
+2026-04-04 04:09:52,117 - INFO -    💾 Session backup saved: task_advancedif_04_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:09:52,117 - INFO - ✅ Task task_advancedif_04: 1.0/1.0 (100%) - llm_judge
+2026-04-04 04:09:52,117 - INFO -    Notes: All requirements met: step-by-step Maltese coat care from bath to blow-dry; specific shampoos (gentle/whitening), conditioners (rinse-out/leave-in), and other products listed; tools explicitly named (
+2026-04-04 04:09:52,117 - INFO - 
+================================================================================
+2026-04-04 04:09:52,117 - INFO - 📋 Task 6/210 (Run 1/1)
+2026-04-04 04:09:52,117 - INFO - ================================================================================
+2026-04-04 04:09:52,118 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_05
+2026-04-04 04:09:52,118 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 04:09:52,118 - INFO -    Category: instruction_following
+2026-04-04 04:09:52,118 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:11:10,276 - INFO - Found transcript via sessions.json: f03c6e99-644f-498f-84ee-6d24151ac475.jsonl (attempt 1)
+2026-04-04 04:11:14,315 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:11:14,315 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:14:14,379 - INFO - Found transcript via sessions.json: f5d75234-e6a1-4717-ad15-3109d200c7b2.jsonl (attempt 1)
+2026-04-04 04:14:14,379 - INFO -    💾 Session backup saved: task_advancedif_05_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:14:14,380 - INFO - ✅ Task task_advancedif_05: 1.0/1.0 (100%) - llm_judge
+2026-04-04 04:14:14,380 - INFO - 
+================================================================================
+2026-04-04 04:14:14,380 - INFO - 📋 Task 7/210 (Run 1/1)
+2026-04-04 04:14:14,380 - INFO - ================================================================================
+2026-04-04 04:14:14,380 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_06
+2026-04-04 04:14:14,380 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 04:14:14,380 - INFO -    Category: instruction_following
+2026-04-04 04:14:14,380 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:15:34,962 - INFO - Found transcript via sessions.json: d8641bd7-036f-43d1-a043-8f0322cc3a1f.jsonl (attempt 1)
+2026-04-04 04:15:41,321 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:15:41,321 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:16:36,697 - INFO - Found transcript via sessions.json: f192a352-5fd9-4f94-bce7-ce5b47c78674.jsonl (attempt 1)
+2026-04-04 04:16:36,698 - INFO -    💾 Session backup saved: task_advancedif_06_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:16:36,698 - INFO - ⚠️ Task task_advancedif_06: 0.9/1.0 (90%) - llm_judge
+2026-04-04 04:16:36,698 - INFO -    Notes: The quote attribution to Elizabeth Murray is questionable—no strong evidence this is a verified existing quote by her; thus criterion 3 scores 0.8. The response mentions strawberries in the first sent
+2026-04-04 04:16:36,698 - INFO - 
+================================================================================
+2026-04-04 04:16:36,698 - INFO - 📋 Task 8/210 (Run 1/1)
+2026-04-04 04:16:36,698 - INFO - ================================================================================
+2026-04-04 04:16:36,698 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_07
+2026-04-04 04:16:36,698 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 04:16:36,698 - INFO -    Category: instruction_following
+2026-04-04 04:16:36,698 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:18:06,493 - INFO - Found transcript via sessions.json: c292be6c-437e-4f31-a286-7dfb3e668b4d.jsonl (attempt 1)
+2026-04-04 04:18:10,540 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:18:10,540 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:21:10,564 - INFO - Found transcript via sessions.json: 653b077f-69e0-4247-9062-fa3097129ecc.jsonl (attempt 1)
+2026-04-04 04:21:10,565 - INFO -    💾 Session backup saved: task_advancedif_07_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:21:10,565 - INFO - ❌ Task task_advancedif_07: 0.0/1.0 (0%) - llm_judge
+2026-04-04 04:21:10,565 - INFO - 
+================================================================================
+2026-04-04 04:21:10,565 - INFO - 📋 Task 9/210 (Run 1/1)
+2026-04-04 04:21:10,565 - INFO - ================================================================================
+2026-04-04 04:21:10,565 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_08
+2026-04-04 04:21:10,565 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 04:21:10,565 - INFO -    Category: instruction_following
+2026-04-04 04:21:10,565 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:23:05,981 - INFO - Found transcript via sessions.json: bf08f923-3214-4fd8-b450-b77ce67828ed.jsonl (attempt 1)
+2026-04-04 04:23:10,018 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:23:10,018 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:26:10,024 - INFO - Found transcript via sessions.json: ef046a5b-b201-4b7c-a4c1-577caa1cdb17.jsonl (attempt 1)
+2026-04-04 04:26:10,025 - INFO -    💾 Session backup saved: task_advancedif_08_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:26:10,025 - INFO - ❌ Task task_advancedif_08: 0.0/1.0 (0%) - llm_judge
+2026-04-04 04:26:10,025 - INFO -    Notes: The response is well-structured, academically appropriate, and thoroughly addresses all requested sections: character design references (6 characters with 2 film/TV examples each, each with paragraph-
+2026-04-04 04:26:10,025 - INFO - 
+================================================================================
+2026-04-04 04:26:10,025 - INFO - 📋 Task 10/210 (Run 1/1)
+2026-04-04 04:26:10,025 - INFO - ================================================================================
+2026-04-04 04:26:10,025 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_advancedif_09
+2026-04-04 04:26:10,025 - INFO -    Task: AdvancedIF - complex_if_single_turn_v5
+2026-04-04 04:26:10,025 - INFO -    Category: instruction_following
+2026-04-04 04:26:10,025 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:28:37,800 - INFO - Found transcript via sessions.json: 184245e4-3f18-4a78-b032-d5ddfa7a5a66.jsonl (attempt 1)
+2026-04-04 04:28:41,794 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:28:41,794 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:31:41,892 - INFO - Found transcript via sessions.json: 2ceebab7-4394-4017-97c4-cd7b71bcc4a1.jsonl (attempt 1)
+2026-04-04 04:31:41,893 - WARNING - Failed to parse judge JSON response
+2026-04-04 04:31:41,893 - INFO -    💾 Session backup saved: task_advancedif_09_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:31:41,894 - INFO - ❌ Task task_advancedif_09: 0.0/1.0 (0%) - llm_judge
+2026-04-04 04:31:41,894 - INFO - 
+================================================================================
+2026-04-04 04:31:41,894 - INFO - 📋 Task 11/210 (Run 1/1)
+2026-04-04 04:31:41,894 - INFO - ================================================================================
+2026-04-04 04:31:41,894 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_00
+2026-04-04 04:31:41,894 - INFO -    Task: BAMBOOGLE Sample 0 (ID: idx_0)
+2026-04-04 04:31:41,894 - INFO -    Category: planning
+2026-04-04 04:31:41,894 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:32:41,093 - INFO - Found transcript via sessions.json: f14b6877-9214-4782-b34a-0fb57a83b3e2.jsonl (attempt 1)
+2026-04-04 04:32:41,094 - INFO -    💾 Session backup saved: task_bamboogle_00_run_8b69845a-1.jsonl (12 entries, status=success)
+2026-04-04 04:32:41,094 - INFO - ⚠️ Task task_bamboogle_00: 0.9/1.0 (92%) - automated
+2026-04-04 04:32:41,094 - INFO - 
+================================================================================
+2026-04-04 04:32:41,095 - INFO - 📋 Task 12/210 (Run 1/1)
+2026-04-04 04:32:41,095 - INFO - ================================================================================
+2026-04-04 04:32:41,095 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_01
+2026-04-04 04:32:41,095 - INFO -    Task: BAMBOOGLE Sample 1 (ID: idx_1)
+2026-04-04 04:32:41,095 - INFO -    Category: planning
+2026-04-04 04:32:41,095 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:33:37,447 - INFO - Found transcript via sessions.json: ea6ec255-546a-4098-91a3-246d13c58405.jsonl (attempt 1)
+2026-04-04 04:33:37,448 - INFO -    💾 Session backup saved: task_bamboogle_01_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:33:37,449 - INFO - ✅ Task task_bamboogle_01: 1.0/1.0 (100%) - automated
+2026-04-04 04:33:37,449 - INFO - 
+================================================================================
+2026-04-04 04:33:37,449 - INFO - 📋 Task 13/210 (Run 1/1)
+2026-04-04 04:33:37,449 - INFO - ================================================================================
+2026-04-04 04:33:37,449 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_02
+2026-04-04 04:33:37,449 - INFO -    Task: BAMBOOGLE Sample 2 (ID: idx_2)
+2026-04-04 04:33:37,449 - INFO -    Category: planning
+2026-04-04 04:33:37,449 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:35:14,953 - INFO - Found transcript via sessions.json: 4bfc0361-9785-460c-a905-5df479c3a6f0.jsonl (attempt 1)
+2026-04-04 04:35:14,953 - INFO -    💾 Session backup saved: task_bamboogle_02_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:35:14,953 - INFO - ✅ Task task_bamboogle_02: 1.0/1.0 (100%) - automated
+2026-04-04 04:35:14,954 - INFO - 
+================================================================================
+2026-04-04 04:35:14,954 - INFO - 📋 Task 14/210 (Run 1/1)
+2026-04-04 04:35:14,954 - INFO - ================================================================================
+2026-04-04 04:35:14,954 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_03
+2026-04-04 04:35:14,954 - INFO -    Task: BAMBOOGLE Sample 3 (ID: idx_3)
+2026-04-04 04:35:14,954 - INFO -    Category: planning
+2026-04-04 04:35:14,954 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:35:45,323 - INFO - Found transcript via sessions.json: 313415c5-7e8b-40fe-8173-7245dc74dc12.jsonl (attempt 1)
+2026-04-04 04:35:45,324 - INFO -    💾 Session backup saved: task_bamboogle_03_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:35:45,324 - INFO - ✅ Task task_bamboogle_03: 1.0/1.0 (100%) - automated
+2026-04-04 04:35:45,324 - INFO - 
+================================================================================
+2026-04-04 04:35:45,324 - INFO - 📋 Task 15/210 (Run 1/1)
+2026-04-04 04:35:45,324 - INFO - ================================================================================
+2026-04-04 04:35:45,324 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_04
+2026-04-04 04:35:45,324 - INFO -    Task: BAMBOOGLE Sample 4 (ID: idx_4)
+2026-04-04 04:35:45,324 - INFO -    Category: planning
+2026-04-04 04:35:45,325 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:36:21,283 - INFO - Found transcript via sessions.json: 668f5bd6-2d53-42c8-a009-0618f97bddba.jsonl (attempt 1)
+2026-04-04 04:36:21,284 - INFO -    💾 Session backup saved: task_bamboogle_04_run_8b69845a-1.jsonl (14 entries, status=success)
+2026-04-04 04:36:21,284 - INFO - ✅ Task task_bamboogle_04: 1.0/1.0 (100%) - automated
+2026-04-04 04:36:21,284 - INFO - 
+================================================================================
+2026-04-04 04:36:21,284 - INFO - 📋 Task 16/210 (Run 1/1)
+2026-04-04 04:36:21,284 - INFO - ================================================================================
+2026-04-04 04:36:21,284 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_05
+2026-04-04 04:36:21,284 - INFO -    Task: BAMBOOGLE Sample 5 (ID: idx_5)
+2026-04-04 04:36:21,284 - INFO -    Category: planning
+2026-04-04 04:36:21,285 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:37:09,808 - INFO - Found transcript via sessions.json: ab968fec-0107-4f55-b2ee-4086457d49b9.jsonl (attempt 1)
+2026-04-04 04:37:09,809 - INFO -    💾 Session backup saved: task_bamboogle_05_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:37:09,809 - INFO - ✅ Task task_bamboogle_05: 1.0/1.0 (100%) - automated
+2026-04-04 04:37:09,809 - INFO - 
+================================================================================
+2026-04-04 04:37:09,810 - INFO - 📋 Task 17/210 (Run 1/1)
+2026-04-04 04:37:09,810 - INFO - ================================================================================
+2026-04-04 04:37:09,810 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_06
+2026-04-04 04:37:09,810 - INFO -    Task: BAMBOOGLE Sample 6 (ID: idx_6)
+2026-04-04 04:37:09,810 - INFO -    Category: planning
+2026-04-04 04:37:09,810 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:38:15,277 - INFO - Found transcript via sessions.json: 50f8d74c-8b22-4c90-8a82-95a25acb5435.jsonl (attempt 1)
+2026-04-04 04:38:15,278 - INFO -    💾 Session backup saved: task_bamboogle_06_run_8b69845a-1.jsonl (12 entries, status=success)
+2026-04-04 04:38:15,279 - INFO - ✅ Task task_bamboogle_06: 1.0/1.0 (100%) - automated
+2026-04-04 04:38:15,279 - INFO - 
+================================================================================
+2026-04-04 04:38:15,279 - INFO - 📋 Task 18/210 (Run 1/1)
+2026-04-04 04:38:15,279 - INFO - ================================================================================
+2026-04-04 04:38:15,279 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_07
+2026-04-04 04:38:15,279 - INFO -    Task: BAMBOOGLE Sample 7 (ID: idx_7)
+2026-04-04 04:38:15,279 - INFO -    Category: planning
+2026-04-04 04:38:15,279 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:39:03,918 - INFO - Found transcript via sessions.json: 2334fade-5eb3-4979-8b60-3e773e920b21.jsonl (attempt 1)
+2026-04-04 04:39:03,920 - INFO -    💾 Session backup saved: task_bamboogle_07_run_8b69845a-1.jsonl (20 entries, status=success)
+2026-04-04 04:39:03,920 - INFO - ✅ Task task_bamboogle_07: 1.0/1.0 (100%) - automated
+2026-04-04 04:39:03,920 - INFO - 
+================================================================================
+2026-04-04 04:39:03,920 - INFO - 📋 Task 19/210 (Run 1/1)
+2026-04-04 04:39:03,920 - INFO - ================================================================================
+2026-04-04 04:39:03,920 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_08
+2026-04-04 04:39:03,920 - INFO -    Task: BAMBOOGLE Sample 8 (ID: idx_8)
+2026-04-04 04:39:03,920 - INFO -    Category: planning
+2026-04-04 04:39:03,920 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:39:50,050 - INFO - Found transcript via sessions.json: 2d67ea9c-06cf-4354-8735-8c87897e6300.jsonl (attempt 1)
+2026-04-04 04:39:50,051 - INFO -    💾 Session backup saved: task_bamboogle_08_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 04:39:50,051 - INFO - ✅ Task task_bamboogle_08: 1.0/1.0 (100%) - automated
+2026-04-04 04:39:50,052 - INFO - 
+================================================================================
+2026-04-04 04:39:50,052 - INFO - 📋 Task 20/210 (Run 1/1)
+2026-04-04 04:39:50,052 - INFO - ================================================================================
+2026-04-04 04:39:50,052 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_bamboogle_09
+2026-04-04 04:39:50,052 - INFO -    Task: BAMBOOGLE Sample 9 (ID: idx_9)
+2026-04-04 04:39:50,052 - INFO -    Category: planning
+2026-04-04 04:39:50,052 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:40:56,151 - INFO - Found transcript via sessions.json: 4f109c53-7604-4c83-9308-e2223309b693.jsonl (attempt 1)
+2026-04-04 04:40:56,152 - INFO -    💾 Session backup saved: task_bamboogle_09_run_8b69845a-1.jsonl (14 entries, status=success)
+2026-04-04 04:40:56,152 - INFO - ⚠️ Task task_bamboogle_09: 0.5/1.0 (50%) - automated
+2026-04-04 04:40:56,152 - INFO - 
+================================================================================
+2026-04-04 04:40:56,152 - INFO - 📋 Task 21/210 (Run 1/1)
+2026-04-04 04:40:56,152 - INFO - ================================================================================
+2026-04-04 04:40:56,153 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_00
+2026-04-04 04:40:56,153 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:40:56,153 - INFO -    Category: visual_qa
+2026-04-04 04:40:56,153 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:41:36,127 - INFO - Found transcript via sessions.json: a25f89ee-f4b1-4a1b-9d98-b94b8e11e69e.jsonl (attempt 1)
+2026-04-04 04:41:40,281 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:41:40,281 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:42:13,669 - INFO - Found transcript via sessions.json: 8a826e51-714e-469d-a25a-c43537ce3ad5.jsonl (attempt 1)
+2026-04-04 04:42:13,670 - INFO -    💾 Session backup saved: task_charxiv_00_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:42:13,670 - INFO - ❌ Task task_charxiv_00: 0.0/1.0 (0%) - llm_judge
+2026-04-04 04:42:13,670 - INFO -    Notes: The agent answered 'Ft-CNN' but the expected answer is 'Joint-CNN'. The response is incorrect based on the chart analysis requirement.
+2026-04-04 04:42:13,670 - INFO - 
+================================================================================
+2026-04-04 04:42:13,670 - INFO - 📋 Task 22/210 (Run 1/1)
+2026-04-04 04:42:13,670 - INFO - ================================================================================
+2026-04-04 04:42:13,670 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_01
+2026-04-04 04:42:13,670 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:42:13,670 - INFO -    Category: visual_qa
+2026-04-04 04:42:13,671 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:42:53,091 - INFO - Found transcript via sessions.json: f94d0d0c-12c7-48cf-ac03-64348a116f0c.jsonl (attempt 1)
+2026-04-04 04:42:57,146 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:42:57,146 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:43:20,454 - INFO - Found transcript via sessions.json: 9c981ddb-8325-43e7-beca-f67b160b3386.jsonl (attempt 1)
+2026-04-04 04:43:20,455 - INFO -    💾 Session backup saved: task_charxiv_01_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:43:20,455 - INFO - ❌ Task task_charxiv_01: 0.0/1.0 (0%) - llm_judge
+2026-04-04 04:43:20,455 - INFO -    Notes: The agent answered 'ap', but the expected answer is 'lambda_L = 0.13'. The response does not match the expected answer or any equivalent form.
+2026-04-04 04:43:20,455 - INFO - 
+================================================================================
+2026-04-04 04:43:20,455 - INFO - 📋 Task 23/210 (Run 1/1)
+2026-04-04 04:43:20,455 - INFO - ================================================================================
+2026-04-04 04:43:20,455 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_02
+2026-04-04 04:43:20,455 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:43:20,455 - INFO -    Category: visual_qa
+2026-04-04 04:43:20,455 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:43:58,834 - INFO - Found transcript via sessions.json: 690a05c0-e3bd-4a55-b03b-685a4295365d.jsonl (attempt 1)
+2026-04-04 04:44:04,580 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:44:04,581 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:44:41,240 - INFO - Found transcript via sessions.json: 5564f1f8-8249-460f-a856-aac08d178ba7.jsonl (attempt 1)
+2026-04-04 04:44:41,241 - INFO -    💾 Session backup saved: task_charxiv_02_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:44:41,241 - INFO - ✅ Task task_charxiv_02: 1.0/1.0 (100%) - llm_judge
+2026-04-04 04:44:41,241 - INFO -    Notes: The agent wrote 'OPT' to answer.txt, which matches the expected answer '(b) OPT' in concise form as permitted by the rubric (equivalent forms acceptable).
+2026-04-04 04:44:41,241 - INFO - 
+================================================================================
+2026-04-04 04:44:41,241 - INFO - 📋 Task 24/210 (Run 1/1)
+2026-04-04 04:44:41,241 - INFO - ================================================================================
+2026-04-04 04:44:41,241 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_03
+2026-04-04 04:44:41,241 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:44:41,241 - INFO -    Category: visual_qa
+2026-04-04 04:44:41,241 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:45:22,584 - INFO - Found transcript via sessions.json: 2d3d4981-2866-49c6-8ccd-4d5092bed154.jsonl (attempt 1)
+2026-04-04 04:45:26,606 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:45:26,606 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:45:48,765 - INFO - Found transcript via sessions.json: 79fb8cab-1c05-4577-a91e-bdeeeeac9835.jsonl (attempt 1)
+2026-04-04 04:45:48,767 - INFO -    💾 Session backup saved: task_charxiv_03_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:45:48,767 - INFO - ❌ Task task_charxiv_03: 0.0/1.0 (0%) - llm_judge
+2026-04-04 04:45:48,767 - INFO -    Notes: The agent answered '(b)' but the expected answer is '(c)'. The split direction for blue/green points differs in subplot (c), not (b).
+2026-04-04 04:45:48,767 - INFO - 
+================================================================================
+2026-04-04 04:45:48,767 - INFO - 📋 Task 25/210 (Run 1/1)
+2026-04-04 04:45:48,767 - INFO - ================================================================================
+2026-04-04 04:45:48,767 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_04
+2026-04-04 04:45:48,767 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:45:48,767 - INFO -    Category: visual_qa
+2026-04-04 04:45:48,768 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:46:40,263 - INFO - Found transcript via sessions.json: f621651d-b678-444e-8cd1-a85315e50a61.jsonl (attempt 1)
+2026-04-04 04:46:44,416 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:46:44,417 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:47:04,746 - INFO - Found transcript via sessions.json: c7b2bdc1-a37e-4835-a7ec-e7469882d68d.jsonl (attempt 1)
+2026-04-04 04:47:04,747 - INFO -    💾 Session backup saved: task_charxiv_04_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:47:04,747 - INFO - ✅ Task task_charxiv_04: 1.0/1.0 (100%) - llm_judge
+2026-04-04 04:47:04,747 - INFO -    Notes: The agent correctly identified 'Kansas City' as the city with the most zig-zagging in stay-at-home rates relative to daily new confirmed Covid-19 cases, matching the expected answer.
+2026-04-04 04:47:04,747 - INFO - 
+================================================================================
+2026-04-04 04:47:04,747 - INFO - 📋 Task 26/210 (Run 1/1)
+2026-04-04 04:47:04,747 - INFO - ================================================================================
+2026-04-04 04:47:04,748 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_05
+2026-04-04 04:47:04,748 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:47:04,748 - INFO -    Category: visual_qa
+2026-04-04 04:47:04,748 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:47:41,754 - INFO - Found transcript via sessions.json: 1599b230-7352-4f28-92c4-c651e8d27af9.jsonl (attempt 1)
+2026-04-04 04:47:47,756 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:47:47,756 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:48:22,956 - INFO - Found transcript via sessions.json: e7269a2e-a4b3-4141-9aa3-d36e285ae23f.jsonl (attempt 1)
+2026-04-04 04:48:22,957 - INFO -    💾 Session backup saved: task_charxiv_05_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:48:22,957 - INFO - ✅ Task task_charxiv_05: 1.0/1.0 (100%) - llm_judge
+2026-04-04 04:48:22,957 - INFO -    Notes: The agent correctly identified 'JeVois (408MHz)' as the configuration with the lowest average throughput, matching the expected answer exactly.
+2026-04-04 04:48:22,957 - INFO - 
+================================================================================
+2026-04-04 04:48:22,957 - INFO - 📋 Task 27/210 (Run 1/1)
+2026-04-04 04:48:22,957 - INFO - ================================================================================
+2026-04-04 04:48:22,957 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_06
+2026-04-04 04:48:22,957 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:48:22,957 - INFO -    Category: visual_qa
+2026-04-04 04:48:22,958 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:48:43,285 - INFO - Found transcript via sessions.json: 3ab8037e-5bae-418b-bffe-ad82ba6e089a.jsonl (attempt 1)
+2026-04-04 04:48:47,446 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:48:47,447 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:49:05,534 - INFO - Found transcript via sessions.json: d411ec1c-a6d4-4d0c-bfa2-d0abbec6cc92.jsonl (attempt 1)
+2026-04-04 04:49:05,536 - INFO -    💾 Session backup saved: task_charxiv_06_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:49:05,536 - INFO - ✅ Task task_charxiv_06: 1.0/1.0 (100%) - llm_judge
+2026-04-04 04:49:05,536 - INFO -    Notes: The agent correctly identified 'Accelerated DAT' as the training method with higher Adversarial Accuracy at Epoch 60, matching the expected answer.
+2026-04-04 04:49:05,537 - INFO - 
+================================================================================
+2026-04-04 04:49:05,537 - INFO - 📋 Task 28/210 (Run 1/1)
+2026-04-04 04:49:05,537 - INFO - ================================================================================
+2026-04-04 04:49:05,537 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_07
+2026-04-04 04:49:05,537 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:49:05,537 - INFO -    Category: visual_qa
+2026-04-04 04:49:05,538 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:49:42,275 - INFO - Found transcript via sessions.json: 75229844-ea04-4a37-9164-3852195a1c7e.jsonl (attempt 1)
+2026-04-04 04:49:46,771 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:49:46,772 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:49:58,551 - INFO - Found transcript via sessions.json: 22138d53-6e6e-46a0-a8ee-67e22ce81e84.jsonl (attempt 1)
+2026-04-04 04:49:58,553 - INFO -    💾 Session backup saved: task_charxiv_07_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:49:58,554 - INFO - ✅ Task task_charxiv_07: 1.0/1.0 (100%) - llm_judge
+2026-04-04 04:49:58,554 - INFO -    Notes: The agent's answer 'ROUND-ROBIN-COMBO' matches the expected answer exactly.
+2026-04-04 04:49:58,554 - INFO - 
+================================================================================
+2026-04-04 04:49:58,555 - INFO - 📋 Task 29/210 (Run 1/1)
+2026-04-04 04:49:58,555 - INFO - ================================================================================
+2026-04-04 04:49:58,555 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_08
+2026-04-04 04:49:58,555 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:49:58,555 - INFO -    Category: visual_qa
+2026-04-04 04:49:58,555 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:50:25,393 - INFO - Found transcript via sessions.json: 4682884f-f71a-4b43-a000-71fda9fef3b1.jsonl (attempt 1)
+2026-04-04 04:50:31,058 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:50:31,059 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:50:46,527 - INFO - Found transcript via sessions.json: 5d59b1cc-9cf5-48ae-9dfa-81cc50667db9.jsonl (attempt 1)
+2026-04-04 04:50:46,528 - INFO -    💾 Session backup saved: task_charxiv_08_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:50:46,528 - INFO - ✅ Task task_charxiv_08: 1.0/1.0 (100%) - llm_judge
+2026-04-04 04:50:46,528 - INFO -    Notes: The agent correctly identified the accuracy as 94%, matching the expected answer.
+2026-04-04 04:50:46,528 - INFO - 
+================================================================================
+2026-04-04 04:50:46,528 - INFO - 📋 Task 30/210 (Run 1/1)
+2026-04-04 04:50:46,528 - INFO - ================================================================================
+2026-04-04 04:50:46,528 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_charxiv_09
+2026-04-04 04:50:46,528 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-04 04:50:46,528 - INFO -    Category: visual_qa
+2026-04-04 04:50:46,529 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 04:51:38,598 - INFO - Found transcript via sessions.json: a87950c7-3a33-4412-9f02-2ed9d6a9761e.jsonl (attempt 1)
+2026-04-04 04:51:46,963 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 04:51:46,964 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 04:52:04,637 - INFO - Found transcript via sessions.json: 1565e60e-c0d4-4d26-9776-b92de2bea1c5.jsonl (attempt 1)
+2026-04-04 04:52:04,639 - INFO -    💾 Session backup saved: task_charxiv_09_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 04:52:04,639 - INFO - ❌ Task task_charxiv_09: 0.0/1.0 (0%) - llm_judge
+2026-04-04 04:52:04,639 - INFO -    Notes: The agent answered '2' but the expected answer is '3'. The answer is incorrect.
+2026-04-04 04:52:04,639 - INFO - 
+================================================================================
+2026-04-04 04:52:04,639 - INFO - 📋 Task 31/210 (Run 1/1)
+2026-04-04 04:52:04,639 - INFO - ================================================================================
+2026-04-04 04:52:04,639 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_00
+2026-04-04 04:52:04,639 - INFO -    Task: DEEPSEARCHQA Sample 0 (ID: idx_0)
+2026-04-04 04:52:04,639 - INFO -    Category: deepsearch_qa
+2026-04-04 04:52:04,639 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 05:00:09,082 - INFO - Found transcript via sessions.json: e6d7d864-6a66-46f4-bf0d-a26737de037f.jsonl (attempt 1)
+2026-04-04 05:00:13,056 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 05:00:13,056 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 05:03:13,085 - INFO - Found transcript via sessions.json: ebd70a7c-4edd-4ff2-ad27-54ee12910fea.jsonl (attempt 1)
+2026-04-04 05:03:13,085 - WARNING - Failed to parse judge JSON response
+2026-04-04 05:03:13,087 - INFO -    💾 Session backup saved: task_deepsearchqa_00_run_8b69845a-1.jsonl (80 entries, status=timeout)
+2026-04-04 05:03:13,087 - INFO - ❌ Task task_deepsearchqa_00: 0.0/1.0 (0%) - llm_judge
+2026-04-04 05:03:13,087 - INFO - 
+================================================================================
+2026-04-04 05:03:13,087 - INFO - 📋 Task 32/210 (Run 1/1)
+2026-04-04 05:03:13,087 - INFO - ================================================================================
+2026-04-04 05:03:13,087 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_01
+2026-04-04 05:03:13,087 - INFO -    Task: DEEPSEARCHQA Sample 1 (ID: idx_1)
+2026-04-04 05:03:13,087 - INFO -    Category: deepsearch_qa
+2026-04-04 05:03:13,088 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 05:05:13,774 - INFO - Found transcript via sessions.json: 7d4380df-ea7b-4dc5-8d17-d1eaed04e347.jsonl (attempt 1)
+2026-04-04 05:05:17,757 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 05:05:17,757 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 05:08:17,857 - INFO - Found transcript via sessions.json: 02a96473-91e5-4423-b049-ec397ece673b.jsonl (attempt 1)
+2026-04-04 05:08:17,858 - INFO -    💾 Session backup saved: task_deepsearchqa_01_run_8b69845a-1.jsonl (22 entries, status=success)
+2026-04-04 05:08:17,858 - INFO - ✅ Task task_deepsearchqa_01: 1.0/1.0 (100%) - llm_judge
+2026-04-04 05:08:17,858 - INFO - 
+================================================================================
+2026-04-04 05:08:17,858 - INFO - 📋 Task 33/210 (Run 1/1)
+2026-04-04 05:08:17,858 - INFO - ================================================================================
+2026-04-04 05:08:17,858 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_02
+2026-04-04 05:08:17,858 - INFO -    Task: DEEPSEARCHQA Sample 2 (ID: idx_2)
+2026-04-04 05:08:17,858 - INFO -    Category: deepsearch_qa
+2026-04-04 05:08:17,859 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 05:11:56,999 - INFO - Found transcript via sessions.json: bd04201a-30cf-4a55-86e6-9781301e09eb.jsonl (attempt 1)
+2026-04-04 05:12:00,922 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 05:12:00,923 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 05:15:02,017 - INFO - Found transcript via sessions.json: 704ac899-838a-4ada-9355-9577d5f14071.jsonl (attempt 2)
+2026-04-04 05:15:02,018 - INFO -    💾 Session backup saved: task_deepsearchqa_02_run_8b69845a-1.jsonl (18 entries, status=success)
+2026-04-04 05:15:02,018 - INFO - ❌ Task task_deepsearchqa_02: 0.0/1.0 (0%) - llm_judge
+2026-04-04 05:15:02,018 - INFO - 
+================================================================================
+2026-04-04 05:15:02,018 - INFO - 📋 Task 34/210 (Run 1/1)
+2026-04-04 05:15:02,018 - INFO - ================================================================================
+2026-04-04 05:15:02,018 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_03
+2026-04-04 05:15:02,018 - INFO -    Task: DEEPSEARCHQA Sample 3 (ID: idx_3)
+2026-04-04 05:15:02,018 - INFO -    Category: deepsearch_qa
+2026-04-04 05:15:02,019 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 05:21:03,918 - INFO - Found transcript via sessions.json: d959dc0c-d722-4170-9a4d-67b6ed037abb.jsonl (attempt 1)
+2026-04-04 05:21:08,005 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 05:21:08,005 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 05:23:41,927 - INFO - Found transcript via sessions.json: 6d204eb4-3795-4ade-b008-d4d273cf3cf7.jsonl (attempt 1)
+2026-04-04 05:23:41,928 - INFO -    💾 Session backup saved: task_deepsearchqa_03_run_8b69845a-1.jsonl (14 entries, status=success)
+2026-04-04 05:23:41,928 - INFO - ✅ Task task_deepsearchqa_03: 1.0/1.0 (100%) - llm_judge
+2026-04-04 05:23:41,928 - INFO -    Notes: The agent correctly identified and wrote 'Ferrierite' to answer.txt, matching the expected answer. Tool usage was appropriate: web_search to locate relevant information, web_fetch for additional conte
+2026-04-04 05:23:41,928 - INFO - 
+================================================================================
+2026-04-04 05:23:41,928 - INFO - 📋 Task 35/210 (Run 1/1)
+2026-04-04 05:23:41,928 - INFO - ================================================================================
+2026-04-04 05:23:41,928 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_04
+2026-04-04 05:23:41,928 - INFO -    Task: DEEPSEARCHQA Sample 4 (ID: idx_4)
+2026-04-04 05:23:41,928 - INFO -    Category: deepsearch_qa
+2026-04-04 05:23:41,928 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 05:25:01,212 - INFO - Found transcript via sessions.json: 1d35f7ff-3bfd-4a8b-8d49-fa40111df0cb.jsonl (attempt 1)
+2026-04-04 05:25:05,236 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 05:25:05,236 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 05:27:53,033 - INFO - Found transcript via sessions.json: 17229c9a-c7f2-4356-8672-2a89c312db89.jsonl (attempt 1)
+2026-04-04 05:27:53,036 - INFO -    💾 Session backup saved: task_deepsearchqa_04_run_8b69845a-1.jsonl (24 entries, status=success)
+2026-04-04 05:27:53,036 - INFO - ⚠️ Task task_deepsearchqa_04: 0.8/1.0 (75%) - llm_judge
+2026-04-04 05:27:53,036 - INFO -    Notes: The agent correctly identified World War II and World War I as the top two, but substituted 'Chinese Civil War' (1,200,000 deaths) for 'Second Sino-Japanese War' (1,689,000 deaths) and omitted Vietnam
+2026-04-04 05:27:53,036 - INFO - 
+================================================================================
+2026-04-04 05:27:53,036 - INFO - 📋 Task 36/210 (Run 1/1)
+2026-04-04 05:27:53,036 - INFO - ================================================================================
+2026-04-04 05:27:53,036 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_05
+2026-04-04 05:27:53,036 - INFO -    Task: DEEPSEARCHQA Sample 5 (ID: idx_5)
+2026-04-04 05:27:53,036 - INFO -    Category: deepsearch_qa
+2026-04-04 05:27:53,037 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 05:32:52,833 - INFO - Found transcript via sessions.json: 6fb44baa-b15f-4873-9f94-a537c39710bf.jsonl (attempt 1)
+2026-04-04 05:32:57,084 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 05:32:57,084 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 05:36:02,115 - WARNING - Transcript not found for agent bench-judge-qwen3-vl-plus-for-gpt-5-2. Sessions dir contents: ['sessions.json']
+2026-04-04 05:36:02,117 - INFO -    💾 Session backup saved: task_deepsearchqa_05_run_8b69845a-1.jsonl (54 entries, status=success)
+2026-04-04 05:36:02,117 - INFO - ❌ Task task_deepsearchqa_05: 0.0/1.0 (0%) - llm_judge
+2026-04-04 05:36:02,117 - INFO - 
+================================================================================
+2026-04-04 05:36:02,117 - INFO - 📋 Task 37/210 (Run 1/1)
+2026-04-04 05:36:02,117 - INFO - ================================================================================
+2026-04-04 05:36:02,117 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_06
+2026-04-04 05:36:02,117 - INFO -    Task: DEEPSEARCHQA Sample 6 (ID: idx_6)
+2026-04-04 05:36:02,117 - INFO -    Category: deepsearch_qa
+2026-04-04 05:36:02,118 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 05:44:04,191 - INFO - Found transcript via sessions.json: 9824d7e6-cb8b-470c-8517-4da0051957a5.jsonl (attempt 1)
+2026-04-04 05:44:08,176 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 05:44:08,177 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 05:47:13,280 - WARNING - Transcript not found for agent bench-judge-qwen3-vl-plus-for-gpt-5-2. Sessions dir contents: ['sessions.json']
+2026-04-04 05:47:13,286 - INFO -    💾 Session backup saved: task_deepsearchqa_06_run_8b69845a-1.jsonl (118 entries, status=timeout)
+2026-04-04 05:47:13,286 - INFO - ❌ Task task_deepsearchqa_06: 0.0/1.0 (0%) - llm_judge
+2026-04-04 05:47:13,286 - INFO - 
+================================================================================
+2026-04-04 05:47:13,286 - INFO - 📋 Task 38/210 (Run 1/1)
+2026-04-04 05:47:13,287 - INFO - ================================================================================
+2026-04-04 05:47:13,287 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_07
+2026-04-04 05:47:13,287 - INFO -    Task: DEEPSEARCHQA Sample 7 (ID: idx_7)
+2026-04-04 05:47:13,287 - INFO -    Category: deepsearch_qa
+2026-04-04 05:47:13,287 - INFO - Removed 2 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 05:53:20,310 - INFO - Found transcript via sessions.json: 8f47e4d5-cea1-47df-98a7-fc81874778dc.jsonl (attempt 1)
+2026-04-04 05:53:24,323 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 05:53:24,323 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 05:56:29,415 - WARNING - Transcript not found for agent bench-judge-qwen3-vl-plus-for-gpt-5-2. Sessions dir contents: ['sessions.json']
+2026-04-04 05:56:29,416 - INFO -    💾 Session backup saved: task_deepsearchqa_07_run_8b69845a-1.jsonl (18 entries, status=success)
+2026-04-04 05:56:29,416 - INFO - ❌ Task task_deepsearchqa_07: 0.0/1.0 (0%) - llm_judge
+2026-04-04 05:56:29,416 - INFO - 
+================================================================================
+2026-04-04 05:56:29,416 - INFO - 📋 Task 39/210 (Run 1/1)
+2026-04-04 05:56:29,416 - INFO - ================================================================================
+2026-04-04 05:56:29,416 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_08
+2026-04-04 05:56:29,416 - INFO -    Task: DEEPSEARCHQA Sample 8 (ID: idx_8)
+2026-04-04 05:56:29,416 - INFO -    Category: deepsearch_qa
+2026-04-04 05:56:29,416 - INFO - Removed 2 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:04:36,578 - WARNING - Transcript not found for agent bench-custom-api-shubiaobiao-cn-gpt-5-2. Sessions dir contents: ['sessions.json']
+2026-04-04 06:04:40,532 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 06:04:40,532 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 06:07:45,630 - WARNING - Transcript not found for agent bench-judge-qwen3-vl-plus-for-gpt-5-2. Sessions dir contents: ['sessions.json']
+2026-04-04 06:07:45,630 - INFO - ❌ Task task_deepsearchqa_08: 0.0/1.0 (0%) - llm_judge
+2026-04-04 06:07:45,630 - INFO - 
+================================================================================
+2026-04-04 06:07:45,630 - INFO - 📋 Task 40/210 (Run 1/1)
+2026-04-04 06:07:45,630 - INFO - ================================================================================
+2026-04-04 06:07:45,630 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_deepsearchqa_09
+2026-04-04 06:07:45,630 - INFO -    Task: DEEPSEARCHQA Sample 9 (ID: idx_9)
+2026-04-04 06:07:45,630 - INFO -    Category: deepsearch_qa
+2026-04-04 06:07:45,631 - INFO - Removed 2 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:15:47,670 - INFO - Found transcript via sessions.json: bfbba642-4e4d-43e8-baf3-cabaa571b5a4.jsonl (attempt 1)
+2026-04-04 06:15:51,828 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 06:15:51,829 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 06:18:56,934 - WARNING - Transcript not found for agent bench-judge-qwen3-vl-plus-for-gpt-5-2. Sessions dir contents: ['sessions.json']
+2026-04-04 06:18:56,935 - INFO -    💾 Session backup saved: task_deepsearchqa_09_run_8b69845a-1.jsonl (35 entries, status=timeout)
+2026-04-04 06:18:56,935 - INFO - ❌ Task task_deepsearchqa_09: 0.0/1.0 (0%) - llm_judge
+2026-04-04 06:18:56,935 - INFO - 
+================================================================================
+2026-04-04 06:18:56,935 - INFO - 📋 Task 41/210 (Run 1/1)
+2026-04-04 06:18:56,935 - INFO - ================================================================================
+2026-04-04 06:18:56,935 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_00
+2026-04-04 06:18:56,935 - INFO -    Task: FinQA — page_23.pdf-2
+2026-04-04 06:18:56,935 - INFO -    Category: finqa
+2026-04-04 06:18:56,936 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:22:24,000 - INFO - Found transcript via sessions.json: e44ee4e8-e849-4122-b9c4-a10fd0404bac.jsonl (attempt 1)
+2026-04-04 06:22:24,002 - INFO -    💾 Session backup saved: task_finqa_00_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 06:22:24,002 - INFO - ❌ Task task_finqa_00: 0.0/1.0 (0%) - automated
+2026-04-04 06:22:24,002 - INFO - 
+================================================================================
+2026-04-04 06:22:24,002 - INFO - 📋 Task 42/210 (Run 1/1)
+2026-04-04 06:22:24,002 - INFO - ================================================================================
+2026-04-04 06:22:24,002 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_01
+2026-04-04 06:22:24,002 - INFO -    Task: FinQA — page_18.pdf-2
+2026-04-04 06:22:24,002 - INFO -    Category: finqa
+2026-04-04 06:22:24,002 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:30:05,078 - INFO - Found transcript via sessions.json: 2760d727-5c55-44aa-8b31-f756bf932d8e.jsonl (attempt 1)
+2026-04-04 06:30:05,079 - INFO -    💾 Session backup saved: task_finqa_01_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 06:30:05,079 - INFO - ❌ Task task_finqa_01: 0.0/1.0 (0%) - automated
+2026-04-04 06:30:05,079 - INFO - 
+================================================================================
+2026-04-04 06:30:05,079 - INFO - 📋 Task 43/210 (Run 1/1)
+2026-04-04 06:30:05,079 - INFO - ================================================================================
+2026-04-04 06:30:05,079 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_02
+2026-04-04 06:30:05,079 - INFO -    Task: FinQA — page_94.pdf-1
+2026-04-04 06:30:05,079 - INFO -    Category: finqa
+2026-04-04 06:30:05,080 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:32:33,049 - INFO - Found transcript via sessions.json: a140b216-ba7a-4b0f-9830-f9a545d60ce4.jsonl (attempt 1)
+2026-04-04 06:32:33,050 - INFO -    💾 Session backup saved: task_finqa_02_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 06:32:33,050 - INFO - ✅ Task task_finqa_02: 1.0/1.0 (100%) - automated
+2026-04-04 06:32:33,050 - INFO - 
+================================================================================
+2026-04-04 06:32:33,050 - INFO - 📋 Task 44/210 (Run 1/1)
+2026-04-04 06:32:33,050 - INFO - ================================================================================
+2026-04-04 06:32:33,050 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_03
+2026-04-04 06:32:33,050 - INFO -    Task: FinQA — page_94.pdf-1
+2026-04-04 06:32:33,050 - INFO -    Category: finqa
+2026-04-04 06:32:33,051 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:36:26,427 - INFO - Found transcript via sessions.json: 03265306-1c24-461d-9822-b66e05308311.jsonl (attempt 1)
+2026-04-04 06:36:26,429 - INFO -    💾 Session backup saved: task_finqa_03_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 06:36:26,429 - INFO - ❌ Task task_finqa_03: 0.0/1.0 (0%) - automated
+2026-04-04 06:36:26,429 - INFO - 
+================================================================================
+2026-04-04 06:36:26,429 - INFO - 📋 Task 45/210 (Run 1/1)
+2026-04-04 06:36:26,429 - INFO - ================================================================================
+2026-04-04 06:36:26,429 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_04
+2026-04-04 06:36:26,429 - INFO -    Task: FinQA — page_70.pdf-2
+2026-04-04 06:36:26,429 - INFO -    Category: finqa
+2026-04-04 06:36:26,429 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:40:09,318 - INFO - Found transcript via sessions.json: 39338d09-275b-494a-b6ef-47a9426ffc82.jsonl (attempt 1)
+2026-04-04 06:40:09,319 - INFO -    💾 Session backup saved: task_finqa_04_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 06:40:09,319 - INFO - ❌ Task task_finqa_04: 0.0/1.0 (0%) - automated
+2026-04-04 06:40:09,319 - INFO - 
+================================================================================
+2026-04-04 06:40:09,319 - INFO - 📋 Task 46/210 (Run 1/1)
+2026-04-04 06:40:09,319 - INFO - ================================================================================
+2026-04-04 06:40:09,319 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_05
+2026-04-04 06:40:09,319 - INFO -    Task: FinQA — page_35.pdf-4
+2026-04-04 06:40:09,319 - INFO -    Category: finqa
+2026-04-04 06:40:09,319 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:43:41,399 - INFO - Found transcript via sessions.json: 0ae0c808-26c3-40e4-b3bf-63b0dfa88590.jsonl (attempt 1)
+2026-04-04 06:43:41,401 - INFO -    💾 Session backup saved: task_finqa_05_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 06:43:41,401 - INFO - ❌ Task task_finqa_05: 0.0/1.0 (0%) - automated
+2026-04-04 06:43:41,401 - INFO - 
+================================================================================
+2026-04-04 06:43:41,401 - INFO - 📋 Task 47/210 (Run 1/1)
+2026-04-04 06:43:41,401 - INFO - ================================================================================
+2026-04-04 06:43:41,401 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_06
+2026-04-04 06:43:41,401 - INFO -    Task: FinQA — page_48.pdf-2
+2026-04-04 06:43:41,401 - INFO -    Category: finqa
+2026-04-04 06:43:41,401 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:44:26,057 - INFO - Found transcript via sessions.json: da920e4f-b41d-466a-8be1-8919304f65c5.jsonl (attempt 1)
+2026-04-04 06:44:26,058 - INFO -    💾 Session backup saved: task_finqa_06_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 06:44:26,058 - INFO - ✅ Task task_finqa_06: 1.0/1.0 (100%) - automated
+2026-04-04 06:44:26,058 - INFO - 
+================================================================================
+2026-04-04 06:44:26,058 - INFO - 📋 Task 48/210 (Run 1/1)
+2026-04-04 06:44:26,058 - INFO - ================================================================================
+2026-04-04 06:44:26,058 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_07
+2026-04-04 06:44:26,058 - INFO -    Task: FinQA — page_91.pdf-4
+2026-04-04 06:44:26,058 - INFO -    Category: finqa
+2026-04-04 06:44:26,059 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:46:07,932 - INFO - Found transcript via sessions.json: 8e2cec04-2d46-494f-b951-ec3518fe9369.jsonl (attempt 1)
+2026-04-04 06:46:07,933 - INFO -    💾 Session backup saved: task_finqa_07_run_8b69845a-1.jsonl (12 entries, status=success)
+2026-04-04 06:46:07,934 - INFO - ❌ Task task_finqa_07: 0.0/1.0 (0%) - automated
+2026-04-04 06:46:07,934 - INFO - 
+================================================================================
+2026-04-04 06:46:07,934 - INFO - 📋 Task 49/210 (Run 1/1)
+2026-04-04 06:46:07,934 - INFO - ================================================================================
+2026-04-04 06:46:07,934 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_08
+2026-04-04 06:46:07,934 - INFO -    Task: FinQA — page_64.pdf-3
+2026-04-04 06:46:07,934 - INFO -    Category: finqa
+2026-04-04 06:46:07,934 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:48:01,388 - INFO - Found transcript via sessions.json: b47137b4-e29b-4162-84eb-cb3086148d40.jsonl (attempt 1)
+2026-04-04 06:48:01,389 - INFO -    💾 Session backup saved: task_finqa_08_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 06:48:01,389 - INFO - ✅ Task task_finqa_08: 1.0/1.0 (100%) - automated
+2026-04-04 06:48:01,389 - INFO - 
+================================================================================
+2026-04-04 06:48:01,389 - INFO - 📋 Task 50/210 (Run 1/1)
+2026-04-04 06:48:01,389 - INFO - ================================================================================
+2026-04-04 06:48:01,389 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_finqa_09
+2026-04-04 06:48:01,389 - INFO -    Task: FinQA — page_121.pdf-3
+2026-04-04 06:48:01,390 - INFO -    Category: finqa
+2026-04-04 06:48:01,390 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:50:29,614 - INFO - Found transcript via sessions.json: ff6b40a4-999c-4673-99ce-49724bc2f6e1.jsonl (attempt 1)
+2026-04-04 06:50:29,616 - INFO -    💾 Session backup saved: task_finqa_09_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 06:50:29,616 - INFO - ✅ Task task_finqa_09: 1.0/1.0 (100%) - automated
+2026-04-04 06:50:29,616 - INFO - 
+================================================================================
+2026-04-04 06:50:29,616 - INFO - 📋 Task 51/210 (Run 1/1)
+2026-04-04 06:50:29,616 - INFO - ================================================================================
+2026-04-04 06:50:29,616 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_00
+2026-04-04 06:50:29,616 - INFO -    Task: GPQA Sample 0 (ID: idx_0)
+2026-04-04 06:50:29,616 - INFO -    Category: reading_comprehension
+2026-04-04 06:50:29,616 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:51:41,067 - INFO - Found transcript via sessions.json: e6ff7cfc-e34b-4d8f-a52d-231b6f7dda78.jsonl (attempt 1)
+2026-04-04 06:51:44,975 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 06:51:44,976 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 06:54:02,592 - INFO - Found transcript via sessions.json: 31a7627b-278b-4489-8ebe-befe6b931e62.jsonl (attempt 1)
+2026-04-04 06:54:02,593 - INFO -    💾 Session backup saved: task_gpqa_00_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 06:54:02,593 - INFO - ✅ Task task_gpqa_00: 1.0/1.0 (100%) - hybrid
+2026-04-04 06:54:02,593 - INFO -    Notes: The agent correctly derived P2/P1 = (5/7)^3 = 125/343 ≈ 0.364, matching the expected answer. Reasoning is step-by-step, includes Doppler shift relation, RV semi-amplitude scaling with period, and prop
+2026-04-04 06:54:02,593 - INFO - 
+================================================================================
+2026-04-04 06:54:02,593 - INFO - 📋 Task 52/210 (Run 1/1)
+2026-04-04 06:54:02,593 - INFO - ================================================================================
+2026-04-04 06:54:02,593 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_01
+2026-04-04 06:54:02,593 - INFO -    Task: GPQA Sample 1 (ID: idx_1)
+2026-04-04 06:54:02,593 - INFO -    Category: reading_comprehension
+2026-04-04 06:54:02,593 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 06:55:39,431 - INFO - Found transcript via sessions.json: 51850d3c-6c22-48f2-99d3-9c0e7e324095.jsonl (attempt 1)
+2026-04-04 06:55:43,350 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 06:55:43,351 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 06:58:43,405 - INFO - Found transcript via sessions.json: d155f343-0950-4d37-b58a-406eb5764b6d.jsonl (attempt 1)
+2026-04-04 06:58:43,406 - WARNING - Failed to parse judge JSON response
+2026-04-04 06:58:43,406 - INFO -    💾 Session backup saved: task_gpqa_01_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 06:58:43,406 - INFO - ⚠️ Task task_gpqa_01: 0.3/1.0 (30%) - hybrid
+2026-04-04 06:58:43,406 - INFO - 
+================================================================================
+2026-04-04 06:58:43,407 - INFO - 📋 Task 53/210 (Run 1/1)
+2026-04-04 06:58:43,407 - INFO - ================================================================================
+2026-04-04 06:58:43,407 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_02
+2026-04-04 06:58:43,407 - INFO -    Task: GPQA Sample 2 (ID: idx_2)
+2026-04-04 06:58:43,407 - INFO -    Category: reading_comprehension
+2026-04-04 06:58:43,407 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:00:24,503 - INFO - Found transcript via sessions.json: a35070e2-4598-487f-8867-b178c51bc4e4.jsonl (attempt 1)
+2026-04-04 07:00:28,537 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:00:28,537 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:02:17,160 - INFO - Found transcript via sessions.json: 37489320-c867-401c-ac57-6bb943e9894f.jsonl (attempt 1)
+2026-04-04 07:02:17,161 - INFO -    💾 Session backup saved: task_gpqa_02_run_8b69845a-1.jsonl (12 entries, status=success)
+2026-04-04 07:02:17,161 - INFO - ✅ Task task_gpqa_02: 1.0/1.0 (100%) - hybrid
+2026-04-04 07:02:17,161 - INFO -    Notes: Agent provided the exact correct IUPAC name matching the expected answer, with clear, step-by-step reasoning that correctly applied IUPAC priority rules, positional constraints, and alphabetical order
+2026-04-04 07:02:17,162 - INFO - 
+================================================================================
+2026-04-04 07:02:17,162 - INFO - 📋 Task 54/210 (Run 1/1)
+2026-04-04 07:02:17,162 - INFO - ================================================================================
+2026-04-04 07:02:17,162 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_03
+2026-04-04 07:02:17,162 - INFO -    Task: GPQA Sample 3 (ID: idx_3)
+2026-04-04 07:02:17,162 - INFO -    Category: reading_comprehension
+2026-04-04 07:02:17,162 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:02:48,269 - INFO - Found transcript via sessions.json: 9e36f584-b37a-4311-868e-48eeec6cc48c.jsonl (attempt 1)
+2026-04-04 07:02:52,539 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:02:52,540 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:04:42,106 - INFO - Found transcript via sessions.json: 545750e7-a124-427a-a74b-7ce0ad85852e.jsonl (attempt 1)
+2026-04-04 07:04:42,107 - INFO -    💾 Session backup saved: task_gpqa_03_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 07:04:42,107 - INFO - ✅ Task task_gpqa_03: 1.0/1.0 (100%) - hybrid
+2026-04-04 07:04:42,107 - INFO -    Notes: The agent derived dN/dp ∝ p⁻⁴ correctly using uniform 3D density, spherical shells, and proper Jacobian transformation. Reasoning is step-by-step, clear, and includes interpretation and a note on log-
+2026-04-04 07:04:42,107 - INFO - 
+================================================================================
+2026-04-04 07:04:42,107 - INFO - 📋 Task 55/210 (Run 1/1)
+2026-04-04 07:04:42,107 - INFO - ================================================================================
+2026-04-04 07:04:42,107 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_04
+2026-04-04 07:04:42,107 - INFO -    Task: GPQA Sample 4 (ID: idx_4)
+2026-04-04 07:04:42,107 - INFO -    Category: reading_comprehension
+2026-04-04 07:04:42,107 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:05:40,222 - INFO - Found transcript via sessions.json: e85dd2b0-c965-48ae-82f3-e92d87be01e8.jsonl (attempt 1)
+2026-04-04 07:05:44,184 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:05:44,184 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:08:44,289 - INFO - Found transcript via sessions.json: b55d5bf4-d709-477f-9800-a356b2f77a61.jsonl (attempt 1)
+2026-04-04 07:08:44,290 - INFO -    💾 Session backup saved: task_gpqa_04_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 07:08:44,290 - INFO - ⚠️ Task task_gpqa_04: 0.7/1.0 (72%) - hybrid
+2026-04-04 07:08:44,290 - INFO -    Notes: The agent's answer identifies the correct reaction type (Diels-Alder), reactants (2,5-dimethylthiophene as diene, furan-2,5-dione/maleic anhydride as dienophile), and correctly notes the exo preferenc
+2026-04-04 07:08:44,290 - INFO - 
+================================================================================
+2026-04-04 07:08:44,290 - INFO - 📋 Task 56/210 (Run 1/1)
+2026-04-04 07:08:44,290 - INFO - ================================================================================
+2026-04-04 07:08:44,290 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_05
+2026-04-04 07:08:44,290 - INFO -    Task: GPQA Sample 5 (ID: idx_5)
+2026-04-04 07:08:44,290 - INFO -    Category: reading_comprehension
+2026-04-04 07:08:44,291 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:10:15,089 - INFO - Found transcript via sessions.json: 5c90c5e5-7bcf-4dc2-8630-df8e6a2bc935.jsonl (attempt 1)
+2026-04-04 07:10:19,223 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:10:19,223 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:11:58,252 - INFO - Found transcript via sessions.json: 0845facd-a0fd-4b5f-82d8-0d09cbf0f8f2.jsonl (attempt 1)
+2026-04-04 07:11:58,253 - INFO -    💾 Session backup saved: task_gpqa_05_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 07:11:58,253 - INFO - ⚠️ Task task_gpqa_05: 1.0/1.0 (99%) - hybrid
+2026-04-04 07:11:58,253 - INFO -    Notes: The agent's answer (≈0.507 λ/a) is extremely close to the expected 0.506 λ/a; the tiny discrepancy (0.001) comes from rounding of (α₂−α₁)/(2π) = (7.01558667−3.83170597)/(2π) ≈ 3.1838807/(6.2831853) ≈ 
+2026-04-04 07:11:58,253 - INFO - 
+================================================================================
+2026-04-04 07:11:58,253 - INFO - 📋 Task 57/210 (Run 1/1)
+2026-04-04 07:11:58,253 - INFO - ================================================================================
+2026-04-04 07:11:58,253 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_06
+2026-04-04 07:11:58,253 - INFO -    Task: GPQA Sample 6 (ID: idx_6)
+2026-04-04 07:11:58,253 - INFO -    Category: reading_comprehension
+2026-04-04 07:11:58,253 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:12:53,109 - INFO - Found transcript via sessions.json: 9c763404-30c5-426b-89b3-39b3317bacb8.jsonl (attempt 1)
+2026-04-04 07:12:57,381 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:12:57,382 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:14:03,198 - INFO - Found transcript via sessions.json: 8bd75c8f-75f6-48fb-a35a-652636d939be.jsonl (attempt 1)
+2026-04-04 07:14:03,199 - INFO -    💾 Session backup saved: task_gpqa_06_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 07:14:03,199 - INFO - ⚠️ Task task_gpqa_06: 0.7/1.0 (66%) - hybrid
+2026-04-04 07:14:03,199 - INFO -    Notes: The agent computed 2500 revolutions assuming peak voltage (cos=1) per crossing, but the expected answer is 3536, which corresponds to using the initial phase Φ₀=π/4 (cos(π/4)=1/√2) for every crossing—
+2026-04-04 07:14:03,199 - INFO - 
+================================================================================
+2026-04-04 07:14:03,199 - INFO - 📋 Task 58/210 (Run 1/1)
+2026-04-04 07:14:03,199 - INFO - ================================================================================
+2026-04-04 07:14:03,199 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_07
+2026-04-04 07:14:03,199 - INFO -    Task: GPQA Sample 7 (ID: idx_7)
+2026-04-04 07:14:03,199 - INFO -    Category: reading_comprehension
+2026-04-04 07:14:03,199 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:16:59,041 - INFO - Found transcript via sessions.json: 02220742-1824-4958-b2e0-b26d2da7a11b.jsonl (attempt 1)
+2026-04-04 07:17:03,210 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:17:03,210 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:18:23,511 - INFO - Found transcript via sessions.json: d0246a76-92cb-4f4b-8477-31c3007a4155.jsonl (attempt 1)
+2026-04-04 07:18:23,512 - INFO -    💾 Session backup saved: task_gpqa_07_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 07:18:23,512 - INFO - ⚠️ Task task_gpqa_07: 1.0/1.0 (98%) - hybrid
+2026-04-04 07:18:23,512 - INFO -    Notes: The agent correctly computes the threshold energy as ~2.6×10^14 eV = 2.6×10^5 GeV, matching the expected answer exactly. Reasoning is clear, step-by-step, and physically sound (uses s = 4Eγε for head-
+2026-04-04 07:18:23,512 - INFO - 
+================================================================================
+2026-04-04 07:18:23,512 - INFO - 📋 Task 59/210 (Run 1/1)
+2026-04-04 07:18:23,512 - INFO - ================================================================================
+2026-04-04 07:18:23,512 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_08
+2026-04-04 07:18:23,512 - INFO -    Task: GPQA Sample 8 (ID: idx_8)
+2026-04-04 07:18:23,512 - INFO -    Category: reading_comprehension
+2026-04-04 07:18:23,513 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:19:47,567 - INFO - Found transcript via sessions.json: 84d83b44-cfec-4ee5-9ff7-bbfdf88154f8.jsonl (attempt 1)
+2026-04-04 07:19:51,654 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:19:51,655 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:21:58,350 - INFO - Found transcript via sessions.json: ed0f0b30-87b6-42ad-b539-9f988eea0045.jsonl (attempt 1)
+2026-04-04 07:21:58,351 - INFO -    💾 Session backup saved: task_gpqa_08_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 07:21:58,351 - INFO - ⚠️ Task task_gpqa_08: 0.7/1.0 (71%) - hybrid
+2026-04-04 07:21:58,351 - INFO -    Notes: Agent proposed A = cyclohexanone + formaldehyde (e.g., paraformaldehyde) and B = p-TsOH. Expected answer is A = cyclohexanecarbaldehyde, B = TsOH. The correct reagent is cyclohexanecarbaldehyde (not c
+2026-04-04 07:21:58,351 - INFO - 
+================================================================================
+2026-04-04 07:21:58,351 - INFO - 📋 Task 60/210 (Run 1/1)
+2026-04-04 07:21:58,351 - INFO - ================================================================================
+2026-04-04 07:21:58,351 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_gpqa_09
+2026-04-04 07:21:58,352 - INFO -    Task: GPQA Sample 9 (ID: idx_9)
+2026-04-04 07:21:58,352 - INFO -    Category: reading_comprehension
+2026-04-04 07:21:58,352 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:22:48,966 - INFO - Found transcript via sessions.json: e6ccfe03-3734-4b24-98b2-7419a3b9c39a.jsonl (attempt 1)
+2026-04-04 07:22:53,003 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:22:53,003 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:25:14,605 - INFO - Found transcript via sessions.json: 91360254-b1e2-4bd4-8cc9-915541bbeaf3.jsonl (attempt 1)
+2026-04-04 07:25:14,606 - INFO -    💾 Session backup saved: task_gpqa_09_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 07:25:14,606 - INFO - ⚠️ Task task_gpqa_09: 0.6/1.0 (56%) - hybrid
+2026-04-04 07:25:14,606 - INFO -    Notes: Agent answered 'condensin complex' but expected answer is 'pre-replication complex'. Condensin is mitotic/chromosome condensation; pre-replication complex (ORC, Cdc6, Cdt1, Mcm2-7) loads at origins in
+2026-04-04 07:25:14,606 - INFO - 
+================================================================================
+2026-04-04 07:25:14,606 - INFO - 📋 Task 61/210 (Run 1/1)
+2026-04-04 07:25:14,606 - INFO - ================================================================================
+2026-04-04 07:25:14,607 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_00
+2026-04-04 07:25:14,607 - INFO -    Task: HLE Sample 0 (Math)
+2026-04-04 07:25:14,607 - INFO -    Category: reasoning
+2026-04-04 07:25:14,607 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:26:03,678 - INFO - Found transcript via sessions.json: dcbc2c2a-9c69-4dad-8560-dc0b92619187.jsonl (attempt 1)
+2026-04-04 07:26:07,711 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:26:07,711 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:27:41,896 - INFO - Found transcript via sessions.json: 4e6b4738-715d-421b-8c0d-0ecd54607ab6.jsonl (attempt 1)
+2026-04-04 07:27:41,897 - INFO -    💾 Session backup saved: task_hle_00_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 07:27:41,897 - INFO - ✅ Task task_hle_00: 1.0/1.0 (100%) - llm_judge
+2026-04-04 07:27:41,897 - INFO -    Notes: The agent concluded that the only correct choice is B, matching the ground truth. Although the intermediate reasoning in Part 1/2 ended with 'None of A–I', the final written answer.txt (as confirmed b
+2026-04-04 07:27:41,897 - INFO - 
+================================================================================
+2026-04-04 07:27:41,897 - INFO - 📋 Task 62/210 (Run 1/1)
+2026-04-04 07:27:41,897 - INFO - ================================================================================
+2026-04-04 07:27:41,897 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_01
+2026-04-04 07:27:41,897 - INFO -    Task: HLE Sample 1 (Math)
+2026-04-04 07:27:41,897 - INFO -    Category: reasoning
+2026-04-04 07:27:41,898 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:29:08,395 - INFO - Found transcript via sessions.json: 4d1c5979-a620-4b4c-b61d-eacbc287f3ee.jsonl (attempt 1)
+2026-04-04 07:29:12,438 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:29:12,439 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:31:29,361 - INFO - Found transcript via sessions.json: 33ceeb13-3ad0-41db-9511-cf5e7c691569.jsonl (attempt 1)
+2026-04-04 07:31:29,362 - INFO -    💾 Session backup saved: task_hle_01_run_8b69845a-1.jsonl (16 entries, status=success)
+2026-04-04 07:31:29,362 - INFO - ❌ Task task_hle_01: 0.0/1.0 (0%) - llm_judge
+2026-04-04 07:31:29,362 - INFO -    Notes: The agent computed the polynomial discriminant as 1,019,904 and concluded the minimal discriminant is that value, but the ground truth is 249. The correct minimal discriminant is obtained by dividing 
+2026-04-04 07:31:29,362 - INFO - 
+================================================================================
+2026-04-04 07:31:29,362 - INFO - 📋 Task 63/210 (Run 1/1)
+2026-04-04 07:31:29,362 - INFO - ================================================================================
+2026-04-04 07:31:29,362 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_02
+2026-04-04 07:31:29,362 - INFO -    Task: HLE Sample 2 (Other)
+2026-04-04 07:31:29,362 - INFO -    Category: reasoning
+2026-04-04 07:31:29,362 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:33:01,983 - INFO - Found transcript via sessions.json: 06c6a899-791e-4aeb-b245-852593ba33f8.jsonl (attempt 1)
+2026-04-04 07:33:06,069 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:33:06,069 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:35:57,782 - INFO - Found transcript via sessions.json: 0f2b5646-9d7e-4985-aa9d-43a3c7a3a3f9.jsonl (attempt 1)
+2026-04-04 07:35:57,786 - INFO -    💾 Session backup saved: task_hle_02_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 07:35:57,786 - INFO - ❌ Task task_hle_02: 0.0/1.0 (0%) - llm_judge
+2026-04-04 07:35:57,786 - INFO -    Notes: Agent answered A but ground truth is D; also hallucinated image details when file was missing.
+2026-04-04 07:35:57,786 - INFO - 
+================================================================================
+2026-04-04 07:35:57,786 - INFO - 📋 Task 64/210 (Run 1/1)
+2026-04-04 07:35:57,786 - INFO - ================================================================================
+2026-04-04 07:35:57,786 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_03
+2026-04-04 07:35:57,786 - INFO -    Task: HLE Sample 3 (Math)
+2026-04-04 07:35:57,786 - INFO -    Category: reasoning
+2026-04-04 07:35:57,786 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:37:44,581 - INFO - Found transcript via sessions.json: 039a58ce-20af-4300-b34b-7ed89e094a98.jsonl (attempt 1)
+2026-04-04 07:37:48,918 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:37:48,918 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:40:49,006 - INFO - Found transcript via sessions.json: 792f937d-3384-4141-9405-1cca7ba57c1d.jsonl (attempt 1)
+2026-04-04 07:40:49,007 - INFO -    💾 Session backup saved: task_hle_03_run_8b69845a-1.jsonl (20 entries, status=success)
+2026-04-04 07:40:49,007 - INFO - ⚠️ Task task_hle_03: 0.9/1.0 (90%) - llm_judge
+2026-04-04 07:40:49,007 - INFO - 
+================================================================================
+2026-04-04 07:40:49,008 - INFO - 📋 Task 65/210 (Run 1/1)
+2026-04-04 07:40:49,008 - INFO - ================================================================================
+2026-04-04 07:40:49,008 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_04
+2026-04-04 07:40:49,008 - INFO -    Task: HLE Sample 4 (Physics)
+2026-04-04 07:40:49,008 - INFO -    Category: reasoning
+2026-04-04 07:40:49,008 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:42:36,387 - INFO - Found transcript via sessions.json: e27ad402-4b47-4201-8252-a30c9745323e.jsonl (attempt 1)
+2026-04-04 07:42:40,514 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:42:40,514 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:45:40,616 - INFO - Found transcript via sessions.json: 8581bbca-a986-498e-b55f-416aa866827c.jsonl (attempt 1)
+2026-04-04 07:45:40,616 - INFO -    💾 Session backup saved: task_hle_04_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 07:45:40,616 - INFO - ⚠️ Task task_hle_04: 0.4/1.0 (40%) - llm_judge
+2026-04-04 07:45:40,616 - INFO - 
+================================================================================
+2026-04-04 07:45:40,617 - INFO - 📋 Task 66/210 (Run 1/1)
+2026-04-04 07:45:40,617 - INFO - ================================================================================
+2026-04-04 07:45:40,617 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_05
+2026-04-04 07:45:40,617 - INFO -    Task: HLE Sample 5 (Biology/Medicine)
+2026-04-04 07:45:40,617 - INFO -    Category: reasoning
+2026-04-04 07:45:40,617 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:47:45,234 - INFO - Found transcript via sessions.json: 7569bdeb-6554-4584-81a7-25032218672e.jsonl (attempt 1)
+2026-04-04 07:47:49,306 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:47:49,306 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:50:49,352 - INFO - Found transcript via sessions.json: b5d34da9-04b6-409f-a3a4-497b810483d2.jsonl (attempt 1)
+2026-04-04 07:50:49,353 - INFO -    💾 Session backup saved: task_hle_05_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 07:50:49,353 - INFO - ❌ Task task_hle_05: 0.0/1.0 (0%) - llm_judge
+2026-04-04 07:50:49,353 - INFO -    Notes: The agent answered G (IV, V) but the ground truth is M (I, IV). The agent incorrectly prioritized buprenorphine-naloxone (V) which can cause precipitated withdrawal in patients still physically depend
+2026-04-04 07:50:49,353 - INFO - 
+================================================================================
+2026-04-04 07:50:49,353 - INFO - 📋 Task 67/210 (Run 1/1)
+2026-04-04 07:50:49,353 - INFO - ================================================================================
+2026-04-04 07:50:49,353 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_06
+2026-04-04 07:50:49,353 - INFO -    Task: HLE Sample 6 (Math)
+2026-04-04 07:50:49,353 - INFO -    Category: reasoning
+2026-04-04 07:50:49,353 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:53:14,220 - INFO - Found transcript via sessions.json: e70ace16-ebe1-44f7-8d72-9fb8f2e20ff5.jsonl (attempt 1)
+2026-04-04 07:53:18,331 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:53:18,331 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 07:56:18,384 - INFO - Found transcript via sessions.json: c0313377-c5b4-498e-acc9-1e824c9593f1.jsonl (attempt 1)
+2026-04-04 07:56:18,386 - INFO -    💾 Session backup saved: task_hle_06_run_8b69845a-1.jsonl (14 entries, status=success)
+2026-04-04 07:56:18,386 - INFO - ✅ Task task_hle_06: 1.0/1.0 (100%) - llm_judge
+2026-04-04 07:56:18,386 - INFO - 
+================================================================================
+2026-04-04 07:56:18,386 - INFO - 📋 Task 68/210 (Run 1/1)
+2026-04-04 07:56:18,386 - INFO - ================================================================================
+2026-04-04 07:56:18,386 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_07
+2026-04-04 07:56:18,386 - INFO -    Task: HLE Sample 7 (Chemistry)
+2026-04-04 07:56:18,386 - INFO -    Category: reasoning
+2026-04-04 07:56:18,386 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 07:59:30,345 - INFO - Found transcript via sessions.json: 6d125809-d110-4252-b9ad-601f236e5230.jsonl (attempt 1)
+2026-04-04 07:59:34,553 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 07:59:34,553 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 08:01:32,056 - INFO - Found transcript via sessions.json: ba54b463-97df-474c-a4ff-e56d9dbe3673.jsonl (attempt 1)
+2026-04-04 08:01:32,057 - INFO -    💾 Session backup saved: task_hle_07_run_8b69845a-1.jsonl (12 entries, status=success)
+2026-04-04 08:01:32,057 - INFO - ❌ Task task_hle_07: 0.0/1.0 (0%) - llm_judge
+2026-04-04 08:01:32,058 - INFO -    Notes: The agent's final answer written to answer.txt is C21H23BF4NO6 (or C21H23NO6+ as cation), but the ground truth is C23H22NO4+. The agent miscounted the carbon and hydrogen atoms, likely due to incorrec
+2026-04-04 08:01:32,058 - INFO - 
+================================================================================
+2026-04-04 08:01:32,058 - INFO - 📋 Task 69/210 (Run 1/1)
+2026-04-04 08:01:32,058 - INFO - ================================================================================
+2026-04-04 08:01:32,058 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_08
+2026-04-04 08:01:32,058 - INFO -    Task: HLE Sample 8 (Computer Science/AI)
+2026-04-04 08:01:32,058 - INFO -    Category: reasoning
+2026-04-04 08:01:32,058 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:03:07,454 - INFO - Found transcript via sessions.json: f5c03cb2-b6fc-46a0-856d-fa158763c947.jsonl (attempt 1)
+2026-04-04 08:03:11,554 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 08:03:11,554 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 08:06:11,563 - INFO - Found transcript via sessions.json: f96cb95c-b933-46ec-bd1a-1e4bed8b9606.jsonl (attempt 1)
+2026-04-04 08:06:11,564 - INFO -    💾 Session backup saved: task_hle_08_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:06:11,564 - INFO - ✅ Task task_hle_08: 1.0/1.0 (100%) - llm_judge
+2026-04-04 08:06:11,565 - INFO - 
+================================================================================
+2026-04-04 08:06:11,565 - INFO - 📋 Task 70/210 (Run 1/1)
+2026-04-04 08:06:11,565 - INFO - ================================================================================
+2026-04-04 08:06:11,565 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_hle_09
+2026-04-04 08:06:11,565 - INFO -    Task: HLE Sample 9 (Other)
+2026-04-04 08:06:11,565 - INFO -    Category: reasoning
+2026-04-04 08:06:11,565 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:07:28,749 - INFO - Found transcript via sessions.json: ecb64cfa-73f6-4100-b40f-80f63e847c27.jsonl (attempt 1)
+2026-04-04 08:07:32,918 - INFO - Agent bench-judge-qwen3-vl-plus-for-gpt-5-2 already exists with correct workspace
+2026-04-04 08:07:32,919 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-gpt-5-2
+2026-04-04 08:10:32,976 - INFO - Found transcript via sessions.json: a215b528-aa63-4111-925a-9d659f278ea7.jsonl (attempt 1)
+2026-04-04 08:10:32,976 - INFO -    💾 Session backup saved: task_hle_09_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:10:32,976 - INFO - ⚠️ Task task_hle_09: 0.2/1.0 (20%) - llm_judge
+2026-04-04 08:10:32,977 - INFO - 
+================================================================================
+2026-04-04 08:10:32,977 - INFO - 📋 Task 71/210 (Run 1/1)
+2026-04-04 08:10:32,977 - INFO - ================================================================================
+2026-04-04 08:10:32,977 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_00
+2026-04-04 08:10:32,977 - INFO -    Task: LexEval Legal QA 0
+2026-04-04 08:10:32,977 - INFO -    Category: reasoning
+2026-04-04 08:10:32,977 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:12:10,017 - INFO - Found transcript via sessions.json: dd5dfdc2-9ac2-4d4a-a36e-6a85b622b65c.jsonl (attempt 1)
+2026-04-04 08:12:10,018 - INFO -    💾 Session backup saved: task_lexeval_00_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:12:10,018 - INFO - ⚠️ Task task_lexeval_00: 0.5/1.0 (50%) - automated
+2026-04-04 08:12:10,018 - INFO - 
+================================================================================
+2026-04-04 08:12:10,018 - INFO - 📋 Task 72/210 (Run 1/1)
+2026-04-04 08:12:10,018 - INFO - ================================================================================
+2026-04-04 08:12:10,018 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_01
+2026-04-04 08:12:10,018 - INFO -    Task: LexEval Legal QA 1
+2026-04-04 08:12:10,018 - INFO -    Category: reasoning
+2026-04-04 08:12:10,019 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:12:48,298 - INFO - Found transcript via sessions.json: b7a4a40e-b472-4179-98d1-8c00444770dc.jsonl (attempt 1)
+2026-04-04 08:12:48,300 - INFO -    💾 Session backup saved: task_lexeval_01_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:12:48,300 - INFO - ✅ Task task_lexeval_01: 1.0/1.0 (100%) - automated
+2026-04-04 08:12:48,300 - INFO - 
+================================================================================
+2026-04-04 08:12:48,300 - INFO - 📋 Task 73/210 (Run 1/1)
+2026-04-04 08:12:48,300 - INFO - ================================================================================
+2026-04-04 08:12:48,300 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_02
+2026-04-04 08:12:48,300 - INFO -    Task: LexEval Legal QA 2
+2026-04-04 08:12:48,300 - INFO -    Category: reasoning
+2026-04-04 08:12:48,301 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:13:51,623 - INFO - Found transcript via sessions.json: 01fbb5a2-ae99-481c-9af6-608c5c536e92.jsonl (attempt 1)
+2026-04-04 08:13:51,624 - INFO -    💾 Session backup saved: task_lexeval_02_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:13:51,624 - INFO - ✅ Task task_lexeval_02: 1.0/1.0 (100%) - automated
+2026-04-04 08:13:51,624 - INFO - 
+================================================================================
+2026-04-04 08:13:51,624 - INFO - 📋 Task 74/210 (Run 1/1)
+2026-04-04 08:13:51,624 - INFO - ================================================================================
+2026-04-04 08:13:51,624 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_03
+2026-04-04 08:13:51,624 - INFO -    Task: LexEval Legal QA 3
+2026-04-04 08:13:51,624 - INFO -    Category: reasoning
+2026-04-04 08:13:51,624 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:15:06,948 - INFO - Found transcript via sessions.json: 4d6c0980-0f15-4e68-8efb-738eb5201324.jsonl (attempt 1)
+2026-04-04 08:15:06,949 - INFO -    💾 Session backup saved: task_lexeval_03_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 08:15:06,949 - INFO - ✅ Task task_lexeval_03: 1.0/1.0 (100%) - automated
+2026-04-04 08:15:06,949 - INFO - 
+================================================================================
+2026-04-04 08:15:06,949 - INFO - 📋 Task 75/210 (Run 1/1)
+2026-04-04 08:15:06,949 - INFO - ================================================================================
+2026-04-04 08:15:06,949 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_04
+2026-04-04 08:15:06,949 - INFO -    Task: LexEval Legal QA 4
+2026-04-04 08:15:06,949 - INFO -    Category: reasoning
+2026-04-04 08:15:06,949 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:21:25,893 - INFO - Found transcript via sessions.json: 280f619b-fb75-44cb-beb5-9174299d6d34.jsonl (attempt 1)
+2026-04-04 08:21:25,894 - INFO -    💾 Session backup saved: task_lexeval_04_run_8b69845a-1.jsonl (10 entries, status=success)
+2026-04-04 08:21:25,894 - INFO - ✅ Task task_lexeval_04: 1.0/1.0 (100%) - automated
+2026-04-04 08:21:25,894 - INFO - 
+================================================================================
+2026-04-04 08:21:25,894 - INFO - 📋 Task 76/210 (Run 1/1)
+2026-04-04 08:21:25,894 - INFO - ================================================================================
+2026-04-04 08:21:25,894 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_05
+2026-04-04 08:21:25,894 - INFO -    Task: LexEval Legal QA 5
+2026-04-04 08:21:25,894 - INFO -    Category: reasoning
+2026-04-04 08:21:25,894 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:23:43,975 - INFO - Found transcript via sessions.json: 3c096e63-e38c-4dbf-8aa2-3d18f2d2067f.jsonl (attempt 1)
+2026-04-04 08:23:43,976 - INFO -    💾 Session backup saved: task_lexeval_05_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:23:43,976 - INFO - ⚠️ Task task_lexeval_05: 0.5/1.0 (50%) - automated
+2026-04-04 08:23:43,976 - INFO - 
+================================================================================
+2026-04-04 08:23:43,976 - INFO - 📋 Task 77/210 (Run 1/1)
+2026-04-04 08:23:43,976 - INFO - ================================================================================
+2026-04-04 08:23:43,976 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_06
+2026-04-04 08:23:43,976 - INFO -    Task: LexEval Legal QA 6
+2026-04-04 08:23:43,976 - INFO -    Category: reasoning
+2026-04-04 08:23:43,977 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:26:59,358 - INFO - Found transcript via sessions.json: 2f645991-312b-4e0a-bbee-f8c4870aefa9.jsonl (attempt 1)
+2026-04-04 08:26:59,360 - INFO -    💾 Session backup saved: task_lexeval_06_run_8b69845a-1.jsonl (20 entries, status=success)
+2026-04-04 08:26:59,360 - INFO - ✅ Task task_lexeval_06: 1.0/1.0 (100%) - automated
+2026-04-04 08:26:59,360 - INFO - 
+================================================================================
+2026-04-04 08:26:59,360 - INFO - 📋 Task 78/210 (Run 1/1)
+2026-04-04 08:26:59,360 - INFO - ================================================================================
+2026-04-04 08:26:59,360 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_07
+2026-04-04 08:26:59,360 - INFO -    Task: LexEval Legal QA 7
+2026-04-04 08:26:59,360 - INFO -    Category: reasoning
+2026-04-04 08:26:59,360 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:28:59,688 - INFO - Found transcript via sessions.json: 8bce4f15-e6f4-4501-bd6d-ea3a4f49bcfe.jsonl (attempt 1)
+2026-04-04 08:28:59,689 - INFO -    💾 Session backup saved: task_lexeval_07_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:28:59,689 - INFO - ⚠️ Task task_lexeval_07: 0.5/1.0 (50%) - automated
+2026-04-04 08:28:59,689 - INFO - 
+================================================================================
+2026-04-04 08:28:59,689 - INFO - 📋 Task 79/210 (Run 1/1)
+2026-04-04 08:28:59,689 - INFO - ================================================================================
+2026-04-04 08:28:59,690 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_08
+2026-04-04 08:28:59,690 - INFO -    Task: LexEval Legal QA 8
+2026-04-04 08:28:59,690 - INFO -    Category: reasoning
+2026-04-04 08:28:59,690 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:30:38,660 - INFO - Found transcript via sessions.json: 76e0ae31-5c56-4378-b523-68fb03fdc1e5.jsonl (attempt 1)
+2026-04-04 08:30:38,661 - INFO -    💾 Session backup saved: task_lexeval_08_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:30:38,661 - INFO - ✅ Task task_lexeval_08: 1.0/1.0 (100%) - automated
+2026-04-04 08:30:38,661 - INFO - 
+================================================================================
+2026-04-04 08:30:38,662 - INFO - 📋 Task 80/210 (Run 1/1)
+2026-04-04 08:30:38,662 - INFO - ================================================================================
+2026-04-04 08:30:38,662 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_09
+2026-04-04 08:30:38,662 - INFO -    Task: LexEval Legal QA 9
+2026-04-04 08:30:38,662 - INFO -    Category: reasoning
+2026-04-04 08:30:38,662 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:32:05,218 - INFO - Found transcript via sessions.json: 8db13555-430a-4056-b988-b541eb0e0e6c.jsonl (attempt 1)
+2026-04-04 08:32:05,219 - INFO -    💾 Session backup saved: task_lexeval_09_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:32:05,220 - INFO - ⚠️ Task task_lexeval_09: 0.5/1.0 (50%) - automated
+2026-04-04 08:32:05,220 - INFO - 
+================================================================================
+2026-04-04 08:32:05,220 - INFO - 📋 Task 81/210 (Run 1/1)
+2026-04-04 08:32:05,220 - INFO - ================================================================================
+2026-04-04 08:32:05,220 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_10
+2026-04-04 08:32:05,220 - INFO -    Task: LexEval Legal QA 10
+2026-04-04 08:32:05,220 - INFO -    Category: reasoning
+2026-04-04 08:32:05,220 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:36:21,843 - INFO - Found transcript via sessions.json: 7e528a0d-7001-484f-8a64-42e6af3e9648.jsonl (attempt 1)
+2026-04-04 08:36:21,843 - INFO -    💾 Session backup saved: task_lexeval_10_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:36:21,844 - INFO - ✅ Task task_lexeval_10: 1.0/1.0 (100%) - automated
+2026-04-04 08:36:21,844 - INFO - 
+================================================================================
+2026-04-04 08:36:21,844 - INFO - 📋 Task 82/210 (Run 1/1)
+2026-04-04 08:36:21,844 - INFO - ================================================================================
+2026-04-04 08:36:21,844 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_11
+2026-04-04 08:36:21,844 - INFO -    Task: LexEval Legal QA 11
+2026-04-04 08:36:21,844 - INFO -    Category: reasoning
+2026-04-04 08:36:21,844 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+2026-04-04 08:39:16,135 - INFO - Found transcript via sessions.json: a606d950-8f03-4f24-b625-adf42ea578c2.jsonl (attempt 1)
+2026-04-04 08:39:16,136 - INFO -    💾 Session backup saved: task_lexeval_11_run_8b69845a-1.jsonl (8 entries, status=success)
+2026-04-04 08:39:16,136 - INFO - ✅ Task task_lexeval_11: 1.0/1.0 (100%) - automated
+2026-04-04 08:39:16,136 - INFO - 
+================================================================================
+2026-04-04 08:39:16,136 - INFO - 📋 Task 83/210 (Run 1/1)
+2026-04-04 08:39:16,136 - INFO - ================================================================================
+2026-04-04 08:39:16,136 - INFO - 🤖 Agent [bench-custom-api-shubiaobiao-cn-gpt-5-2] starting task: task_lexeval_12
+2026-04-04 08:39:16,136 - INFO -    Task: LexEval Legal QA 12
+2026-04-04 08:39:16,136 - INFO -    Category: reasoning
+2026-04-04 08:39:16,136 - INFO - Removed 1 old OpenClaw session transcripts for bench-custom-api-shubiaobiao-cn-gpt-5-2
+[2026-04-04T08:41:20+00:00] exit_code=143

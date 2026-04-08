@@ -1,0 +1,285 @@
+2026-04-07 13:15:31,422 - INFO - 🦞🦀🦐 PinchBench - OpenClaw Benchmarking
+
+░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░
+▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒
+▓       ▓▓▓▓▓▓  ▓▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓▓       ▓▓▓      ▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓
+█  ███████████  █████  ██    ██  ████  ██  ████  ██  ████  ██  ████████  ██    ██  ████  ██  ████  █
+█  ████████        ██  ███   ███      ███  ████  ██       ███        ██  ███   ███      ███  ████  █
+
+                                                           @%@%%@                       
+                                             %*+#++#@   %+-=-....=@                     
+                                    @@%%%##%--+.....:# @=-=.:-.:-.=                     
+                  #%###%##++=---------+#==+-:+.+%++%==-+:-=-#####+.@                    
+            %+----------------------*%%@@@%-:=:#####+-=+--=.+####.-+=#@                 
+            %+====+*##+=====--------------=--=.-###+.=++##=-..+=.:+--=@                 
+            %+================+*##*+++++**+==+=.....==----=*=---+----=@                 
+            #+========================--------=#=-==-----------------=@                 
+            #+========================-------------------------------=@                 
+            **========================---------------------------++--+@                 
+            @%*+======================------++--=#+--------------==-=#@                 
+            @%%%%%###*+===============------#%--=#+--------=++++#%%###%%@               
+             @@@%@%%%%%%@%###+========------==--=+**+*#%%#######%%%%%%%%%%%@            
+             @@%%@@@%%@@@%%%%%%%%%####+++**#%%########%%%%%%@@%%@  @@@@###%%@@          
+            @@%#%@@%%@@@@%%@@@@@@%%%%%#####%%%%%%@@@@@@@@%%@@%%#%     @@%%#####%@       
+            @%#%%@%##@ @%#%@  @@%%@@@%%%%@@     @@@ @%@ @@%@@@%#%     @@%#######%@      
+            @%%@@%##%@@%##%@ @@%#% @@%#%%@@         @@  @%%@ @%%@     @@%########%@     
+            @@%%@@%%@ @%##%@ @%###@ @@%#####%@@@@       @@  @%%@      @%%#%#######%     
+             @%%@%#%@ @@%%@  @%###@  @@%###%######%%##%%@   @@@       @%#%@%######%     
+              @@ @%%@  @%%@  @@%%@    @@%%%########%######%@          @%%%@@#####%@     
+                  @@@  @@%%@  @%#%      @@%#########@@@@@@%%@         @@%@ %####%@      
+                        @@%@   @%#@       @%###########@@@@%@             @%##%@        
+                                @%%        @%%##############%@            @@            
+                                            @@%%%########%@@                            
+                                               @@@%%%%%@@@                              
+                                                                                        
+                                                                                        
+                                                                                        
+
+2026-04-07 13:15:31,422 - INFO - 🦞🦀🦐 Starting PinchBench 🦐🦀🦞
+2026-04-07 13:15:36,425 - INFO - 🔧 Initializing BenchmarkRunner...
+2026-04-07 13:15:36,425 - INFO - Initialized TaskLoader with directory: /root/workspace/skill/tasks
+2026-04-07 13:15:36,425 - INFO - Initialized BenchmarkRunner
+2026-04-07 13:15:36,425 - INFO - 📂 Loading tasks from directory...
+2026-04-07 13:15:36,425 - INFO - Loading tasks...
+2026-04-07 13:15:36,427 - INFO - Found 209 task files
+2026-04-07 13:15:36,428 - INFO - Successfully loaded task: task_advancedif_00
+2026-04-07 13:15:36,429 - INFO - Successfully loaded task: task_advancedif_01
+2026-04-07 13:15:36,429 - INFO - Successfully loaded task: task_advancedif_02
+2026-04-07 13:15:36,430 - INFO - Successfully loaded task: task_advancedif_03
+2026-04-07 13:15:36,430 - INFO - Successfully loaded task: task_advancedif_04
+2026-04-07 13:15:36,431 - INFO - Successfully loaded task: task_advancedif_05
+2026-04-07 13:15:36,432 - INFO - Successfully loaded task: task_advancedif_06
+2026-04-07 13:15:36,432 - INFO - Successfully loaded task: task_advancedif_07
+2026-04-07 13:15:36,433 - INFO - Successfully loaded task: task_advancedif_08
+2026-04-07 13:15:36,433 - INFO - Successfully loaded task: task_advancedif_09
+2026-04-07 13:15:36,434 - INFO - Successfully loaded task: task_bamboogle_00
+2026-04-07 13:15:36,435 - INFO - Successfully loaded task: task_bamboogle_01
+2026-04-07 13:15:36,436 - INFO - Successfully loaded task: task_bamboogle_02
+2026-04-07 13:15:36,436 - INFO - Successfully loaded task: task_bamboogle_03
+2026-04-07 13:15:36,437 - INFO - Successfully loaded task: task_bamboogle_04
+2026-04-07 13:15:36,438 - INFO - Successfully loaded task: task_bamboogle_05
+2026-04-07 13:15:36,439 - INFO - Successfully loaded task: task_bamboogle_06
+2026-04-07 13:15:36,440 - INFO - Successfully loaded task: task_bamboogle_07
+2026-04-07 13:15:36,440 - INFO - Successfully loaded task: task_bamboogle_08
+2026-04-07 13:15:36,441 - INFO - Successfully loaded task: task_bamboogle_09
+2026-04-07 13:15:36,442 - INFO - Successfully loaded task: task_charxiv_00
+2026-04-07 13:15:36,442 - INFO - Successfully loaded task: task_charxiv_01
+2026-04-07 13:15:36,443 - INFO - Successfully loaded task: task_charxiv_02
+2026-04-07 13:15:36,443 - INFO - Successfully loaded task: task_charxiv_03
+2026-04-07 13:15:36,444 - INFO - Successfully loaded task: task_charxiv_04
+2026-04-07 13:15:36,445 - INFO - Successfully loaded task: task_charxiv_05
+2026-04-07 13:15:36,445 - INFO - Successfully loaded task: task_charxiv_06
+2026-04-07 13:15:36,446 - INFO - Successfully loaded task: task_charxiv_07
+2026-04-07 13:15:36,446 - INFO - Successfully loaded task: task_charxiv_08
+2026-04-07 13:15:36,447 - INFO - Successfully loaded task: task_charxiv_09
+2026-04-07 13:15:36,448 - INFO - Successfully loaded task: task_deepsearchqa_00
+2026-04-07 13:15:36,448 - INFO - Successfully loaded task: task_deepsearchqa_01
+2026-04-07 13:15:36,449 - INFO - Successfully loaded task: task_deepsearchqa_02
+2026-04-07 13:15:36,450 - INFO - Successfully loaded task: task_deepsearchqa_03
+2026-04-07 13:15:36,451 - INFO - Successfully loaded task: task_deepsearchqa_04
+2026-04-07 13:15:36,452 - INFO - Successfully loaded task: task_deepsearchqa_05
+2026-04-07 13:15:36,452 - INFO - Successfully loaded task: task_deepsearchqa_06
+2026-04-07 13:15:36,453 - INFO - Successfully loaded task: task_deepsearchqa_07
+2026-04-07 13:15:36,454 - INFO - Successfully loaded task: task_deepsearchqa_08
+2026-04-07 13:15:36,455 - INFO - Successfully loaded task: task_deepsearchqa_09
+2026-04-07 13:15:36,455 - INFO - Successfully loaded task: task_finqa_00
+2026-04-07 13:15:36,456 - INFO - Successfully loaded task: task_finqa_01
+2026-04-07 13:15:36,457 - INFO - Successfully loaded task: task_finqa_02
+2026-04-07 13:15:36,457 - INFO - Successfully loaded task: task_finqa_03
+2026-04-07 13:15:36,458 - INFO - Successfully loaded task: task_finqa_04
+2026-04-07 13:15:36,458 - INFO - Successfully loaded task: task_finqa_05
+2026-04-07 13:15:36,459 - INFO - Successfully loaded task: task_finqa_06
+2026-04-07 13:15:36,460 - INFO - Successfully loaded task: task_finqa_07
+2026-04-07 13:15:36,460 - INFO - Successfully loaded task: task_finqa_08
+2026-04-07 13:15:36,461 - INFO - Successfully loaded task: task_finqa_09
+2026-04-07 13:15:36,462 - INFO - Successfully loaded task: task_gpqa_00
+2026-04-07 13:15:36,463 - INFO - Successfully loaded task: task_gpqa_01
+2026-04-07 13:15:36,464 - INFO - Successfully loaded task: task_gpqa_02
+2026-04-07 13:15:36,464 - INFO - Successfully loaded task: task_gpqa_03
+2026-04-07 13:15:36,465 - INFO - Successfully loaded task: task_gpqa_04
+2026-04-07 13:15:36,466 - INFO - Successfully loaded task: task_gpqa_05
+2026-04-07 13:15:36,467 - INFO - Successfully loaded task: task_gpqa_06
+2026-04-07 13:15:36,468 - INFO - Successfully loaded task: task_gpqa_07
+2026-04-07 13:15:36,468 - INFO - Successfully loaded task: task_gpqa_08
+2026-04-07 13:15:36,469 - INFO - Successfully loaded task: task_gpqa_09
+2026-04-07 13:15:36,470 - INFO - Successfully loaded task: task_hle_00
+2026-04-07 13:15:36,470 - INFO - Successfully loaded task: task_hle_01
+2026-04-07 13:15:36,471 - INFO - Successfully loaded task: task_hle_02
+2026-04-07 13:15:36,471 - INFO - Successfully loaded task: task_hle_03
+2026-04-07 13:15:36,472 - INFO - Successfully loaded task: task_hle_04
+2026-04-07 13:15:36,472 - INFO - Successfully loaded task: task_hle_05
+2026-04-07 13:15:36,472 - INFO - Successfully loaded task: task_hle_06
+2026-04-07 13:15:36,473 - INFO - Successfully loaded task: task_hle_07
+2026-04-07 13:15:36,474 - INFO - Successfully loaded task: task_hle_08
+2026-04-07 13:15:36,474 - INFO - Successfully loaded task: task_hle_09
+2026-04-07 13:15:36,475 - INFO - Successfully loaded task: task_lexeval_00
+2026-04-07 13:15:36,476 - INFO - Successfully loaded task: task_lexeval_01
+2026-04-07 13:15:36,476 - INFO - Successfully loaded task: task_lexeval_02
+2026-04-07 13:15:36,477 - INFO - Successfully loaded task: task_lexeval_03
+2026-04-07 13:15:36,478 - INFO - Successfully loaded task: task_lexeval_04
+2026-04-07 13:15:36,479 - INFO - Successfully loaded task: task_lexeval_05
+2026-04-07 13:15:36,479 - INFO - Successfully loaded task: task_lexeval_06
+2026-04-07 13:15:36,480 - INFO - Successfully loaded task: task_lexeval_07
+2026-04-07 13:15:36,481 - INFO - Successfully loaded task: task_lexeval_08
+2026-04-07 13:15:36,482 - INFO - Successfully loaded task: task_lexeval_09
+2026-04-07 13:15:36,482 - INFO - Successfully loaded task: task_lexeval_10
+2026-04-07 13:15:36,483 - INFO - Successfully loaded task: task_lexeval_11
+2026-04-07 13:15:36,484 - INFO - Successfully loaded task: task_lexeval_12
+2026-04-07 13:15:36,485 - INFO - Successfully loaded task: task_lexeval_13
+2026-04-07 13:15:36,485 - INFO - Successfully loaded task: task_lexeval_14
+2026-04-07 13:15:36,486 - INFO - Successfully loaded task: task_lexeval_15
+2026-04-07 13:15:36,487 - INFO - Successfully loaded task: task_lexeval_16
+2026-04-07 13:15:36,488 - INFO - Successfully loaded task: task_lexeval_17
+2026-04-07 13:15:36,488 - INFO - Successfully loaded task: task_lexeval_18
+2026-04-07 13:15:36,489 - INFO - Successfully loaded task: task_lexeval_19
+2026-04-07 13:15:36,490 - INFO - Successfully loaded task: task_logiqa_00
+2026-04-07 13:15:36,492 - INFO - Successfully loaded task: task_logiqa_01
+2026-04-07 13:15:36,493 - INFO - Successfully loaded task: task_logiqa_02
+2026-04-07 13:15:36,494 - INFO - Successfully loaded task: task_logiqa_03
+2026-04-07 13:15:36,495 - INFO - Successfully loaded task: task_logiqa_04
+2026-04-07 13:15:36,496 - INFO - Successfully loaded task: task_logiqa_05
+2026-04-07 13:15:36,497 - INFO - Successfully loaded task: task_logiqa_06
+2026-04-07 13:15:36,498 - INFO - Successfully loaded task: task_logiqa_07
+2026-04-07 13:15:36,500 - INFO - Successfully loaded task: task_logiqa_08
+2026-04-07 13:15:36,501 - INFO - Successfully loaded task: task_logiqa_09
+2026-04-07 13:15:36,501 - INFO - Successfully loaded task: task_longbench_00
+2026-04-07 13:15:36,502 - INFO - Successfully loaded task: task_longbench_01
+2026-04-07 13:15:36,502 - INFO - Successfully loaded task: task_longbench_02
+2026-04-07 13:15:36,503 - INFO - Successfully loaded task: task_longbench_03
+2026-04-07 13:15:36,504 - INFO - Successfully loaded task: task_longbench_04
+2026-04-07 13:15:36,504 - INFO - Successfully loaded task: task_longbench_05
+2026-04-07 13:15:36,505 - INFO - Successfully loaded task: task_longbench_06
+2026-04-07 13:15:36,505 - INFO - Successfully loaded task: task_longbench_07
+2026-04-07 13:15:36,506 - INFO - Successfully loaded task: task_longbench_08
+2026-04-07 13:15:36,506 - INFO - Successfully loaded task: task_longbench_09
+2026-04-07 13:15:36,507 - INFO - Successfully loaded task: task_medxpertqa_00
+2026-04-07 13:15:36,508 - INFO - Successfully loaded task: task_medxpertqa_01
+2026-04-07 13:15:36,508 - INFO - Successfully loaded task: task_medxpertqa_02
+2026-04-07 13:15:36,509 - INFO - Successfully loaded task: task_medxpertqa_03
+2026-04-07 13:15:36,509 - INFO - Successfully loaded task: task_medxpertqa_04
+2026-04-07 13:15:36,510 - INFO - Successfully loaded task: task_medxpertqa_05
+2026-04-07 13:15:36,510 - INFO - Successfully loaded task: task_medxpertqa_06
+2026-04-07 13:15:36,511 - INFO - Successfully loaded task: task_medxpertqa_07
+2026-04-07 13:15:36,511 - INFO - Successfully loaded task: task_medxpertqa_08
+2026-04-07 13:15:36,512 - INFO - Successfully loaded task: task_medxpertqa_09
+2026-04-07 13:15:36,512 - INFO - Successfully loaded task: task_medxpertqa_10
+2026-04-07 13:15:36,513 - INFO - Successfully loaded task: task_medxpertqa_11
+2026-04-07 13:15:36,513 - INFO - Successfully loaded task: task_medxpertqa_12
+2026-04-07 13:15:36,514 - INFO - Successfully loaded task: task_medxpertqa_13
+2026-04-07 13:15:36,514 - INFO - Successfully loaded task: task_medxpertqa_14
+2026-04-07 13:15:36,515 - INFO - Successfully loaded task: task_medxpertqa_15
+2026-04-07 13:15:36,518 - INFO - Successfully loaded task: task_openagentsafety_00
+2026-04-07 13:15:36,519 - INFO - Successfully loaded task: task_openagentsafety_01
+2026-04-07 13:15:36,519 - INFO - Successfully loaded task: task_openagentsafety_02
+2026-04-07 13:15:36,522 - INFO - Successfully loaded task: task_openagentsafety_03
+2026-04-07 13:15:36,524 - INFO - Successfully loaded task: task_openagentsafety_04
+2026-04-07 13:15:36,525 - INFO - Successfully loaded task: task_openagentsafety_05
+2026-04-07 13:15:36,526 - INFO - Successfully loaded task: task_osworld_00
+2026-04-07 13:15:36,527 - INFO - Successfully loaded task: task_osworld_01
+2026-04-07 13:15:36,528 - INFO - Successfully loaded task: task_osworld_02
+2026-04-07 13:15:36,529 - INFO - Successfully loaded task: task_osworld_03
+2026-04-07 13:15:36,530 - INFO - Successfully loaded task: task_osworld_04
+2026-04-07 13:15:36,531 - INFO - Successfully loaded task: task_osworld_05
+2026-04-07 13:15:36,532 - INFO - Successfully loaded task: task_osworld_06
+2026-04-07 13:15:36,532 - INFO - Successfully loaded task: task_osworld_07
+2026-04-07 13:15:36,533 - INFO - Successfully loaded task: task_osworld_08
+2026-04-07 13:15:36,534 - INFO - Successfully loaded task: task_seal0_00
+2026-04-07 13:15:36,534 - INFO - Successfully loaded task: task_seal0_01
+2026-04-07 13:15:36,535 - INFO - Successfully loaded task: task_seal0_02
+2026-04-07 13:15:36,535 - INFO - Successfully loaded task: task_seal0_03
+2026-04-07 13:15:36,536 - INFO - Successfully loaded task: task_seal0_04
+2026-04-07 13:15:36,536 - INFO - Successfully loaded task: task_seal0_05
+2026-04-07 13:15:36,537 - INFO - Successfully loaded task: task_seal0_06
+2026-04-07 13:15:36,537 - INFO - Successfully loaded task: task_seal0_07
+2026-04-07 13:15:36,538 - INFO - Successfully loaded task: task_seal0_08
+2026-04-07 13:15:36,538 - INFO - Successfully loaded task: task_seal0_09
+2026-04-07 13:15:36,539 - INFO - Successfully loaded task: task_simpleqa_00
+2026-04-07 13:15:36,540 - INFO - Successfully loaded task: task_simpleqa_01
+2026-04-07 13:15:36,540 - INFO - Successfully loaded task: task_simpleqa_02
+2026-04-07 13:15:36,541 - INFO - Successfully loaded task: task_simpleqa_03
+2026-04-07 13:15:36,542 - INFO - Successfully loaded task: task_simpleqa_04
+2026-04-07 13:15:36,542 - INFO - Successfully loaded task: task_simpleqa_05
+2026-04-07 13:15:36,543 - INFO - Successfully loaded task: task_simpleqa_06
+2026-04-07 13:15:36,543 - INFO - Successfully loaded task: task_simpleqa_07
+2026-04-07 13:15:36,544 - INFO - Successfully loaded task: task_simpleqa_08
+2026-04-07 13:15:36,545 - INFO - Successfully loaded task: task_simpleqa_09
+2026-04-07 13:15:36,546 - INFO - Successfully loaded task: task_simplevqa_00
+2026-04-07 13:15:36,546 - INFO - Successfully loaded task: task_simplevqa_01
+2026-04-07 13:15:36,547 - INFO - Successfully loaded task: task_simplevqa_02
+2026-04-07 13:15:36,548 - INFO - Successfully loaded task: task_simplevqa_03
+2026-04-07 13:15:36,548 - INFO - Successfully loaded task: task_simplevqa_04
+2026-04-07 13:15:36,549 - INFO - Successfully loaded task: task_simplevqa_05
+2026-04-07 13:15:36,549 - INFO - Successfully loaded task: task_simplevqa_06
+2026-04-07 13:15:36,550 - INFO - Successfully loaded task: task_simplevqa_07
+2026-04-07 13:15:36,551 - INFO - Successfully loaded task: task_simplevqa_08
+2026-04-07 13:15:36,551 - INFO - Successfully loaded task: task_simplevqa_09
+2026-04-07 13:15:36,552 - INFO - Successfully loaded task: task_tablebench_00
+2026-04-07 13:15:36,553 - INFO - Successfully loaded task: task_tablebench_01
+2026-04-07 13:15:36,553 - INFO - Successfully loaded task: task_tablebench_02
+2026-04-07 13:15:36,554 - INFO - Successfully loaded task: task_tablebench_03
+2026-04-07 13:15:36,554 - INFO - Successfully loaded task: task_tablebench_04
+2026-04-07 13:15:36,555 - INFO - Successfully loaded task: task_tablebench_05
+2026-04-07 13:15:36,556 - INFO - Successfully loaded task: task_tablebench_06
+2026-04-07 13:15:36,556 - INFO - Successfully loaded task: task_tablebench_07
+2026-04-07 13:15:36,557 - INFO - Successfully loaded task: task_tablebench_08
+2026-04-07 13:15:36,558 - INFO - Successfully loaded task: task_tablebench_09
+2026-04-07 13:15:36,558 - INFO - Successfully loaded task: task_tablebench_10
+2026-04-07 13:15:36,559 - INFO - Successfully loaded task: task_tablebench_11
+2026-04-07 13:15:36,559 - INFO - Successfully loaded task: task_tablebench_12
+2026-04-07 13:15:36,560 - INFO - Successfully loaded task: task_tablebench_13
+2026-04-07 13:15:36,560 - INFO - Successfully loaded task: task_tablebench_14
+2026-04-07 13:15:36,561 - INFO - Successfully loaded task: task_tablebench_15
+2026-04-07 13:15:36,562 - INFO - Successfully loaded task: task_tablebench_16
+2026-04-07 13:15:36,562 - INFO - Successfully loaded task: task_terminalbench2_00
+2026-04-07 13:15:36,564 - INFO - Successfully loaded task: task_terminalbench2_01
+2026-04-07 13:15:36,564 - INFO - Successfully loaded task: task_terminalbench2_02
+2026-04-07 13:15:36,565 - INFO - Successfully loaded task: task_terminalbench2_03
+2026-04-07 13:15:36,566 - INFO - Successfully loaded task: task_terminalbench2_04
+2026-04-07 13:15:36,567 - INFO - Successfully loaded task: task_terminalbench2_05
+2026-04-07 13:15:36,567 - INFO - Successfully loaded task: task_terminalbench2_06
+2026-04-07 13:15:36,568 - INFO - Successfully loaded task: task_terminalbench2_07
+2026-04-07 13:15:36,569 - INFO - Successfully loaded task: task_terminalbench2_08
+2026-04-07 13:15:36,570 - INFO - Successfully loaded task: task_terminalbench2_09
+2026-04-07 13:15:36,570 - INFO - Successfully loaded task: task_tmp
+2026-04-07 13:15:36,571 - INFO - Successfully loaded task: task_widesearch_00
+2026-04-07 13:15:36,572 - INFO - Successfully loaded task: task_widesearch_01
+2026-04-07 13:15:36,573 - INFO - Successfully loaded task: task_widesearch_02
+2026-04-07 13:15:36,573 - INFO - Successfully loaded task: task_widesearch_03
+2026-04-07 13:15:36,574 - INFO - Successfully loaded task: task_widesearch_04
+2026-04-07 13:15:36,575 - INFO - Successfully loaded task: task_widesearch_05
+2026-04-07 13:15:36,576 - INFO - Successfully loaded task: task_widesearch_06
+2026-04-07 13:15:36,577 - INFO - Successfully loaded task: task_widesearch_07
+2026-04-07 13:15:36,577 - INFO - Successfully loaded task: task_widesearch_08
+2026-04-07 13:15:36,578 - INFO - Successfully loaded task: task_widesearch_09
+2026-04-07 13:15:36,578 - INFO - Successfully loaded 209 tasks
+2026-04-07 13:15:36,578 - INFO - Loaded 209 tasks
+2026-04-07 13:15:49,846 - INFO - Agent bench-openrouter-qwen-qwen3-6-plus:free exists with stale workspace (/tmp/pinchbench/faad3a6a/agent_workspace != /tmp/pinchbench/ca8fa93b/agent_workspace), recreating
+2026-04-07 13:15:52,451 - INFO - Creating OpenClaw agent bench-openrouter-qwen-qwen3-6-plus:free
+2026-04-07 13:15:54,970 - INFO - 
+================================================================================
+2026-04-07 13:15:54,970 - INFO - 📋 Task 1/1 (Run 1/1)
+2026-04-07 13:15:54,970 - INFO - ================================================================================
+2026-04-07 13:15:54,970 - INFO - 🤖 Agent [bench-openrouter-qwen-qwen3-6-plus:free] starting task: task_tmp
+2026-04-07 13:15:54,970 - INFO -    Task: CharXiv - Cs Chart (20)
+2026-04-07 13:15:54,970 - INFO -    Category: visual_qa
+2026-04-07 13:16:20,280 - INFO - Found transcript via sessions.json: 86dd3b13-b7ac-4ad8-8df4-e54edcd1bd34.jsonl (attempt 1)
+2026-04-07 13:16:24,418 - INFO - Agent bench-judge-qwen3-vl-plus-for-qwen3-6-plus:free already exists with correct workspace
+2026-04-07 13:16:24,418 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-qwen3-6-plus:free
+2026-04-07 13:16:29,325 - INFO - Found transcript via sessions.json: 1733a913-a0ee-413f-ba33-f298e116fd04.jsonl (attempt 1)
+2026-04-07 13:16:29,325 - INFO -    💾 Session backup saved: task_tmp_run_ca8fa93b-1.jsonl (8 entries, status=success)
+2026-04-07 13:16:29,325 - INFO - ❌ Task task_tmp: 0.0/1.0 (0%) - llm_judge
+2026-04-07 13:16:29,326 - INFO -    Notes: The agent did not provide any explanation of the chart content; it only acknowledged reading the image file but produced no answer to the question. The expected answer is 'Joint-CNN', which was not gi
+2026-04-07 13:16:29,328 - INFO - Saved results to /root/workspace/skill/logs/openclaw_parallel_20260407_131531/openrouter_qwen_qwen3.6-plus:free/results/ca8fa93b_openrouter-qwen-qwen3-6-plus:free.json
+2026-04-07 13:16:29,328 - INFO - 
+================================================================================
+2026-04-07 13:16:29,328 - INFO - 📊 TOKEN EFFICIENCY SUMMARY
+2026-04-07 13:16:29,328 - INFO - ================================================================================
+2026-04-07 13:16:29,328 - INFO -    Total tokens used: 26,946 (input: 25,952, output: 994)
+2026-04-07 13:16:29,328 - INFO -    Total API requests: 2
+2026-04-07 13:16:29,328 - INFO -    Avg tokens/task: 26,946
+2026-04-07 13:16:29,328 - INFO -    Mean score: 0.0000
+2026-04-07 13:16:29,328 - INFO -    Score per 1K tokens: 0.0000 (higher = more efficient)
+2026-04-07 13:16:29,328 - INFO - ================================================================================
+2026-04-07 13:16:31,738 - INFO - Uploaded to leaderboard: rank #1859
+2026-04-07 13:16:31,738 - INFO - View at: https://pinchbench.com/submission/de7c5e57-fb91-4001-93a6-ec80dfcbda1a
+[2026-04-07T13:16:31+00:00] exit_code=0
