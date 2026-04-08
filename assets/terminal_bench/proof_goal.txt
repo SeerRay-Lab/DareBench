@@ -1,0 +1,2 @@
+Theorem: forall a b, a + b = b + a
+Proof strategy: induction on a

@@ -1,0 +1,4 @@
+Image: alpine.iso
+Memory: 512M
+CPU: 1
+Network: user,hostfwd=tcp::2222-:22

@@ -1,0 +1,56 @@
+{
+  "finqa_id": "FIS/2012/page_48.pdf-2",
+  "question": "what is the percentage change in the impact of euro from 2011 to 2012?",
+  "pre_text": [
+    "."
+  ],
+  "post_text": [
+    "the impact on earnings of the foregoing assumed 10% ( 10 % ) change in each of the periods presented would not have been significant .",
+    "revenue included $ 100.8 million and operating income included $ 9.0 million of unfavorable foreign currency impact during 2012 resulting from a stronger u.s .",
+    "dollar during 2012 compared to 2011 .",
+    "our foreign exchange risk management policy permits the use of derivative instruments , such as forward contracts and options , to reduce volatility in our results of operations and/or cash flows resulting from foreign exchange rate fluctuations .",
+    "our international operations' revenues and expenses are generally denominated in local currency , which limits the economic exposure to foreign exchange risk in those jurisdictions .",
+    "we do not enter into foreign currency derivative instruments for trading purposes .",
+    "we have entered into foreign currency forward exchange contracts to hedge foreign currency exposure to intercompany loans .",
+    "as of december 31 , 2012 , the notional amount of these derivatives was approximately $ 115.6 million and the fair value was nominal .",
+    "these derivatives are intended to hedge the foreign exchange risks related to intercompany loans , but have not been designated as hedges for accounting purposes. ."
+  ],
+  "table": [
+    [
+      "currency",
+      "2012",
+      "2011",
+      "2010"
+    ],
+    [
+      "real",
+      "$ 40.4",
+      "$ 42.4",
+      "$ 32.5"
+    ],
+    [
+      "euro",
+      "27.1",
+      "26.4",
+      "18.6"
+    ],
+    [
+      "pound sterling",
+      "18.5",
+      "17.6",
+      "9.0"
+    ],
+    [
+      "indian rupee",
+      "4.3",
+      "3.6",
+      "2.6"
+    ],
+    [
+      "total impact",
+      "$ 90.3",
+      "$ 90.0",
+      "$ 62.7"
+    ]
+  ]
+}

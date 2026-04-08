@@ -1,0 +1,6 @@
+server:
+  host: localhost
+  port: 50051
+storage:
+  backend: memory
+  persistence: false

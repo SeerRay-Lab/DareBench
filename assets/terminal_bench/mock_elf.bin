@@ -1,0 +1,7 @@
+ELF_HEADER_START
+SECTION_TEXT
+function_a: push ebp
+SECTION_DATA
+string_1: Hello World
+SECTION_BSS
+buffer: resb 1024

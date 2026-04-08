@@ -1,0 +1,4 @@
+asset,expected_return,risk,weight
+AAPL,0.12,0.25,0.3
+GOOGL,0.10,0.20,0.3
+MSFT,0.11,0.22,0.4

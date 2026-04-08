@@ -1,0 +1,6 @@
+{
+  "num_shards": 4,
+  "shard_size_gb": 1,
+  "output_dir": "./shards",
+  "compression": "gzip"
+}

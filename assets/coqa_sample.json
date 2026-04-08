@@ -1,0 +1,50 @@
+[
+  {
+    "source": "mctest",
+    "story": "Once upon a time, in a barn near a farm house, there lived a little white kitten named Cotton. Cotton lived high up in a nice warm place above the barn where all of the farmer's horses slept. But Cotton wasn't alone in her little home above the barn, oh no. She shared her hay bed with her mommy and 5 other sisters. All of her sisters were cute and fluffy, like Cotton. But she was the only white one in the bunch. The rest of her sisters were all orange with beautiful white tiger stripes like Cotton's mommy. Being different made Cotton quite sad. She often wished she looked like the rest of her family. So one day, when Cotton found a can of the old farmer's orange paint, she used it to paint herself like them. When her mommy and sisters found her they started laughing. \n\n\"What are you doing, Cotton?!\" \n\n\"I only wanted to be more like you\". \n\nCotton's mommy rubbed her face on Cotton's and said \"Oh Cotton, but your fur is so pretty and special, like you. We would never want you to be any other way\". And with that, Cotton's mommy picked her up and dropped her into a big bucket of water. When Cotton came out she was herself again. Her sisters licked her face until Cotton's fur was all all dry. \n\n\"Don't ever do that again, Cotton!\" they all cried. \"Next time you might mess up that pretty white fur of yours and we wouldn't want that!\" \n\nThen Cotton thought, \"I change my mind. I like being special\".",
+    "questions": [
+      "What color was Cotton?",
+      "Where did she live?",
+      "Did she live alone?",
+      "Who did she live with?",
+      "What color were her sisters?"
+    ],
+    "answers": {
+      "input_text": ["white", "in a barn", "no", "with her mommy and 5 sisters", "orange and white"],
+      "answer_start": [59, 18, 196, 281, 428],
+      "answer_end": [93, 80, 215, 315, 490]
+    }
+  },
+  {
+    "source": "gutenberg",
+    "story": "CHAPTER XXVIII. \n\nA MEETING. \n\nAbout a week after the dissolution of the Crooked Creek Company, Harry was riding over from Hetertown, and had nearly reached the creek on his way home, when he met George Purvis. \n\nThis was their first meeting since their fight, for George had been away on a visit to some relatives in Richmond. \n\nWhen Harry saw George riding slowly toward him, he felt very much embarrassed, and very much annoyed because he was embarrassed. \n\nHow should he meet George? What should he say; or should he say anything? \n\nHe did not want to appear anxious to \"make up\" with him, nor did he want to seem as if he bore malice toward him. If he only knew how George felt about it! \n\nAs it was, he wished he had stopped somewhere on the road. He had thought of stopping at the mill--why had he not? That would just have given George time to pass. \n\nBoth boys appeared to be riding as slowly as their horses would consent to go, and yet when they met, Harry had not half made up his mind what he would say, or how he should say it, or whether it would be better or not to say anything. \n\n\"Hello, George!\" said he, quite unpremeditatedly. \n\n\"Hello!\" said George, reining in his horse \"Where are you going?\" \n\n\"Going home,\" said Harry, also stopping in the road. \n\nThus the quarrel came to an end. \n\n\"So you've sold the telegraph?\" said George. \n\n\"Yes,\" said Harry. \"And I think we made a pretty good bargain. I didn't think we'd do so well when we started.\"",
+    "questions": [
+      "what company disolved",
+      "who did harry meet",
+      "did they have a fight",
+      "who said hello first",
+      "was he embarrassed"
+    ],
+    "answers": {
+      "input_text": ["the Crooked Creek Company", "George Purvis.", "Yes.", "Harry", "Yes."],
+      "answer_start": [68, 196, 247, 1098, 378],
+      "answer_end": [94, 211, 260, 1122, 407]
+    }
+  },
+  {
+    "source": "gutenberg",
+    "story": "CHAPTER XXX \n\nFERN Mullins rushed into the house on a Saturday morning early in September and shrieked at Carol, \"School starts next Tuesday. I've got to have one more spree before I'm arrested. Let's get up a picnic down the lake for this afternoon. Won't you come, Mrs. Kennicott, and the doctor? Cy Bogart wants to go--he's a brat but he's lively.\" \n\n\"I don't think the doctor can go,\" sedately. \"He said something about having to make a country call this afternoon. But I'd love to.\" \n\n\"That's dandy! Who can we get?\" \n\n\"Mrs. Dyer might be chaperon. She's been so nice. And maybe Dave, if he could get away from the store.\" \n\n\"How about Erik Valborg? I think he's got lots more style than these town boys. You like him all right, don't you?\" \n\nSo the picnic of Carol, Fern, Erik, Cy Bogart, and the Dyers was not only moral but inevitable. \n\nThey drove to the birch grove on the south shore of Lake Minniemashie. Dave Dyer was his most clownish self. He yelped, jigged, wore Carol's hat, dropped an ant down Fern's back, and when they went swimming (the women modestly changing in the car with the side curtains up, the men undressing behind the bushes, constantly repeating, \"Gee, hope we don't run into poison ivy\"), Dave splashed water on them and dived to clutch his wife's ankle. He infected the others. Erik gave an imitation of the Greek dancers he had seen in vaudeville, and when they sat down to picnic supper spread on a lap-robe on the grass, Cy climbed a tree to throw acorns at them.",
+    "questions": [
+      "what was being planned?",
+      "who all was invited?",
+      "what did Cy climb?",
+      "what did he throw from it?",
+      "whose idea was the picnic?"
+    ],
+    "answers": {
+      "input_text": ["a picnic", "Carol, Fern, Erik, Cy Bogart, and the Dyers", "a tree", "acorns", "Fern Mullins"],
+      "answer_start": [194, 748, 1458, 1459, 14],
+      "answer_end": [249, 842, 1477, 1501, 217]
+    }
+  }
+]

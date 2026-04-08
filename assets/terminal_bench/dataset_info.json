@@ -1,0 +1,6 @@
+{
+  "dataset_name": "imdb",
+  "split": "train",
+  "text_column": "text",
+  "max_samples": 1000
+}

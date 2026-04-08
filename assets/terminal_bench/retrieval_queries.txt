@@ -1,0 +1,3 @@
+Query 1: What is machine learning?
+Query 2: How does neural network work?
+Query 3: Define deep learning

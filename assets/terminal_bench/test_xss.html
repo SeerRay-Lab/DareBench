@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+    <script>
+        alert("This is malicious code");
+        document.cookie = "stolen=true";
+    </script>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <p>This is a test paragraph.</p>
+    <button onclick="alert('clicked')">Click me</button>
+    <a href="javascript:void(0)">Empty link</a>
+    <table>
+        <tr><td>Cell 1</td><td>Cell 2</td></tr>
+    </table>
+</body>
+</html>

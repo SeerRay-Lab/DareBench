@@ -1,0 +1,37 @@
+{
+  "task_id": "osworld_001",
+  "intent": "Create a spreadsheet in LibreOffice Calc with a monthly budget table, calculate totals using SUM formulas, and save as budget.xlsx",
+  "domain": "libreoffice_calc",
+  "setup": {
+    "vm_type": "ubuntu_22.04",
+    "pre_installed": [
+      "libreoffice"
+    ],
+    "initial_state": "desktop_clean"
+  },
+  "eval": {
+    "eval_type": "file_check",
+    "expected_file": "~/Documents/budget.xlsx",
+    "checks": [
+      "file_exists",
+      "has_sum_formulas",
+      "has_12_months"
+    ]
+  },
+  "requirements": {
+    "categories": [
+      "Income",
+      "Rent",
+      "Groceries",
+      "Utilities",
+      "Transportation",
+      "Entertainment"
+    ],
+    "months": 12,
+    "formulas": [
+      "column totals",
+      "row totals",
+      "grand total"
+    ]
+  }
+}

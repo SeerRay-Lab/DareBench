@@ -1,0 +1,6 @@
+{
+  "images": [
+    {"file": "cell1.jpg", "width": 512, "height": 512, "cells": 5},
+    {"file": "cell2.jpg", "width": 512, "height": 512, "cells": 8}
+  ]
+}

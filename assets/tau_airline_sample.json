@@ -1,0 +1,26 @@
+{
+  "task_id": "tau_airline_001",
+  "scenario": "Customer wants to change their flight from NYC to LAX on March 20 to March 22. They have a basic economy ticket purchased 3 days ago.",
+  "customer_info": {
+    "name": "Sarah Johnson",
+    "booking_ref": "ABC123",
+    "ticket_class": "basic_economy",
+    "original_flight": {
+      "from": "JFK",
+      "to": "LAX",
+      "date": "2026-03-20",
+      "flight": "UA1234"
+    },
+    "frequent_flyer": "Silver",
+    "purchase_date": "2026-03-08"
+  },
+  "tools": [
+    "search_flights",
+    "modify_booking",
+    "calculate_fee",
+    "check_policy",
+    "send_confirmation"
+  ],
+  "rules_excerpt": "Basic economy tickets: change fee $200 + fare difference. Within 24h of purchase: free cancellation. Silver members: 50% discount on change fees. No same-day changes for basic economy. Changes must be made at least 2 hours before departure.",
+  "expected_resolution": "Apply $100 change fee (Silver 50% discount on $200), search for available flights on March 22 JFK-LAX, rebook with fare difference if any, send confirmation."
+}

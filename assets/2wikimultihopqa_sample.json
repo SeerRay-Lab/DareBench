@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "8813f87c0bdd11eba7f7acde48001122",
+    "type": "compositional",
+    "question": "Who is the mother of the director of film Polish-Russian War (Film)?",
+    "answer": "Ma\u0142gorzata Braunek",
+    "supporting_facts": [["Polish-Russian War (film)", 1], ["Xawery \u017bu\u0142awski", 2]],
+    "evidences": [["Polish-Russian War", "director", "Xawery \u017bu\u0142awski"], ["Xawery \u017bu\u0142awski", "mother", "Ma\u0142gorzata Braunek"]]
+  },
+  {
+    "_id": "61a46987092f11ebbdaeac1f6bf848b6",
+    "type": "comparison",
+    "question": "Which film came out first, Blind Shaft or The Mask Of Fu Manchu?",
+    "answer": "The Mask Of Fu Manchu",
+    "supporting_facts": [["Blind Shaft", 0], ["The Mask of Fu Manchu", 0]],
+    "evidences": [["Blind Shaft", "publication date", "2003"], ["The Mask of Fu Manchu", "publication date", "1932"]]
+  },
+  {
+    "_id": "e2a3bf2a0bdd11eba7f7acde48001122",
+    "type": "compositional",
+    "question": "When did John V, Prince Of Anhalt-Zerbst's father die?",
+    "answer": "12 June 1516",
+    "supporting_facts": [["John V, Prince of Anhalt-Zerbst", 2], ["Ernest I, Prince of Anhalt-Dessau", 0]],
+    "evidences": [["John V of Anhalt-Zerbst", "father", "Ernest I, Prince of Anhalt-Dessau"], ["Ernest I, Prince of Anhalt-Dessau", "date of death", "12 June 1516"]]
+  },
+  {
+    "_id": "b5e9ef2c0bdd11eba7f7acde48001122",
+    "type": "compositional",
+    "question": "Where was the place of death of Juan Carlos Gumucio's wife?",
+    "answer": "Homs",
+    "supporting_facts": [["Juan Carlos Gumucio", 0], ["Marie Colvin", 1]],
+    "evidences": [["Juan Carlos Gumucio", "spouse", "Marie Colvin"], ["Marie Colvin", "place of death", "Homs"]]
+  },
+  {
+    "_id": "421b26d80bb011ebab90acde48001122",
+    "type": "inference",
+    "question": "Who is the paternal grandmother of Archduchess Dolores Of Austria?",
+    "answer": "Princess Maria Immaculata of Bourbon-Two Sicilies",
+    "supporting_facts": [["Archduchess Dolores of Austria", 0], ["Archduke Leopold Salvator of Austria", 2]],
+    "evidences": [["Archduchess Dolores of Austria", "father", "Archduke Leopold Salvator of Austria"], ["Archduke Leopold Salvator of Austria", "mother", "Princess Maria Immaculata of Bourbon-Two Sicilies"]]
+  }
+]

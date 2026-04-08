@@ -1,0 +1,10 @@
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ex:student1 foaf:name "Alice" ;
+            ex:major "Computer Science" ;
+            ex:year 3 .
+
+ex:student2 foaf:name "Bob" ;
+            ex:major "Mathematics" ;
+            ex:year 2 .

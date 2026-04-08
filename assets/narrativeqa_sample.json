@@ -1,0 +1,37 @@
+[
+  {
+    "document_id": "doc_001",
+    "document_title": "The Great Gatsby",
+    "document_type": "novel",
+    "question": "What does the green light at the end of Daisy's dock symbolize for Gatsby?",
+    "answer": "The green light symbolizes Gatsby's hopes and dreams, particularly his desire to reunite with Daisy and recapture the past."
+  },
+  {
+    "document_id": "doc_001",
+    "document_title": "The Great Gatsby",
+    "document_type": "novel",
+    "question": "How does Nick Carraway's role as narrator affect the reader's perception of Gatsby?",
+    "answer": "Nick serves as both participant and observer, providing a relatively objective yet sympathetic view of Gatsby. His admiration for Gatsby's romantic idealism colors the narrative, making readers more inclined to see Gatsby as a tragic figure rather than a criminal."
+  },
+  {
+    "document_id": "doc_001",
+    "document_title": "The Great Gatsby",
+    "document_type": "novel",
+    "question": "What is the significance of the Valley of Ashes in the story?",
+    "answer": "The Valley of Ashes represents the moral and social decay hidden beneath the surface of wealth. It symbolizes the plight of the poor who live among the waste of the rich, and serves as a stark contrast to the opulence of East and West Egg."
+  },
+  {
+    "document_id": "doc_002",
+    "document_title": "Blade Runner",
+    "document_type": "film",
+    "question": "What is the significance of Roy Batty's 'tears in rain' monologue at the end of the film?",
+    "answer": "Roy Batty's monologue highlights the tragedy of lost memories and experiences that will vanish with his death. It demonstrates that the replicant has developed genuine human emotions and a profound appreciation for life, blurring the line between artificial and human consciousness."
+  },
+  {
+    "document_id": "doc_002",
+    "document_title": "Blade Runner",
+    "document_type": "film",
+    "question": "How does the film use the Voight-Kampff test to explore the theme of what it means to be human?",
+    "answer": "The Voight-Kampff test measures empathic responses to distinguish replicants from humans, but the film subverts this by showing replicants who display deep emotions while some humans appear cold and detached. This raises questions about whether empathy alone defines humanity."
+  }
+]

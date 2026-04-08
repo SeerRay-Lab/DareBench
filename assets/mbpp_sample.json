@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": 11,
+    "text": "Write a python function to remove first and last occurrence of a given character from the string.",
+    "code": "def remove_Occ(s,ch): \n    for i in range(len(s)): \n        if (s[i] == ch): \n            s = s[0 : i] + s[i + 1:] \n            break\n    for i in range(len(s) - 1,-1,-1):  \n        if (s[i] == ch): \n            s = s[0 : i] + s[i + 1:] \n            break\n    return s ",
+    "test_list": [
+      "assert remove_Occ(\"hello\",\"l\") == \"heo\"",
+      "assert remove_Occ(\"abcda\",\"a\") == \"bcd\"",
+      "assert remove_Occ(\"PHP\",\"P\") == \"H\""
+    ]
+  },
+  {
+    "task_id": 12,
+    "text": "Write a function to sort a given matrix in ascending order according to the sum of its rows.",
+    "code": "def sort_matrix(M):\n    result = sorted(M, key=sum)\n    return result",
+    "test_list": [
+      "assert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3], [2, 4, 5]]",
+      "assert sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]])==[[-2, 4, -5], [1, -1, 1], [1, 2, 3]]",
+      "assert sort_matrix([[5,8,9],[6,4,3],[2,1,4]])==[[2, 1, 4], [6, 4, 3], [5, 8, 9]]"
+    ]
+  },
+  {
+    "task_id": 14,
+    "text": "Write a python function to find the volume of a triangular prism.",
+    "code": "def find_Volume(l,b,h) : \n    return ((l * b * h) / 2) ",
+    "test_list": [
+      "assert find_Volume(10,8,6) == 240",
+      "assert find_Volume(3,2,2) == 6",
+      "assert find_Volume(1,2,1) == 1"
+    ]
+  },
+  {
+    "task_id": 102,
+    "text": "Write a function to convert a snake case string to camel case string.",
+    "code": "def snake_to_camel(word):\n        import re\n        return ''.join(x.capitalize() or '_' for x in word.split('_'))",
+    "test_list": [
+      "assert snake_to_camel('python_program')=='PythonProgram'",
+      "assert snake_to_camel('python_language')==('PythonLanguage')",
+      "assert snake_to_camel('programming_language')==('ProgrammingLanguage')"
+    ]
+  },
+  {
+    "task_id": 103,
+    "text": "Write a function to find the Eulerian number a(n, m).",
+    "code": "def eulerian_num(n, m): \n\tif (m >= n or n == 0): \n\t\treturn 0 \n\tif (m == 0): \n\t\treturn 1 \n\treturn ((n - m) * eulerian_num(n - 1, m - 1) +(m + 1) * eulerian_num(n - 1, m))",
+    "test_list": [
+      "assert eulerian_num(3, 1) == 4",
+      "assert eulerian_num(4, 1) == 11",
+      "assert eulerian_num(5, 3) == 26"
+    ]
+  }
+]

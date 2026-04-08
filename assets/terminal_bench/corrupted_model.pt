@@ -1,0 +1,4 @@
+MOCK_PYTORCH_MODEL_DATA
+layer1: Conv2d(3, 64, 3)
+layer2: BatchNorm2d(64)
+CORRUPTED_SECTION

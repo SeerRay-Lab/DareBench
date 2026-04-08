@@ -1,0 +1,26 @@
+[
+  {
+    "task_id": "apibench_001",
+    "query": "I want to classify the sentiment of customer reviews into positive, negative, or neutral categories.",
+    "provider": "huggingface",
+    "api_name": "pipeline",
+    "api_call": "from transformers import pipeline\nclassifier = pipeline('sentiment-analysis')\nresult = classifier('This product is amazing!')",
+    "description": "Use HuggingFace transformers pipeline for sentiment classification"
+  },
+  {
+    "task_id": "apibench_002",
+    "query": "I need to generate a short product description given a few keywords about the product.",
+    "provider": "openai",
+    "api_name": "ChatCompletion",
+    "api_call": "from openai import OpenAI\nclient = OpenAI()\nresponse = client.chat.completions.create(\n  model='gpt-4',\n  messages=[{'role': 'user', 'content': 'Write a product description for: wireless noise-cancelling headphones, 30h battery, lightweight'}]\n)",
+    "description": "Use OpenAI ChatCompletion API to generate product descriptions from keywords"
+  },
+  {
+    "task_id": "apibench_003",
+    "query": "I want to detect objects in images and draw bounding boxes around them.",
+    "provider": "tensorflow",
+    "api_name": "saved_model",
+    "api_call": "import tensorflow as tf\nimport tensorflow_hub as hub\ndetector = hub.load('https://tfhub.dev/tensorflow/efficientdet/d0/1')\nimage_tensor = tf.image.decode_jpeg(tf.io.read_file('image.jpg'))\nimage_tensor = tf.expand_dims(image_tensor, axis=0)\nresult = detector(image_tensor)",
+    "description": "Use TensorFlow Hub EfficientDet model for object detection in images"
+  }
+]

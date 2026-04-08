@@ -1,0 +1,37 @@
+[
+  {
+    "id": "56ddde6b9a695914005b9628",
+    "context": "The Normans (Norman: Nourmands; French: Normands; Latin: Normanni) were the people who in the 10th and 11th centuries gave their name to Normandy, a region in France. They were descended from Norse (\"Norman\" comes from \"Norseman\") raiders and pirates from Denmark, Iceland and Norway who, under their leader Rollo, agreed to swear fealty to King Charles III of West Francia. Through generations of assimilation and mixing with the native Frankish and Roman-Gaulish populations, their descendants would gradually merge with the Carolingian-based cultures of West Francia. The distinct cultural and ethnic identity of the Normans emerged initially in the first half of the 10th century, and it continued to evolve over the succeeding centuries.",
+    "question": "In what country is Normandy located?",
+    "answer": "France",
+    "answer_start": 159
+  },
+  {
+    "id": "56e16182e3433e1400422e28",
+    "context": "Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other. A computational problem is understood to be a task that is in principle amenable to being solved by a computer, which is equivalent to stating that the problem may be solved by mechanical application of mathematical steps, such as an algorithm.",
+    "question": "What branch of theoretical computer science deals with broadly classifying computational problems by difficulty and class of relationship?",
+    "answer": "Computational complexity theory",
+    "answer_start": 0
+  },
+  {
+    "id": "56dddf4066d3e219004dad5f",
+    "context": "The Norman dynasty had a major political, cultural and military impact on medieval Europe and even the Near East. The Normans were famed for their martial spirit and eventually for their Christian piety, becoming exponents of the Catholic orthodoxy into which they assimilated. They adopted the Gallo-Romance language of the Frankish land they settled, their dialect becoming known as Norman, Normaund or Norman French, an important literary language. The Duchy of Normandy, which they formed by treaty with the French crown, was a great fief of medieval France, and under Richard I of Normandy was forged into a cohesive and formidable principality in feudal tenure. The Normans are noted both for their culture, such as their unique Romanesque architecture and musical traditions, and for their significant military accomplishments and innovations. Norman adventurers founded the Kingdom of Sicily under Roger II after conquering southern Italy on the Saracens and Byzantines, and an expedition on behalf of their duke, William the Conqueror, led to the Norman conquest of England at the Battle of Hastings in 1066. Norman cultural and military influence spread from these new European centres to the Crusader states of the Near East, where their prince Bohemond I founded the Principality of Antioch in the Levant, to Scotland and Wales in Great Britain, to Ireland, and to the coasts of north Africa and the Canary Islands.",
+    "question": "Who was the duke in the battle of Hastings?",
+    "answer": "William the Conqueror",
+    "answer_start": 1022
+  },
+  {
+    "id": "570602fa52bb89140068979e",
+    "context": "Southern California is divided culturally, politically, and economically into distinctive regions, each containing its own culture and atmosphere, anchored usually by a city with both national and sometimes global recognition, which are often the hub of economic activity for its respective region and being home to many tourist destinations. Each region is further divided into many culturally distinct areas but as a whole combine to create the southern California atmosphere.",
+    "question": "Southern California's distinctive regions are divided culturally, politically and what other trait?",
+    "answer": "economically",
+    "answer_start": 60
+  },
+  {
+    "id": "571cb010dd7acb1400e4c12c",
+    "context": "Singlet oxygen is a name given to several higher-energy species of molecular O2 in which all the electron spins are paired. It is much more reactive towards common organic molecules than is molecular oxygen per se. In nature, singlet oxygen is commonly formed from water during photosynthesis, using the energy of sunlight. It is also produced in the troposphere by the photolysis of ozone by light of short wavelength, and by the immune system as a source of active oxygen. Carotenoids in photosynthetic organisms (and possibly also in animals) play a major role in absorbing energy from singlet oxygen and converting it to the unexcited ground state before it can cause harm to tissues.",
+    "question": "What objects in organisms absorb singlet oxygen to prevent harm?",
+    "answer": "Carotenoids",
+    "answer_start": 476
+  }
+]

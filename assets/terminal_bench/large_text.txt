@@ -1,0 +1,5 @@
+Line 1: This is a sample line
+Line 2: Another sample line with PII: john@example.com
+Line 3: More data here
+Line 4: Phone: 555-1234
+Line 5: End of sample

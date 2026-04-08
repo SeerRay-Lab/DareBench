@@ -1,0 +1,3604 @@
+Android in the Wild: A Large-Scale Dataset for
+Android Device Control
+Christopher Rawles∗
+Google Research
+Alice Li∗
+Google Research
+Daniel Rodriguez
+Google Research
+Oriana Riva
+Google Research
+Timothy Lillicrap
+Google DeepMind
+Abstract
+There is a growing interest in device-control systems that can interpret human
+natural language instructions and execute them on a digital device by directly con-
+trolling its user interface. We present a dataset for device-control research, Android
+in the Wild (AITW), which is orders of magnitude larger than current datasets. The
+dataset contains human demonstrations of device interactions, including the screens
+and actions, and corresponding natural language instructions. It consists of 715k
+episodes spanning 30k unique instructions, four versions of Android (v10–13),
+and eight device types (Pixel 2 XL to Pixel 6) with varying screen resolutions.
+It contains multi-step tasks that require semantic understanding of language and
+visual context. This dataset poses a new challenge: actions available through the
+user interface must be inferred from their visual appearance, and, instead of simple
+UI element-based actions, the action space consists of precise gestures (e.g., hori-
+zontal scrolls to operate carousel widgets). We organize our dataset to encourage
+robustness analysis of device-control systems, i.e., how well a system performs in
+the presence of new task descriptions, new applications, or new platform versions.
+We develop two agents and report performance across the dataset. The dataset
+is available at https://github.com/google-research/google-research/
+tree/master/android_in_the_wild.
+1
+Introduction
+Users complete tasks on mobile devices via a sequence of touches and gestures on the screen. Tasks
+can often be succinctly described using natural language commands, and, in many situations, it
+is valuable to be able to speak or type commands rather than interacting directly with the device.
+This has important implications for users who are unable to physically operate a device due to a
+physical (e.g., visual or motor disabilities) or situational (e.g., driving, cooking, etc.) impairment. It
+is therefore beneficial to build device-control systems that can interpret natural language instructions
+and execute them on a device without any manual intervention.
+Instead of using application-specific APIs, which are not generally available for any given application
+or function, these systems directly manipulate user interface (UI) elements on a screen, exactly
+as a human does [1, 28, 29, 35, 21]. Hence, to work correctly, it is essential for such systems to
+understand the screen, which usually means detecting position and inferring semantics of its UI
+elements. Device-control systems must also be able to map high-level commands to execution plans
+that can be carried out on the device. For example, understanding that the command “open my recent
+email with Jane” involves opening an email app, potentially tapping the search icon, typing "Jane",
+etc. Further, to be useful, they must be able to generalize across a variety of task instructions and UIs.
+∗Equal contribution. Contact: crawles@google.com and lialice@google.com
+37th Conference on Neural Information Processing Systems (NeurIPS 2023) Track on Datasets and Benchmarks.
+arXiv:2307.10088v2  [cs.LG]  27 Oct 2023
+
+
+Human executes 
+task on a mobile 
+emulator
+15K multi-step prompts
+Sample from 
+instruction 
+database
+episodes
+26K hindsight relabeled
+689K multi-step demos
+Human selects 
+frames and 
+annotates them
+“Open calendar and 
+show me the second 
+week of next month”
+1. “show week view”
+2.“switch to week view”
+…
+for each action: extract preceding screenshot and 
+pixel-based screen features
+{'action_type': 'dual-point-gesture',
+ 'touch_point': (0.28,0.19), 
+ 'lift_point': (0.28,0.19),
+ 'typed_text': None}
++
+Demonstration processing
++
++
++
++
+{'action_type': 'dual-point gesture',
+ 'touch_point': (0.90,0.41), 
+ 'lift_point': (0.05,0.35),
+ 'typed_text': None}
++
++
+OCR text 
+& icons
+OCR text 
+& icons
+Figure 1: AITW data pipeline. Raters are given a randomly selected instruction. The raters execute
+the task by interacting with the device in a natural way. We capture precise gestures in addition to
+typing and the home and back button interactions (we plot swipes with the arrow pointing where the
+finger moves to). Hindsight relabeling of high-level episodes is used to generate single-step tasks.
+The rapid development of general-purpose large foundation models (LLMs) [8, 6, 13] makes device-
+control systems more viable. Yet, there is a lack of datasets for training, fine-tuning, and evaluating
+these systems. Existing datasets [28, 9, 42, 37, 4] are limited in terms of number of human demon-
+strations and the diversity of task instructions, and they are platform specific (either Android or web).
+They also assume a tree-based representation of an application UI can be derived from platform-
+specific UI metadata (e.g., the View Hierarchy for Android and the DOM tree for the web). This
+assumption simplifies the problem, but limits the resulting systems to work in environments where
+high-quality UI metadata is available2. Finally, some popular datasets (e.g., MiniWoB++ dataset [29]
+and UIBert [4]) assume task instructions are specified as step-by-step commands referring to specific
+UI elements appearing on the screen (“Click the button in the dialog box labeled Cancel”), while
+users may use short commands that describe high-level goals (e.g., “turn on airplane mode”) or pose
+questions (e.g., “Is it going to rain tomorrow?”)
+To drive research in this field, we release AITW (Figure 1), an Android device-control dataset which
+is orders of magnitude larger than existing datasets. It consists of 715k episodes spanning 30k unique
+task instructions collected across hundreds of Android apps and websites. Each episode consists of a
+goal instruction provided in natural language and a sequence of observation-action pairs describing
+the execution of the task. Observations consist of screenshots of the application UI. Gesture actions
+are represented as taps and drags at arbitrary <x,y> coordinates in the screen. Agents trained on this
+dataset can be evaluated using AndroidEnv [40], an open-source platform for developing and testing
+Android agents with the Android Emulator3.
+A key feature of our dataset is the diversity of task instructions and execution paths we collected,
+aimed to emulate real-world scenarios. We used multiple sources to collect high-level goal instruc-
+2Since most users do not use UI metadata for interactions it tends to be poor quality or missing altogether. On
+Android, only applications registered as Accessibility tools can access the View Hierarchy [45]. On Windows, in
+many cases (e.g., Electron apps like Teams), UI trees are not easily accessible. Moreover, screen representations
+derived from UI metadata can be incomplete. On Android, WebViews and Canvas are not captured in the View
+Hierarchy, and many websites render directly to a Canvas, which does not contain any tree structure.
+3https://developer.android.com/studio/run/emulator
+2
+
+
+Dataset
+Platform
+# Human
+# Apps or
+# Task
+Observation
+Screen
+Real
+High-level
+demos
+websites
+steps
+format
+features
+instruction
+RicoSCA [28]
+Android (apps)
+0
+n/a
+1.0
+VH, screen
+x
+x
+x
+UIBert [4]
+Android (apps)
+16,660
+n/a
+1.0
+VH, screen
+x
+✓
+x
+MiniWoB++ [37, 29]
+synthetic web
+17,971
+100
+2.3
+DOM, screen
+x
+x
+x
+PixelHelp [28]
+Android (apps)
+187
+4
+4.2
+VH, screen
+x
+✓
+✓
+UGIF [42]
+Android (apps)
+523
+12
+5.3
+VH, screen
+x
+✓
+✓
+Mind2Web [14]
+web
+2,350
+137
+7.3
+DOM, screen
+x
+✓
+✓
+MoTIF [9]
+Android (apps)
+4,707
+125
+4.5
+VH, screen
+x
+✓
+✓
+AITW
+Android (apps+web)
+715,142
+357+
+6.5
+screen
+✓
+✓
+✓
+Table 1: Comparison of AITW to existing datasets. We consider platform, format of screen obser-
+vations, presence of synthetic UIs or synthetic instructions (“Real”), and whether instructions are
+expressed as goals (high-level). For size comparison, we report the number of human demonstrations,
+apps/websites, and average task steps. AITW collects observations as screenshots and includes screen
+features (OCR and icon labels), which can be used to augment them.
+tions: humans (both crowdsourced raters and us authors), LLM-generated prompts, and technical
+documentation (as in PixelHelp [28]). During crowdsourcing, raters were asked to both demonstrate
+full tasks and annotate sequences of screenshots (hindsight language relabeling [31, 32]), which
+allowed us to collect both multi-step and single-step task trajectories. We made the execution paths
+more varied by randomizing the application state, which forced the raters to demonstrate how to
+navigate to the relevant screens. Finally, we collected demonstrations on four versions of Android
+(v10–13) and eight device types (Pixel 2 XL to Pixel 6) with varying screen resolutions.
+Device-control systems need to work on rapidly evolving software platforms, so an important metric
+for their success is generalizability to new tasks and applications. We organize our dataset to enable
+analysis of how trained systems perform in the presence of previously-seen tasks and applications,
+but also in the presence of new task descriptions, new Android versions, and new applications. Due
+to the lack of off-the-shelf pixel-based device-control models, to establish new state-of-the-art results
+on this dataset, we implement two agents: one trained from scratch using behavioural cloning (BC)
+and a second based on a pre-trained LLM.
+We make the following contributions: (i) we collect and release a dataset for device-control research,
+AITW, which is larger and more varied than existing datasets; (ii) we report performance for two
+models, which can serve as baselines for future work and (iii) we show how to use the dataset to
+conduct a generalization analysis.
+2
+Related work
+2.1
+Device-control datasets
+Table 1 provides a comparison of device-control datasets. Some datasets (top part of the table) target
+the problem of grounding referring expressions to UI elements on a screen. Every data instance
+in these datasets includes a screen, a low-level command (e.g., "click the menu button at the top
+left"), and a UI element corresponding to the command. In the RicoSCA dataset [28], commands are
+synthetically generated, while in MiniWoB++ [37, 29] sequences of low-level UI commands describe
+multi-step tasks (e.g., “find and click on the center of the circle, then press submit”).
+A second group of datasets contain instructions expressed as task goals. Each episode in these
+datasets is a sequence of action-observation pairs. The observations include screenshots and tree-
+based representations: View Hierarchy (VH) for Android and Document Object Model (DOM) for
+web-based applications. For instance, the PixelHelp dataset [28] comprises 187 high-level task
+goals and step-by-step instructions sourced from Pixel Phone Help pages. The UGIF dataset [42]
+contains similar queries but extends to multiple languages. The largest dataset to date is MoTIF [9],
+which consists of 4.7k task demonstrations4 with an average number of 6.5 steps and 276 unique
+task instructions. AITW is two orders of magnitude larger than MoTIF. In total, AITW consists of
+715,142 episodes, spanning 30,378 unique prompts, with a small subset of the prompts inspired by
+4This represents the number of “feasible” tasks. We do not consider tasks without a valid demonstration.
+3
+
+
+Name
+Task type
+Description
+Episodes
+Screens
+Prompts
+GOOGLEAPPS
+Multi-step
+Tasks with Google apps (Gmail, Photos, Settings, etc.)
+625,542
+4,903,601
+306
+INSTALL
+App installation and login tasks
+25,760
+250,058
+688
+WEBSHOPPING
+Web shopping tasks
+28,061
+365,253
+13,473
+GENERAL
+Misc web/app tasks and Q&A
+9,476
+85,413
+545
+SINGLE
+Single-step
+Mostly shopping tasks from WEBSHOPPING
+26,303
+85,668
+15,366
+Total
+715,142
+5,689,993
+30,378
+Table 2: Composition of the AITW dataset.
+the PixelHelp dataset. Observations are represented by screenshots along with pixel-based screen
+features.
+2.2
+UI representation and automation models
+Research on device control is mainly focused on two problems: understanding UIs and automating
+tasks. Existing work on the first problem utilizes self-supervised [21, 4, 5, 27] and supervised
+methods [10, 30, 11, 46] to train UI understanding models. In some cases, these models are fine-tuned
+for simple grounding tasks (e.g., referring expression component retrieval [4]), along with widget
+captioning or question answering tasks [27, 4].
+For task automation, Li et al. [28] decompose the problem in two stages: an action phrase-extraction
+stage to transform step-by-step instructions into actionable phrases, and a grounding stage that
+executes these instructions. Venkatesh et al. [42] utilize an LLM to parse the instruction before
+executing “macros” (e.g., tap(), toggle()) during the grounding phase. AppBuddy [38] train an RL
+agent to interact with on-screen UI elements to achieve tasks. LLMs can also understand and operate
+UI screens [43]. On the web front, previous studies have developed RL [20, 25, 29, 18], behavioral
+cloning [24], and LLM-based models [19, 26, 17]. These approaches utilize Document Object Model
+(DOM) inputs and often evaluate results on a simulated environment, MiniWob++ [37, 29]. Finally,
+LLMs have shown impressive results leveraging APIs, when they are available, for performing
+higher-level tasks [36, 33, 34].
+3
+Android in the Wild (AITW)
+Table 2 shows the composition of AITW in terms of category and type of tasks. Overall, AITW
+consists of four multi-step datasets, GOOGLEAPPS, INSTALL, WEBSHOPPING, and GENERAL, along
+with a single-step dataset SINGLE.
+The dataset is collected in a two-stage pipeline shown in Figure 1. First, we ask the raters to perform
+end-to-end tasks on emulators. Then the raters apply hindsight language relabeling [31, 32] to the
+trajectories that were collected in the first stage. We ask the raters to identify and label simple action
+sequences. We refer to these as single-step tasks.
+Our recording system uses AndroidEnv [40] with the Android Emulator. The environment supports 3
+action types {TOUCH, LIFT, REPEAT} with an (x,y) tuple indicating the on-screen position of the
+action. We record the TOUCH and LIFT actions. In response to an action, the environment returns an
+RGB screenshot, along with additional metadata such as the opened application. Raters interact with
+the emulated device using a mouse and keyboard on a desktop computer. Click events are logged
+as touch events. We provide dedicated buttons for Home, Back and Enter actions along with a field
+for entering text. We encourage the raters to use the dedicated buttons when necessary, however we
+require them to use a dedicated input text field for typing; we do not allow them to use the on-screen
+keyboard. We also ask the raters to indicate when they have completed the task or if they deem the
+task to be impossible to complete by pressing a button on our data collection UI.
+The system captures the raw observations and actions at 10Hz. Mouse presses and releases are
+recorded as TOUCH and LIFT, respectively. For touch events, we log the start and end position of the
+virtual finger’s gesture, which we call a "dual-point" gesture. A scroll is represented by a start and
+end position, and a tap is a special case where the start and end are approximately equal (<= 0.04
+Euclidean distance away). Figure 1 contains an example of a tap and horizontal scroll gesture using
+4
+
+
+this formulation. We found the dual-point gesture abstraction to be a good trade-off between data
+compression and precision, allowing us to represent arbitrary drags that are needed to operate widgets,
+including scrolling through a menu and operating carousel widgets. After identifying dual-point
+gestures, we drop LIFT actions. Button presses and type events are logged as additional actions types.
+For type events, we log the typed text.
+In summary, AITW’s actions are described by four fields: type, touch_point, lift_point (only for
+gesture actions), and typed_text (only for typing actions). The type field can be one of the following:
+dual-point gesture, type, go_back, go_home, enter, task_complete, or task_impossible.
+We post-process RGB screenshots to map them to a set of detected UI elements. Each element has a
+bounding box and either OCR-detected text or an icon class label (one of the possible 96 icon types
+detected using IconNet [39]). The OCR outputs describe most of the text on the screen, although
+certain characters can be misidentified and text blocks are not always grouped as desired. Although
+this screen representation inferred from pixels is noisy and not as comprehensive as that obtained
+from UI metadata, we provide these features for convenience and expect developers will replace them
+with more powerful screen understanding models. We use these features for training and evaluating
+our models.
+3.1
+Multi-step task trajectories
+We first create high-level task instructions from various sources: (1) the authors, (2) a subset of
+PixelHelp [28] instructions that were deemed achievable, and (3) an LLM prompted to generate
+instructions. Next, we randomly assign instructions to raters and they follow them to complete tasks.
+Every task requires multiple steps to be performed. For example, the task “show my schedule for next
+week in Google Calendar” could correspond to the following steps: 1) opening Google calendar, 2)
+selecting "week view", and 3) opening next week. For each episode, we reset the environment to a
+random starting screen.
+We ask the raters to interact with the device in a natural way, to avoid clicking on anything unrelated
+to the task, and to avoid unnecessary scrolling. To help guide the raters we prompt them with the
+following “Imagine a friend is asking you to perform the task on their phone...” The raters end a task
+with a special "status" action: either task_complete or task_impossible. A task is deemed impossible
+when an invalid or unavailable instruction is given, e.g., “turn on flashlight” on an emulator or “show
+my starred emails” when the Internet is not available. For instructions that result in verification rather
+than a state change (e.g., if the prompt is “Turn wifi off” and WiFi is found to be already off), we ask
+the raters to mark the task as successful.
+3.2
+Hindsight language relabeling
+Single-step task demonstrations cannot be collected in the usual way of giving raters instructions and
+asking them to solve end-to-end tasks, since they require the relevant preceding steps to be executed.
+For example, in the task we described above, we cannot ask the raters to demonstrate “go to next
+week” unless they are already in the week view of the calendar app. Rather than asking raters to
+manually perform the single steps, we utilize event-selectable hindsight language relabeling [31, 32]
+to label previously collected trajectories.
+To collect single-step demonstrations, we provide the raters observation-action sequences of multi-
+step task trajectories and ask them to identify and annotate shorter sequences (around two to five
+frames). We instruct them to label single steps, e.g., “add item to cart”, “show the settings”, “show
+me my bookmarks”. We ask that they label at least K subsequences (K >= 3 in our case) per video.
+We instruct the raters to avoid the following words: “click”, “select”, “tap”, “touch” or “scroll
+down/up/left/right”, since these can be easily synthetically created, and instead ask them to write
+descriptive phrases that describe the result of the action (e.g., instead of “tap airplane mode”, write
+the label “disable airplane mode”).
+3.3
+Dataset summary
+With reference to Table 2, we describe the 5 sub-categories of AITW.
+5
+
+
+(a)
+(b)
+(c)
+(d)
+Figure 2: Statistics for AITW. a) Episode length distribution. b) Episode length distribution by
+dataset group. c) Frequency of Android apps in the dataset. d) Token analysis including distribution
+of instruction length and token frequency for GOOGLEAPPS and GENERAL.
+GOOGLEAPPS contains high-level tasks with some overlap from PixelHelp [28] which involve
+various Google applications such as Gmail, Calendar, Photos, Settings, etc.
+INSTALL contains high-level tasks related to installing and uninstalling apps, app login, and app
+login support (e.g., "forgot password") for 88 different apps available on the Google Play store.
+WEBSHOPPING contains tasks related to shopping on E-commerce websites. Example tasks include
+searching for an item, adding an item to the cart, viewing the shopping cart, etc.
+GENERAL contains miscellaneous tasks (e.g., “play the new Taylor Swift video on YouTube”), mostly
+centered around question and answering (Q & A) (e.g., “How much does a 2 bedroom apartment
+rent cost in San Francisco?”) and interacting with third-party apps and websites.
+SINGLE contains single-step tasks manually annotated using hindsight relabeling, mostly from
+WEBSHOPPING (e.g., “Close the pop-up then add first item to cart”,“clear items from cart”). It also
+contains a smaller amount of episodes (560) from a variety of Google apps and third-party websites.
+In Figure 2, we report statistics about AITW. The episode length distribution (Figure 2a), measured
+as number of steps required to complete the task, shows that tasks are of moderate length (between 2
+and 16 steps for the 5th to 95th percentile, respectively) and that WEBSHOPPING tasks are generally
+the longest (Figure 2b). Chrome and Google apps are the most commonly used apps (Figure 2c).
+Overall, the dataset spans 159 Android apps and 198+ websites.5
+(Figure 2d) shows summary statistics of the instructions. Instructions lengths fall between 4 and
+24 for the 5th to 95th percentile, respectively, and are not overloaded with technical terms such as
+“click”, “tap”, “menu”, “button”, etc. which is generally the case for low-level UI commands provided
+in existing datasets [37, 4].
+4
+Experimental setup
+With the ultimate goal of building automation systems that can generalize to new scenarios, we use a
+standard test split and also design four experimental setups to evaluate Out-of-Distribution (OOD)
+generalization.
+5This number is a conservative estimate computed using heuristics.
+6
+
+
+Table 3: Examples of subject templates.
+Instruction
+Subject template
+Split
+open app grab and go to login screen
+open {subject1} and
+train
+open walmart and go to shopping cart
+go to {subject2}
+train
+search newegg.com on google
+search {subject1}
+val
+search usb-c to usb-a on ebay
+on {subject2}
+val
+add jbl flip 4 to the cart on bestbuy
+add {subject1} to the
+test
+add acer nitro to the cart on target
+cart on {subject2}
+test
+Standard. We randomly split each dataset (the four multi-step datasets and SINGLE) episode wise
+into a training, validation, and test set (80/10/10%). Because the datasets different sizes, we evaluate
+each of them separately, then take the average score across them; we do the same for OOD setups.
+Unseen Android version. To evaluate a system’s performance on an unseen Android version —
+which contains unseen graphical components and execution flows — we partition our data as follows:
+We put episodes collected on Android versions 10, 11, and 12 into the training and validation sets,
+maintaining a 90/10% split respectively. Then, we create a separate test set comprising entirely of
+episodes captured on Android version 13 devices.
+Unseen subject and unseen verb. This setup is aimed at evaluating generalization to unseen
+instructions. Due to the large number of prompts in AITW, it is infeasible to manually group similar
+tasks together. Simply splitting based on exact match of the raw instructions would be the most
+straightforward way to automatically assign splits. However, similar instructions with minor changes
+in language would potentially be seen in both training and testing.
+To better differentiate the training and test sets, we develop instruction templates by masking out
+either verb or subject phrases (examples provided in Table 3). By splitting data based on these
+templates, we can assess a system’s ability to generalize to unseen language patterns, and occasionally
+to entirely new tasks. For instance, all instructions following the template add {subject1} to the cart
+on {subject2}" are grouped together, ensuring they are not represented in both training and testing
+sets. Similarly, verb-based templates such as open the shopping cart" and “view the shopping cart"
+would be assigned to the same split.
+We extract the templates for each instruction, by prompting a few-shot LLM [13]. In total, we extract
+6,111 subject templates and 22,122 verb templates. For both types, we randomly assign each template
+to a train, validation or test split (with 80/10/10%). Then for each episode, we determine its template
+based on its instruction, and map the episode to a split.
+Unseen domain. This split is designed to test an agent’s ability to generalize to unseen apps and
+websites, which we refer to as domains. For WEBSHOPPING and GENERAL, we perform the split
+based on the web domain, as inferred from the instructions. For INSTALL tasks, we divide the data
+based on the app name, but we restrict these tasks to only those that require interaction with the
+installed app (e.g., performing a ’forgot password’ request). Each domain, along with all associated
+episodes, is randomly assigned to a train/validation/test split (80/10/10%). We exclude SINGLE, as
+there are no distinguishable domains across tasks, and GOOGLEAPPS, due to the limited number of
+distinct apps.
+5
+Experiments
+In this section, we report results of two device-control agent models evaluated on AITW. Both models
+take as input a task instruction, the current screen’s pixel-derived features (included in the dataset),
+and (optionally) a stacked history of screen observations and actions.
+5.1
+Models
+BC. We implement a Transformer-based [41] Behavioural Cloning (BC) agent. The agent’s output is
+in line with the AITW’s data format. It outputs an action type and a gesture. The action type can be
+dual-point gesture, type, go_back, go_home, enter, task_complete, or task_impossible. The gesture
+7
+
+
+action includes two spatial points, a touch and a lift position. This approach gives this agent a large
+and flexible action space, as it is able to predict taps and scrolls at arbitrary locations, rather than at
+specific UI elements as in existing work [4, 28]. We consider two variants of the agent, depending
+on whether it takes as input the screen-action history (2 prior steps), BC-history, or not, BC-single.
+Appendix B.1 provides more implementation details.
+LLM. We feed to PaLM 2 [3] a textual description of the screen and ask it to predict an action
+among the supported actions in AITW. We adopt a previously-proposed LLM-based design for
+device control [43], where the input screen (represented by an Android VH) is converted to HTML
+syntax. We use a modified version of their prompt (see Appendix B.2), and convert the OCR and
+detected icons to HTML. We create a zero-shot (LLM-0) and a 5-shot Chain-of-Thought (CoT) [44]
+(LLM-hist-5-CoT) version, which also contains history on prior actions taken by the agent, as we
+observed improves model performance. This model takes the same inputs as the BC model, but as in
+the original implementation [43], it can only click on detected UI elements, rather than at arbitrary
+locations and scrolling at precise locations. Since AITW was collected by humans performing precise
+gestures, some of the recorded gestures are not associated with OCR/Icon-detected UI elements, thus
+being not feasible for the LLM-based model. This could potentially be ameliorated in future versions
+by outputting a <x,y> output, rather than tapping specific elements.
+5.2
+Evaluation methodology and metrics
+Online evaluation of device-control systems is hard because the execution environment generally does
+not provide a reward signal. Human validation of such systems can be leveraged, however watching
+and judging an agent’s behaviour in real-time requires constant attention and is error prone. We
+propose an offline evaluation method which is cheaper and reproducible at the expense of accuracy.
+We devise and release the code for action matching to evaluate an agent’s action’s alignment with
+the ground truth. Two actions can match if their action types are equal. For dual-point taps, they are
+considered equal if they fall within a 14% screen distance from each other. Alternatively, if the tap
+actions occur within the same detected bounding box (augmented to 240% of their total size during
+action matching) they are considered equal. Finally, two dual-point scrolls are equal if they have the
+same primary scroll axis (vertical or horizontal).
+Using action matching, we compute partial and complete action matching scores (originally proposed
+by Li et al. [28]). A partial score is defined as the number of correct actions divided by the episode
+length, and the complete score is defined as a partial match of 1.0.
+To validate offline evaluation results, for subsets of the data, we also perform online evaluation. A
+human marks an episode as failed if any of the agent actions are incorrect, and correct when the agent
+performs a correct action on every step and achieves the expected goal. Human validation scores
+typically outperform complete action matching scores due to the multiple valid action alternatives
+one can take to complete a task. For instance, pressing the navigation bar’s back button is functionally
+similar to using an app-specific back button. As action matching relies on distance-based measures,
+these actions are deemed distinct.
+5.3
+Results
+We evaluate the four agents on the five AITW splits described in §4. For the BC agent, we train and
+test using all the data. For the LLM agent, due to the high computational overhead, we test on a
+random sample of 288 episodes for each split. Table 4 reports the average partial matching scores.
+The BC agent performs the best across all splits. It performs reasonably well on the OOD tasks,
+particularly on the subject and verb template splits, indicating the model is generalizing to unseen
+language instructions and tasks. The LLM-based model only sees a small amount (only those k-shot
+that are in the prompt) of the training distribution for the OOD experiments. Making use of fine-tuning
+for future experiments would allow us to leverage more of the training data.
+The performance of the LLM-based models suffers due to its element-based action space. For
+the standard test set, for example, 33% of the episodes have some non-element tap actions (i.e.,
+only <x,y> location), which are infeasible for this modelling approach. Across the feasible actions,
+LLM-hist-5-CoT has a partial match score of 58%.
+8
+
+
+Out-of-domain generalization
+Model
+Standard
+Version
+Subject
+Verb
+Domain
+BC-single
+68.7
+59.2
+64.2
+66.4
+52.2
+BC-history
+73.1
+63.2
+68.5
+70.4
+59.7
+LLM-0 [43]
+30.9 [25.6, 36.6]
+31.6 [26.3, 37.3]
+33.7 [28.2, 39.5]
+32.6 [27.3, 38.4]
+25.3 [20.4, 30.8]
+LLM-hist-5-CoT
+39.6 [33.9, 45.5]
+29.5 [24.3, 35.1]
+44.4 [38.6, 50.4]
+41.7 [35.9, 47.6]
+35.8 [30.2, 41.6]
+Table 4: Partial match scores across standard and OOD generalization splits. For the LLM agent, the
+estimated score and binomial proportion 95% confidence interval are shown. BC evaluation is on the
+entire test sets; confidence intervals are < 0.1% and are excluded for brevity.
+Figure 3: True complete match (estimated using human evaluation), and partial and complete match
+(both estimated using automated evaluation) for BC-history. True complete match is based on a subset
+of episodes; 95% confidence bounds are reported. Partial match is correlated with true complete
+match, while the complete match heuristic is a lower bound score.
+We perform human evaluation for BC-history on a small subset from GOOGLEAPPS (on average 86.5
+episodes from each split). We use this dataset portion because it has the largest training set, but we
+exclude the domain split due to the limited number of apps. As shown in Figure 3, we find that action
+matching is a reasonable approximation of true success rates.
+As expected, the agent performs the best on the standard test split. Compared to what is observed
+across all dataset portions (Table 4) its performance on the standard set is higher, but on subject and
+verb OOD splits is lower. This is due to the nature of GOOGLEAPPS data (see Table 2) where the
+tasks are rather distinct (few unique prompts) which makes the verb and subject generalization hard,
+but at the same time every prompt has many demonstrations, which makes the standard test easier.
+Although the automated complete match is low, we note the agent is correct for the majority of steps
+as indicated by the partial match scores > 0.5. We confirmed this was the case by visual inspection.
+The agent typically performs many of the initial steps correct, but it is more error prone farther in the
+trajectory.
+In summary, across the four splits, partial match tends to be correlated with true complete match. It is
+a reliable approximation especially if the number of steps in a task is small. Automated complete
+metrics represent a lower bound score of the true value.
+6
+Discussion
+6.1
+Data Limitations
+User Demographics Distribution. The raters are not a representative sample of the entire world
+population. The screens they visit, containing dynamic content from the Internet, are not representative
+of the rich variety of content and languages of the world. Similarly, the dataset prompts are exclusively
+in English, although they could potentially be translated and evaluated using multilingual models.
+Rater device interaction. Raters use a mouse and keyboard rather than the native touch-based
+interface. This may result in somewhat different user patterns.
+Form factor. The dataset is derived from mobile phone user interactions. The dataset could be
+augmented with more form factors, such as tablets, to increase generalization.
+9
+
+
+UI Drift/Evolution. Our dataset includes an unseen domain split, containing new and unseen UIs,
+but it may not fully represent the continuous evolution of a given app or website’s UI. This dynamic
+change is an essential aspect of real-world interfaces but is a complex phenomenon to capture
+comprehensively. However, we do capture some of this drift through the unseen Android version
+split, reflecting changes in Google apps’ UI over various Android versions.
+6.2
+Ethical considerations
+Privacy. The raters were instructed not to enter any Personal Identifiable Information (PII) during
+collection. The dataset does not contain any interactions from real users.
+Malicious use. Malicious actors could use the dataset for undesired purposes such as overriding
+anti-fraud mechanisms like CAPTCHAs. Malicious actors could also manipulate prompts and/or
+screen representations of deployed models to achieve undesirable goals.
+7
+Future Work
+Multimodal modeling. The LLM-based model, adapted from prior work [43], is not as performant as
+the bespoke BC model. This model consumes a text-based screen representation and cannot output a
+<x,y> coordinate-based output. A multimodal foundation model [2, 12] that consumes raw pixels and
+outputs gestures at arbitrary points would be a natural next model type to investigate. Furthermore,
+any foundation models may benefit from fine-tuning on the AITW training sets.
+Multiple ways to achieve a task. There are often multiple ways to achieve a task. Future evaluation
+methods could be more "lenient" and not penalize correct agent actions that do not match human
+demonstrations. Furthermore, constraining agents to achieve goals in "optimal" ways, however that
+may be defined, may increase user satisfaction with trained models.
+8
+Conclusions
+Mobile device control via natural language commands has broad application. It requires translating
+high-level instructions into execution plans that operate the device interface as a human would.
+Recent advancements in general-purpose large foundation models have opened doors for creating
+such device-control systems, however there remains a substantial void due to the dearth of large,
+comprehensive datasets essential for training and evaluating these systems.
+Addressing these gaps, we present AITW, which is significantly larger and more diverse than existing
+device-control datasets. AITW consists of 715k episodes across more than 350 Android applications
+and websites, and a variety of task instructions and execution paths, a realistic representation of
+real-world system interactions.
+Through dataset structure, we provide experimental setups for evaluation under varying conditions,
+including novel tasks and language, Android versions, and applications and websites. We trained and
+ran models on the data and demonstrated how to evaluate model performance under novel conditions.
+We hope AITW will spur research to create more powerful device automation models.
+Acknowledgements
+The authors thank Gabriel Taubman, James Stout, Gregory Wayne, and Max Lin for insightful
+discussions throughout. Thanks to Elisabeth Chauncey for help with dataset release. Thank you to JD
+Chen for helpful feedback on early manuscript versions. Daniel Toyama, Philippe Hamel, and Anita
+Gergely provided essential Android environment assistance. We also thank our raters for collecting
+our data.
+References
+[1] Adept. ACT-1: Transformer for Actions, 2022. https://www.adept.ai/act.
+[2] J.-B. Alayrac, J. Donahue, P. Luc, A. Miech, I. Barr, Y. Hasson, K. Lenc, A. Mensch, K. Millican,
+M. Reynolds, R. Ring, E. Rutherford, S. Cabi, T. Han, Z. Gong, S. Samangooei, M. Monteiro,
+10
+
+
+J. Menick, S. Borgeaud, A. Brock, A. Nematzadeh, S. Sharifzadeh, M. Binkowski, R. Barreira,
+O. Vinyals, A. Zisserman, and K. Simonyan. Flamingo: a visual language model for few-shot
+learning, 2022.
+[3] R. Anil, A. M. Dai, O. Firat, M. Johnson, D. Lepikhin, A. Passos, S. Shakeri, E. Taropa,
+P. Bailey, Z. Chen, E. Chu, J. H. Clark, L. E. Shafey, Y. Huang, K. Meier-Hellstern, G. Mishra,
+E. Moreira, M. Omernick, K. Robinson, S. Ruder, Y. Tay, K. Xiao, Y. Xu, Y. Zhang, G. H.
+Abrego, J. Ahn, J. Austin, P. Barham, J. Botha, J. Bradbury, S. Brahma, K. Brooks, M. Catasta,
+Y. Cheng, C. Cherry, C. A. Choquette-Choo, A. Chowdhery, C. Crepy, S. Dave, M. Dehghani,
+S. Dev, J. Devlin, M. Díaz, N. Du, E. Dyer, V. Feinberg, F. Feng, V. Fienber, M. Freitag,
+X. Garcia, S. Gehrmann, L. Gonzalez, G. Gur-Ari, S. Hand, H. Hashemi, L. Hou, J. Howland,
+A. Hu, J. Hui, J. Hurwitz, M. Isard, A. Ittycheriah, M. Jagielski, W. Jia, K. Kenealy, M. Krikun,
+S. Kudugunta, C. Lan, K. Lee, B. Lee, E. Li, M. Li, W. Li, Y. Li, J. Li, H. Lim, H. Lin, Z. Liu,
+F. Liu, M. Maggioni, A. Mahendru, J. Maynez, V. Misra, M. Moussalem, Z. Nado, J. Nham,
+E. Ni, A. Nystrom, A. Parrish, M. Pellat, M. Polacek, A. Polozov, R. Pope, S. Qiao, E. Reif,
+B. Richter, P. Riley, A. C. Ros, A. Roy, B. Saeta, R. Samuel, R. Shelby, A. Slone, D. Smilkov,
+D. R. So, D. Sohn, S. Tokumine, D. Valter, V. Vasudevan, K. Vodrahalli, X. Wang, P. Wang,
+Z. Wang, T. Wang, J. Wieting, Y. Wu, K. Xu, Y. Xu, L. Xue, P. Yin, J. Yu, Q. Zhang, S. Zheng,
+C. Zheng, W. Zhou, D. Zhou, S. Petrov, and Y. Wu. Palm 2 technical report, 2023.
+[4] C. Bai, X. Zang, Y. Xu, S. Sunkara, A. Rastogi, J. Chen, and B. A. y Arcas. UIBert: Learning
+generic multimodal representations for UI understanding. In Z. Zhou, editor, Proc. of the
+30th International Joint Conference on Artificial Intelligence, IJCAI 2021, pages 1705–1712.
+ijcai.org, 2021.
+[5] P. Banerjee, S. Mahajan, K. Arora, C. Baral, and O. Riva. Lexi: Self-supervised learning of
+the UI language. In Proc. of the 2022 Conference on Empirical Methods in Natural Language
+Processing. Association for Computational Linguistics, December 2022.
+[6] R. Bommasani, D. A. Hudson, E. Adeli, R. Altman, S. Arora, S. von Arx, M. S. Bernstein,
+J. Bohg, A. Bosselut, E. Brunskill, E. Brynjolfsson, S. Buch, D. Card, R. Castellon, N. Chatterji,
+A. Chen, K. Creel, J. Q. Davis, D. Demszky, C. Donahue, M. Doumbouya, E. Durmus, S. Ermon,
+J. Etchemendy, K. Ethayarajh, L. Fei-Fei, C. Finn, T. Gale, L. Gillespie, K. Goel, N. Goodman,
+S. Grossman, N. Guha, T. Hashimoto, P. Henderson, J. Hewitt, D. E. Ho, J. Hong, K. Hsu,
+J. Huang, T. Icard, S. Jain, D. Jurafsky, P. Kalluri, S. Karamcheti, G. Keeling, F. Khani,
+O. Khattab, P. W. Koh, M. Krass, R. Krishna, R. Kuditipudi, A. Kumar, F. Ladhak, M. Lee,
+T. Lee, J. Leskovec, I. Levent, X. L. Li, X. Li, T. Ma, A. Malik, C. D. Manning, S. Mirchandani,
+E. Mitchell, Z. Munyikwa, S. Nair, A. Narayan, D. Narayanan, B. Newman, A. Nie, J. C.
+Niebles, H. Nilforoshan, J. Nyarko, G. Ogut, L. Orr, I. Papadimitriou, J. S. Park, C. Piech,
+E. Portelance, C. Potts, A. Raghunathan, R. Reich, H. Ren, F. Rong, Y. Roohani, C. Ruiz,
+J. Ryan, C. Ré, D. Sadigh, S. Sagawa, K. Santhanam, A. Shih, K. Srinivasan, A. Tamkin,
+R. Taori, A. W. Thomas, F. Tramèr, R. E. Wang, W. Wang, B. Wu, J. Wu, Y. Wu, S. M. Xie,
+M. Yasunaga, J. You, M. Zaharia, M. Zhang, T. Zhang, X. Zhang, Y. Zhang, L. Zheng, K. Zhou,
+and P. Liang. On the opportunities and risks of foundation models, 2022.
+[7] J. Bradbury, R. Frostig, P. Hawkins, M. J. Johnson, C. Leary, D. Maclaurin, G. Necula, A. Paszke,
+J. VanderPlas, S. Wanderman-Milne, and Q. Zhang. JAX: composable transformations of
+Python+NumPy programs, 2018.
+[8] T. B. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal, A. Neelakantan,
+P. Shyam, G. Sastry, A. Askell, S. Agarwal, A. Herbert-Voss, G. Krueger, T. Henighan, R. Child,
+A. Ramesh, D. M. Ziegler, J. Wu, C. Winter, C. Hesse, M. Chen, E. Sigler, M. Litwin, S. Gray,
+B. Chess, J. Clark, C. Berner, S. McCandlish, A. Radford, I. Sutskever, and D. Amodei.
+Language models are few-shot learners, 2020.
+[9] A. Burns, D. Arsan, S. Agrawal, R. Kumar, K. Saenko, and B. A. Plummer. Mobile app tasks
+with iterative feedback (motif): Addressing task feasibility in interactive visual environments.
+CoRR, abs/2104.08560, 2021.
+[10] J. Chen, C. Chen, Z. Xing, X. Xu, L. Zhu, G. Li, and J. Wang. Unblind Your Apps: Predicting
+Natural-Language Labels for Mobile GUI Components by Deep Learning. In Proc. of the
+ACM/IEEE 42nd International Conference on Software Engineering, ICSE ’20, pages 322–334,
+2020.
+11
+
+
+[11] J. Chen, M. Xie, Z. Xing, C. Chen, X. Xu, L. Zhu, and G. Li. Object detection for graphical
+user interface: Old fashioned or deep learning or a combination? In Proc. of the 28th ACM Joint
+Meeting on European Software Engineering Conference and Symposium on the Foundations of
+Software Engineering, ESEC/FSE 2020, pages 1202–1214, 2020.
+[12] X. Chen, X. Wang, S. Changpinyo, A. Piergiovanni, P. Padlewski, D. Salz, S. Goodman,
+A. Grycner, B. Mustafa, L. Beyer, A. Kolesnikov, J. Puigcerver, N. Ding, K. Rong, H. Akbari,
+G. Mishra, L. Xue, A. Thapliyal, J. Bradbury, W. Kuo, M. Seyedhosseini, C. Jia, B. K. Ayan,
+C. Riquelme, A. Steiner, A. Angelova, X. Zhai, N. Houlsby, and R. Soricut. Pali: A jointly-
+scaled multilingual language-image model, 2023.
+[13] A. Chowdhery, S. Narang, J. Devlin, M. Bosma, G. Mishra, A. Roberts, P. Barham, H. W.
+Chung, C. Sutton, S. Gehrmann, P. Schuh, K. Shi, S. Tsvyashchenko, J. Maynez, A. Rao,
+P. Barnes, Y. Tay, N. Shazeer, V. Prabhakaran, E. Reif, N. Du, B. Hutchinson, R. Pope,
+J. Bradbury, J. Austin, M. Isard, G. Gur-Ari, P. Yin, T. Duke, A. Levskaya, S. Ghemawat, S. Dev,
+H. Michalewski, X. Garcia, V. Misra, K. Robinson, L. Fedus, D. Zhou, D. Ippolito, D. Luan,
+H. Lim, B. Zoph, A. Spiridonov, R. Sepassi, D. Dohan, S. Agrawal, M. Omernick, A. M. Dai,
+T. S. Pillai, M. Pellat, A. Lewkowycz, E. Moreira, R. Child, O. Polozov, K. Lee, Z. Zhou,
+X. Wang, B. Saeta, M. Diaz, O. Firat, M. Catasta, J. Wei, K. Meier-Hellstern, D. Eck, J. Dean,
+S. Petrov, and N. Fiedel. Palm: Scaling language modeling with pathways, 2022.
+[14] X. Deng, Y. Gu, B. Zheng, S. Chen, S. Stevens, B. Wang, H. Sun, and Y. Su. Mind2Web:
+Towards a generalist agent for the web, 2023.
+[15] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova. Bert: Pre-training of deep bidirectional
+transformers for language understanding. arXiv preprint arXiv:1810.04805, 2018.
+[16] A. Dosovitskiy, L. Beyer, A. Kolesnikov, D. Weissenborn, X. Zhai, T. Unterthiner, M. Dehghani,
+M. Minderer, G. Heigold, S. Gelly, J. Uszkoreit, and N. Houlsby. An image is worth 16x16
+words: Transformers for image recognition at scale. CoRR, abs/2010.11929, 2020.
+[17] H. Furuta, O. Nachum, K.-H. Lee, Y. Matsuo, S. S. Gu, and I. Gur. Multimodal web navigation
+with instruction-finetuned foundation models, 2023.
+[18] I. Gur, N. Jaques, Y. Miao, J. Choi, M. Tiwari, H. Lee, and A. Faust. Environment generation
+for zero-shot compositional reinforcement learning, 2022.
+[19] I. Gur, O. Nachum, Y. Miao, M. Safdari, A. Huang, A. Chowdhery, S. Narang, N. Fiedel, and
+A. Faust. Understanding html with large language models, 2023.
+[20] I. Gur, U. Rueckert, A. Faust, and D. Hakkani-Tur. Learning to Navigate the Web. In 7th
+International Conference on Learning Representations (ICLR ’19), May 6–9 2019.
+[21] Z. He, S. Sunkara, X. Zang, Y. Xu, L. Liu, N. Wichers, G. Schubiner, R. B. Lee, and J. Chen.
+ActionBert: Leveraging User Actions for Semantic Understanding of User Interfaces. In 35th
+AAAI Conference on Artificial Intelligence, AAAI 2021, pages 5931–5938, 2021.
+[22] T. Hennigan, T. Cai, T. Norman, and I. Babuschkin. Haiku: Sonnet for JAX, 2020.
+[23] M. W. Hoffman, B. Shahriari, J. Aslanides, G. Barth-Maron, N. Momchev, D. Sinopalnikov,
+P. Sta´
+nczyk, S. Ramos, A. Raichuk, D. Vincent, L. Hussenot, R. Dadashi, G. Dulac-Arnold,
+M. Orsini, A. Jacq, J. Ferret, N. Vieillard, S. K. S. Ghasemipour, S. Girgin, O. Pietquin,
+F. Behbahani, T. Norman, A. Abdolmaleki, A. Cassirer, F. Yang, K. Baumli, S. Henderson,
+A. Friesen, R. Haroun, A. Novikov, S. G. Colmenarejo, S. Cabi, C. Gulcehre, T. L. Paine,
+S. Srinivasan, A. Cowie, Z. Wang, B. Piot, and N. de Freitas. Acme: A research framework for
+distributed reinforcement learning. arXiv preprint arXiv:2006.00979, 2020.
+[24] P. C. Humphreys, D. Raposo, T. Pohlen, G. Thornton, R. Chhaparia, A. Muldal, J. Abramson,
+P. Georgiev, A. Santoro, and T. Lillicrap. A data-driven approach for learning to control
+computers. In K. Chaudhuri, S. Jegelka, L. Song, C. Szepesvari, G. Niu, and S. Sabato,
+editors, Proceedings of the 39th International Conference on Machine Learning, volume 162 of
+Proceedings of Machine Learning Research, pages 9466–9482. PMLR, 17–23 Jul 2022.
+[25] S. Jia, J. Kiros, and J. Ba. Dom-q-net: Grounded rl on structured language, 2019.
+[26] G. Kim, P. Baldi, and S. McAleer. Language models can solve computer tasks, 2023.
+[27] K. Lee, M. Joshi, I. Turc, H. Hu, F. Liu, J. Eisenschlos, U. Khandelwal, P. Shaw, M.-W.
+Chang, and K. Toutanova. Pix2struct: Screenshot parsing as pretraining for visual language
+understanding, 2022.
+12
+
+
+[28] Y. Li, J. He, X. Zhou, Y. Zhang, and J. Baldridge. Mapping natural language instructions
+to mobile UI action sequences. In Proc. of the 58th Annual Meeting of the Association for
+Computational Linguistics, ACL 2020, Online, July 5-10, 2020, pages 8198–8210. Association
+for Computational Linguistics, 2020.
+[29] E. Z. Liu, K. Guu, P. Pasupat, and P. Liang. Reinforcement learning on web interfaces using
+workflow-guided exploration. In 6th International Conference on Learning Representations
+(ICLR ’18), 2018.
+[30] T. F. Liu, M. Craft, J. Situ, E. Yumer, R. Mech, and R. Kumar. Learning design semantics for
+mobile apps. In Proc. of the 31st Annual ACM Symposium on User Interface Software and
+Technology, UIST ’18, page 569–579, New York, NY, USA, 2018. Association for Computing
+Machinery.
+[31] C. Lynch and P. Sermanet. Language conditioned imitation learning over unstructured data.
+Robotics: Science and Systems, 2021.
+[32] C. Lynch, A. Wahid, J. Tompson, T. Ding, J. Betker, R. Baruch, T. Armstrong, and P. Florence.
+Interactive language: Talking to robots in real time, 2022.
+[33] S. G. Patil, T. Zhang, X. Wang, and J. E. Gonzalez. Gorilla: Large language model connected
+with massive apis, 2023.
+[34] Y. Qin, S. Liang, Y. Ye, K. Zhu, L. Yan, Y. Lu, Y. Lin, X. Cong, X. Tang, B. Qian, S. Zhao,
+R. Tian, R. Xie, J. Zhou, M. Gerstein, D. Li, Z. Liu, and M. Sun. Toolllm: Facilitating large
+language models to master 16000+ real-world apis, 2023.
+[35] A. Richard, H. Kuehne, and J. Gall. Weakly supervised action learning with RNN based fine-
+to-coarse modeling. In 2017 IEEE Conference on Computer Vision and Pattern Recognition
+(CVPR), pages 1273–1282, 2017.
+[36] T. Schick, J. Dwivedi-Yu, R. Dessì, R. Raileanu, M. Lomeli, L. Zettlemoyer, N. Cancedda, and
+T. Scialom. Toolformer: Language models can teach themselves to use tools, 2023.
+[37] T. Shi, A. Karpathy, L. Fan, J. Hernandez, and P. Liang. World of bits: An open-domain
+platform for web-based agents. In D. Precup and Y. W. Teh, editors, Proceedings of the 34th
+International Conference on Machine Learning, volume 70 of Proceedings of Machine Learning
+Research, pages 3135–3144. PMLR, 06–11 Aug 2017.
+[38] M. Shvo, Z. Hu, R. T. Icarte, I. Mohomed, A. Jepson, and S. A. McIlraith. Appbuddy: Learning
+to accomplish tasks in mobile apps via reinforcement learning, 2021.
+[39] S. Sunkara, M. Wang, L. Liu, G. Baechler, Y.-C. Hsiao, J. Chen, A. Sharma, and J. W. W. Stout.
+Towards better semantic understanding of mobile interfaces. In Proc. of the 29th International
+Conference on Computational Linguistics, pages 5636–5650. International Committee on
+Computational Linguistics, Oct. 2022.
+[40] D. Toyama, P. Hamel, A. Gergely, G. Comanici, A. Glaese, Z. Ahmed, T. Jackson, S. Mourad,
+and D. Precup. Androidenv: A reinforcement learning platform for android, 2021.
+[41] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and
+I. Polosukhin. Attention is all you need, 2017.
+[42] S. G. Venkatesh, P. Talukdar, and S. Narayanan. Ugif: Ui grounded instruction following, 2022.
+[43] B. Wang, G. Li, and Y. Li. Enabling conversational interaction with mobile ui using large
+language models. In Proc. of the 2023 CHI Conference on Human Factors in Computing
+Systems, CHI ’23. Association for Computing Machinery, 2023.
+[44] J. Wei, X. Wang, D. Schuurmans, M. Bosma, B. Ichter, F. Xia, E. Chi, Q. Le, and D. Zhou.
+Chain-of-thought prompting elicits reasoning in large language models, 2023.
+[45] XDA.
+Google
+is
+trying
+to
+limit
+what
+apps
+can
+use
+an
+Accessi-
+bility
+Service
+(again),
+2021.
+https://www.xda-developers.com/
+google-trying-limit-apps-accessibility-service/.
+[46] X. Zhang, L. de Greef, A. Swearngin, S. White, K. Murray, L. Yu, Q. Shan, J. Nichols, J. Wu,
+C. Fleizach, A. Everitt, and J. P. Bigham. Screen Recognition: Creating Accessibility Metadata
+for Mobile Applications from Pixels. In Proc. of the 2021 CHI Conference on Human Factors
+in Computing Systems, CHI ’21, 2021.
+13
+
+
+Appendix A
+Dataset collection
+A.1
+Crowdsourcing
+This work was carried out by participants who are paid contractors. Those contractors received a
+standard contracted wage, which complies with living wage laws in their country of employment.
+Due to global privacy concerns, we cannot include more details about our participants, e.g., estimated
+hourly wage or total amount spent on compensation.
+We provided raters with a detailed instructional document and a video tutorial, followed by having
+them perform test demonstrations using our system. For multi-step task trajectories, we ensured
+quality and diversity through manual inspection of a subset of demonstrations. Tasks were marked
+as complete with the task_complete action once a rater completed an assignment, including cases
+where the task was already completed. In contrast, the task_impossible action was used to indicate
+infeasible tasks, such as turning on a flashlight in an emulator.
+For hindsight-language relabeling, we conducted manual reviews of a sample of labeled trajectories
+due to the nuanced nature of natural language use. The aim was to encourage the creation of
+descriptive, unambiguous labels and discourage the use of oversimplified technical terms or vague
+language in order to collect clear and useful task descriptions that cannot be captured using automatic
+heuristics.
+A.2
+Prompt generation
+We use the following prompt to extract the subject templates and a similar prompt for the verb
+templates:
+# Identify subject variables in commands.
+phrase = ["show me popular videos on youtube",
+"whats the weather?",
+"go to espn.com",
+"click the top result",
+"open calendar and show me the fourth week of next month",
+<INPUT_INSTRUCTIONS>]
+result = ["show me {subject1} on {subject2}",
+"whats {subject1}?",
+"go to {subject1}",
+"click {subject1}",
+"open {subject1} and show me {subject2} of {subject3}",
+A.3
+Examples
+Example of episodes from AITW are show in Figures 4, 5, and 6.
+Appendix B
+Experiment details
+B.1
+Behavioral Cloning
+The Behavioral Cloning (BC), shown in Figure 7, is a Transformer-based architecture [41] that takes
+a task instruction, the current screen, and a stacked history of screen observations and actions as
+input. The model is conditioned on BERT [15] embeddings of the natural language instruction. For
+the screen input the model embeds each detected OCR and detected icon to a vector of size 512
+using the following procedure. We embed the text using a pre-trained BERT model taking the output
+from the CLS token, which is then linearly projected from size 732 to 512. For the icons, we learn
+an embedding from the ID, which we add element-wise to the BERT embedding. Following similar
+approaches [28, 16], we add to this the spatial information by learning four embeddings for each of
+the bounding box points, which are binned into 200 and 96 elements vertically and horizontally. For
+the screen history (excluding the current screen), we embed the <x,y> positions of the touch and lift
+actions, which are added to the element encoding, using a dummy value for non-gesture actions. We
+found that including action history improves performance.
+14
+
+
+Figure 4: Example episode from the dataset.
+Figure 5: Example episode from the dataset.
+15
+
+
+Figure 6: Example episode from the dataset.
+Figure 7: Architecture diagram of the BC agent.
+16
+
+
+Table 5: Partial match scores across generalization splits and datasets for BC-history.
+Standard
+Version
+Subject
+Verb
+Domain
+Dataset
+GOOGLEAPPS
+75.7
+63.4
+48.4
+57.4
+n/a
+GENERAL
+63.7
+52.5
+65.4
+64.1
+n/a
+WEBSHOPPING
+68.5
+56.7
+69.5
+68.4
+49.6
+INSTALL
+77.5
+66.5
+76.4
+77.7
+66.9
+SINGLE
+80.3
+77.0
+82.8
+84.6
+62.6
+For gesture actions, the agent outputs a dual-point output. We found such a formulation useful for
+interacting with many common widgets (e.g., carousel widgets, switching months in a calendar,
+controlling sliders), which require precise scrolling.
+We train the agent using the standard cross-entropy loss using a 2x2 slice of a V2 Tensor Processing
+Unit (TPU). The agent is implemented using Acme [23], Haiku [22], and JAX [7]. The Transformer
+has 4 layers, a dropout rate of 0.1, and we train use the AdamW optimizer with a learning rate of
+0.0001, and a batch size of 128.
+For evaluation we train and perform a hyperparameter search via grid search on the validation set.
+We choose the best performing model and run it on the test set for the final numbers.
+Table 5 reports a breakdown of the performance of the BC-history agent (our best performing agent)
+across the different dataset splits and portions.
+B.2
+LLM
+We use the following prompt for LLM-0:
+Given a mobile screen and a question, provide the action based on the screen
+information.
+Available Actions:
+{"action_type": "click", "idx": <element_idx>}
+{"action_type": "type", "text": <text>}
+{"action_type": "navigate_home"}
+{"action_type": "navigate_back"}
+{"action_type": "scroll", "direction": "up"}
+{"action_type": "scroll", "direction": "down"}
+{"action_type": "scroll", "direction": "left"}
+{"action_type": "scroll", "direction": "right"}
+Screen:
+<SCREEN_REPRESENTATION>
+Instruction: <GROUNDING_GOAL>
+Answer:
+We use the following prompt for LLM-hist-5-CoT:
+Given a mobile screen and a question, provide the action based on the screen
+information.
+Available Actions:
+{"action_type": "click", "idx": <element_idx>}
+{"action_type": "type", "text": <text>}
+{"action_type": "navigate_home"}
+{"action_type": "navigate_back"}
+{"action_type": "scroll", "direction": "up"}
+{"action_type": "scroll", "direction": "down"}
+{"action_type": "scroll", "direction": "left"}
+{"action_type": "scroll", "direction": "right"}
+17
+
+
+Previous Actions:
+{"step_idx": 0, "action_description": "press [HOME key]"}
+{"step_idx": 2, "action_description": "click [Google Icon]"}
+{"step_idx": 3, "action_description": "click [search for hotels]"}
+Screen:
+<img id=0 class="IconGoogle" alt="Google Icon"> </img>
+<img id=1 class="IconX" alt="Close Icon"> </img>
+<p id=2 class="text" alt="search for hotels"> search for hotels </p>
+<p id=3 class="text" alt="in"> in </p>
+<p id=4 class="text" alt="mexico city mexico"> mexico city mexico </p>
+<img id=5 class="IconMagnifyingGlass" alt="Search Icon"> </img>
+<p id=6 class="text" alt="Share"> Share </p>
+<p id=7 class="text" alt="Select alI"> Select alI </p>
+<p id=8 class="text" alt="Cut"> Cut </p>
+<p id=9 class="text" alt="Copy"> Copy </p>
+<p id=10 class="text" alt="hotel in mex"> hotel in mex </p>
+<img id=11 class="IconMagnifyingGlass" alt="Search Icon"> </img>
+<p id=12 class="text" alt="best hotel"> best hotel </p>
+<p id=13 class="text" alt="mexico city"> mexico city </p>
+<p id=14 class="text" alt="in"> in </p>
+<img id=15 class="IconMagnifyingGlass" alt="Search Icon"> </img>
+<p id=16 class="text" alt="K"> K </p>
+<p id=17 class="text" alt="hotel ciudad"> hotel ciudad </p>
+<p id=18 class="text" alt="de mexico"> de mexico </p>
+<p id=19 class="text" alt="gran"> gran </p>
+<img id=20 class="IconVBackward" alt="Left Icon"> </img>
+<img id=21 class="IconNavBarCircle" alt="Home Icon"> </img>
+<img id=22 class="IconNavBarRect" alt="Overview Icon"> </img>
+Instruction: What time is it in Berlin?
+Answer: Let’s think step by step. I see unrelated search results in the Google app,
+I must clear the search bar, so the action is {"action_type": "click", "idx": 1}
+Previous Actions:
+{"step_idx": 0, "action_description": "click [DISMISS]"}
+Screen:
+<p id=0 class="text" alt="Update your"> Update your </p>
+<p id=1 class="text" alt="Gmail app"> Gmail app </p>
+<p id=2 class="text" alt="attach files from"> attach files from </p>
+<p id=3 class="text" alt="To"> To </p>
+<p id=4 class="text" alt="download the"> download the </p>
+<p id=5 class="text" alt="Drive,"> Drive, </p>
+<p id=6 class="text" alt="latest"> latest </p>
+<p id=7 class="text" alt="version"> version </p>
+<p id=8 class="text" alt="of"> of </p>
+<p id=9 class="text" alt="Gmail"> Gmail </p>
+<p id=10 class="text" alt="UPDATE"> UPDATE </p>
+<p id=11 class="text" alt="DISMISS"> DISMISS </p>
+<p id=12 class="text" alt="Got"> Got </p>
+<p id=13 class="text" alt="it"> it </p>
+<img id=14 class="IconVBackward" alt="Left Icon"> </img>
+Instruction: see creations saved in the google photos
+Answer: Let’s think step by step. I see a popup, I need to open Google Photos, so
+the action is {"action_type": "click", "idx": 11}
+Previous Actions:
+Screen:
+<p id=0 class="text" alt="M"> M </p>
+<p id=1 class="text" alt="New in Gmail"> New in Gmail </p>
+<p id=2 class="text" alt="All the features you"> All the features you </p>
+18
+
+
+<p id=3 class="text" alt="love with"> love with </p>
+<p id=4 class="text" alt="a fresh"> a fresh </p>
+<p id=5 class="text" alt="look"> look </p>
+<p id=6 class="text" alt="new"> new </p>
+<p id=7 class="text" alt="GOT IT"> GOT IT </p>
+Instruction: open app "Google Play services"
+Answer: Let’s think step by step. I see the GMail app, I need to open the app
+drawer, so the action is {"action_type": "navigate_home"}
+Previous Actions:
+Screen:
+<p id=0 class="text" alt="Tuesday, Aug"> Tuesday, Aug </p>
+<p id=1 class="text" alt="9"> 9 </p>
+<img id=2 class="IconChat" alt="Chat Icon"> </img>
+<img id=3 class="IconGoogle" alt="Google Icon"> </img>
+Instruction: open app "Messenger Lite" (install if not already installed)
+Answer: Let’s think step by step. I see the home screen, I need to open the app
+drawer, I should swipe up, so the action is {"action_type": "scroll", "direction":
+"down"}
+Previous Actions:
+{"step_idx": 0, "action_description": "scroll down"}
+Screen:
+<img id=0 class="IconThreeDots" alt="More Icon"> </img>
+<p id=1 class="text" alt="Search your phone and more"> Search your phone and more </p>
+<p id=2 class="text" alt="M"> M </p>
+<p id=3 class="text" alt="O"> O </p>
+<img id=4 class="IconPlay" alt="Play Icon"> </img>
+<p id=5 class="text" alt="Clock"> Clock </p>
+<p id=6 class="text" alt="YouTube"> YouTube </p>
+<p id=7 class="text" alt="Photos"> Photos </p>
+<p id=8 class="text" alt="Gmail"> Gmail </p>
+<p id=9 class="text" alt="All apps"> All apps </p>
+<p id=10 class="text" alt="g"> g </p>
+<p id=11 class="text" alt="O"> O </p>
+<img id=12 class="IconTakePhoto" alt="Camera Icon"> </img>
+<p id=13 class="text" alt="10"> 10 </p>
+<p id=14 class="text" alt="Calendar"> Calendar </p>
+<p id=15 class="text" alt="Camera"> Camera </p>
+<p id=16 class="text" alt="Chrome"> Chrome </p>
+<p id=17 class="text" alt="Clock"> Clock </p>
+<p id=18 class="text" alt="0"> 0 </p>
+<p id=19 class="text" alt="M"> M </p>
+<p id=20 class="text" alt="B"> B </p>
+<img id=21 class="IconPerson" alt="Person Icon"> </img>
+<p id=22 class="text" alt="Gmail"> Gmail </p>
+<p id=23 class="text" alt="Drive"> Drive </p>
+<p id=24 class="text" alt="Files"> Files </p>
+<p id=25 class="text" alt="Contacts"> Contacts </p>
+<p id=26 class="text" alt="G OO"> G OO </p>
+<img id=27 class="IconGoogle" alt="Google Icon"> </img>
+<img id=28 class="IconLocation" alt="Location Icon"> </img>
+<img id=29 class="IconCall" alt="Phone Icon"> </img>
+<img id=30 class="IconChat" alt="Chat Icon"> </img>
+<p id=31 class="text" alt="Google"> Google </p>
+<p id=32 class="text" alt="Maps"> Maps </p>
+Instruction: Search for hotels in Chicago.
+Answer: Let’s think step by step. I see the app drawer, I need to search, so the
+action is {"action_type": "click", "idx": 27}
+19
+
+
+Previous Actions:
+<HISTORY>
+Screen:
+<SCREEN_REPRESENTATION>
+Instruction: <GROUNDING_GOAL>
+Answer: Let’s think step by step. I see
+Appendix C
+Dataset format
+Each datapoint is stored as a TFRecord file with compression type ‘GZIP’ with the following fields:
+• android_api_level: the Android API level of the emulator the episode was collected
+from
+• current_activity: the name of the activity running when the example was collected
+• device_type: the device type of the emulator the episode was collected from, mostly Pixel
+devices with one custom device image
+• episode_id: the unique identifier for the episode the example is from
+• episode_length: the overall number of steps in the episode
+• goal_info: the natural language instruction the episode is demonstrating
+• image/channels, image/height, image/width: the number of channels, height, and
+width of the screenshot
+• image/encoded: the encoded screenshot
+• image/ui_annotations_positions: a flattened array of coordinates representing the
+bounding boxes of the UI annotations; the coordinates are in (y, x, height, width) format and
+the length of this array is 4 * num_elements
+• image/ui_annotations_text: the OCR-detected text associated with the UI element
+• image/ui_annotations_ui_types: the type of UI element for each annotation, can be
+an icon or just text
+• results/action_type: the type of the predicted action (see ’Action space’ for more
+details)
+• results/type_action: if the action is a type then this holds the text string that was
+typed
+• results/yx_touch, results/yx_lift: the (y, x) coordinates for the touch and lift point
+of a dual point action
+• step_id: the example’s zero-indexed step number within the episode (i.e. if step_id is 2,
+then this is the third step of the episode)
+20
+
+
+ANDROIDWORLD: A Dynamic Benchmarking
+Environment for Autonomous Agents
+Christopher Rawles∗1, Sarah Clinckemaillie†2, Yifan Chang†2, Jonathan Waltz2, Gabrielle Lau2,
+Marybeth Fair2, Alice Li1, William Bishop1, Wei Li1, Folawiyo Campbell-Ajala1, Daniel Toyama1,
+Robert Berry1, Divya Tyamagundlu2, Timothy Lillicrap1, and Oriana Riva1
+1Google DeepMind
+2Google
+Abstract
+Autonomous agents that execute human tasks by controlling computers can en-
+hance human productivity and application accessibility. However, progress in
+this field will be driven by realistic and reproducible benchmarks. We present
+ANDROIDWORLD, a fully functional Android environment that provides reward
+signals for 116 programmatic tasks across 20 real-world Android apps. Unlike ex-
+isting interactive environments, which provide a static test set, ANDROIDWORLD
+dynamically constructs tasks that are parameterized and expressed in natural lan-
+guage in unlimited ways, thus enabling testing on a much larger and more realistic
+suite of tasks. Reward signals are derived from the computer’s system state, mak-
+ing them durable across task variations and extensible across different apps.
+To demonstrate ANDROIDWORLD’s benefits and mode of operation, we introduce
+a new computer control agent, M3A. M3A can complete 30.6% of ANDROID-
+WORLD’s tasks, leaving ample room for future work. Furthermore, we adapt a
+popular desktop web agent to work on Android, which we find to be less effective
+on mobile, suggesting future research is needed to achieve universal, cross-domain
+agents. Finally, we conduct a robustness analysis by testing M3A against a range
+of task variations on a representative subset of tasks, demonstrating that variations
+in task parameters can significantly alter a task’s complexity and, consequently, an
+agent’s performance, highlighting the importance of testing agents under diverse
+conditions. ANDROIDWORLD and the experiments in this paper are available at
+https://github.com/google-research/android_world.
+1
+Introduction
+Autonomous agents that interpret human natural language instructions and operate computing
+devices can provide enormous value by automating repetitive tasks, augmenting human intel-
+ligence, and accomplishing complex workflows.
+The enthusiasm for building such agents is
+evident by the growing number of computer control agent systems [45, 10, 78, 27, 25, 19]
+and code repositories [16, 1, 2, 63, 66].
+Yet, most existing approaches evaluate agents with
+proxy metrics, by comparing an agent’s trajectory to a previously collected human demonstra-
+tion [32, 5, 10, 45, 70, 76, 37, 74, 68]. This kind of measurement is not representative of real-world
+performance [45, 78] because it does not reflect that there are usually multiple correct paths to solve
+a task, environments may behave non-deterministically (e.g., the environment freezes), and agents
+*Lead contributor. Contact: crawles@google.com
+†Equal contribution.
+Preprint. Under review.
+arXiv:2405.14573v2  [cs.AI]  10 Jun 2024
+
+
+Android Emulator
++ UI tree
+or APIs
+  Apps
+OS
+State
+Agent
+116 Android & 92 
+MiniWob++ tasks
+…
+task
+goal
+TaskEval
+def goal
+def gen_random_params
+def initialize_task
+def is_successful
+def teardown
+AndroidWorld
+reward
+Enter 03/16/2014 
+as the date and hit 
+submit
+In Simple Calendar Pro, create a 
+calendar event on 
+{year}-{month}-{day} at {hour}h with 
+the title {title} and the description 
+{description}. The event should last 
+for {duration_mins} mins.
+Add a location marker 
+for {location} in the 
+OsmAnd maps app.
+What incomplete tasks 
+do I have still to do by 
+{date} in Tasks app?
+Figure 1: ANDROIDWORLD is an environment for building and testing autonomous agents.
+can dynamically learn from mistakes to correct their actions [50, 35, 31, 43]. Towards more accu-
+rate evaluation, emerging testing environments [71, 81, 27, 11, 29, 65] place agents in interactive
+environments and measure their task completion rates across a suite of tasks.
+Reward signals are quantitative metrics that indicate functional correctness of a task, i.e. is the stated
+goal achieved? For example, for the task “Send a text message to Jane confirming I’ll be there”, a
+positive reward indicates the relevant message has been sent. Yet, real-world environments (apps
+and websites), unlike simulations [54, 51] and games [42, 52, 60, 62, 53], do not naturally provide
+explicit reward signals. The internals of most apps and websites are hidden from developers mak-
+ing it difficult to program rewards. Additionally, such systems are seemingly infinitely expansive,
+spanning millions of continuously-changing apps and websites. All these factors make it hard to
+establish reliable and durable reward functions.
+One way to obtain reliable reward signals is to leverage human judgment [45, 78, 43, 26] to conduct
+one-off evaluations on a diverse suite of tasks; however, each evaluation run requires both significant
+time and costly manual review. LLM-based “judges” used to evaluate natural language generation
+models [8, 79, 36] are emerging as a solution for evaluating agents in dynamic real-world environ-
+ments [12, 39], and while showing promise also for computer control agents [43, 19] they remain
+imperfect evaluators. As a result, existing testing environments for computer control agents that
+provide automated reward signals are limited in their real-world diversity and scale. They cover
+mostly single-app tasks on a small set of domains (1–6 websites [71, 81, 27]) and evaluate agents on
+static test sets [65, 41], instead of across varied conditions and inputs which are found in real-world
+scenarios.
+To tackle these challenges, we introduce and release ANDROIDWORLD, a robust agent environ-
+ment for Android that offers realism and scalability for developing and evaluating computer control
+agents. ANDROIDWORLD is an open environment consisting of a fully functional Android OS, al-
+lowing access to millions of Android apps and the Web. Crucially, it provides a highly reproducible
+task suite for developing and evaluating computer control agents, consisting of 116 tasks across 20
+apps. Similarly to the popular MiniWoB++ [49] benchmark, each task is dynamically instantiated
+using randomly-generated parameters, challenging agents with millions of unique task goals and
+conditions. While MiniWob++ consists of simple, synthetic websites, ANDROIDWORLD leverages
+real-world Android applications. To ensure that reward signals are durable when using real applica-
+tions, ANDROIDWORLD’s key insight is to leverage the extensive and consistent state management
+capabilities of the Android operating system, using the same mechanisms that the apps themselves
+utilize. The dynamic nature of ANDROIDWORLD’s tasks is not only a test of adaptability for evalua-
+tion purposes, but it can also spawn new research on online learning algorithms for computer control
+agents.
+ANDROIDWORLD is a lightweight environment, requiring only 2 GB of memory and 8 GB of disk
+space, and is designed with convenience in mind. It connects agents to Android OS by leveraging the
+2
+
+
+Python library AndroidEnv [58] to connect to the freely available Android Emulator.1 ANDROID-
+WORLD is highly extensible, making it easy to add new tasks and even new benchmarks, which we
+demonstrate by integrating the MiniWoB++ [49, 33] benchmark.
+To demonstrate ANDROIDWORLD’s usefulness as a benchmark, we build and release a new multi-
+modal agent, M3A (Multimodal Autonomous Agent for Android), and establish state-of-the-art re-
+sults on ANDROIDWORLD. We analyze M3A’s performance using both multimodal and text-only
+input, and we observe that while multimodal perception can improve performance in some cases,
+it generally does not outperform the text-only approach. On ANDROIDWORLD, M3A achieves a
+30.6% success rate, which surpasses that of a web agent adapted for Android but remains signifi-
+cantly lower than the human success rate of 80.0%. In pursuit of building robust computer control
+agents, our study includes comprehensive tests under varied real-world conditions, demonstrating
+significant performance variations primarily driven by changes in intent parameters.
+We make the following contributions: (i) the creation of a new, highly diverse and realistic computer
+control agent environment; (ii) establishment of benchmark performance with a state-of-the-art mul-
+timodal agent, and (iii) a careful analysis demonstrating the need to evaluate agents across multiple
+test sets and conditions due to the inherent stochasticity in both models and environments.
+2
+Related Work
+Table 1 compares existing evaluation environments for autonomous agents.
+2.1
+Interactive evaluation environments
+Effective evaluation of autonomous agents requires environments that not only mimic real-world
+scenarios but also provide immediate reward signals upon successful task completion [45, 10, 3,
+46, 6]. MiniWoB++ [49, 35] offers a lightweight framework of small, synthetic HTML pages with
+parameterized tasks which allow for unlimited task variability. WebShop [71] provides a simulated
+e-commerce environment, whereas WebArena [81] and VisualWebArena [27] consist of simulated
+websites across up to four domains. WorkArena [11] consists of 29 tasks for enterprise software.
+OSWorld [65] provides an interface and programmatic rewards across nine apps for desktop OSes.
+GAIA [41] is a static dataset that tests an agent’s ability to interact with live web environments.
+MMInA [77] is a multihop and multimodal benchmark designed to evaluate agents for compositional
+Internet tasks. B-MoCA [29] is the only interactive testing environment that exists today for mobile.
+It supports 31 tasks whose success is determined by comparing an agent’s execution with logs from
+human demonstrations using simple regex expressions. Unlike MiniWoB++, these frameworks use
+a fixed set of evaluation tasks with static initial conditions and goals, limiting adaptability. As has
+been observed in other domains such as reinforcement learning [20, 44, 9], the current output of
+foundation models is stochastic and highly sensitive to their inputs [23, 38, 34, 47], motivating the
+need to test them under varying conditions.
+Reward signal construction is crucial when comparing interactive benchmarking environments.
+MiniWoB++ [49] dynamically constructs tasks, embedding rewards directly in custom HTML and
+JS code, a method specific to web-based tasks and less adaptable to other environments. WebArena
+[81], VisualWebArena [27] and MMInA [77] check trajectories for specific URLs and examine result
+pages for expected strings or images. Information retrieval tasks compare returned answers against
+a ground truth. WebShop [71] identifies specific products by matching their attributes against pre-
+defined gold attributes. B-MoCA [29] uses regular expressions to match log outputs. These types of
+reward are application specific and time dependent. OSWorld [65] scales better by inspecting device
+states or querying the cloud to compute rewards, thus offering robust functions adaptable to content
+and app updates, and shareable across multiple tasks. ANDROIDWORLD enhances OSWorld’s ap-
+proach by dynamically constructing the start states and varying the task goals in unlimited ways.
+Other studies leverage human evaluation [45, 78, 4] for tasks where automatic evaluation is not
+available. Lastly, emerging research [43, 19] explores the potential of multimodal models to gener-
+alize agent evaluations to new settings, though this area requires further research to achieve accuracy
+comparable to manually coded rewards.
+1The Android Emulator is packaged as part of Android Studio, which can be downloaded from
+https://developer.android.com/studio
+3
+
+
+Table 1: Comparison of different datasets and environments for benchmarking computer agents.
+Env?
+# of apps
+# task
+Avg # task
+Reward
+Platform
+or websites
+templates
+instances
+method
+GAIA
+✗
+n/a
+466
+1
+text-match
+None
+MIND2WEB
+✗
+137
+2350
+1
+None
+Desktop Web
+WEBLINX
+✗
+155
+2337
+1
+None
+Desktop Web
+PIXELHELP
+✗
+4
+187
+1
+None
+Android
+METAGUI
+✗
+6
+1125
+1
+None
+Android
+MOTIF
+✗
+125
+4707
+1
+None
+Android (Apps+Web)
+AITW
+✗
+357+
+30378
+1
+None
+Android (Apps+Web)
+OMNIACT
+✗
+60+
+9802
+1
+None
+Desktop (Apps+Web)
+MINIWOB++
+✓
+1
+114
+∞
+HTML/JS state
+Web (synthetic)
+WEBSHOP
+✓
+1
+12k
+1
+product attrs match
+Desktop Web
+WEBARENA
+✓
+6
+241
+3.3
+url/text-match
+Desktop Web
+VISUALWEBARENA
+✓
+4
+314
+2.9
+url/text/image-match
+Desktop Web
+WORKARENA
+✓
+1
+29
+622.4
+cloud state
+Desktop Web
+B-MOCA
+✓
+12
+31
+1.9
+regex
+Android (Apps+Web)
+MMINA
+✓
+14
+1050
+1
+text-match
+Desktop web
+OSWORLD
+✓
+9
+369
+1
+device/cloud state
+Desktop (Apps+Web)
+ANDROIDWORLD
+✓
+20
+116
+∞
+device state
+Android (Apps+Web)
+2.2
+Static datasets for automation
+Datasets derived from human interactions provide proxy metrics that correlate with real-world agent
+performance [32, 5, 10, 45]. On mobile platforms, AitW [45], PixelHelp [32], UGIF [59], and
+MoTIF [5] consist of demonstrations across Android apps and mobile websites, with screens often
+represented via accessibility trees. In contrast, desktop web environments typically utilize the DOM
+for representing website content, with Mind2Web [10], OmniAct [24] and others, across various
+desktop websites. Mobile-based datasets frequently involve more complex actions, such as scrolling,
+which are not as useful in DOM-based desktop interactions where the entire action space is readily
+accessible. Additionally, API-centric datasets like API-Bank [30], ToolTalk [13], and ToolBench
+[67] assess agents’ capabilities to manipulate computer systems via APIs.
+2.3
+Interactive agents
+Prior to today’s foundation models, traditional approaches to developing user interface-operating
+agents primarily used reinforcement learning and behavioral cloning to simulate interactions like
+mouse clicks and keyboard typing [32, 35, 17, 22]. More recent work tends to leverage off-the-
+shelf foundational models [55, 56, 57] with in-context learning (ICL) and fine-tuning applied to
+mobile [45, 21, 61, 68, 76, 4, 75], desktop web [78, 10, 81, 27, 7, 28], and desktop OS [64, 73, 65].
+Recent work explores agents that reflect on system state [50, 72, 40] by leveraging exploration, self-
+evaluation, and retry-capabilities enabling continual learning and adaptation [31, 70, 43, 64, 15].
+3
+ANDROIDWORLD
+3.1
+Android for autonomous agents
+Android is an ideal environment for developing autonomous agents. It is the most widely-used OS
+globally2 and is highly flexible for research, while providing an open world of the Web3 and over
+2M apps for agents to operate in. Using emulation, an Android environment is easy to deploy, does
+not require specialized hardware, and can be run on a laptop. Android Virtual Devices or emulator
+images are well suited for research as they are self-contained, easy to distribute, and configurable.
+Compared to desktop environments, mobile environments, like Android, pose unique research chal-
+lenges for computer control agents. On one hand, mobile UIs tend to be simpler than their desktop
+counterparts because of their smaller screen size. On the other hand, the action space on mobile
+2https://gs.statcounter.com/os-market-share
+3Mobile is the most popular platform for accessing the web;
+https://gs.statcounter.com/
+platform-market-share/desktop-mobile/worldwide/
+4
+
+
+(a)
+(b)
+(c)
+Figure 2: Annotators performed the tasks assigned to them, assigned a difficulty level (2a) and
+selected relevant category tags from a predefined list (2b). They also estimated the number of steps
+required to complete each task (2b), using the action space available to an agent.
+devices is more complicated and more actions can be required to complete tasks. Precise gestures
+are needed to fully operate the UI, such as when navigating a carousel widget, long-pressing on a
+widget, or performing multi-finger gestures to zoom in. Since it is an OS, Android is a fully open
+environment compared to web-browser-only environments. Android’s flexibility is also reflected in
+its action space; in addition to UI actions (click, scroll, type, etc.), Android provides function-calling
+APIs, such as sending a text message, for example, which allow computer control agents to utilize a
+broader action space.
+3.2
+The observation and action space
+ANDROIDWORLD provides an interface for agents to receive observations and execute actions on
+Android. It uses AndroidEnv [58] and the Android Device Bridge to facilitate interaction between
+Android and the agent. The observation space consists of a full-resolution screenshot and a UI tree
+representation developed for accessibility purposes. The action space is similar to that which humans
+use, consisting of gestures (i.e., tapping, long-press, and swiping), typing, and navigation buttons
+(i.e., go home and go back). In addition to these naturalistic actions, ANDROIDWORLD exposes a
+limited set of function calling APIs, such as send text message, to help agents accomplish goals.
+App. B provides more details on the observation format and action space.
+3.3
+Reproducible and parameterized tasks
+ANDROIDWORLD consists of a suite of 116 tasks, spread across 20 diverse applications (see App. C
+for more details). These tasks simulate practical, everyday activities, including note-taking, schedul-
+ing appointments, communicating through messaging, and interacting with system utilities. The
+suite consists of open-source apps and built-in Android system apps, such as Settings and Contacts.
+As rated by humans, the tasks vary in difficulty, duration, and categories (Figure 2).
+To achieve a high degree of reproducibility in real-world scenarios, ANDROIDWORLD precisely
+controls the OS and app states in several ways. The Android OS is fixed, consisting of a Pixel 6
+emulator running Android 13 with a fixed time on the date October 15th, 2023. All applications
+in ANDROIDWORLD are fully-functional, open-source apps, besides the OS-level apps included
+with Android. For the open-source apps, ANDROIDWORLD maintains a constant environment by
+installing a fixed version of each app, acquired from F-Droid. 4. OS-level apps’ versions are de-
+termined by the Android OS, which is also fixed. ANDROIDWORLD only utilizes apps that do not
+require login/authentication, can function offline, and store their application data on device.
+In addition to managing the states of apps and operating systems, ANDROIDWORLD precisely de-
+fines and controls the state during task execution. Each task has its own unique setup, reward de-
+termination logic, and teardown procedures (see App. C.2 and C.3 for more details), ensuring a
+fully reproducible suite of tasks. This careful state management not only ensures reproducibility
+but also allows for easy customization of tasks through parametrization. Task parameters, initial-
+ized randomly at the start of each task based on a controlled random seed, dictate the initial state
+and influence reward outcomes. Similarly to MiniWoB++ [49, 33], ANDROIDWORLD consists of
+a practically infinite set of varying initial conditions and success criteria. This approach provides
+4https://f-droid.org/
+5
+
+
+Table 2: Selected tasks with code describing validation logic.
+Task
+Validation code
+In Simple Calendar Pro, create a calendar event on
+{event.year}-{event.month}-{event.day} at {event.hour}h with
+the title ‘{event.title}’ and the description ‘{event.description}’.
+The event should last for {event.duration} mins.
+event exists(event)
+Send a text message to {phone number} with message: {message}.
+message exists(phone number,
+message, messaging db)
+Create a new drawing in Simple Draw Pro. Name it {file name}. Save it
+in the Pictures folder.
+file exists(file path)
+Create a timer with {hours} hours, {minutes} minutes, and {seconds}
+seconds. Do not start the timer.
+timer displays(time,
+ui hierarchy)
+Create a new note in Markor named {file name} with the following text:
+{text}. Share the entire content of the note with the phone number
+{number} via SMS.
+(file exists(file name,
+content=text) +
+message exists(phone number,
+message)) / 2.0
+Turn on WiFi and open {app name}.
+(wifi enabled() +
+app launched(app name))/2.0
+more granular analyses of agents’ adaptability — a vital attribute for real-world deployment. Be-
+yond testing agent robustness, the dynamic construction of tasks supports the use of online learning
+methodologies, particularly reinforcement learning [49, 33, 22, 17]. It also simplifies the generation
+of distinct train/test datasets, facilitating supervised learning experiments [22, 48, 14].
+3.4
+Durable rewards from system state
+ANDROIDWORLD provides reward signals by managing application state using the Android De-
+bug Bridge (adb). With the adb tool ANDROIDWORLD has complete access to system resources
+including the file system, application databases, and system settings. Determining reward signals
+from system state has several benefits. It is highly accurate because an application’s state can be
+quickly inspected and manipulated using the same mechanisms that the app itself utilizes. Using
+the underlying system state is much more durable than matching superficial UI changes. Addition-
+ally, it facilitates easy re-use across disparate apps, which tend to use the same underlying caching
+mechanisms. For instance, logic for checking existence of a specific file is used across many un-
+related applications, including those for file management, note-taking, and media playback. For
+applications leveraging SQLite databases, a common pattern, ANDROIDWORLD implements evalu-
+ators that verify the existence of new and deleted rows. Table 2 shows examples of the validators in
+ANDROIDWORLD. For more examples see Table 5.
+3.5
+Task composability
+In addition to facilitating accurate and reusable evaluations, inferring a task’s success from system
+state makes it easy to create composite tasks by combining together existing tasks. For example,
+the task “Create a calendar event with details and text the details to contact” could be created by
+combining together two existing tasks for creating a calendar event and for sending a text message,
+which is possible because each task initialization and success detection logic is hermetic. Composite
+tasks tend to be more challenging because of their complexity, although they provide partial rewards
+based on completion of sub tasks, to help facilitate hill climbing. The last two rows of Table 2 show
+the validation code for composite tasks.
+3.6
+Integrating MiniWob++
+To demonstrate ANDROIDWORLD’s extensibility, we implement MiniWoB++ in the ANDROID-
+WORLD framework and term it MobileMiniWoB++. Each MobileMiniWoB++ task is instantiated
+using the standard ANDROIDWORLD interface, inheriting from TaskEval base class, and contains
+methods like initialize state and is successful. Since MiniWoB++ leverages JavaScript for
+task configuration and success detection, we built a WebView app to communicate between Python
+6
+
+
+and the app. For instance, the is successful method of each task retrieves the reward value from
+the WebView app via an Android intent.
+MobileMiniWoB++ introduces modifications in both observations and actions compared to the orig-
+inal benchmark. For example, HTML5 <input> elements are rendered with native Android UI wid-
+gets like the date-picker (see Figure 4), enhancing the realism of the tasks. MobileMiniWoB++ uses
+the same observation space as the Android tasks (accessibility tree and screenshot). Notably, it does
+not include the DOM as in the original implementation. The action space from ANDROIDWORLD
+is retained. We manually review and test each task to ensure they are solvable. We excluded twelve
+of the original tasks that failed to render correctly on Android, presented compatibility issues with
+the touch interface, or required near real-time interaction, which poses challenges on emulators.
+Overall, ANDROIDWORLD supports 92 MiniWoB++ tasks. See App. B.3 for more details.
+4
+ANDROIDWORLD as a computer-control benchmark
+To test ANDROIDWORLD’s applicability for autonomous agents, we develop and test a state-of-the-
+art agent and its variants across all 20 apps and 116 tasks, as well as on MobileMiniWoB++.
+4.1
+Computer control agents
+4.1.1
+M3A
+We develop a multimodal autonomous agent for Android, M3A. It is zero-shot, integrating ReAct-
+style [72] and Reflexion-style [50] prompting to consume user instructions and screen content, rea-
+son, take actions, and update its decision-making based on the outcome of its actions.
+In the first stage, M3A generates an action, represented in JSON, and reasoning for that action.
+To generate this output, the agent is provided with a list of available action types, guidelines for
+operating the phone, and a list of UI elements derived from the Android accessibility tree’s leaf
+nodes. The agent receives the current screenshot and a Set-of-Mark (SoM) [69] annotated screen-
+shot, which includes bounding boxes with numeric labels on the top-left corner for each UI element
+(see screenshot in Figure 5). The agent attempts to execute outputted action by referencing the spe-
+cific mark (if applicable). In addition to the multimodal agent, we have developed a text-only variant
+that consumes the screen represented using the accessibility tree and selects the relevant action in
+JSON format.
+After executing an action, M3A reflects on its effect by observing any state changes that may have
+occurred. During this stage, the agent is provided with available action types, general operating
+guidelines, the actual action taken, and its reasoning, as well as before-and-after UI states, repre-
+sented by UI element representations and screenshots with SoM annotations. We request the agent
+to provide a concise summary of this step, including the intended action, success or failure, potential
+reasons for failure, and recommendations for subsequent actions. This summary will serve as the
+action history and be used for future action selection. See App. D for more details on the agent.
+4.1.2
+SeeAct baseline
+We implement a baseline agent based on SeeAct [78], which was originally designed for GPT-4V
+for web navigation. Specifically, we implement the best-performing variant, SeeActchoice, which
+grounds actions via textual choices. We implement SeeAct for the Android environment to evaluate
+how an existing model that performs well on web tasks [10] can be adapted and applied to Android.
+To accommodate the Android environment, we adapt SeeAct in several ways. Firstly, we augment
+the action space from the original SeeAct implementation to support actions needed for mobile,
+including scroll, long press, navigate home and back, and open app actions. Secondly, in lieu of the
+DOM, which is not available for Android apps, we utilize the accessibility tree to construct candidate
+UI actions. Due to the lack of the DOM representation, we do not use the bespoke ranker model
+from the original implementation. However we observe that after applying a filtering heuristic to
+remove non-interactable elements, the majority of screens contains less than 50 candidate elements.
+See App. D.5 for more details on the implementation.
+7
+
+
+Table 3: Success Rates (SR) on ANDROIDWORLD and MobileMiniWoB++.
+Agent
+Input
+Base model
+SRANDROIDWORLD
+SRMMiniWoB++
+Human
+screen
+N/A
+80.0
+100.0
+M3A
+a11y tree
+GPT-4 Turbo
+30.6
+59.7
+M3A
+a11y tree
+Gemini 1.5 Pro
+19.4
+57.4
+M3A
+SoM (screen + a11y tree)
+GPT-4 Turbo
+25.4
+67.7
+M3A
+SoM (screen + a11y tree)
+Gemini 1.5 Pro
+22.8
+40.3
+SeeAct [78]
+SoM (screen + a11y tree)
+GPT-4 Turbo
+15.5
+66.1
+4.2
+Experiment results
+We evaluate M3A and SeeAct on ANDROIDWORLD and MobileMiniWoB++. We set the seed
+to 30 and provide a task-specific step budget. We use Gemini 1.5 Pro and GPT-4 Turbo as base
+models. For MobileMiniWoB++, we evaluate on a subset of 62 tasks, consistent with recent studies
+[80, 25, 18].
+Table 3 presents the success rates (SR) for the agents and human performance on both task suites.
+Although the agents have far from human performance, they demonstrate out-of-the-box capabilities
+in operating mobile UIs, exhibiting basic understanding and control capabilities of UIs. They can
+perform a variety of actions, including long-press, scrolling to search for information, and revising
+their plan if actions do not work out. The best performance is obtained for M3A when using GPT-4.
+On ANDROIDWORLD the SoM-based variant is less performant, while on MobileMiniWoB++ it
+performs best. A similar result was obtained in recent work in the context of computer agents for
+desktop applications [65]. We posit SoM grounding is less beneficial for ANDROIDWORLD as the
+accessibility tree for Android apps is generally better populated than for mobile websites and covers
+the required action space, reducing the value of SoM.
+4.3
+Analysis
+Agents have difficulty understanding mobile UIs, often failing to detect visual cues that are essential
+for task completion (see Figure 6a). Additionally, agents struggle with certain UI patterns and
+affordances, and when they make reasoning mistakes (see Figure 6b), they often lack the capability
+to explore and adapt as humans do (see Figure 6c). Moreover, agents sometimes struggle with tasks
+that simply involve confirming system states, e.g., confirming the WiFi is turned on, suggesting
+challenges in both task and screen understanding.
+The agents struggle with grounding, particularly when executing precise interactions, such as manip-
+ulating text (see Figure 7) or operating sliders, and they are often unable to recover from mistyping
+errors. In addition, for tasks that demand memory, such as performing transcriptions across apps,
+multiplying numbers, or scrolling, the agents struggle as they are unable to “remember” content.
+SeeAct performs less effectively than M3A on the ANDROIDWORLD task suite and similarly on
+MobileMiniWoB++, reflecting its optimization for web rather than mobile environments. It strug-
+gles with mobile-specific actions like long-presses and swipes, and often fails to select appropriate
+actions due to not incorporating screen elements during action generation. Memory-intensive tasks
+are particularly challenging, as SeeAct only caches actions without remembering outcomes, leading
+to repetitive, ineffective behaviors such as endless scrolling. This lack of quick error recovery often
+results in task termination once maximum steps are reached.
+Finally, we note that large foundation models significantly increase latency, taking three times longer
+than humans on average to complete tasks. On average, M3A takes 3.9 minutes to complete a task,
+with the text-only version taking 2.5 minutes.
+4.4
+Agent robustness under random seeds
+We evaluate agent robustness under two conditions: (1) identical tasks with the same parameters and
+(2) tasks with different parameter combinations, which change the initial state and task definition.
+Due to computational constraints, we perform this analysis on a representative subset of ANDROID-
+8
+
+
+WORLD tasks (listed in D.4). We use the strongest agent, M3A using the accessibility tree and
+GPT-4, for this analysis. Our results are shown in Figure 3.
+Figure 3: Success rate variation across tasks due to the
+parametrization built into ANDROIDWORLD.
+Using a
+fixed seed, the agent appears completely incapable of solv-
+ing some tasks due to “bad luck” with the seed. In con-
+trast, under different task parameterizations, we observe
+the agent is capable of solving the tasks fairly often. This
+contrast between the two groups is reflected by higher vari-
+ance for the different seed group (orange) vs. the same seed
+group (blue). Significant differences, with p-value < 0.05,
+are indicated by “*”.
+In the baseline experiment with a con-
+stant seed, the agent fails the add and
+edit tasks, and rarely solves the two
+delete tasks.
+For the add and edit
+tasks, the agent struggles with UI op-
+erations, while for the delete tasks,
+it often gets confused before the step
+budget is consumed. Surprisingly, the
+agent’s performance varies even with
+a fixed seed, suggesting the model’s
+non-determinism affects agent reliabil-
+ity.
+Agent performance varies much more
+using different seeds, with statisti-
+cally significant differences for the add
+expense and edit note tasks.
+The
+high intra-task variation indicates the
+model’s sensitivity to the seed and its
+parameters, stemming from a lack of
+robustness from the underlying model.
+Research in RL environments ([20,
+44, 9]) has noted similar sensitivity to
+seeds. Consistent with these studies, we observe agent performance is best represented by the mean
+across random seeds. Notably, the observation of non-zero rewards under some seeds points to
+potential enhancements through RL-like mechanisms in future work.
+Overall, this experiment underscores the importance of extensively testing agents under varied task
+parameters to ensure they can handle real-world variability, a capability that ANDROIDWORLD
+supports effectively.
+5
+Limitations
+ANDROIDWORLD currently supports tasks from mostly open-source Android apps with at least
+1 million downloads and built-in Android system apps. While testing on more trending apps is
+desirable, we found open-source apps to be equally realistic and, in some cases, more challenging
+than apps with larger user bases. Trending apps tend to have UIs which are heavily optimized for
+smooth user experience, offering more UI functionality and shortcuts. Testing on less-optimized
+UIs makes the agent’s task harder. In an example failure we show in Figure 6c, the agent needed
+to delete all notes in a list and failed by repeatedly searching for a “delete-all” button. Instead, an
+agent with stronger reasoning capabilities would have probably searched once for that functionality,
+realized it was not available, and deleted the notes one by one.
+6
+Conclusion
+We introduced ANDROIDWORLD, a realistic and robust agent environment for Android that enables
+the development and evaluation of autonomous agents across a wide range of tasks and apps. AN-
+DROIDWORLD provides a reproducible task suite consisting of 116 tasks across 20 apps, with each
+task dynamically generated using random parameters to challenge agents with millions of unique
+goals. By releasing ANDROIDWORLD and establishing benchmark performance with M3A, we aim
+to accelerate research and development in this area, ultimately leading to the creation of computer
+control agents capable of operating effectively in real-world environments. Further, the dynamic
+nature of ANDROIDWORLD opens up new research opportunities for online learning algorithms in
+computer control agents.
+9
+
+
+References
+[1] AgentGPT, 2024. https://agentgpt.reworkd.ai/.
+[2] WebLlama, 2024. https://webllama.github.io/.
+[3] Josh Abramson, Arun Ahuja, Federico Carnevale, Petko Georgiev, Alex Goldin, Alden Hung,
+Jessica Landon, Timothy Lillicrap, Alistair Muldal, Blake Richards, Adam Santoro, Tamara
+von Glehn, Greg Wayne, Nathaniel Wong, and Chen Yan. Evaluating multimodal interactive
+agents, 2022.
+[4] William E Bishop, Alice Li, Christopher Rawles, and Oriana Riva. Latent state estimation
+helps ui agents to reason, 2024.
+[5] Andrea Burns, Deniz Arsan, Sanjna Agrawal, Ranjitha Kumar, Kate Saenko, and Bryan A.
+Plummer. Mobile app tasks with iterative feedback (motif): Addressing task feasibility in
+interactive visual environments. CoRR, abs/2104.08560, 2021.
+[6] Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde de Oliveira Pinto,
+Jared Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, Alex Ray, Raul
+Puri, Gretchen Krueger, Michael Petrov, Heidy Khlaaf, Girish Sastry, Pamela Mishkin, Brooke
+Chan, Scott Gray, Nick Ryder, Mikhail Pavlov, Alethea Power, Lukasz Kaiser, Mohammad
+Bavarian, Clemens Winter, Philippe Tillet, Felipe Petroski Such, Dave Cummings, Matthias
+Plappert, Fotios Chantzis, Elizabeth Barnes, Ariel Herbert-Voss, William Hebgen Guss, Alex
+Nichol, Alex Paino, Nikolas Tezak, Jie Tang, Igor Babuschkin, Suchir Balaji, Shantanu Jain,
+William Saunders, Christopher Hesse, Andrew N Carr, Jan Leike, Josh Achiam, Vedant Misra,
+Evan Morikawa, Alec Radford, Matthew Knight, Miles Brundage, Mira Murati, Katie Mayer,
+Peter Welinder, Bob McGrew, Dario Amodei, Sam McCandlish, Ilya Sutskever, and Wojciech
+Zaremba. Evaluating large language models trained on code. July 2021.
+[7] Kanzhi Cheng, Qiushi Sun, Yougang Chu, Fangzhi Xu, Yantao Li, Jianbing Zhang, and Zhiy-
+ong Wu. Seeclick: Harnessing gui grounding for advanced visual gui agents. arXiv preprint
+arXiv:2401.10935, 2024.
+[8] Wei-Lin Chiang, Lianmin Zheng, Ying Sheng, Anastasios Nikolas Angelopoulos, Tianle Li,
+Dacheng Li, Hao Zhang, Banghua Zhu, Michael Jordan, Joseph E Gonzalez, et al. Chat-
+bot arena: An open platform for evaluating llms by human preference.
+arXiv preprint
+arXiv:2403.04132, 2024.
+[9] C´
+edric Colas, Olivier Sigaud, and Pierre-Yves Oudeyer. How many random seeds? statistical
+power analysis in deep reinforcement learning experiments. arXiv preprint arXiv:1806.08295,
+2018.
+[10] Xiang Deng, Yu Gu, Boyuan Zheng, Shijie Chen, Samuel Stevens, Boshi Wang, Huan Sun,
+and Yu Su. Mind2Web: Towards a generalist agent for the web, 2023.
+[11] Alexandre Drouin, Maxime Gasse, Massimo Caccia, Issam H Laradji, Manuel Del Verme,
+Tom Marty, L´
+eo Boisvert, Megh Thakkar, Quentin Cappart, David Vazquez, et al. Workarena:
+How capable are web agents at solving common knowledge work tasks?
+arXiv preprint
+arXiv:2403.07718, 2024.
+[12] Yuqing Du, Ksenia Konyushkova, Misha Denil, Akhil Raju, Jessica Landon, Felix Hill, Nando
+de Freitas, and Serkan Cabi. Vision-Language models as success detectors. March 2023.
+[13] Nicholas Farn and Richard Shin. Tooltalk: Evaluating tool-usage in a conversational setting.
+arXiv preprint arXiv:2311.10775, 2023.
+[14] Hiroki Furuta, Kuang-Huei Lee, Ofir Nachum, Yutaka Matsuo, Aleksandra Faust, Shixi-
+ang Shane Gu, and Izzeddin Gur.
+Multimodal web navigation with Instruction-Finetuned
+foundation models. May 2023.
+[15] Difei Gao, Lei Ji, Zechen Bai, Mingyu Ouyang, Peiran Li, Dongxing Mao, Qinchen Wu,
+Weichen Zhang, Peiyi Wang, Xiangwu Guo, et al. Assistgui: Task-oriented desktop graphical
+user interface automation. arXiv preprint arXiv:2312.13108, 2023.
+[16] Significant Gravitas. AutoGPT. https://agpt.co, 2023. https://agpt.co.
+[17] Izzeddin Gur, Natasha Jaques, Yingjie Miao, Jongwook Choi, Manoj Tiwari, Honglak Lee,
+and Aleksandra Faust.
+Environment generation for zero-shot compositional reinforcement
+learning, 2022.
+10
+
+
+[18] Izzeddin Gur, Ofir Nachum, Yingjie Miao, Mustafa Safdari, Austin Huang, Aakanksha Chowd-
+hery, Sharan Narang, Noah Fiedel, and Aleksandra Faust. Understanding html with large lan-
+guage models. arXiv preprint arXiv:2210.03945, 2022.
+[19] Hongliang He, Wenlin Yao, Kaixin Ma, Wenhao Yu, Yong Dai, Hongming Zhang, Zhenzhong
+Lan, and Dong Yu. Webvoyager: Building an end-to-end web agent with large multimodal
+models. arXiv preprint arXiv:2401.13919, 2024.
+[20] Peter Henderson, Riashat Islam, Philip Bachman, Joelle Pineau, Doina Precup, and David
+Meger. Deep reinforcement learning that matters. In Proceedings of the AAAI conference on
+artificial intelligence, volume 32, 2018.
+[21] Wenyi Hong, Weihan Wang, Qingsong Lv, Jiazheng Xu, Wenmeng Yu, Junhui Ji, Yan Wang,
+Zihan Wang, Yuxiao Dong, Ming Ding, et al. Cogagent: A visual language model for gui
+agents. arXiv preprint arXiv:2312.08914, 2023.
+[22] Peter C Humphreys, David Raposo, Tobias Pohlen, Gregory Thornton, Rachita Chhaparia,
+Alistair Muldal, Josh Abramson, Petko Georgiev, Adam Santoro, and Timothy Lillicrap. A
+data-driven approach for learning to control computers.
+In Kamalika Chaudhuri, Stefanie
+Jegelka, Le Song, Csaba Szepesvari, Gang Niu, and Sivan Sabato, editors, Proceedings of the
+39th International Conference on Machine Learning, volume 162 of Proceedings of Machine
+Learning Research, pages 9466–9482. PMLR, 17–23 Jul 2022.
+[23] Jean Kaddour, Joshua Harris, Maximilian Mozes, Herbie Bradley, Roberta Raileanu, and
+Robert McHardy.
+Challenges and applications of large language models.
+arXiv preprint
+arXiv:2307.10169, 2023.
+[24] Raghav Kapoor, Yash Parag Butala, Melisa Russak, Jing Yu Koh, Kiran Kamble, Waseem Al-
+shikh, and Ruslan Salakhutdinov. Omniact: A dataset and benchmark for enabling multimodal
+generalist autonomous agents for desktop and web. arXiv preprint arXiv:2402.17553, 2024.
+[25] Geunwoo Kim, Pierre Baldi, and Stephen McAleer. Language models can solve computer
+tasks. Advances in Neural Information Processing Systems, 36, 2024.
+[26] Megan Kinniment, Lucas Jun Koba Sato, Haoxing Du, Brian Goodrich, Max Hasin, Lawrence
+Chan, Luke Harold Miles, Tao R Lin, Hjalmar Wijk, Joel Burget, et al. Evaluating language-
+model agents on realistic autonomous tasks. arXiv preprint arXiv:2312.11671, 2023.
+[27] Jing Yu Koh, Robert Lo, Lawrence Jang, Vikram Duvvur, Ming Chong Lim, Po-Yu Huang,
+Graham Neubig, Shuyan Zhou, Ruslan Salakhutdinov, and Daniel Fried. Visualwebarena:
+Evaluating multimodal agents on realistic visual web tasks. arXiv preprint arXiv:2401.13649,
+2024.
+[28] Hanyu Lai, Xiao Liu, Iat Long Iong, Shuntian Yao, Yuxuan Chen, Pengbo Shen, Hao Yu,
+Hanchen Zhang, Xiaohan Zhang, Yuxiao Dong, et al. Autowebglm: Bootstrap and reinforce a
+large language model-based web navigating agent. arXiv preprint arXiv:2404.03648, 2024.
+[29] Juyong Lee, Taywon Min, Minyong An, Changyeon Kim, and Kimin Lee. Benchmarking mo-
+bile device control agents across diverse configurations. In ICLR 2024 Workshop on Generative
+Models for Decision Making, 2024.
+[30] Minghao Li, Yingxiu Zhao, Bowen Yu, Feifan Song, Hangyu Li, Haiyang Yu, Zhoujun Li, Fei
+Huang, and Yongbin Li. API-Bank: A comprehensive benchmark for Tool-Augmented LLMs.
+April 2023.
+[31] Tao Li, Gang Li, Zhiwei Deng, Bryan Wang, and Yang Li.
+A Zero-Shot language agent
+for computer control with structured reflection. In Houda Bouamor, Juan Pino, and Kalika
+Bali, editors, Findings of the Association for Computational Linguistics: EMNLP 2023, pages
+11261–11274, Singapore, December 2023. Association for Computational Linguistics.
+[32] Yang Li, Jiacong He, Xin Zhou, Yuan Zhang, and Jason Baldridge. Mapping natural language
+instructions to mobile UI action sequences. In Proc. of the 58th Annual Meeting of the Asso-
+ciation for Computational Linguistics, ACL 2020, Online, July 5-10, 2020, pages 8198–8210.
+Association for Computational Linguistics, 2020.
+[33] Evan Zheran Liu, Kelvin Guu, Panupong Pasupat, and Percy Liang. Reinforcement learning
+on web interfaces using workflow-guided exploration. In 6th International Conference on
+Learning Representations (ICLR ’18), 2018.
+11
+
+
+[34] Pengfei Liu, Weizhe Yuan, Jinlan Fu, Zhengbao Jiang, Hiroaki Hayashi, and Graham Neubig.
+Pre-train, prompt, and predict: A systematic survey of prompting methods in natural language
+processing. ACM Computing Surveys, 55(9):1–35, 2023.
+[35] Thomas F. Liu, Mark Craft, Jason Situ, Ersin Yumer, Radomir Mech, and Ranjitha Kumar.
+Learning design semantics for mobile apps. In Proc. of the 31st Annual ACM Symposium
+on User Interface Software and Technology, UIST ’18, page 569–579, New York, NY, USA,
+2018. Association for Computing Machinery.
+[36] Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu. G-Eval:
+NLG evaluation using GPT-4 with better human alignment, 2023.
+[37] Xing Han L`
+u, Zdenˇ
+ek Kasner, and Siva Reddy. WebLINX: Real-World website navigation
+with Multi-Turn dialogue. February 2024.
+[38] Yao Lu, Max Bartolo, Alastair Moore, Sebastian Riedel, and Pontus Stenetorp. Fantastically
+ordered prompts and where to find them: Overcoming few-shot prompt order sensitivity. arXiv
+preprint arXiv:2104.08786, 2021.
+[39] Yecheng Jason Ma, William Liang, Guanzhi Wang, De-An Huang, Osbert Bastani, Dinesh
+Jayaraman, Yuke Zhu, Linxi Fan, and Anima Anandkumar.
+Eureka: Human-level reward
+design via coding large language models, 2023.
+[40] Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe,
+Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, et al. Self-refine: Iterative refine-
+ment with self-feedback. Advances in Neural Information Processing Systems, 36, 2024.
+[41] Gr´
+egoire Mialon, Cl´
+ementine Fourrier, Craig Swift, Thomas Wolf, Yann LeCun, and Thomas
+Scialom. GAIA: a benchmark for general AI assistants. November 2023.
+[42] Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis Antonoglou, Daan
+Wierstra, and Martin Riedmiller. Playing atari with deep reinforcement learning, 2013.
+[43] Jiayi Pan, Yichi Zhang, Nicholas Tomlin, Yifei Zhou, Sergey Levine, and Alane Suhr. Au-
+tonomous evaluation and refinement of digital agents. April 2024.
+[44] Antonin Raffin, Ashley Hill, Adam Gleave, Anssi Kanervisto, Maximilian Ernestus, and Noah
+Dormann. Stable-baselines3: Reliable reinforcement learning implementations. Journal of
+Machine Learning Research, 22(268):1–8, 2021.
+[45] Christopher Rawles, Alice Li, Daniel Rodriguez, Oriana Riva, and Timothy Lillicrap. Android
+in the wild: A large-scale dataset for android device control. arXiv preprint arXiv:2307.10088,
+2023.
+[46] Yangjun Ruan, Honghua Dong, Andrew Wang, Silviu Pitis, Yongchao Zhou, Jimmy Ba, Yann
+Dubois, Chris J Maddison, and Tatsunori Hashimoto. Identifying the risks of LM agents with
+an LM-Emulated sandbox. September 2023.
+[47] Melanie Sclar, Yejin Choi, Yulia Tsvetkov, and Alane Suhr. Quantifying language models’
+sensitivity to spurious features in prompt design or: How i learned to start worrying about
+prompt formatting. arXiv preprint arXiv:2310.11324, 2023.
+[48] Peter Shaw, Mandar Joshi, James Cohan, Jonathan Berant, Panupong Pasupat, Hexiang Hu,
+Urvashi Khandelwal, Kenton Lee, and Kristina Toutanova. From pixels to UI actions: Learning
+to follow instructions via graphical user interfaces. May 2023.
+[49] Tianlin Shi, Andrej Karpathy, Linxi Fan, Jonathan Hernandez, and Percy Liang. World of bits:
+An open-domain platform for web-based agents. In Doina Precup and Yee Whye Teh, editors,
+Proc. of the 34th International Conference on Machine Learning, volume 70 of Proceedings
+of Machine Learning Research, pages 3135–3144. PMLR, 06–11 Aug 2017.
+[50] Noah Shinn, Beck Labash, and Ashwin Gopinath. Reflexion: an autonomous agent with dy-
+namic memory and self-reflection. arXiv preprint arXiv:2303.11366, 2023.
+[51] Mohit Shridhar, Jesse Thomason, Daniel Gordon, Yonatan Bisk, Winson Han, Roozbeh Mot-
+taghi, Luke Zettlemoyer, and Dieter Fox. Alfred: A benchmark for interpreting grounded
+instructions for everyday tasks, 2020.
+[52] David Silver, Aja Huang, Chris J. Maddison, Arthur Guez, Laurent Sifre, George van den
+Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda Panneershelvam, Marc Lanctot,
+Sander Dieleman, Dominik Grewe, John Nham, Nal Kalchbrenner, Ilya Sutskever, Timothy
+12
+
+
+Lillicrap, Madeleine Leach, Koray Kavukcuoglu, Thore Graepel, and Demis Hassabis. Master-
+ing the Game of Go with Deep Neural Networks and Tree Search. Nature, 529(7587):484–489,
+January 2016.
+[53] Weihao Tan, Ziluo Ding, Wentao Zhang, Boyu Li, Bohan Zhou, Junpeng Yue, Haochong Xia,
+Jiechuan Jiang, Longtao Zheng, Xinrun Xu, Yifei Bi, Pengjie Gu, Xinrun Wang, B¨
+orje F.
+Karlsson, Bo An, and Zongqing Lu. Towards General Computer Control: A Multimodal Agent
+For Red Dead Redemption II As A Case Study. arXiv preprint arXiv:2403.03186, 2024.
+[54] Yuval Tassa, Yotam Doron, Alistair Muldal, Tom Erez, Yazhe Li, Diego de Las Casas, David
+Budden, Abbas Abdolmaleki, Josh Merel, Andrew Lefrancq, Timothy Lillicrap, and Martin
+Riedmiller. DeepMind control suite. January 2018.
+[55] Gemini Team. Gemini: A family of highly capable multimodal models, 2023.
+[56] OpenAI Team. GPT-4 technical report, 2023.
+[57] Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei,
+Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open
+foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288, 2023.
+[58] Daniel Toyama, Philippe Hamel, Anita Gergely, Gheorghe Comanici, Amelia Glaese, Zafar-
+ali Ahmed, Tyler Jackson, Shibl Mourad, and Doina Precup. Androidenv: A reinforcement
+learning platform for android, 2021.
+[59] Sagar Gubbi Venkatesh, Partha Talukdar, and Srini Narayanan. Ugif: Ui grounded instruction
+following, 2022.
+[60] Oriol Vinyals, Igor Babuschkin, Wojciech M Czarnecki, Micha¨
+el Mathieu, Andrew Dudzik,
+Junyoung Chung, David H Choi, Richard Powell, Timo Ewalds, Petko Georgiev, Junhyuk Oh,
+Dan Horgan, Manuel Kroiss, Ivo Danihelka, Aja Huang, Laurent Sifre, Trevor Cai, John P
+Agapiou, Max Jaderberg, Alexander S Vezhnevets, R´
+emi Leblond, Tobias Pohlen, Valentin
+Dalibard, David Budden, Yury Sulsky, James Molloy, Tom L Paine, Caglar Gulcehre, Ziyu
+Wang, Tobias Pfaff, Yuhuai Wu, Roman Ring, Dani Yogatama, Dario W¨
+unsch, Katrina McK-
+inney, Oliver Smith, Tom Schaul, Timothy Lillicrap, Koray Kavukcuoglu, Demis Hassabis,
+Chris Apps, and David Silver. Grandmaster level in StarCraft II using multi-agent reinforce-
+ment learning. Nature, 575(7782):350–354, November 2019.
+[61] Bryan Wang, Gang Li, and Yang Li. Enabling conversational interaction with mobile ui using
+large language models. In Proc. of the 2023 CHI Conference on Human Factors in Computing
+Systems, CHI ’23. Association for Computing Machinery, 2023.
+[62] Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu, Linxi
+Fan, and Anima Anandkumar. Voyager: An open-ended embodied agent with large language
+models. arXiv preprint arXiv:2305.16291, 2023.
+[63] Qingyun Wu, Gagan Bansal, Jieyu Zhang, Yiran Wu, Beibin Li, Erkang Zhu, Li Jiang, Xiaoyun
+Zhang, Shaokun Zhang, Jiale Liu, Ahmed Hassan Awadallah, Ryen W White, Doug Burger,
+and Chi Wang. Autogen: Enabling next-gen llm applications via multi-agent conversation
+framework. 2023.
+[64] Zhiyong Wu, Chengcheng Han, Zichen Ding, Zhenmin Weng, Zhoumianze Liu, Shunyu Yao,
+Tao Yu, and Lingpeng Kong.
+Os-copilot: Towards generalist computer agents with self-
+improvement. arXiv preprint arXiv:2402.07456, 2024.
+[65] Tianbao Xie, Danyang Zhang, Jixuan Chen, Xiaochuan Li, Siheng Zhao, Ruisheng Cao,
+Toh Jing Hua, Zhoujun Cheng, Dongchan Shin, Fangyu Lei, et al. Osworld: Benchmark-
+ing multimodal agents for open-ended tasks in real computer environments. arXiv preprint
+arXiv:2404.07972, 2024.
+[66] Tianbao Xie, Fan Zhou, Zhoujun Cheng, Peng Shi, Luoxuan Weng, Yitao Liu, Toh Jing Hua,
+Junning Zhao, Qian Liu, Che Liu, Leo Z. Liu, Yiheng Xu, Hongjin Su, Dongchan Shin, Caim-
+ing Xiong, and Tao Yu. Openagents: An open platform for language agents in the wild, 2023.
+[67] Qiantong Xu, Fenglu Hong, Bo Li, Changran Hu, Zhengyu Chen, and Jian Zhang. On the tool
+manipulation capability of open-source large language models. May 2023.
+[68] An Yan, Zhengyuan Yang, Wanrong Zhu, Kevin Lin, Linjie Li, Jianfeng Wang, Jianwei Yang,
+Yiwu Zhong, Julian McAuley, Jianfeng Gao, Zicheng Liu, and Lijuan Wang.
+GPT-4V in
+13
+
+
+wonderland: Large multimodal models for Zero-Shot smartphone GUI navigation. November
+2023.
+[69] Jianwei Yang, Hao Zhang, Feng Li, Xueyan Zou, Chunyuan Li, and Jianfeng Gao.
+Set-
+of-mark prompting unleashes extraordinary visual grounding in gpt-4v.
+arXiv preprint
+arXiv:2310.11441, 2023.
+[70] Zhao Yang, Jiaxuan Liu, Yucheng Han, Xin Chen, Zebiao Huang, Bin Fu, and Gang Yu.
+Appagent: Multimodal agents as smartphone users. arXiv preprint arXiv:2312.13771, 2023.
+[71] Shunyu Yao, Howard Chen, John Yang, and Karthik Narasimhan. Webshop: Towards scalable
+real-world web interaction with grounded language agents, 2023.
+[72] Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan
+Cao. ReAct: Synergizing reasoning and acting in language models. October 2022.
+[73] Chaoyun Zhang, Liqun Li, Shilin He, Xu Zhang, Bo Qiao, Si Qin, Minghua Ma, Yu Kang,
+Qingwei Lin, Saravan Rajmohan, et al. Ufo: A ui-focused agent for windows os interaction.
+arXiv preprint arXiv:2402.07939, 2024.
+[74] Jiwen Zhang, Jihao Wu, Yihua Teng, Minghui Liao, Nuo Xu, Xiao Xiao, Zhongyu Wei, and
+Duyu Tang.
+Android in the zoo: Chain-of-action-thought for gui agents.
+arXiv preprint
+arXiv:2403.02713, 2024.
+[75] Zhuosheng Zhang, Yao Yao, Aston Zhang, Xiangru Tang, Xinbei Ma, Zhiwei He, Yim-
+ing Wang, Mark Gerstein, Rui Wang, Gongshen Liu, et al. Igniting language intelligence:
+The hitchhiker’s guide from chain-of-thought reasoning to language agents. arXiv preprint
+arXiv:2311.11797, 2023.
+[76] Zhuosheng Zhang and Aston Zhang. You only look at screens: Multimodal chain-of-action
+agents, 2023.
+[77] Ziniu Zhang, Shulin Tian, Liangyu Chen, and Ziwei Liu. MMInA: Benchmarking multihop
+multimodal internet agents. arXiv preprint arXiv:2404.09992, 2024.
+[78] Boyuan Zheng, Boyu Gou, Jihyung Kil, Huan Sun, and Yu Su. Gpt-4v(ision) is a generalist
+web agent, if grounded. arXiv preprint arXiv:2401.01614, 2024.
+[79] Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao
+Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P Xing, Hao Zhang, Joseph E Gonzalez, and
+Ion Stoica. Judging LLM-as-a-Judge with MT-Bench and chatbot arena. June 2023.
+[80] Longtao Zheng, Rundong Wang, Xinrun Wang, and Bo An. Synapse: Trajectory-as-exemplar
+prompting with memory for computer control, 2024.
+[81] Shuyan Zhou, Frank F. Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar, Xianyi Cheng,
+Tianyue Ou, Yonatan Bisk, Daniel Fried, Uri Alon, and Graham Neubig. Webarena: A realistic
+web environment for building autonomous agents, 2023.
+14
+
+
+Appendix A
+Ethical considerations
+Malicious use
+There is a risk that malicious actors could engineer agents to bypass security mea-
+sures like CAPTCHAs or engage in activities like spamming. Additionally, they could alter prompts
+or screen outputs to further harmful objectives.
+Societal impact
+Automation agents may transform societal norms, disrupt employment, and mod-
+ify human behavior. While they can enhance efficiency, this improvement could pose risks if ex-
+ploited by malevolent forces.
+Appendix B
+ANDROIDWORLD environment
+B.1
+Observation Space
+In ANDROIDWORLD, the Android screen is represented using a State class, which includes the
+following attributes:
+• Pixels: An RGB array representing the current screen capture of the device. The screenshot
+resolution is 2400 × 1080 × 3.
+• Accessibility tree: A raw representation of the accessibility tree.5 This UI tree provides
+a detailed snapshot of all UI elements currently displayed on the screen. We utilize an
+accessibility forwarding app from AndroidEnv [58], which leverages gRPC to transmit the
+accessibility tree data efficiently to the device.
+• UI elements: A list of processed UI elements extracted from the children of the accessi-
+bility tree. Each UIElement contains attributes such as text, content description, bounding
+boxes, and various state flags (e.g., clickable, scrollable, focused).
+Since Android observations and actions are asynchronous, changes resulting from actions may take
+some time to manifest. Therefore, instead of using an RL-based interface, which assumes a tight
+coupling between actions and observations, we design an interface for the agent tailored for asyn-
+chronous interaction. This interface implements a get state method responsible for capturing the
+current state of the environment, typically after executing an action. This method includes an op-
+tional wait to stabilize flag, which, when enabled, employs heuristics to ensure the UI elements
+are not in a transient state, thus providing a stable and accurate snapshot of the environment.
+B.2
+Action space
+Actions are stored using a Python dataclass (shown below) and are executed using adb. Each action
+type corresponds to specific ADB commands that interact with the Android environment. For click-
+based actions (click, double tap, long press), we use ADB to simulate touch events at specified
+coordinates on the screen. For text input actions, we first focus on the text input field and then use
+ADB to type the desired text and press the enter button. Navigation actions (home, back) involve
+sending corresponding key events to the device. Scrolling and swiping actions, which are essentially
+inverse operations, are both implemented by generating and issuing swipe commands through ADB
+to simulate these gestures. To launch applications, we use ADB to start the desired app.
+1
+ACTION_TYPES = {
+2
+"CLICK": "click",
+3
+"DOUBLE_TAP": "double_tap",
+4
+"SCROLL": "scroll",
+5
+"SWIPE": "swipe",
+6
+"INPUT_TEXT": "input _text",
+7
+" NAVIGATE_HOME ": " navigate_home ",
+8
+" NAVIGATE_BACK ": " navigate_back ",
+9
+" KEYBOARD_ENTER ": " keyboard_enter ",
+10
+"OPEN_APP": "open_app",
+11
+"STATUS": "status",
+12
+"WAIT": "wait",
+13
+"LONG_PRESS": "long_press",
+14
+"ANSWER": "answer",
+15
+"UNKNOWN": "unknown"
+5Represented using all current windows; https://developer.android.com/reference/android/
+view/accessibility/AccessibilityWindowInfo
+15
+
+
+16
+}
+17
+18
+@dataclasses .dataclass ()
+19
+class
+JSONAction:
+20
+""" Represents a parsed
+JSON
+action.
+21
+22
+# Example
+23
+result_json = {’ action_type ’: ’click ’, ’x ’: %d, ’y ’: %d}
+24
+action = JSONAction (** result_json )
+25
+26
+Attributes:
+27
+action_type: The
+action
+type.
+28
+index: The
+index to click , if action is a click. Either an index or a <x, y>
+29
+should be
+provided. See x, y attributes
+below.
+30
+x: The x position
+to click , if the
+action is a click.
+31
+y: The y position
+to click , if the
+action is a click.
+32
+text: The
+text to type , if action is type.
+33
+direction: The
+direction
+to scroll , if action is scroll.
+34
+goal_status: If the
+status is a ’status ’ type , indicates
+the
+status of the
+goal.
+35
+app_name: The app
+name to launch , if the
+action
+type is ’open_app ’.
+36
+"""
+37
+action_type: str
+38
+index: int = None
+39
+x: int = None
+40
+y: int = None
+41
+text: str = None
+42
+direction: str = None
+43
+goal_status: str = None
+44
+app_name: str = None
+Listing 1: Pseudo-code representation of the action space.
+B.3
+MobileMiniWoB++
+Authors manually completed all tasks in MiniWoB++ to verify solvability on a mobile interface.
+MobileMiniWoB++ differs from MiniWoB++ due to the touch-based interface, which required dif-
+ferent approaches for certain tasks. For instance, highlighting text from the highlight-text tasks
+involves using Android’s long-press and cursor-moving functionalities. HTML5 <input> elements
+are natively rendered with native Android UI widgets like the date-picker (see Figure 4).
+Our implementation of MiniWoB++ contains 92 tasks in total.
+We exclude the following
+tasks: chase-circle (requires near-realtime movement, unachievable by humans on emulators),
+moving-items (too hard to click in emulator), drag-cube (drags will scroll the screen, moving
+the task out of view), drag-items-grid (elements are not interactable on Android), drag-items
+(elements are not interactable on Android), drag-shapes (drags will scroll the screen, moving the
+task out of view), drag-sort-numbers (elements are not interactable on Android), text-editor
+(cannot underline everything, weird glitch), number-checkboxes (not correctly rendered: only
+three columns), use-slider-2 (slider implementation not working), use-spinner (slider imple-
+mentation not working), and click-menu (the menu responsiveness breaks and the task does not
+behave as intended).
+Appendix C
+ANDROIDWORLD Benchmark Details
+C.1
+App selection
+Our selection of apps (summarized in Table 4) was guided by three main factors: use case, popular-
+ity, and the need for consistency and reproducibility.
+Use case and categories
+We analyzed popular app categories in app stores, focusing on produc-
+tivity, communication, and multimedia. Selected apps had to meet criteria such as not requiring a
+login and storing data locally on the device. Additionally, we considered apps from categories that
+the authors commonly used, ensuring the selection was representative of real-world Android usage.
+Popularity
+We used download statistics from the Google Play Store to gauge app popularity, se-
+lecting apps with over 1 million downloads. Most of the selected apps exceeded this threshold. Less
+popular apps were also included if they featured common UI patterns and affordances, ensuring
+they are indicative of typical Android app usage. For instance, Simple Calendar Pro, though less
+downloaded, has a UI comparable to the widely-used Google Calendar app.
+16
+
+
+Figure 4: Native Android UI widget rendering for HTML5 <input> element.
+Table 4: List of ANDROIDWORLD apps and number of tasks for each one.
+App name
+Description
+# tasks
+Simple Calendar Pro
+A calendar app for creating, deleting, and managing events and appoint-
+ments.
+17
+Settings
+The Android system settings app for managing device settings such as
+Bluetooth, Wi-Fi, and brightness.
+15
+Markor
+A note-taking app for creating, editing, deleting, and managing notes
+and folders.
+14
+Broccoli - Recipe App
+A recipe management app for adding, deleting, and organizing recipes.
+13
+Pro Expense
+An expense tracking app for adding, deleting, and managing expenses.
+9
+Simple SMS Messenger
+An SMS app for sending, replying to, and resending text messages.
+7
+OpenTracks
+A sport tracking app for recording and analyzing activities, durations,
+and distances.
+6
+Tasks
+A task management app for tracking tasks, due dates, and priorities.
+6
+Clock
+An app with stopwatch and timer functionality.
+4
+Joplin
+A note-taking app.
+4
+Retro Music
+A music player app.
+4
+Simple Gallery Pro
+An app for viewing images.
+4
+Camera
+An app for taking photos and videos.
+3
+Chrome
+A web browser app.
+3
+Contacts
+An app for managing contact information.
+3
+OsmAnd
+A maps and navigation app with support for adding location markers,
+favorites, and saving tracks.
+3
+VLC
+A media player app for playing media files.
+3
+Audio Recorder
+An app for recording and saving audio clips.
+2
+Files
+A file manager app for the Android filesystem, used for deleting and
+moving files.
+2
+Simple Draw Pro
+A drawing app for creating and saving drawings.
+1
+Consistency and reproducibility
+All apps were sourced from F-Droid, an open-source Android
+app repository. This allowed us to manage app versions precisely by selecting and distributing
+specific APKs. We use the newest version of each app at the time of download.
+C.2
+Task classification and generation
+We categorize tasks into two types: those with side-effects and those without. Tasks with side-effects
+are those that modify the internal state of the device or applications, such as turning off Wi-Fi or
+creating a calendar event. These tasks are implemented as distinct Python classes, each with its own
+parameter generation, initialization, evaluation, and teardown methods.
+17
+
+
+Below we show an example of the task evaluation for a SendSms task, which involves sending and
+validating a text message. The pseudocode illustrates the task initialization, success check, and
+parameter generation methods. Each task has its own random parameter generation method and
+success logic.
+1
+class
+SendSms(TaskEval):
+2
+""" Task
+sending
+and
+validating a text
+message
+has
+been
+sent.
+3
+4
+It checks
+the SMS
+telephony
+database , which is
+located
+at:
+5
+/data/data/com.android.providers.telephony/databases/mmssms.db."""
+6
+7
+template = (
+8
+"Send a text
+message
+using
+Simple
+SMS
+Messenger
+to "
+9
+"{number} with
+message: {message}"
+10
+)
+11
+12
+def
+initialize_task (self , env: interface.AsyncEnv) -> None:
+13
+""" Sets up the
+initial
+state of the
+task."""
+14
+super (). initialize_task (env)
+15
+clear_sms_database (env.base_env)
+16
+17
+def
+is_successful (self , env: interface.AsyncEnv) -> float:
+18
+""" Checks if the SMS was
+sent
+successfully ."""
+19
+super (). is_successful (env)
+20
+messages = get_messages (env.base_env)
+21
+return
+check_message_exists (
+22
+phone_number =self.params["number"],
+23
+body=self.params["message"],
+24
+)
+25
+26
+def
+teardown(self , env: interface.AsyncEnv) -> None:
+27
+""" Clears
+the SMS
+database."""
+28
+super ().teardown(env)
+29
+clear_sms_database (env.base_env)
+30
+31
+@classmethod
+32
+def
+generate_random_params (cls) -> dict[str , Any ]:
+33
+number = generate_random_number ()
+34
+message = generate_random_message ()
+35
+return {
+36
+"number": number ,
+37
+"message": message ,
+38
+}
+C.3
+Information retrieval tasks
+Tasks without side-effects are Information Retrieval tasks, requiring the agent to answer a question
+based on the device or app’s current state. For these tasks, instead of a Python class, we create a
+protobuf structure to specify the prompt, parameter values, and initialization and validation logic.
+We decided to use a structured data format with the belief that it would allow us to define new
+information retrieval tasks by simply adding new entries, making it easier to scale up the number of
+tasks without needing to write and maintain Python classes for each one.
+Initialization is defined per app, including only the state relevant to the prompt’s answer and exclu-
+sion conditions for generating random states. This ensures that no random state contains information
+that could alter the expected answer. The initial state and prompt are parameterized using random
+values from the specified task parameters. For validation, we define the expected answer format
+within the prompt and use a few supported functions (“count”, “sum”, “identity”) to generate the
+answer from the initial state.
+Once an app and its specific logic are programmed, new tasks can be generated using an LLM to
+generate the task’s protobuf. The process is not automatic and requires human review. Common
+issues with LLM-generated tasks include missing fields, hallucinated fields, incompatible parame-
+ter generation, insufficient parameter usage, and non-specific task prompts. We observed that the
+complexity of the proto structure correlates with an increase in generated task issues. Despite these
+challenges, we found that editing LLM-generated protobufs can be more efficient than writing a
+complete task from scratch.
+Below we show a simplified version of the task definition for the SimpleCalendarEventsOnDate
+task which involves checking which events are on a certain date. It specifies the relevant event, the
+exclusion conditions for any noisy event, how to determine success, and possible parameter values
+to be chosen at random that will be used to fill out the task definition.
+1
+tasks {
+2
+name: " SimpleCalendarEventsOnDate "
+18
+
+
+3
+prompt: "What
+events do I have {date} in Simple
+Calendar
+Pro? Answer
+with
+the
+titles
+only. If there
+are
+multiple
+titles , format
+your
+answer as a comma
+separated
+list."
+4
+complexity: 1
+5
+relevant_state {
+6
+//
+Defines
+information
+for the
+goal
+events.
+7
+state: {
+8
+calendar {
+9
+events {
+10
+start_date: "{date}"
+11
+start_time: "{time}"
+12
+duration: "{duration}"
+13
+title: "{title}"
+14
+}
+15
+}
+16
+}
+17
+// Non -goal
+events.
+18
+exclusion_conditions {
+19
+field: "start_date"
+20
+operation: EQUAL_TO
+21
+value: "{date}"
+22
+}
+23
+}
+24
+success_criteria {
+25
+expectations {
+26
+field_transformation {
+27
+operation: IDENTITY
+28
+field_name: "title"
+29
+}
+30
+match_type: STRING_MATCH
+31
+}
+32
+}
+33
+34
+task_params {
+35
+name: "time"
+36
+possible_values : "11:00 am"
+37
+// ...
+38
+}
+39
+40
+task_params {
+41
+name: "date"
+42
+possible_values : "October
+15 2023"
+43
+//...
+44
+}
+45
+task_params {
+46
+name: "duration"
+47
+possible_values : "30 m"
+48
+// ...
+49
+}
+50
+task_params {
+51
+name: "title"
+52
+possible_values : "Data
+Dive"
+53
+// ...
+54
+}
+55
+}
+C.4
+Humans for task analysis
+During development, we recruited six software engineers from Google to analyze task difficulty, du-
+ration, and category. Each human was assigned an equal portion of tasks and tasked with identifying
+bugs during this annotation phase. This process resulted in the discovery and resolution of over 30
+bugs.
+To evaluate human performance, we enlisted two software engineers to complete the tasks using an
+Android emulator. Participants were provided with task descriptions and attempted to achieve the
+goals based on their interpretations. Each participant had one attempt per task. The majority of errors
+stemmed from misinterpretations or minor errors, such as entering an incorrect file extension. Other
+errors occurred when participants encountered unfamiliar user interfaces, impeding their ability to
+solve the tasks on their first attempt.
+In both exercises, we informed participants about the intended use of the collected data. Participants
+were not required to enter any personal information in the tested tasks.
+C.5
+Task examples
+Table 5 lists some additional examples of tasks and highlights which task attributes can be parame-
+terized in unlimited ways.
+19
+
+
+Table 5: Examples of ANDROIDWORLD tasks. We list the task nickname, the task template indi-
+cating which task attributes can be parameterized, the initialization logic that is executed before the
+task starts and pseudo code describing the success evaluation.
+Task nickname
+Task template
+Initialization logic
+Success evaluation code
+VlcCreatePlaylist
+Create
+a
+playlist
+in
+VLC,
+titled
+“{playlist name}”
+with
+the
+following
+files, in order: {files}
+Create new mpeg files:
+files + “noise” files that
+should
+not
+be
+added.
+Add them to VLC videos
+folder.
+execute sql(vlc query) ==
+files
+RecipeAddMultiple
+RecipesFromImage
+Add the recipes from recipes.jpg in Sim-
+ple Gallery Pro to the recipe app.
+Write a receipt file with
+recipes to Simple Gallery.
+sql rows exist(expected recipes)
+MarkorEditNote
+Edit
+{file name}
+in
+Markor.
+{file operation}.
+Generate file with start-
+ing content, along with
+“noise”
+files
+not
+rele-
+vant
+to
+goal.
+Note:
+file operation can be
+to add a footer, header, or
+update note content.
+file exists(file name,
+content=expected content)
+ExpenseAddSingle
+Add the following expenses into pro ex-
+pense: {expense csv}
+Add to the app’s SQLite
+database
+the
+expense
+that should be deleted,
+along with “noise” ex-
+penses that should not be
+deleted.
+sql rows exist(expense obj)
+SimpleCalendarDelete
+EventsOnRelativeDay
+In Simple Calendar Pro, delete all events
+scheduled for this {day of week}.
+add to the app’s SQLite
+database calendar events
+on specified day, along
+with “noise” events that
+should not be deleted.
+!sql rows exist(expected events)
+FilesDeleteFile
+Delete the file {file name} from the An-
+droid filesystem located in the {subfolder}
+folder within the sdk gphone x86 64 stor-
+age area.
+Generate specified file,
+along
+with
+“noise”
+files that should not be
+deleted.
+!file exists(file name)
+SportsTrackerActivities
+CountForWeek
+How many {category} activities did I do
+this week in the OpenTracks app? Express
+your answer as a single integer.
+add to the app’s SQLite
+database activities for the
+specified category, along
+with “noise” activities.
+int(agent response) ==
+expected count
+Appendix D
+ANDROIDWORLD agent details
+D.1
+M3A observations
+ANDROIDWORLD consumes the raw screen pixels, the screen shot with Set-of-Mark (SoM) [69]
+annotations, and a list of UI elements on screen.
+1
+Here is a list of
+descriptions
+for
+some UI
+elements
+on the
+current
+screen:
+2
+3
+UIelement0: UIElement(text="VLC", content_description =None , class_name="android.widget.EditText",
+4
+bbox_pixels= BoundingBox (x_min =98, x_max =886 ,
+y_min =146 ,
+y_max =311) , ...)
+5
+UIelement1: UIElement(text=None , content_description ="Clear
+search
+box", class_name="android.widget.
+ImageButton ",
+6
+bbox_pixels= BoundingBox (x_min =886 ,
+x_max =1023 ,
+y_min =160 ,
+y_max =297) , ...)
+7
+UIelement2: UIElement(text="15:11", content_description ="15:11", class_name="android.widget.TextView",
+8
+bbox_pixels= BoundingBox (x_min =50, x_max =148 ,
+y_min =1, y_max =128) , ...)
+9
+...
+More
+elements
+listed
+...
+10
+11
+...
+Guidelines
+on action
+selection
+emitted
+...
+12
+13
+Now
+output an action
+from
+the
+above
+list in the
+correct
+JSON
+format , following
+the
+reason
+why you do
+that. Your
+answer
+should
+look
+like:
+14
+15
+Reason: ...
+16
+Action: {" action_type ":...}
+Listing 2: The prompt format pertaining to screen representation with UI elements.
+D.2
+M3A actions
+For the SoM prompting, the screen is annotated based on the UI elements extracted from the acces-
+sibility tree, which form the agent’s action space. Figure 5 shows one example.
+20
+
+
+Figure 5: Set-of-marks overlaid on an Android screen.
+D.3
+Error analysis
+We analyze M3A errors based on broader categories we observe during evaluation.
+Perceptual errors
+Perceptual errors are caused when the model fails to recognize crucial elements
+on the screen necessary for task completion.
+For the task below, the model does not recognize that the “All-day” checkbox is currently not
+checked (see Figure 6a):
+In Simple Calendar Pro, create a recurring calendar event titled ’Review session
+for Budget Planning’ starting on 2023-10-15 at 14h. The event recurs weekly,
+forever, and lasts for 60 minutes each occurrence. The event description should
+be ’We will understand software updates. Remember to confirm attendance.’
+Reasoning errors
+Reasoning errors occur when the model misinterprets the task requirements or
+the current state, leading to incorrect actions.
+For example, in the task below, the model mistakenly believes the note name has already been
+entered, so it types the note text into the “Name” field and cannot recover from this error (see
+Figure 6b):
+Create a new note in Markor named ipsum mNcKd36pDq.txt with the following
+text: ...
+Here is the agent’s reasoning trace:
+The user wants to create a new note with a specific name and text. The name of
+the note has already been entered, so all that needs to be done is to enter the text
+and click on the OK button.
+Missing knowledge errors
+Missing knowledge errors occur when the model lacks the necessary
+understanding of the application’s UI to complete a task efficiently.
+For example, in the task below, the agent does not know how to delete all files at once. It looks for
+an option to do that instead of deleting each file one by one (see Figure 6c):
+21
+
+
+(a) Perceptual error.
+Red square
+highlights issue.
+(b) Reasoning error.
+The agent’s
+next action is to start entering the
+note’s contents, which is incorrect
+because it needs to enter the note’s
+name first.
+(c) Missing knowledge error.
+To
+delete all notes, the agent mistak-
+enly looks for an option to delete all
+the notes at once, rather than trying
+to do it note-by-note.
+Figure 6: Screens illustrating perceptual, reasoning and missing knowledge errors.
+Delete all files in the current directory.
+Grounding errors
+Grounding errors occur when the model fails to correctly interact with the UI
+elements based on their spatial or contextual positioning.
+For the task below, the agent needs to update the Markor note by prepending text to the existing
+text. Figure 7 illustrates the errors the agent makes. It clicks the entire text field area, highlighted
+in green, which automatically places the cursor after the current text, resulting in the new text being
+appended after the current content.
+Update
+the
+Markor
+note
+‘2023 08 10 neat wolf.txt‘
+by
+adding
+the
+fol-
+lowing text,
+along with a new blank line before the existing content:
+”ETBM2jAP6vXqhbpUsfVm”, and rename it to ‘sure ocean uRnI.txt‘.
+Then, in the next screen, the text has been entered after the existing content, and the agent clicks the
+save button.
+D.4
+Agent robustness experiments
+We ran the agent on the following tasks (the nicknames shown in the figures in parentheses):
+• MarkorEditNote (EditNote)
+• ExpenseAddSingle (AddExpense)
+• SimpleCalendarDeleteEventsOnRelativeDay (DeleteEvent)
+22
+
+
+(a) Error on initial click.
+(b) Error with text entered and saving.
+Figure 7: Screens illustrating grounding errors.
+• FilesDeleteFile (DeleteFile)
+• SportsTrackerActivitiesCountForWeek (CountActivities)
+More details about these tasks can be found in Table 5.
+D.5
+SeeAct details
+We modify the SeeAct prompt [78] to reflect that the environment is Android by inputting elements
+from the accessibility tree and supporting additional actions (e.g., scrolling). Below we include the
+updated prompt. We annotate the system, user, and assistant roles that are each provided to the
+OpenAI API.
+1
+2
+> Role: SYSTEM
+3
+Imagine
+that
+you are
+imitating
+humans
+operating
+an
+Android
+device
+for a task
+step by step. At each
+stage , you can see the
+Android
+screen
+like
+humans by a screenshot
+and
+know
+the
+previous
+actions
+before
+the
+current
+step
+decided
+by
+yourself
+through
+recorded
+history. You
+need to decide on the
+first
+following
+action to take. You can tap on an element , long -press an element , swipe , input
+text , open an app , or use the
+keyboard
+enter , home , or back
+key. (For
+your
+understanding , they
+are
+like ‘adb
+shell
+input tap ’, ‘adb
+shell
+input
+swipe ’, ‘adb
+shell
+input text ’, ‘adb
+shell am start
+-n’, and ‘adb
+shell
+input
+keyevent ’). One
+next
+step
+means
+one
+operation
+within
+these
+actions.
+Unlike
+humans , for
+typing (e.g., in text areas , text
+boxes), you
+should
+try
+directly
+typing
+the
+input or
+selecting
+the choice , bypassing
+the
+need
+for an
+initial
+click. You
+should
+not
+attempt
+to
+create
+accounts , log in or do the
+final
+submission. Terminate
+when
+you
+deem
+the
+task
+complete
+or
+if it
+requires
+potentially
+harmful
+actions.
+4
+5
+> Role: USER
+6
+You are
+asked to
+complete
+the
+following
+task: <GOAL >
+7
+8
+Previous
+Actions:
+9
+<PREVIOUS
+ACTIONS >
+10
+11
+The
+screenshot
+below
+shows
+the
+Android
+screen
+you see. Follow
+the
+following
+guidance
+to think
+step by
+step
+before
+outlining
+the
+next
+action
+step at the
+current
+stage:
+12
+13
+(Current
+Screen
+Identification )
+14
+Firstly , think
+about
+what
+the
+current
+screen is.
+15
+16
+(Previous
+Action
+Analysis)
+17
+Secondly , combined
+with
+the
+screenshot , analyze
+each
+step of the
+previous
+action
+history
+and
+their
+intention
+one by one. Particularly , pay
+more
+attention
+to the
+last step , which
+may be more
+related
+to what
+you
+should do now as the
+next
+step. Specifically , if the
+last
+action
+involved a INPUT
+23
+
+
+TEXT , always
+evaluate
+whether
+it
+necessitates a confirmation
+step , because
+typically a single
+INPUT
+TEXT
+action
+does
+not
+make
+effect. (often , simply
+pressing
+’Enter ’, assuming
+the
+default
+element
+involved
+in the
+last
+action , unless
+other
+clear
+elements
+are
+present
+for
+operation).
+18
+19
+(Screenshot
+Details
+Analysis)
+20
+Closely
+examine
+the
+screenshot
+to check
+the
+status of every
+part of the
+screen to
+understand
+what
+you
+can
+operate
+with
+and
+what
+has
+been
+set or
+completed. You
+should
+closely
+examine
+the
+screenshot
+details
+to see
+what
+steps
+have
+been
+completed
+by
+previous
+actions
+even
+though
+you are
+given
+the
+textual
+previous
+actions. Because
+the
+textual
+history
+may not
+clearly
+and
+sufficiently
+record
+some
+effects
+of
+previous
+actions , you
+should
+closely
+evaluate
+the
+status of every
+part of the
+screen
+to
+understand
+what
+you
+have
+done.
+21
+22
+(Next
+Action
+Based on
+Android
+screen
+and
+Analysis)
+23
+Then , based on your
+analysis , in
+conjunction
+with
+human
+phone
+operation
+habits
+and the
+logic of app
+design , decide on the
+following
+action. And
+clearly
+outline
+which
+element
+on the
+Android
+screen
+users
+will
+operate
+with as the
+first
+next
+target
+element , its
+detailed
+location , and the
+corresponding
+operation.
+24
+25
+To be successful , it is
+important
+to follow
+the
+following
+rules:
+26
+1. You
+should
+only
+issue a valid
+action
+given
+the
+current
+observation.
+27
+2. You
+should
+only
+issue
+one
+action at a time
+28
+3. For
+handling
+the
+select
+dropdown
+elements
+on a screen , it ’s not
+necessary
+for you to
+provide
+completely
+accurate
+options
+right
+now. The
+full
+list of
+options
+for
+these
+elements
+will be
+supplied
+later.
+29
+30
+> Role: ASSISTANT
+31
+<AGENT
+RESPONSE
+TO ABOVE >
+32
+33
+> Role: USER
+34
+(Reiteration)
+35
+First , reiterate
+your
+next
+target
+element , its
+detailed
+location , and the
+corresponding
+operation.
+36
+37
+(Multichoice
+Question)
+38
+Below is a multi -choice
+question , where
+the
+choices
+are
+elements
+on the
+screen. All
+elements
+are
+arranged
+in the
+order
+based on their
+height on the screen , from
+top to bottom (and
+from
+left to
+right). This
+arrangement
+can be used to locate
+them. From
+the
+screenshot , find
+out
+where
+and
+what
+each
+one is on the screen , taking
+into
+account
+both
+their
+text
+content
+and
+details. Then ,
+determine
+whether
+one
+matches
+your
+target
+element. Please
+examine
+the
+choices
+one by one. Choose
+the
+matching
+one. If
+multiple
+options
+match
+your
+answer , choose
+the
+most
+likely
+one by re -
+examining
+the
+screenshot , the choices , and
+your
+further
+reasoning. If you
+would
+like to
+perform a
+swipe
+action , you can
+optionally
+select
+the
+choice
+where
+you
+will
+swipe.
+39
+40
+A. "Home" icon
+41
+B. "Phone" icon
+42
+C. "Messages" icon
+43
+D. "Chrome" icon
+44
+E. "Search" icon
+45
+...
+46
+If none of these
+elements
+match
+your
+target
+element , please
+select Z. None of the
+other
+options
+match
+the
+correct
+element.
+47
+48
+(Final
+Answer)
+49
+Finally , conclude
+your
+answer
+using
+the
+format
+below. Ensure
+your
+answer is
+strictly
+adhering
+to the
+format
+provided
+below. Please do not
+leave
+any
+explanation
+in your
+answers
+of the
+final
+standardized
+format part , and
+this
+final
+part
+should be clear
+and
+certain. The
+element
+choice ,
+action , and
+value
+should be in three
+separate
+lines.
+50
+51
+Format:
+52
+53
+ELEMENT: The
+uppercase
+letter of your
+choice. (No need
+for
+TERMINATE , KEYBOARD
+ENTER , WAIT , ANSWER ,
+OPEN APP , NAVIGATE
+HOME , NAVIGATE
+BACK; and
+optional
+for
+SWIPE .)
+54
+55
+ACTION: Choose an action
+from {CLICK , INPUT TEXT , LONG PRESS , NAVIGATE
+BACK , TERMINATE , KEYBOARD
+ENTER ,
+SWIPE , WAIT , ANSWER , OPEN APP , NAVIGATE
+HOME }.
+56
+57
+VALUE: Provide
+additional
+input
+based on ACTION.
+58
+59
+The
+VALUE
+means:
+60
+If ACTION == INPUT TEXT , specify
+the
+text to be typed.
+61
+If ACTION == SWIPE , specify
+the
+direction: up , down , left , right.
+62
+If ACTION == OPEN APP , provide
+the
+name of the app to be opened.
+63
+If ACTION == ANSWER , specify
+the
+text of your
+answer to
+respond
+directly
+to a question
+or
+request
+for
+information .
+64
+For CLICK , LONG PRESS , KEYBOARD
+ENTER , NAVIGATE
+HOME , NAVIGATE
+BACK , WAIT , and
+TERMINATE , write "None ".
+24

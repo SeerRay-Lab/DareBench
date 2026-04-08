@@ -1,0 +1,4 @@
+password\s*=\s*.+
+api_key\s*=\s*.+
+secret\s*=\s*.+
+BEGIN (RSA|DSA|EC) PRIVATE KEY

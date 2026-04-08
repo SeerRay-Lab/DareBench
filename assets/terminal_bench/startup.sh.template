@@ -1,0 +1,8 @@
+#!/bin/bash
+# QEMU startup script template
+# TODO: Complete the qemu-system-x86_64 command
+qemu-system-x86_64 \
+    -m 512M \
+    -hda IMAGE \
+    -netdev user,id=net0,hostfwd=tcp::PORT-:PORT \
+    -device e1000,netdev=net0

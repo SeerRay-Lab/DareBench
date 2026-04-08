@@ -1,0 +1,61 @@
+{
+  "task_id": "toolbench_g3_001",
+  "query": "Find the most popular Italian restaurant near the Eiffel Tower, get its menu, and convert the prices from EUR to USD.",
+  "available_tools": [
+    {
+      "name": "place_search",
+      "description": "Search for places near a location",
+      "endpoint": "GET /v1/places/search",
+      "parameters": {
+        "query": "string",
+        "location": "string",
+        "sort_by": "string"
+      }
+    },
+    {
+      "name": "restaurant_menu",
+      "description": "Get menu for a restaurant",
+      "endpoint": "GET /v1/restaurants/{id}/menu",
+      "parameters": {
+        "restaurant_id": "string"
+      }
+    },
+    {
+      "name": "currency_exchange",
+      "description": "Convert currency amounts",
+      "endpoint": "GET /v1/exchange-rate",
+      "parameters": {
+        "from_currency": "string",
+        "to_currency": "string",
+        "amount": "number"
+      }
+    }
+  ],
+  "expected_chain": [
+    {
+      "step": 1,
+      "tool": "place_search",
+      "params": {
+        "query": "Italian restaurant",
+        "location": "Eiffel Tower, Paris",
+        "sort_by": "popularity"
+      }
+    },
+    {
+      "step": 2,
+      "tool": "restaurant_menu",
+      "params": {
+        "restaurant_id": "<from step 1>"
+      }
+    },
+    {
+      "step": 3,
+      "tool": "currency_exchange",
+      "params": {
+        "from_currency": "EUR",
+        "to_currency": "USD",
+        "amount": "<from step 2>"
+      }
+    }
+  ]
+}
