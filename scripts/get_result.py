@@ -279,23 +279,30 @@ def build_overall_table(
     fair_keys: Optional[Set[Tuple[str, int]]] = None,
 ) -> str:
     headers = [
-        "模型",
-        "任务数",
-        "平均分",
-        "满分率%",
-        "均耗时(s)",
-        "总tokens",
-        "均tokens",
-        "成功",
-        "超时",
-        "错误",
+        "Model",
+        "Tasks",
+        "Mean Score",
+        "Full Rate %",
+        "Mean Time (s)",
+        "Total Tokens",
+        "Mean Tokens",
+        "Success",
+        "Timeout",
+        "Error",
     ]
-    body: List[List[str]] = []
-    for name in sorted(rollups.keys()):
+    # Compute aggregates and sort by mean_score descending
+    model_aggregates = []
+    for name in rollups.keys():
         rows = rollups[name].rows
         if fair_keys is not None:
             rows = [r for r in rows if r.task_key in fair_keys]
         m = aggregate_rows(rows)
+        model_aggregates.append((name, m))
+    # Sort by mean_score descending
+    model_aggregates.sort(key=lambda x: x[1]['mean_score'], reverse=True)
+    
+    body: List[List[str]] = []
+    for name, m in model_aggregates:
         body.append(
             [
                 name,
@@ -349,22 +356,29 @@ def print_task_group_sections(
     chunks: List[str] = []
     for group in group_sorted:
         headers = [
-            "模型",
-            "任务数",
-            "平均分",
-            "满分率%",
-            "均耗时(s)",
-            "总tokens",
-            "均tokens",
-            "成功",
-            "超时",
-            "错误",
+            "Model",
+            "Tasks",
+            "Mean Score",
+            "Full Rate %",
+            "Mean Time (s)",
+            "Total Tokens",
+            "Mean Tokens",
+            "Success",
+            "Timeout",
+            "Error",
         ]
-        body: List[List[str]] = []
+        # Compute aggregates and sort by mean_score descending
+        model_aggregates = []
         for mn in model_names:
             m = pivot[group][mn]
             if m["n"] == 0:
                 continue
+            model_aggregates.append((mn, m))
+        # Sort by mean_score descending
+        model_aggregates.sort(key=lambda x: x[1]['mean_score'], reverse=True)
+        
+        body: List[List[str]] = []
+        for mn, m in model_aggregates:
             body.append(
                 [
                     mn,
@@ -396,8 +410,8 @@ def export_csv_overall(
     headers = [
         "model",
         "tasks",
-        "mean_score",
         "full_rate_pct",
+        "mean_score",
         "mean_time_s",
         "total_tokens",
         "mean_tokens",
@@ -417,8 +431,8 @@ def export_csv_overall(
                 [
                     name,
                     m["n"],
-                    f"{m['mean_score']:.6f}",
                     f"{m['full_rate']:.4f}",
+                    f"{m['mean_score']:.6f}",
                     f"{m['mean_time']:.4f}",
                     m["total_tokens"],
                     f"{m['mean_tokens']:.4f}",
@@ -441,8 +455,8 @@ def export_csv_by_benchmark(
         "task_group",
         "model",
         "tasks",
-        "mean_score",
         "full_rate_pct",
+        "mean_score",
         "mean_time_s",
         "total_tokens",
         "mean_tokens",
@@ -463,8 +477,8 @@ def export_csv_by_benchmark(
                         group,
                         mn,
                         m["n"],
-                        f"{m['mean_score']:.6f}",
                         f"{m['full_rate']:.4f}",
+                        f"{m['mean_score']:.6f}",
                         f"{m['mean_time']:.4f}",
                         m["total_tokens"],
                         f"{m['mean_tokens']:.4f}",
