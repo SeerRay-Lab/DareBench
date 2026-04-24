@@ -5,8 +5,8 @@ category: multimodal_agent
 level: L2
 grading_type: hybrid
 grading_weights:
-  automated: 0.2
-  llm_judge: 0.8
+  automated: 0.1
+  llm_judge: 0.9
 timeout_seconds: 480
 environment:
   type: sandbox

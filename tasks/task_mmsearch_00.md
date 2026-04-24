@@ -5,8 +5,8 @@ category: multimodal_search
 level: L2
 grading_type: hybrid
 grading_weights:
-  automated: 0.2
-  llm_judge: 0.7
+  automated: 0.1
+  llm_judge: 0.9
 timeout_seconds: 480
 environment:
   type: sandbox
@@ -34,21 +34,21 @@ Write a **short, direct answer** to `answer.txt` in the workspace (plain text, n
 
 Write your complete response to 'answer.txt' in the workspace
 
-**Note**: Please use agent browser skill for web search if you need, web_search tool is not allowed to use.
+**Note**: You may use available skills or tools in the system to complete this task.
 
 You need to complete the task in **480s**.
 
 ## Expected Behavior
 
 1. Inspect `image.png`, `image_search_result.png`, and the question.
-2. Use tools as needed **except** the `web_search` tool (forbidden for this task); rely on the workspace images and any other allowed tools.
+2. Use tools as needed. Web-related tools are allowed and encouraged when helpful.
 3. Put the final answer in `answer.txt` (plain text). For date-style answers, prefer **yyyy-mm-dd** when applicable. If the question rests on a false premise, answer exactly: `invalid question`
 
 ## Grading Criteria
 
 - [ ] **answer_written** (automated): `answer.txt` exists and is non-empty
-- [ ] **compliance_no_web_search** (LLM): Transcript shows the agent did **not** invoke the `web_search` tool (other tools or no tools are acceptable)
-- [ ] **answer_correctness** (LLM): `answer.txt` semantically matches the reference **and** the agent did not use `web_search` (see rubric; LLM judge **total** is all-or-nothing on these two conditions)
+- [ ] **compliance_web_tool_used** (LLM, 0.2): Transcript shows the agent used at least one web-related tool
+- [ ] **answer_correctness** (LLM, 0.8): `answer.txt` semantically matches the reference
 
 ## Automated Checks
 
@@ -85,33 +85,36 @@ def grade(transcript: list, workspace_path: str) -> dict:
 
 ---
 
-### Criterion 1: No `web_search` tool (compliance)
+### Criterion 1: Web tool usage (compliance, weight 0.2)
 
-Using the **Agent Transcript (summarized)** section, determine whether the agent invoked the **`web_search`** tool (match the tool name literally as used in the agent environment).
+Using the **Agent Transcript (summarized)** section, determine whether the agent used at least one **web-related tool**.
 
-**Score 1.0**: The transcript shows **no** use of the `web_search` tool. Using **other** tools (e.g. browser/fetch/read_file/bash/vision) or using **no** tools at all is **acceptable** and should still score **1.0** here.
-**Score 0.0**: The transcript shows **any** invocation of the `web_search` tool.
+Web-related tools include tool calls that access online/web content, such as `web_search`, `browser_*` tools, `web_fetch`, or equivalent web-browsing/search tools in this environment.
 
-Do **not** treat generic "search/browse/fetch" wording in the transcript as a failure unless it is specifically the **`web_search`** tool.
+**Score 1.0**: The transcript shows at least one invocation of a web-related tool.
+**Score 0.0**: The transcript shows no invocation of any web-related tool.
 
-### Criterion 2: Answer correctness (gated)
+### Criterion 2: Answer correctness (weight 0.8)
 
 Read the agent's answer from **`answer.txt`** (if missing or empty, **0.0**).
 
 Compare to the **Reference Answer** and **Acceptable alternative answers** for semantic equivalence.
 
-**Score 1.0**: **Only if** (a) **Criterion 1 is 1.0** (no `web_search` tool), **and** (b) the answer is fully semantically correct vs the reference or acceptable alternatives; dates acceptable in yyyy-mm-dd or clearly equivalent forms.
-**Score 0.0**: **Criterion 1 is 0.0** ( `web_search` was used ), **or** the answer is missing/empty, partially correct, incorrect, unrelated, or contradicts the reference.
+**Score 1.0**: The answer is fully semantically correct vs the reference or acceptable alternatives; dates acceptable in yyyy-mm-dd or clearly equivalent forms.
+**Score 0.0**: The answer is missing/empty, partially correct, incorrect, unrelated, or contradicts the reference.
 
 ### JSON output for the judge
 
 Return a JSON object with:
-- `"scores": { "compliance_no_web_search": <0..1>, "answer_correctness": <0..1> }`
-- `"total"`: **1.0** if **both** `compliance_no_web_search` and `answer_correctness` are **1.0**; otherwise **0.0** (this task's LLM judge is all-or-nothing: no `web_search` **and** a correct answer).
-- `"notes"`: brief justification (cite whether `web_search` appeared and how `answer.txt` compares to the reference)
+- `"scores"`: { `"compliance_web_tool_used"`: <0..1>, `"answer_correctness"`: <0..1> }
+- `"total"`: computed as `0.2 * compliance_web_tool_used + 0.8 * answer_correctness`.
+  - Correct answer + used web-related tool(s): **1.0**
+  - Correct answer + no web-related tool used: **0.8**
+  - Incorrect answer (regardless of tool usage): **0.0**
+- `"notes"`: brief justification (cite whether web-related tools were used and how `answer.txt` compares to the reference)
 
 ## Additional Notes
 
 - Source: Hugging Face `CaraJ/MMSearch`, config `end2end`.
-- Hybrid: per frontmatter `grading_weights` (automated file check + LLM judge). LLM judge **`total`** follows this task's rubric: **1.0** only when **both** `compliance_no_web_search` and `answer_correctness` are **1.0**; otherwise **0.0** (not a 30/70 weighted blend).
+- Hybrid: per frontmatter `grading_weights` (automated file check + LLM judge). LLM judge `total` for this task is `0.2 * compliance_web_tool_used + 0.8 * answer_correctness`.
 - Workspace images are staged from `assets/mmsearch/00_*.png` as `image.png` and `image_search_result.png`.
