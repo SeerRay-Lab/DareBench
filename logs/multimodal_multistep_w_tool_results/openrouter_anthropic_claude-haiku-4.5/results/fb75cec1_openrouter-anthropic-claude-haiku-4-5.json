@@ -1,0 +1,1735 @@
+{
+  "model": "openrouter/anthropic/claude-haiku-4.5",
+  "executor": "openclaw",
+  "benchmark_version": "03f3306",
+  "run_id": "fb75cec1",
+  "timestamp": 1777120991.4251108,
+  "suite": "task_agentvista_00, task_agentvista_01, task_agentvista_02, task_agentvista_03, task_agentvista_04, task_agentvista_05, task_agentvista_06, task_agentvista_07, task_agentvista_08, task_agentvista_09, task_mmsearch_00, task_mmsearch_01, task_mmsearch_02, task_mmsearch_03, task_mmsearch_04, task_mmsearch_05, task_mmsearch_06, task_mmsearch_07, task_mmsearch_08, task_mmsearch_09, task_mmsearchplus_00, task_mmsearchplus_01, task_mmsearchplus_02, task_mmsearchplus_03, task_mmsearchplus_04",
+  "runs_per_task": 1,
+  "tasks": [
+    {
+      "task_id": "task_agentvista_00",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 52.26450514793396,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 2928,
+        "output_tokens": 2908,
+        "cache_read_tokens": 30729,
+        "cache_write_tokens": 18536,
+        "total_tokens": 55101,
+        "cost_usd": 0.043710900000000004,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_00",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent answered 'Onion' but ground truth is 'Broccoli'. The answers do not match."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_agentvista_00",
+        "name": "AgentVista - society / Health and Culinary",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/00_0.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_agentvista_01",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 64.62119674682617,
+      "transcript_length": 18,
+      "usage": {
+        "input_tokens": 17220,
+        "output_tokens": 2040,
+        "cache_read_tokens": 100271,
+        "cache_write_tokens": 7944,
+        "total_tokens": 127475,
+        "cost_usd": 0.0473771,
+        "request_count": 6
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_01",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent incorrectly identified the coin as depicting Pompey the Great. The ground truth is Marcus Aurelius Probus (Roman Emperor, 276-282 CE). These are entirely different historical figures from different eras - Pompey lived 106-48 BCE during the Republic, while Probus was a 3rd century CE Emperor. The agent's search strategy focused on 'PROPUS' which should have led to 'PROBUS' but instead converged on Pompey/POMPEIUS. Fundamental factual error."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_agentvista_01",
+        "name": "AgentVista - culture / Artifact Appraisal and Craftsmanship",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/01_0.png",
+            "dest": "image_0.png"
+          },
+          {
+            "source": "agentvista/01_1.png",
+            "dest": "image_1.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_agentvista_02",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 137.48050117492676,
+      "transcript_length": 36,
+      "usage": {
+        "input_tokens": 54272,
+        "output_tokens": 3293,
+        "cache_read_tokens": 271379,
+        "cache_write_tokens": 27759,
+        "total_tokens": 356703,
+        "cost_usd": 0.13257365,
+        "request_count": 12
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_02",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent correctly identified Donna Tartt and The Goldfinch, but stated 30 weeks instead of the correct 39 weeks. Per rubric requiring exact match with no partial credit, this factual error makes the answer incorrect."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_agentvista_02",
+        "name": "AgentVista - culture / Cultural Knowledge and History",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/02_0.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_agentvista_03",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 30.70004916191101,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 3318,
+        "output_tokens": 2025,
+        "cache_read_tokens": 47397,
+        "cache_write_tokens": 1285,
+        "total_tokens": 54025,
+        "cost_usd": 0.01978895,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_03",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent failed to identify the game as Monster Hunter Wilds and calculated 50% drop instead of the correct 59.86%. Both key requirements were incorrect."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_agentvista_03",
+        "name": "AgentVista - entertainment / Video Game Mechanics",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/07_0.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_agentvista_04",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 114.71101188659668,
+      "transcript_length": 37,
+      "usage": {
+        "input_tokens": 40067,
+        "output_tokens": 3516,
+        "cache_read_tokens": 360673,
+        "cache_write_tokens": 20254,
+        "total_tokens": 424510,
+        "cost_usd": 0.11903180000000002,
+        "request_count": 16
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_04",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent calculated 384 RMB based on web searches, but ground truth is 0. The agent failed to extract critical information from the image itself that would indicate the ride was free or no payment was required. Extensive web research was performed but led to an incorrect conclusion."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_agentvista_04",
+        "name": "AgentVista - commerce / Transaction and Price Calculation",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/10_0.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_agentvista_05",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 33.42959499359131,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 3424,
+        "output_tokens": 2186,
+        "cache_read_tokens": 46228,
+        "cache_write_tokens": 2412,
+        "total_tokens": 54250,
+        "cost_usd": 0.0219918,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_05",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent answered 5, but ground truth is 4. Answer is incorrect."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_agentvista_05",
+        "name": "AgentVista - geography / Thematic Map Interpretation",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/15_0.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_agentvista_06",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 32.754677534103394,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 4773,
+        "output_tokens": 1880,
+        "cache_read_tokens": 47353,
+        "cache_write_tokens": 1325,
+        "total_tokens": 55331,
+        "cost_usd": 0.02056455,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_06",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent incorrectly identified component B as having the error, while ground truth clearly states component C is installed in the opposite orientation. The agent even stated 'Components A and C appear correct' which directly contradicts the ground truth answer."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_agentvista_06",
+        "name": "AgentVista - society / Manual Assembly and Troubleshooting",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/18_0.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_agentvista_07",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 66.38126873970032,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 3892,
+        "output_tokens": 2748,
+        "cache_read_tokens": 46042,
+        "cache_write_tokens": 2591,
+        "total_tokens": 55273,
+        "cost_usd": 0.02547495,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_07",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Model answered 'North East England' but the correct answer is 'Norwich'. These are completely different geographic areas and do not match."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_agentvista_07",
+        "name": "AgentVista - geography / Thematic Map Interpretation",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/23_0.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_agentvista_08",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 68.11120414733887,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 3076,
+        "output_tokens": 1549,
+        "cache_read_tokens": 31024,
+        "cache_write_tokens": 17709,
+        "total_tokens": 53358,
+        "cost_usd": 0.036059650000000006,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_08",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent answered 48 months but ground truth is 79 months. The answer is incorrect."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_agentvista_08",
+        "name": "AgentVista - culture / Cultural Knowledge and History",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/25_0.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_agentvista_09",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 37.47421336174011,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 3757,
+        "output_tokens": 2292,
+        "cache_read_tokens": 46124,
+        "cache_write_tokens": 2527,
+        "total_tokens": 54700,
+        "cost_usd": 0.02298815,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_agentvista_09",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 1.0
+            },
+            "notes": "Agent correctly identified OPT-175B as the answer, matching the ground truth exactly."
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_agentvista_09",
+        "name": "AgentVista - academics / Scientific Identification and Knowledge",
+        "category": "multimodal_agent",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "agentvista/26_0.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_00",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 35.63910460472107,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 5456,
+        "output_tokens": 858,
+        "cache_read_tokens": 47176,
+        "cache_write_tokens": 1461,
+        "total_tokens": 54951,
+        "cost_usd": 0.01628985,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_00",
+            "score": 0.8200000000000001,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 0.0,
+              "llm_judge.answer_correctness": 1.0
+            },
+            "notes": "Agent did not use any web-related tools (only read images and wrote answer). Answer 'LeBron James' matches the reference answer exactly."
+          }
+        ],
+        "mean": 0.8200000000000001,
+        "std": 0.0,
+        "min": 0.8200000000000001,
+        "max": 0.8200000000000001
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_00",
+        "name": "MMSearch - traditional sports_2",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/00_query.png",
+            "dest": "image.png"
+          },
+          {
+            "source": "mmsearch/00_image_search.png",
+            "dest": "image_search_result.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_01",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 34.200215578079224,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 3897,
+        "output_tokens": 1861,
+        "cache_read_tokens": 47366,
+        "cache_write_tokens": 1275,
+        "total_tokens": 54399,
+        "cost_usd": 0.01953235,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_01",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 0.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "No web-related tools were used (only read and write). The answer in answer.txt states 'More vertices' which directly contradicts the reference answer 'fewer' - this is incorrect."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_01",
+        "name": "MMSearch - paper_0",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/01_query.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_02",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 24.897253036499023,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 3759,
+        "output_tokens": 959,
+        "cache_read_tokens": 46156,
+        "cache_write_tokens": 2487,
+        "total_tokens": 53361,
+        "cost_usd": 0.016278349999999997,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_02",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 0.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "No web-related tools were used (only read and write tools). The answer 'Non neural approach' is incorrect - the reference answer is 'NeuTex', which is a specific method name, not a generic description."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_02",
+        "name": "MMSearch - paper_9",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/02_query.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_03",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 59.14539074897766,
+      "transcript_length": 21,
+      "usage": {
+        "input_tokens": 15047,
+        "output_tokens": 1422,
+        "cache_read_tokens": 138920,
+        "cache_write_tokens": 7544,
+        "total_tokens": 162933,
+        "cost_usd": 0.045479,
+        "request_count": 8
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_03",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 1.0,
+              "llm_judge.answer_correctness": 1.0
+            },
+            "notes": "Agent used multiple web_search calls and attempted web_fetch to identify the manga. Answer 'Kodansha USA' in answer.txt exactly matches the reference answer."
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_03",
+        "name": "MMSearch - entertainment_12",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/03_query.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_04",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 30.34511113166809,
+      "transcript_length": 13,
+      "usage": {
+        "input_tokens": 6193,
+        "output_tokens": 653,
+        "cache_read_tokens": 62425,
+        "cache_write_tokens": 3631,
+        "total_tokens": 72902,
+        "cost_usd": 0.02023925,
+        "request_count": 4
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_04",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 1.0,
+              "llm_judge.answer_correctness": 1.0
+            },
+            "notes": "Agent used web_search tool (web-related). Answer 'June 28, 2024' is semantically equivalent to reference '2024-06-28'. Full marks."
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_04",
+        "name": "MMSearch - technology_12",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/04_query.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_05",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 30.732932806015015,
+      "transcript_length": 11,
+      "usage": {
+        "input_tokens": 4546,
+        "output_tokens": 1379,
+        "cache_read_tokens": 45796,
+        "cache_write_tokens": 2824,
+        "total_tokens": 54545,
+        "cost_usd": 0.0195506,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_05",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 0.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "No web-related tools were used (only read image.png and wrote answer.txt). The answer 'Unable to determine' is incorrect - the reference answer is 'Clem Delangue' (CEO of Hugging Face). The agent should have used web search to identify the person in the image."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_05",
+        "name": "MMSearch - finance_19",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/05_query.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_06",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 87.81370115280151,
+      "transcript_length": 41,
+      "usage": {
+        "input_tokens": 35195,
+        "output_tokens": 3089,
+        "cache_read_tokens": 399865,
+        "cache_write_tokens": 18421,
+        "total_tokens": 456570,
+        "cost_usd": 0.11365275000000001,
+        "request_count": 18
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_06",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 1.0,
+              "llm_judge.answer_correctness": 1.0
+            },
+            "notes": "Agent used multiple web_search and web_fetch calls to research Tesla stock prices. Answer.txt correctly states 'No' - August 2 closing price ($207.67) was lower than August 16 ($216.12), matching the reference answer."
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_06",
+        "name": "MMSearch - finance_27",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/06_query.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_07",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 35.54527497291565,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 5224,
+        "output_tokens": 1324,
+        "cache_read_tokens": 45316,
+        "cache_write_tokens": 3321,
+        "total_tokens": 55185,
+        "cost_usd": 0.02052685,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_07",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 0.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "No web-related tools were used (only read images and wrote answer). Answer 'Aug 13, 2024' is incorrect - reference answer is 2024-08-12 (one day off)."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_07",
+        "name": "MMSearch - entertainment_34",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/07_query.png",
+            "dest": "image.png"
+          },
+          {
+            "source": "mmsearch/07_image_search.png",
+            "dest": "image_search_result.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_08",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 61.7275652885437,
+      "transcript_length": 14,
+      "usage": {
+        "input_tokens": 8382,
+        "output_tokens": 1838,
+        "cache_read_tokens": 61119,
+        "cache_write_tokens": 4266,
+        "total_tokens": 75605,
+        "cost_usd": 0.0290164,
+        "request_count": 4
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_08",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 1.0,
+              "llm_judge.answer_correctness": 1.0
+            },
+            "notes": "Agent used web_search tool for web research. Answer correctly states April 17, 2025 as PS5 release date, which matches the reference answer of 2025."
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_08",
+        "name": "MMSearch - general_37",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/08_query.png",
+            "dest": "image.png"
+          },
+          {
+            "source": "mmsearch/08_image_search.png",
+            "dest": "image_search_result.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearch_09",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 138.08605885505676,
+      "transcript_length": 39,
+      "usage": {
+        "input_tokens": 59639,
+        "output_tokens": 2710,
+        "cache_read_tokens": 448714,
+        "cache_write_tokens": 30429,
+        "total_tokens": 541492,
+        "cost_usd": 0.15609664999999998,
+        "request_count": 17
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearch_09",
+            "score": 0.28,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.compliance_web_tool_used": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent used web-related tools extensively (multiple web_search calls and one web_fetch). However, the answer in answer.txt ('2020, likely between January-April') is incorrect compared to the reference answer (2018-09 / September 2018). The agent's answer is off by approximately 1.5-2 years."
+          }
+        ],
+        "mean": 0.28,
+        "std": 0.0,
+        "min": 0.28,
+        "max": 0.28
+      },
+      "frontmatter": {
+        "id": "task_mmsearch_09",
+        "name": "MMSearch - architecture_0",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch/09_query.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearchplus_00",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 122.80269622802734,
+      "transcript_length": 49,
+      "usage": {
+        "input_tokens": 50382,
+        "output_tokens": 4019,
+        "cache_read_tokens": 570386,
+        "cache_write_tokens": 26073,
+        "total_tokens": 650860,
+        "cost_usd": 0.16010685000000005,
+        "request_count": 22
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearchplus_00",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent's answer 'Robustness Evaluation of Large Language Models on Semantic Relation Classification under Noisy Conditions' does not match the reference answer 'Calibrating Pre-trained Language Classifiers on LLM-generated Noisy Labels via Iterative Refinement'. The agent performed multiple web searches but failed to correctly identify the paper title from the image."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_mmsearchplus_00",
+        "name": "MMSearch-Plus - Academic Research (00)",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch-plus/00_image.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearchplus_01",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 54.21079897880554,
+      "transcript_length": 22,
+      "usage": {
+        "input_tokens": 22213,
+        "output_tokens": 1614,
+        "cache_read_tokens": 148343,
+        "cache_write_tokens": 11977,
+        "total_tokens": 184147,
+        "cost_usd": 0.060088550000000004,
+        "request_count": 8
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearchplus_01",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent answered 'Lou Molino III' but the reference answer is 'Chris Brown'. The agent incorrectly identified the band and drummer, likely misidentifying the person in the images. The answer does not match the reference or any acceptable alternative."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_mmsearchplus_01",
+        "name": "MMSearch-Plus - Music (01)",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch-plus/01_image_1.png",
+            "dest": "image_1.png"
+          },
+          {
+            "source": "mmsearch-plus/01_image_2.png",
+            "dest": "image_2.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearchplus_02",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 63.8492329120636,
+      "transcript_length": 27,
+      "usage": {
+        "input_tokens": 24546,
+        "output_tokens": 2437,
+        "cache_read_tokens": 210999,
+        "cache_write_tokens": 12987,
+        "total_tokens": 250969,
+        "cost_usd": 0.07406465,
+        "request_count": 11
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearchplus_02",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent answered 'December 6, 2022' but the reference answer is '2022.1.19' (January 19, 2022). These are completely different dates - the agent's answer is incorrect."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_mmsearchplus_02",
+        "name": "MMSearch-Plus - Video Games (02)",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch-plus/02_image.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearchplus_03",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 34.46840238571167,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 6474,
+        "output_tokens": 2133,
+        "cache_read_tokens": 44599,
+        "cache_write_tokens": 4041,
+        "total_tokens": 57247,
+        "cost_usd": 0.02665015,
+        "request_count": 3
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearchplus_03",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent failed to identify the episode title, claiming it was 'not clearly legible' and 'not visible or readable'. However, the reference answer shows the title was extractable: '\u662f\u771f\u7684\u5417 20130824 \u7528\u9152\u7cbe\u53ef\u4ee5\u8fa8\u522b\u4f18\u52a3\u9171\u6cb9\uff1f'. The agent's answer is incorrect and does not match the reference semantically."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_mmsearchplus_03",
+        "name": "MMSearch-Plus - Film & TV (03)",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch-plus/03_image_1.png",
+            "dest": "image_1.png"
+          },
+          {
+            "source": "mmsearch-plus/03_image_2.png",
+            "dest": "image_2.png"
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "task_mmsearchplus_04",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 40.0908784866333,
+      "transcript_length": 15,
+      "usage": {
+        "input_tokens": 10344,
+        "output_tokens": 1437,
+        "cache_read_tokens": 79610,
+        "cache_write_tokens": 5215,
+        "total_tokens": 96606,
+        "cost_usd": 0.03200875,
+        "request_count": 5
+      },
+      "workspace": "/tmp/pinchbench/fb75cec1/agent_workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_mmsearchplus_04",
+            "score": 0.1,
+            "max_score": 1.0,
+            "grading_type": "hybrid",
+            "breakdown": {
+              "automated.answer_written": 1.0,
+              "llm_judge.answer_correctness": 0.0
+            },
+            "notes": "Agent answered 'Chiyoda district, Tokyo' but the reference answer is 'Tokyo Shinjuku'. The district is incorrect - Chiyoda and Shinjuku are different wards in Tokyo."
+          }
+        ],
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "frontmatter": {
+        "id": "task_mmsearchplus_04",
+        "name": "MMSearch-Plus - Geography (04)",
+        "category": "multimodal_search",
+        "level": "L2",
+        "grading_type": "hybrid",
+        "grading_weights": {
+          "automated": 0.1,
+          "llm_judge": 0.9
+        },
+        "timeout_seconds": 480,
+        "environment": {
+          "type": "sandbox",
+          "requirements": [
+            "web_search"
+          ]
+        },
+        "workspace_files": [
+          {
+            "source": "mmsearch-plus/04_image.png",
+            "dest": "image.png"
+          }
+        ]
+      }
+    }
+  ],
+  "efficiency": {
+    "total_tokens": 4112498,
+    "total_input_tokens": 398024,
+    "total_output_tokens": 52170,
+    "total_cost_usd": 1.299142,
+    "total_requests": 170,
+    "total_execution_time_seconds": 1491.48,
+    "tasks_with_usage_data": 25,
+    "tokens_per_task": 164499.9,
+    "cost_per_task_usd": 0.051966,
+    "score_per_1k_tokens": 0.001921,
+    "score_per_dollar": 6.0809,
+    "per_task": [
+      {
+        "task_id": "task_agentvista_00",
+        "score": 0.1,
+        "total_tokens": 55101,
+        "cost_usd": 0.043711,
+        "tokens_per_score_point": 551010.0
+      },
+      {
+        "task_id": "task_agentvista_01",
+        "score": 0.1,
+        "total_tokens": 127475,
+        "cost_usd": 0.047377,
+        "tokens_per_score_point": 1274750.0
+      },
+      {
+        "task_id": "task_agentvista_02",
+        "score": 0.1,
+        "total_tokens": 356703,
+        "cost_usd": 0.132574,
+        "tokens_per_score_point": 3567030.0
+      },
+      {
+        "task_id": "task_agentvista_03",
+        "score": 0.1,
+        "total_tokens": 54025,
+        "cost_usd": 0.019789,
+        "tokens_per_score_point": 540250.0
+      },
+      {
+        "task_id": "task_agentvista_04",
+        "score": 0.1,
+        "total_tokens": 424510,
+        "cost_usd": 0.119032,
+        "tokens_per_score_point": 4245100.0
+      },
+      {
+        "task_id": "task_agentvista_05",
+        "score": 0.1,
+        "total_tokens": 54250,
+        "cost_usd": 0.021992,
+        "tokens_per_score_point": 542500.0
+      },
+      {
+        "task_id": "task_agentvista_06",
+        "score": 0.1,
+        "total_tokens": 55331,
+        "cost_usd": 0.020565,
+        "tokens_per_score_point": 553310.0
+      },
+      {
+        "task_id": "task_agentvista_07",
+        "score": 0.1,
+        "total_tokens": 55273,
+        "cost_usd": 0.025475,
+        "tokens_per_score_point": 552730.0
+      },
+      {
+        "task_id": "task_agentvista_08",
+        "score": 0.1,
+        "total_tokens": 53358,
+        "cost_usd": 0.03606,
+        "tokens_per_score_point": 533580.0
+      },
+      {
+        "task_id": "task_agentvista_09",
+        "score": 1.0,
+        "total_tokens": 54700,
+        "cost_usd": 0.022988,
+        "tokens_per_score_point": 54700.0
+      },
+      {
+        "task_id": "task_mmsearch_00",
+        "score": 0.82,
+        "total_tokens": 54951,
+        "cost_usd": 0.01629,
+        "tokens_per_score_point": 67013.4
+      },
+      {
+        "task_id": "task_mmsearch_01",
+        "score": 0.1,
+        "total_tokens": 54399,
+        "cost_usd": 0.019532,
+        "tokens_per_score_point": 543990.0
+      },
+      {
+        "task_id": "task_mmsearch_02",
+        "score": 0.1,
+        "total_tokens": 53361,
+        "cost_usd": 0.016278,
+        "tokens_per_score_point": 533610.0
+      },
+      {
+        "task_id": "task_mmsearch_03",
+        "score": 1.0,
+        "total_tokens": 162933,
+        "cost_usd": 0.045479,
+        "tokens_per_score_point": 162933.0
+      },
+      {
+        "task_id": "task_mmsearch_04",
+        "score": 1.0,
+        "total_tokens": 72902,
+        "cost_usd": 0.020239,
+        "tokens_per_score_point": 72902.0
+      },
+      {
+        "task_id": "task_mmsearch_05",
+        "score": 0.1,
+        "total_tokens": 54545,
+        "cost_usd": 0.019551,
+        "tokens_per_score_point": 545450.0
+      },
+      {
+        "task_id": "task_mmsearch_06",
+        "score": 1.0,
+        "total_tokens": 456570,
+        "cost_usd": 0.113653,
+        "tokens_per_score_point": 456570.0
+      },
+      {
+        "task_id": "task_mmsearch_07",
+        "score": 0.1,
+        "total_tokens": 55185,
+        "cost_usd": 0.020527,
+        "tokens_per_score_point": 551850.0
+      },
+      {
+        "task_id": "task_mmsearch_08",
+        "score": 1.0,
+        "total_tokens": 75605,
+        "cost_usd": 0.029016,
+        "tokens_per_score_point": 75605.0
+      },
+      {
+        "task_id": "task_mmsearch_09",
+        "score": 0.28,
+        "total_tokens": 541492,
+        "cost_usd": 0.156097,
+        "tokens_per_score_point": 1933900.0
+      },
+      {
+        "task_id": "task_mmsearchplus_00",
+        "score": 0.1,
+        "total_tokens": 650860,
+        "cost_usd": 0.160107,
+        "tokens_per_score_point": 6508600.0
+      },
+      {
+        "task_id": "task_mmsearchplus_01",
+        "score": 0.1,
+        "total_tokens": 184147,
+        "cost_usd": 0.060089,
+        "tokens_per_score_point": 1841470.0
+      },
+      {
+        "task_id": "task_mmsearchplus_02",
+        "score": 0.1,
+        "total_tokens": 250969,
+        "cost_usd": 0.074065,
+        "tokens_per_score_point": 2509690.0
+      },
+      {
+        "task_id": "task_mmsearchplus_03",
+        "score": 0.1,
+        "total_tokens": 57247,
+        "cost_usd": 0.02665,
+        "tokens_per_score_point": 572470.0
+      },
+      {
+        "task_id": "task_mmsearchplus_04",
+        "score": 0.1,
+        "total_tokens": 96606,
+        "cost_usd": 0.032009,
+        "tokens_per_score_point": 966060.0
+      }
+    ]
+  }
+}

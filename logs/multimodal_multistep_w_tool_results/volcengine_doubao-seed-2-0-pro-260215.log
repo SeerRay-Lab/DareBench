@@ -1,0 +1,737 @@
+2026-04-24 05:52:32,455 - INFO - 🦞🦀🦐 PinchBench - OpenClaw Benchmarking
+
+░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░
+▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒
+▓       ▓▓▓▓▓▓  ▓▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓▓       ▓▓▓      ▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓
+█  ███████████  █████  ██    ██  ████  ██  ████  ██  ████  ██  ████████  ██    ██  ████  ██  ████  █
+█  ████████        ██  ███   ███      ███  ████  ██       ███        ██  ███   ███      ███  ████  █
+
+                                                           @%@%%@                       
+                                             %*+#++#@   %+-=-....=@                     
+                                    @@%%%##%--+.....:# @=-=.:-.:-.=                     
+                  #%###%##++=---------+#==+-:+.+%++%==-+:-=-#####+.@                    
+            %+----------------------*%%@@@%-:=:#####+-=+--=.+####.-+=#@                 
+            %+====+*##+=====--------------=--=.-###+.=++##=-..+=.:+--=@                 
+            %+================+*##*+++++**+==+=.....==----=*=---+----=@                 
+            #+========================--------=#=-==-----------------=@                 
+            #+========================-------------------------------=@                 
+            **========================---------------------------++--+@                 
+            @%*+======================------++--=#+--------------==-=#@                 
+            @%%%%%###*+===============------#%--=#+--------=++++#%%###%%@               
+             @@@%@%%%%%%@%###+========------==--=+**+*#%%#######%%%%%%%%%%%@            
+             @@%%@@@%%@@@%%%%%%%%%####+++**#%%########%%%%%%@@%%@  @@@@###%%@@          
+            @@%#%@@%%@@@@%%@@@@@@%%%%%#####%%%%%%@@@@@@@@%%@@%%#%     @@%%#####%@       
+            @%#%%@%##@ @%#%@  @@%%@@@%%%%@@     @@@ @%@ @@%@@@%#%     @@%#######%@      
+            @%%@@%##%@@%##%@ @@%#% @@%#%%@@         @@  @%%@ @%%@     @@%########%@     
+            @@%%@@%%@ @%##%@ @%###@ @@%#####%@@@@       @@  @%%@      @%%#%#######%     
+             @%%@%#%@ @@%%@  @%###@  @@%###%######%%##%%@   @@@       @%#%@%######%     
+              @@ @%%@  @%%@  @@%%@    @@%%%########%######%@          @%%%@@#####%@     
+                  @@@  @@%%@  @%#%      @@%#########@@@@@@%%@         @@%@ %####%@      
+                        @@%@   @%#@       @%###########@@@@%@             @%##%@        
+                                @%%        @%%##############%@            @@            
+                                            @@%%%########%@@                            
+                                               @@@%%%%%@@@                              
+                                                                                        
+                                                                                        
+                                                                                        
+
+2026-04-24 05:52:32,456 - INFO - 🦞🦀🦐 Starting PinchBench 🦐🦀🦞
+2026-04-24 05:52:37,458 - INFO - 🔧 Initializing BenchmarkRunner...
+2026-04-24 05:52:37,458 - INFO - Initialized TaskLoader with directory: /root/workspace/skill/tasks
+2026-04-24 05:52:37,458 - INFO - Initialized BenchmarkRunner
+2026-04-24 05:52:37,458 - INFO - 📂 Loading tasks from directory...
+2026-04-24 05:52:37,458 - INFO - Loading tasks...
+2026-04-24 05:52:37,460 - INFO - Found 234 task files
+2026-04-24 05:52:37,461 - INFO - Successfully loaded task: task_advancedif_00
+2026-04-24 05:52:37,462 - INFO - Successfully loaded task: task_advancedif_01
+2026-04-24 05:52:37,463 - INFO - Successfully loaded task: task_advancedif_02
+2026-04-24 05:52:37,464 - INFO - Successfully loaded task: task_advancedif_03
+2026-04-24 05:52:37,464 - INFO - Successfully loaded task: task_advancedif_04
+2026-04-24 05:52:37,465 - INFO - Successfully loaded task: task_advancedif_05
+2026-04-24 05:52:37,465 - INFO - Successfully loaded task: task_advancedif_06
+2026-04-24 05:52:37,466 - INFO - Successfully loaded task: task_advancedif_07
+2026-04-24 05:52:37,467 - INFO - Successfully loaded task: task_advancedif_08
+2026-04-24 05:52:37,467 - INFO - Successfully loaded task: task_advancedif_09
+2026-04-24 05:52:37,468 - INFO - Successfully loaded task: task_agentvista_00
+2026-04-24 05:52:37,469 - INFO - Successfully loaded task: task_agentvista_01
+2026-04-24 05:52:37,470 - INFO - Successfully loaded task: task_agentvista_02
+2026-04-24 05:52:37,470 - INFO - Successfully loaded task: task_agentvista_03
+2026-04-24 05:52:37,471 - INFO - Successfully loaded task: task_agentvista_04
+2026-04-24 05:52:37,472 - INFO - Successfully loaded task: task_agentvista_05
+2026-04-24 05:52:37,473 - INFO - Successfully loaded task: task_agentvista_06
+2026-04-24 05:52:37,475 - INFO - Successfully loaded task: task_agentvista_07
+2026-04-24 05:52:37,476 - INFO - Successfully loaded task: task_agentvista_08
+2026-04-24 05:52:37,476 - INFO - Successfully loaded task: task_agentvista_09
+2026-04-24 05:52:37,477 - INFO - Successfully loaded task: task_bamboogle_00
+2026-04-24 05:52:37,478 - INFO - Successfully loaded task: task_bamboogle_01
+2026-04-24 05:52:37,478 - INFO - Successfully loaded task: task_bamboogle_02
+2026-04-24 05:52:37,479 - INFO - Successfully loaded task: task_bamboogle_03
+2026-04-24 05:52:37,480 - INFO - Successfully loaded task: task_bamboogle_04
+2026-04-24 05:52:37,480 - INFO - Successfully loaded task: task_bamboogle_05
+2026-04-24 05:52:37,481 - INFO - Successfully loaded task: task_bamboogle_06
+2026-04-24 05:52:37,482 - INFO - Successfully loaded task: task_bamboogle_07
+2026-04-24 05:52:37,482 - INFO - Successfully loaded task: task_bamboogle_08
+2026-04-24 05:52:37,483 - INFO - Successfully loaded task: task_bamboogle_09
+2026-04-24 05:52:37,483 - INFO - Successfully loaded task: task_charxiv_00
+2026-04-24 05:52:37,484 - INFO - Successfully loaded task: task_charxiv_01
+2026-04-24 05:52:37,485 - INFO - Successfully loaded task: task_charxiv_02
+2026-04-24 05:52:37,485 - INFO - Successfully loaded task: task_charxiv_03
+2026-04-24 05:52:37,486 - INFO - Successfully loaded task: task_charxiv_04
+2026-04-24 05:52:37,487 - INFO - Successfully loaded task: task_charxiv_05
+2026-04-24 05:52:37,487 - INFO - Successfully loaded task: task_charxiv_06
+2026-04-24 05:52:37,488 - INFO - Successfully loaded task: task_charxiv_07
+2026-04-24 05:52:37,489 - INFO - Successfully loaded task: task_charxiv_08
+2026-04-24 05:52:37,490 - INFO - Successfully loaded task: task_charxiv_09
+2026-04-24 05:52:37,491 - INFO - Successfully loaded task: task_deepsearchqa_00
+2026-04-24 05:52:37,492 - INFO - Successfully loaded task: task_deepsearchqa_01
+2026-04-24 05:52:37,492 - INFO - Successfully loaded task: task_deepsearchqa_02
+2026-04-24 05:52:37,493 - INFO - Successfully loaded task: task_deepsearchqa_03
+2026-04-24 05:52:37,494 - INFO - Successfully loaded task: task_deepsearchqa_04
+2026-04-24 05:52:37,494 - INFO - Successfully loaded task: task_deepsearchqa_05
+2026-04-24 05:52:37,495 - INFO - Successfully loaded task: task_deepsearchqa_06
+2026-04-24 05:52:37,496 - INFO - Successfully loaded task: task_deepsearchqa_07
+2026-04-24 05:52:37,496 - INFO - Successfully loaded task: task_deepsearchqa_08
+2026-04-24 05:52:37,497 - INFO - Successfully loaded task: task_deepsearchqa_09
+2026-04-24 05:52:37,498 - INFO - Successfully loaded task: task_finqa_00
+2026-04-24 05:52:37,498 - INFO - Successfully loaded task: task_finqa_01
+2026-04-24 05:52:37,499 - INFO - Successfully loaded task: task_finqa_02
+2026-04-24 05:52:37,500 - INFO - Successfully loaded task: task_finqa_03
+2026-04-24 05:52:37,501 - INFO - Successfully loaded task: task_finqa_04
+2026-04-24 05:52:37,502 - INFO - Successfully loaded task: task_finqa_05
+2026-04-24 05:52:37,502 - INFO - Successfully loaded task: task_finqa_06
+2026-04-24 05:52:37,503 - INFO - Successfully loaded task: task_finqa_07
+2026-04-24 05:52:37,504 - INFO - Successfully loaded task: task_finqa_08
+2026-04-24 05:52:37,505 - INFO - Successfully loaded task: task_finqa_09
+2026-04-24 05:52:37,506 - INFO - Successfully loaded task: task_gpqa_00
+2026-04-24 05:52:37,507 - INFO - Successfully loaded task: task_gpqa_01
+2026-04-24 05:52:37,507 - INFO - Successfully loaded task: task_gpqa_02
+2026-04-24 05:52:37,508 - INFO - Successfully loaded task: task_gpqa_03
+2026-04-24 05:52:37,509 - INFO - Successfully loaded task: task_gpqa_04
+2026-04-24 05:52:37,510 - INFO - Successfully loaded task: task_gpqa_05
+2026-04-24 05:52:37,511 - INFO - Successfully loaded task: task_gpqa_06
+2026-04-24 05:52:37,512 - INFO - Successfully loaded task: task_gpqa_07
+2026-04-24 05:52:37,513 - INFO - Successfully loaded task: task_gpqa_08
+2026-04-24 05:52:37,514 - INFO - Successfully loaded task: task_gpqa_09
+2026-04-24 05:52:37,515 - INFO - Successfully loaded task: task_hle_00
+2026-04-24 05:52:37,515 - INFO - Successfully loaded task: task_hle_01
+2026-04-24 05:52:37,516 - INFO - Successfully loaded task: task_hle_02
+2026-04-24 05:52:37,516 - INFO - Successfully loaded task: task_hle_03
+2026-04-24 05:52:37,516 - INFO - Successfully loaded task: task_hle_04
+2026-04-24 05:52:37,517 - INFO - Successfully loaded task: task_hle_05
+2026-04-24 05:52:37,517 - INFO - Successfully loaded task: task_hle_06
+2026-04-24 05:52:37,518 - INFO - Successfully loaded task: task_hle_07
+2026-04-24 05:52:37,518 - INFO - Successfully loaded task: task_hle_08
+2026-04-24 05:52:37,518 - INFO - Successfully loaded task: task_hle_09
+2026-04-24 05:52:37,519 - INFO - Successfully loaded task: task_lexeval_00
+2026-04-24 05:52:37,520 - INFO - Successfully loaded task: task_lexeval_01
+2026-04-24 05:52:37,520 - INFO - Successfully loaded task: task_lexeval_02
+2026-04-24 05:52:37,521 - INFO - Successfully loaded task: task_lexeval_03
+2026-04-24 05:52:37,522 - INFO - Successfully loaded task: task_lexeval_04
+2026-04-24 05:52:37,523 - INFO - Successfully loaded task: task_lexeval_05
+2026-04-24 05:52:37,524 - INFO - Successfully loaded task: task_lexeval_06
+2026-04-24 05:52:37,525 - INFO - Successfully loaded task: task_lexeval_07
+2026-04-24 05:52:37,526 - INFO - Successfully loaded task: task_lexeval_08
+2026-04-24 05:52:37,526 - INFO - Successfully loaded task: task_lexeval_09
+2026-04-24 05:52:37,527 - INFO - Successfully loaded task: task_lexeval_10
+2026-04-24 05:52:37,527 - INFO - Successfully loaded task: task_lexeval_11
+2026-04-24 05:52:37,528 - INFO - Successfully loaded task: task_lexeval_12
+2026-04-24 05:52:37,529 - INFO - Successfully loaded task: task_lexeval_13
+2026-04-24 05:52:37,529 - INFO - Successfully loaded task: task_lexeval_14
+2026-04-24 05:52:37,530 - INFO - Successfully loaded task: task_lexeval_15
+2026-04-24 05:52:37,531 - INFO - Successfully loaded task: task_lexeval_16
+2026-04-24 05:52:37,532 - INFO - Successfully loaded task: task_lexeval_17
+2026-04-24 05:52:37,533 - INFO - Successfully loaded task: task_lexeval_18
+2026-04-24 05:52:37,534 - INFO - Successfully loaded task: task_lexeval_19
+2026-04-24 05:52:37,535 - INFO - Successfully loaded task: task_logiqa_00
+2026-04-24 05:52:37,536 - INFO - Successfully loaded task: task_logiqa_01
+2026-04-24 05:52:37,537 - INFO - Successfully loaded task: task_logiqa_02
+2026-04-24 05:52:37,538 - INFO - Successfully loaded task: task_logiqa_03
+2026-04-24 05:52:37,539 - INFO - Successfully loaded task: task_logiqa_04
+2026-04-24 05:52:37,541 - INFO - Successfully loaded task: task_logiqa_05
+2026-04-24 05:52:37,542 - INFO - Successfully loaded task: task_logiqa_06
+2026-04-24 05:52:37,543 - INFO - Successfully loaded task: task_logiqa_07
+2026-04-24 05:52:37,544 - INFO - Successfully loaded task: task_logiqa_08
+2026-04-24 05:52:37,545 - INFO - Successfully loaded task: task_logiqa_09
+2026-04-24 05:52:37,546 - INFO - Successfully loaded task: task_longbench_00
+2026-04-24 05:52:37,546 - INFO - Successfully loaded task: task_longbench_01
+2026-04-24 05:52:37,547 - INFO - Successfully loaded task: task_longbench_02
+2026-04-24 05:52:37,548 - INFO - Successfully loaded task: task_longbench_03
+2026-04-24 05:52:37,548 - INFO - Successfully loaded task: task_longbench_04
+2026-04-24 05:52:37,549 - INFO - Successfully loaded task: task_longbench_05
+2026-04-24 05:52:37,549 - INFO - Successfully loaded task: task_longbench_06
+2026-04-24 05:52:37,550 - INFO - Successfully loaded task: task_longbench_07
+2026-04-24 05:52:37,550 - INFO - Successfully loaded task: task_longbench_08
+2026-04-24 05:52:37,551 - INFO - Successfully loaded task: task_longbench_09
+2026-04-24 05:52:37,551 - INFO - Successfully loaded task: task_medxpertqa_00
+2026-04-24 05:52:37,552 - INFO - Successfully loaded task: task_medxpertqa_01
+2026-04-24 05:52:37,552 - INFO - Successfully loaded task: task_medxpertqa_02
+2026-04-24 05:52:37,553 - INFO - Successfully loaded task: task_medxpertqa_03
+2026-04-24 05:52:37,554 - INFO - Successfully loaded task: task_medxpertqa_04
+2026-04-24 05:52:37,554 - INFO - Successfully loaded task: task_medxpertqa_05
+2026-04-24 05:52:37,555 - INFO - Successfully loaded task: task_medxpertqa_06
+2026-04-24 05:52:37,555 - INFO - Successfully loaded task: task_medxpertqa_07
+2026-04-24 05:52:37,556 - INFO - Successfully loaded task: task_medxpertqa_08
+2026-04-24 05:52:37,556 - INFO - Successfully loaded task: task_medxpertqa_09
+2026-04-24 05:52:37,557 - INFO - Successfully loaded task: task_medxpertqa_10
+2026-04-24 05:52:37,557 - INFO - Successfully loaded task: task_medxpertqa_11
+2026-04-24 05:52:37,558 - INFO - Successfully loaded task: task_medxpertqa_12
+2026-04-24 05:52:37,558 - INFO - Successfully loaded task: task_medxpertqa_13
+2026-04-24 05:52:37,559 - INFO - Successfully loaded task: task_medxpertqa_14
+2026-04-24 05:52:37,559 - INFO - Successfully loaded task: task_medxpertqa_15
+2026-04-24 05:52:37,560 - INFO - Successfully loaded task: task_mmsearch_00
+2026-04-24 05:52:37,561 - INFO - Successfully loaded task: task_mmsearch_01
+2026-04-24 05:52:37,562 - INFO - Successfully loaded task: task_mmsearch_02
+2026-04-24 05:52:37,563 - INFO - Successfully loaded task: task_mmsearch_03
+2026-04-24 05:52:37,564 - INFO - Successfully loaded task: task_mmsearch_04
+2026-04-24 05:52:37,565 - INFO - Successfully loaded task: task_mmsearch_05
+2026-04-24 05:52:37,566 - INFO - Successfully loaded task: task_mmsearch_06
+2026-04-24 05:52:37,566 - INFO - Successfully loaded task: task_mmsearch_07
+2026-04-24 05:52:37,568 - INFO - Successfully loaded task: task_mmsearch_08
+2026-04-24 05:52:37,569 - INFO - Successfully loaded task: task_mmsearch_09
+2026-04-24 05:52:37,570 - INFO - Successfully loaded task: task_mmsearchplus_00
+2026-04-24 05:52:37,570 - INFO - Successfully loaded task: task_mmsearchplus_01
+2026-04-24 05:52:37,571 - INFO - Successfully loaded task: task_mmsearchplus_02
+2026-04-24 05:52:37,572 - INFO - Successfully loaded task: task_mmsearchplus_03
+2026-04-24 05:52:37,573 - INFO - Successfully loaded task: task_mmsearchplus_04
+2026-04-24 05:52:37,577 - INFO - Successfully loaded task: task_openagentsafety_00
+2026-04-24 05:52:37,578 - INFO - Successfully loaded task: task_openagentsafety_01
+2026-04-24 05:52:37,579 - INFO - Successfully loaded task: task_openagentsafety_02
+2026-04-24 05:52:37,582 - INFO - Successfully loaded task: task_openagentsafety_03
+2026-04-24 05:52:37,584 - INFO - Successfully loaded task: task_openagentsafety_04
+2026-04-24 05:52:37,586 - INFO - Successfully loaded task: task_openagentsafety_05
+2026-04-24 05:52:37,586 - INFO - Successfully loaded task: task_osworld_00
+2026-04-24 05:52:37,587 - INFO - Successfully loaded task: task_osworld_01
+2026-04-24 05:52:37,589 - INFO - Successfully loaded task: task_osworld_02
+2026-04-24 05:52:37,590 - INFO - Successfully loaded task: task_osworld_03
+2026-04-24 05:52:37,591 - INFO - Successfully loaded task: task_osworld_04
+2026-04-24 05:52:37,591 - INFO - Successfully loaded task: task_osworld_05
+2026-04-24 05:52:37,592 - INFO - Successfully loaded task: task_osworld_06
+2026-04-24 05:52:37,593 - INFO - Successfully loaded task: task_osworld_07
+2026-04-24 05:52:37,594 - INFO - Successfully loaded task: task_osworld_08
+2026-04-24 05:52:37,594 - INFO - Successfully loaded task: task_seal0_00
+2026-04-24 05:52:37,595 - INFO - Successfully loaded task: task_seal0_01
+2026-04-24 05:52:37,596 - INFO - Successfully loaded task: task_seal0_02
+2026-04-24 05:52:37,596 - INFO - Successfully loaded task: task_seal0_03
+2026-04-24 05:52:37,597 - INFO - Successfully loaded task: task_seal0_04
+2026-04-24 05:52:37,597 - INFO - Successfully loaded task: task_seal0_05
+2026-04-24 05:52:37,598 - INFO - Successfully loaded task: task_seal0_06
+2026-04-24 05:52:37,598 - INFO - Successfully loaded task: task_seal0_07
+2026-04-24 05:52:37,599 - INFO - Successfully loaded task: task_seal0_08
+2026-04-24 05:52:37,600 - INFO - Successfully loaded task: task_seal0_09
+2026-04-24 05:52:37,601 - INFO - Successfully loaded task: task_simpleqa_00
+2026-04-24 05:52:37,601 - INFO - Successfully loaded task: task_simpleqa_01
+2026-04-24 05:52:37,602 - INFO - Successfully loaded task: task_simpleqa_02
+2026-04-24 05:52:37,603 - INFO - Successfully loaded task: task_simpleqa_03
+2026-04-24 05:52:37,603 - INFO - Successfully loaded task: task_simpleqa_04
+2026-04-24 05:52:37,604 - INFO - Successfully loaded task: task_simpleqa_05
+2026-04-24 05:52:37,605 - INFO - Successfully loaded task: task_simpleqa_06
+2026-04-24 05:52:37,606 - INFO - Successfully loaded task: task_simpleqa_07
+2026-04-24 05:52:37,606 - INFO - Successfully loaded task: task_simpleqa_08
+2026-04-24 05:52:37,607 - INFO - Successfully loaded task: task_simpleqa_09
+2026-04-24 05:52:37,608 - INFO - Successfully loaded task: task_simplevqa_00
+2026-04-24 05:52:37,608 - INFO - Successfully loaded task: task_simplevqa_01
+2026-04-24 05:52:37,609 - INFO - Successfully loaded task: task_simplevqa_02
+2026-04-24 05:52:37,609 - INFO - Successfully loaded task: task_simplevqa_03
+2026-04-24 05:52:37,610 - INFO - Successfully loaded task: task_simplevqa_04
+2026-04-24 05:52:37,611 - INFO - Successfully loaded task: task_simplevqa_05
+2026-04-24 05:52:37,611 - INFO - Successfully loaded task: task_simplevqa_06
+2026-04-24 05:52:37,612 - INFO - Successfully loaded task: task_simplevqa_07
+2026-04-24 05:52:37,612 - INFO - Successfully loaded task: task_simplevqa_08
+2026-04-24 05:52:37,613 - INFO - Successfully loaded task: task_simplevqa_09
+2026-04-24 05:52:37,614 - INFO - Successfully loaded task: task_tablebench_00
+2026-04-24 05:52:37,614 - INFO - Successfully loaded task: task_tablebench_01
+2026-04-24 05:52:37,615 - INFO - Successfully loaded task: task_tablebench_02
+2026-04-24 05:52:37,616 - INFO - Successfully loaded task: task_tablebench_03
+2026-04-24 05:52:37,616 - INFO - Successfully loaded task: task_tablebench_04
+2026-04-24 05:52:37,617 - INFO - Successfully loaded task: task_tablebench_05
+2026-04-24 05:52:37,618 - INFO - Successfully loaded task: task_tablebench_06
+2026-04-24 05:52:37,619 - INFO - Successfully loaded task: task_tablebench_07
+2026-04-24 05:52:37,619 - INFO - Successfully loaded task: task_tablebench_08
+2026-04-24 05:52:37,620 - INFO - Successfully loaded task: task_tablebench_09
+2026-04-24 05:52:37,621 - INFO - Successfully loaded task: task_tablebench_10
+2026-04-24 05:52:37,622 - INFO - Successfully loaded task: task_tablebench_11
+2026-04-24 05:52:37,622 - INFO - Successfully loaded task: task_tablebench_12
+2026-04-24 05:52:37,623 - INFO - Successfully loaded task: task_tablebench_13
+2026-04-24 05:52:37,623 - INFO - Successfully loaded task: task_tablebench_14
+2026-04-24 05:52:37,624 - INFO - Successfully loaded task: task_tablebench_15
+2026-04-24 05:52:37,625 - INFO - Successfully loaded task: task_tablebench_16
+2026-04-24 05:52:37,625 - INFO - Successfully loaded task: task_terminalbench2_00
+2026-04-24 05:52:37,626 - INFO - Successfully loaded task: task_terminalbench2_01
+2026-04-24 05:52:37,627 - INFO - Successfully loaded task: task_terminalbench2_02
+2026-04-24 05:52:37,628 - INFO - Successfully loaded task: task_terminalbench2_03
+2026-04-24 05:52:37,628 - INFO - Successfully loaded task: task_terminalbench2_04
+2026-04-24 05:52:37,629 - INFO - Successfully loaded task: task_terminalbench2_05
+2026-04-24 05:52:37,630 - INFO - Successfully loaded task: task_terminalbench2_06
+2026-04-24 05:52:37,631 - INFO - Successfully loaded task: task_terminalbench2_07
+2026-04-24 05:52:37,631 - INFO - Successfully loaded task: task_terminalbench2_08
+2026-04-24 05:52:37,632 - INFO - Successfully loaded task: task_terminalbench2_09
+2026-04-24 05:52:37,633 - INFO - Successfully loaded task: task_tmp
+2026-04-24 05:52:37,634 - INFO - Successfully loaded task: task_widesearch_00
+2026-04-24 05:52:37,635 - INFO - Successfully loaded task: task_widesearch_01
+2026-04-24 05:52:37,636 - INFO - Successfully loaded task: task_widesearch_02
+2026-04-24 05:52:37,637 - INFO - Successfully loaded task: task_widesearch_03
+2026-04-24 05:52:37,638 - INFO - Successfully loaded task: task_widesearch_04
+2026-04-24 05:52:37,639 - INFO - Successfully loaded task: task_widesearch_05
+2026-04-24 05:52:37,639 - INFO - Successfully loaded task: task_widesearch_06
+2026-04-24 05:52:37,640 - INFO - Successfully loaded task: task_widesearch_07
+2026-04-24 05:52:37,641 - INFO - Successfully loaded task: task_widesearch_08
+2026-04-24 05:52:37,642 - INFO - Successfully loaded task: task_widesearch_09
+2026-04-24 05:52:37,642 - INFO - Successfully loaded 234 tasks
+2026-04-24 05:52:37,642 - INFO - Loaded 234 tasks
+2026-04-24 05:52:51,116 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 exists with stale workspace (/tmp/pinchbench/a7ae1513/agent_workspace != /tmp/pinchbench/5fbcd6d5/agent_workspace), recreating
+2026-04-24 05:53:14,627 - INFO - Creating OpenClaw agent bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 05:53:38,165 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 created successfully with workspace /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 05:53:44,957 - INFO - Workspace confirmed: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 05:53:44,957 - INFO - 
+================================================================================
+2026-04-24 05:53:44,958 - INFO - 📋 Task 1/25 (Run 1/1)
+2026-04-24 05:53:44,958 - INFO - ================================================================================
+2026-04-24 05:53:44,958 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_00
+2026-04-24 05:53:44,958 - INFO -    Task: AgentVista - society / Health and Culinary
+2026-04-24 05:53:44,958 - INFO -    Category: multimodal_agent
+2026-04-24 05:53:51,775 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 05:53:51,778 - INFO - Task task_agentvista_00 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 05:57:54,684 - INFO - Found transcript via sessions.json: 3ba63947-da32-4a1b-87af-96155ee1258c.jsonl (attempt 1)
+2026-04-24 05:58:09,531 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 05:58:09,533 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:00:19,803 - INFO - Found transcript via sessions.json: judge_1777010289533.jsonl (attempt 1)
+2026-04-24 06:00:19,804 - INFO - Task task_agentvista_00 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 06:00:19,806 - INFO -    💾 Session backup saved: task_agentvista_00_run_5fbcd6d5-1.jsonl (29 entries, status=success)
+2026-04-24 06:00:19,806 - INFO - ⚠️ Task task_agentvista_00: 0.1/1.0 (10%) - hybrid
+2026-04-24 06:00:19,806 - INFO -    Notes: Agent answered 'Onion' but ground truth is 'Broccoli'. The agent performed multiple web searches but arrived at the wrong candidate from the filtered list.
+2026-04-24 06:00:19,806 - INFO - 
+================================================================================
+2026-04-24 06:00:19,806 - INFO - 📋 Task 2/25 (Run 1/1)
+2026-04-24 06:00:19,806 - INFO - ================================================================================
+2026-04-24 06:00:19,806 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_01
+2026-04-24 06:00:19,806 - INFO -    Task: AgentVista - culture / Artifact Appraisal and Craftsmanship
+2026-04-24 06:00:19,806 - INFO -    Category: multimodal_agent
+2026-04-24 06:00:19,807 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:00:26,777 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:00:26,782 - INFO - Task task_agentvista_01 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:01:37,234 - INFO - Found transcript via sessions.json: 36aae57f-af75-4a16-9178-8b4162eb8f34.jsonl (attempt 1)
+2026-04-24 06:01:50,884 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:01:50,885 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:02:30,618 - INFO - Found transcript via sessions.json: a710b777-a123-4b65-8798-dc805ae859d2.jsonl (attempt 1)
+2026-04-24 06:02:30,621 - INFO -    💾 Session backup saved: task_agentvista_01_run_5fbcd6d5-1.jsonl (13 entries, status=success)
+2026-04-24 06:02:30,621 - INFO - ✅ Task task_agentvista_01: 1.0/1.0 (100%) - hybrid
+2026-04-24 06:02:30,621 - INFO -    Notes: Model correctly identified Marcus Aurelius Probus, matching the ground truth answer exactly. Additional historical context provided (reign dates, inscription details) demonstrates thorough analysis.
+2026-04-24 06:02:30,621 - INFO - 
+================================================================================
+2026-04-24 06:02:30,621 - INFO - 📋 Task 3/25 (Run 1/1)
+2026-04-24 06:02:30,621 - INFO - ================================================================================
+2026-04-24 06:02:30,621 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_02
+2026-04-24 06:02:30,621 - INFO -    Task: AgentVista - culture / Cultural Knowledge and History
+2026-04-24 06:02:30,621 - INFO -    Category: multimodal_agent
+2026-04-24 06:02:30,622 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:02:37,588 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:02:37,593 - INFO - Task task_agentvista_02 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:10:37,696 - INFO - Found transcript via sessions.json: c3c1da69-b4c5-4ff6-9b15-369399762fdf.jsonl (attempt 1)
+2026-04-24 06:10:51,687 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:10:51,688 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:11:30,954 - INFO - Found transcript via sessions.json: f5c63da0-d0de-4bf7-9716-3ecd2afab892.jsonl (attempt 1)
+2026-04-24 06:11:30,955 - INFO - Task task_agentvista_02 attempt 1: status=timeout score=0.00, running second attempt.
+2026-04-24 06:11:30,960 - INFO -    💾 Session backup saved: task_agentvista_02_run_5fbcd6d5-1.jsonl (37 entries, status=timeout)
+2026-04-24 06:11:30,960 - INFO - ❌ Task task_agentvista_02: 0.0/1.0 (0%) - hybrid
+2026-04-24 06:11:30,960 - INFO -    Notes: Agent transcript does not show the final answer written to answer.txt. While the agent performed relevant searches including 'The Goldfinch Donna Tartt weeks on New York Times bestseller list', the ac
+2026-04-24 06:11:30,960 - INFO - 
+================================================================================
+2026-04-24 06:11:30,960 - INFO - 📋 Task 4/25 (Run 1/1)
+2026-04-24 06:11:30,960 - INFO - ================================================================================
+2026-04-24 06:11:30,960 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_03
+2026-04-24 06:11:30,960 - INFO -    Task: AgentVista - entertainment / Video Game Mechanics
+2026-04-24 06:11:30,960 - INFO -    Category: multimodal_agent
+2026-04-24 06:11:30,962 - INFO - Removed 2 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:11:37,891 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:11:37,894 - INFO - Task task_agentvista_03 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:15:42,267 - INFO - Found transcript via sessions.json: c1239c15-487d-4d96-adaa-67f657ecf793.jsonl (attempt 1)
+2026-04-24 06:15:56,286 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:15:56,287 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:16:26,626 - INFO - Found transcript via sessions.json: 9dcfef03-6d0e-455a-a0ef-85ca09fa740d.jsonl (attempt 1)
+2026-04-24 06:16:26,626 - INFO - Task task_agentvista_03 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 06:16:26,628 - INFO -    💾 Session backup saved: task_agentvista_03_run_5fbcd6d5-1.jsonl (21 entries, status=success)
+2026-04-24 06:16:26,628 - INFO - ⚠️ Task task_agentvista_03: 0.1/1.0 (10%) - hybrid
+2026-04-24 06:16:26,628 - INFO -    Notes: Game correctly identified as Monster Hunter Wilds, but percentage calculation is incorrect (agent answered ~62% vs ground truth 59.86%). Question required exact calculation.
+2026-04-24 06:16:26,628 - INFO - 
+================================================================================
+2026-04-24 06:16:26,628 - INFO - 📋 Task 5/25 (Run 1/1)
+2026-04-24 06:16:26,628 - INFO - ================================================================================
+2026-04-24 06:16:26,628 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_04
+2026-04-24 06:16:26,628 - INFO -    Task: AgentVista - commerce / Transaction and Price Calculation
+2026-04-24 06:16:26,628 - INFO -    Category: multimodal_agent
+2026-04-24 06:16:26,629 - INFO - Removed 2 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:16:33,478 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:16:33,503 - INFO - Task task_agentvista_04 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:17:38,330 - INFO - Found transcript via sessions.json: a681d243-c002-4c8e-ba6b-e5a25aa1dc18.jsonl (attempt 1)
+2026-04-24 06:17:52,132 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:17:52,133 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:18:17,209 - INFO - Found transcript via sessions.json: f0e6bd41-07c7-4289-9495-9caf32662e95.jsonl (attempt 1)
+2026-04-24 06:18:17,209 - INFO - Task task_agentvista_04 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 06:18:17,211 - INFO -    💾 Session backup saved: task_agentvista_04_run_5fbcd6d5-1.jsonl (14 entries, status=success)
+2026-04-24 06:18:17,211 - INFO - ⚠️ Task task_agentvista_04: 0.1/1.0 (10%) - hybrid
+2026-04-24 06:18:17,211 - INFO -    Notes: Model answered 60 HKD but ground truth is 0. The model failed to correctly identify from the image or context that the tickets were free or cost nothing.
+2026-04-24 06:18:17,211 - INFO - 
+================================================================================
+2026-04-24 06:18:17,211 - INFO - 📋 Task 6/25 (Run 1/1)
+2026-04-24 06:18:17,211 - INFO - ================================================================================
+2026-04-24 06:18:17,211 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_05
+2026-04-24 06:18:17,211 - INFO -    Task: AgentVista - geography / Thematic Map Interpretation
+2026-04-24 06:18:17,211 - INFO -    Category: multimodal_agent
+2026-04-24 06:18:17,212 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:18:24,309 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:18:24,316 - INFO - Task task_agentvista_05 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:19:21,287 - INFO - Found transcript via sessions.json: 71ceaef3-f866-4c47-bc77-5c95368943e5.jsonl (attempt 1)
+2026-04-24 06:19:35,363 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:19:35,364 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:19:49,895 - INFO - Found transcript via sessions.json: 1536f8ad-153e-4763-9b05-b0372af0727f.jsonl (attempt 1)
+2026-04-24 06:19:49,896 - INFO - Task task_agentvista_05 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 06:19:49,896 - INFO -    💾 Session backup saved: task_agentvista_05_run_5fbcd6d5-1.jsonl (11 entries, status=success)
+2026-04-24 06:19:49,896 - INFO - ⚠️ Task task_agentvista_05: 0.1/1.0 (10%) - hybrid
+2026-04-24 06:19:49,896 - INFO -    Notes: Agent answered '1' but ground truth is '4' airports in Taiwan Province. Answer is incorrect.
+2026-04-24 06:19:49,897 - INFO - 
+================================================================================
+2026-04-24 06:19:49,897 - INFO - 📋 Task 7/25 (Run 1/1)
+2026-04-24 06:19:49,897 - INFO - ================================================================================
+2026-04-24 06:19:49,897 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_06
+2026-04-24 06:19:49,897 - INFO -    Task: AgentVista - society / Manual Assembly and Troubleshooting
+2026-04-24 06:19:49,897 - INFO -    Category: multimodal_agent
+2026-04-24 06:19:49,898 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:19:56,970 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:19:56,974 - INFO - Task task_agentvista_06 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:20:54,911 - INFO - Found transcript via sessions.json: 0094cf00-1d37-44fb-9d31-a27b612d3f57.jsonl (attempt 1)
+2026-04-24 06:21:08,921 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:21:08,922 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:21:35,952 - INFO - Found transcript via sessions.json: 6075ad3d-fc23-48a3-ab47-459897ae40bf.jsonl (attempt 1)
+2026-04-24 06:21:35,953 - INFO - Task task_agentvista_06 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 06:21:35,954 - INFO -    💾 Session backup saved: task_agentvista_06_run_5fbcd6d5-1.jsonl (11 entries, status=success)
+2026-04-24 06:21:35,954 - INFO - ⚠️ Task task_agentvista_06: 0.1/1.0 (10%) - hybrid
+2026-04-24 06:21:35,954 - INFO -    Notes: Agent identified error at position B, but ground truth clearly states error is at position C. Wrong position identified is a critical factual error.
+2026-04-24 06:21:35,954 - INFO - 
+================================================================================
+2026-04-24 06:21:35,954 - INFO - 📋 Task 8/25 (Run 1/1)
+2026-04-24 06:21:35,954 - INFO - ================================================================================
+2026-04-24 06:21:35,954 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_07
+2026-04-24 06:21:35,954 - INFO -    Task: AgentVista - geography / Thematic Map Interpretation
+2026-04-24 06:21:35,954 - INFO -    Category: multimodal_agent
+2026-04-24 06:21:35,956 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:21:42,845 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:21:42,848 - INFO - Task task_agentvista_07 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:23:32,873 - INFO - Found transcript via sessions.json: f7a41f1b-48fb-43c4-b486-f555cfe6784d.jsonl (attempt 1)
+2026-04-24 06:23:46,214 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:23:46,215 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:23:59,206 - INFO - Found transcript via sessions.json: 388e1707-0996-474c-bb14-6c6d575b0639.jsonl (attempt 1)
+2026-04-24 06:23:59,206 - INFO - Task task_agentvista_07 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 06:23:59,211 - INFO -    💾 Session backup saved: task_agentvista_07_run_5fbcd6d5-1.jsonl (11 entries, status=success)
+2026-04-24 06:23:59,211 - INFO - ⚠️ Task task_agentvista_07: 0.1/1.0 (10%) - hybrid
+2026-04-24 06:23:59,211 - INFO -    Notes: Agent answered 'North East England' but the correct answer is 'Norwich'. These are completely different geographic areas - Norwich is a city while North East England is a region. The answers do not ma
+2026-04-24 06:23:59,211 - INFO - 
+================================================================================
+2026-04-24 06:23:59,211 - INFO - 📋 Task 9/25 (Run 1/1)
+2026-04-24 06:23:59,211 - INFO - ================================================================================
+2026-04-24 06:23:59,211 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_08
+2026-04-24 06:23:59,211 - INFO -    Task: AgentVista - culture / Cultural Knowledge and History
+2026-04-24 06:23:59,211 - INFO -    Category: multimodal_agent
+2026-04-24 06:23:59,213 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:24:06,210 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:24:06,213 - INFO - Task task_agentvista_08 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:31:38,491 - INFO - Found transcript via sessions.json: e7e5270a-d61d-4484-9770-2f93a8118cbf.jsonl (attempt 1)
+2026-04-24 06:31:51,895 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:31:51,896 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:32:15,340 - INFO - Found transcript via sessions.json: 72f71cb2-b7da-4103-81a3-d83a8710f8aa.jsonl (attempt 1)
+2026-04-24 06:32:15,341 - INFO - Task task_agentvista_08 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 06:32:15,346 - INFO -    💾 Session backup saved: task_agentvista_08_run_5fbcd6d5-1.jsonl (27 entries, status=success)
+2026-04-24 06:32:15,346 - INFO - ⚠️ Task task_agentvista_08: 0.1/1.0 (10%) - hybrid
+2026-04-24 06:32:15,346 - INFO -    Notes: Agent answered 68 months but ground truth is 79 months. The answer is incorrect.
+2026-04-24 06:32:15,346 - INFO - 
+================================================================================
+2026-04-24 06:32:15,346 - INFO - 📋 Task 10/25 (Run 1/1)
+2026-04-24 06:32:15,346 - INFO - ================================================================================
+2026-04-24 06:32:15,346 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_agentvista_09
+2026-04-24 06:32:15,346 - INFO -    Task: AgentVista - academics / Scientific Identification and Knowledge
+2026-04-24 06:32:15,346 - INFO -    Category: multimodal_agent
+2026-04-24 06:32:15,347 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:32:22,045 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:32:22,048 - INFO - Task task_agentvista_09 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:36:44,706 - INFO - Found transcript via sessions.json: be618543-0ea7-432d-9651-fff276ec6f89.jsonl (attempt 1)
+2026-04-24 06:36:58,158 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:36:58,160 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:37:23,288 - INFO - Found transcript via sessions.json: 141c9c36-f297-435b-90cd-4d74a11861b7.jsonl (attempt 1)
+2026-04-24 06:37:23,292 - INFO -    💾 Session backup saved: task_agentvista_09_run_5fbcd6d5-1.jsonl (23 entries, status=success)
+2026-04-24 06:37:23,292 - INFO - ✅ Task task_agentvista_09: 1.0/1.0 (100%) - hybrid
+2026-04-24 06:37:23,292 - INFO -    Notes: Agent answered 'OPT' which correctly identifies the OPT-175B model. This is the open-source model with >100B parameters closest in release date to GPT-3. The shorthand 'OPT' is semantically equivalent
+2026-04-24 06:37:23,292 - INFO - 
+================================================================================
+2026-04-24 06:37:23,292 - INFO - 📋 Task 11/25 (Run 1/1)
+2026-04-24 06:37:23,292 - INFO - ================================================================================
+2026-04-24 06:37:23,292 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_00
+2026-04-24 06:37:23,292 - INFO -    Task: MMSearch - traditional sports_2
+2026-04-24 06:37:23,292 - INFO -    Category: multimodal_search
+2026-04-24 06:37:23,293 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:37:30,045 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:37:30,049 - INFO - Task task_mmsearch_00 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:38:08,390 - INFO - Found transcript via sessions.json: 0f989b61-f86b-443d-8dcf-a26022ee2d50.jsonl (attempt 1)
+2026-04-24 06:38:22,317 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:38:22,318 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:38:49,838 - INFO - Found transcript via sessions.json: 20f0fe44-e9f6-45b0-a019-a3041c6c5285.jsonl (attempt 1)
+2026-04-24 06:38:49,838 - INFO - Task task_mmsearch_00 attempt 1: status=success score=0.82, running second attempt.
+2026-04-24 06:38:49,839 - INFO -    💾 Session backup saved: task_mmsearch_00_run_5fbcd6d5-1.jsonl (11 entries, status=success)
+2026-04-24 06:38:49,839 - INFO - ⚠️ Task task_mmsearch_00: 0.8/1.0 (82%) - hybrid
+2026-04-24 06:38:49,839 - INFO -    Notes: Agent correctly answered 'LeBron James' matching the reference answer. However, no web-related tools were used (only read and write tools). The agent did not examine image_search_result.png or use web
+2026-04-24 06:38:49,839 - INFO - 
+================================================================================
+2026-04-24 06:38:49,839 - INFO - 📋 Task 12/25 (Run 1/1)
+2026-04-24 06:38:49,839 - INFO - ================================================================================
+2026-04-24 06:38:49,839 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_01
+2026-04-24 06:38:49,839 - INFO -    Task: MMSearch - paper_0
+2026-04-24 06:38:49,839 - INFO -    Category: multimodal_search
+2026-04-24 06:38:49,840 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:38:56,722 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:38:56,725 - INFO - Task task_mmsearch_01 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:39:50,154 - INFO - Found transcript via sessions.json: ce881e8a-397f-4584-8c80-1ebc65b7d18a.jsonl (attempt 1)
+2026-04-24 06:40:03,770 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:40:03,772 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:40:37,401 - INFO - Found transcript via sessions.json: 3b9ad31f-54af-429c-907c-b920d591a6e6.jsonl (attempt 1)
+2026-04-24 06:40:37,401 - INFO - Task task_mmsearch_01 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 06:40:37,402 - INFO -    💾 Session backup saved: task_mmsearch_01_run_5fbcd6d5-1.jsonl (11 entries, status=success)
+2026-04-24 06:40:37,402 - INFO - ⚠️ Task task_mmsearch_01: 0.1/1.0 (10%) - hybrid
+2026-04-24 06:40:37,403 - INFO - 
+================================================================================
+2026-04-24 06:40:37,403 - INFO - 📋 Task 13/25 (Run 1/1)
+2026-04-24 06:40:37,403 - INFO - ================================================================================
+2026-04-24 06:40:37,403 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_02
+2026-04-24 06:40:37,403 - INFO -    Task: MMSearch - paper_9
+2026-04-24 06:40:37,403 - INFO -    Category: multimodal_search
+2026-04-24 06:40:37,404 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:40:44,193 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:40:44,196 - INFO - Task task_mmsearch_02 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:41:19,795 - INFO - Found transcript via sessions.json: cf3ec778-f8c0-4537-a00b-82ad5b59686d.jsonl (attempt 1)
+2026-04-24 06:41:33,364 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:41:33,365 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:42:00,261 - INFO - Found transcript via sessions.json: 3df7816a-ffd5-4b8a-967f-dde2d2137a74.jsonl (attempt 1)
+2026-04-24 06:42:00,261 - INFO - Task task_mmsearch_02 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 06:42:00,262 - INFO -    💾 Session backup saved: task_mmsearch_02_run_5fbcd6d5-1.jsonl (11 entries, status=success)
+2026-04-24 06:42:00,262 - INFO - ⚠️ Task task_mmsearch_02: 0.1/1.0 (10%) - hybrid
+2026-04-24 06:42:00,262 - INFO -    Notes: No web-related tools were used (only read and write tools). The answer 'Non neural approach' does not match the reference answer 'NeuTex' - these are not semantically equivalent.
+2026-04-24 06:42:00,262 - INFO - 
+================================================================================
+2026-04-24 06:42:00,262 - INFO - 📋 Task 14/25 (Run 1/1)
+2026-04-24 06:42:00,262 - INFO - ================================================================================
+2026-04-24 06:42:00,262 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_03
+2026-04-24 06:42:00,262 - INFO -    Task: MMSearch - entertainment_12
+2026-04-24 06:42:00,262 - INFO -    Category: multimodal_search
+2026-04-24 06:42:00,264 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:42:07,201 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:42:07,204 - INFO - Task task_mmsearch_03 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:43:41,557 - INFO - Found transcript via sessions.json: 6744ae1f-f2e7-48eb-8f7d-c6f2f76b86a9.jsonl (attempt 1)
+2026-04-24 06:43:55,470 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:43:55,471 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:44:20,941 - INFO - Found transcript via sessions.json: 9c4cf35b-0b0a-4076-9fa8-4cce04fbf5bf.jsonl (attempt 1)
+2026-04-24 06:44:20,943 - INFO -    💾 Session backup saved: task_mmsearch_03_run_5fbcd6d5-1.jsonl (15 entries, status=success)
+2026-04-24 06:44:20,943 - INFO - ✅ Task task_mmsearch_03: 1.0/1.0 (100%) - hybrid
+2026-04-24 06:44:20,943 - INFO -    Notes: Agent used web_search tool twice (web-related tools confirmed). Answer 'Kodansha USA' in answer.txt matches the reference answer exactly.
+2026-04-24 06:44:20,943 - INFO - 
+================================================================================
+2026-04-24 06:44:20,943 - INFO - 📋 Task 15/25 (Run 1/1)
+2026-04-24 06:44:20,943 - INFO - ================================================================================
+2026-04-24 06:44:20,943 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_04
+2026-04-24 06:44:20,943 - INFO -    Task: MMSearch - technology_12
+2026-04-24 06:44:20,943 - INFO -    Category: multimodal_search
+2026-04-24 06:44:20,945 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:44:27,628 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:44:27,631 - INFO - Task task_mmsearch_04 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:45:32,848 - INFO - Found transcript via sessions.json: d7c6b9b8-0ea8-47ea-8cbf-382714247f06.jsonl (attempt 1)
+2026-04-24 06:45:46,295 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:45:46,296 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:46:11,756 - INFO - Found transcript via sessions.json: bc576d8a-5dde-4a0e-b5b8-03f9ef0ec5d7.jsonl (attempt 1)
+2026-04-24 06:46:11,757 - INFO -    💾 Session backup saved: task_mmsearch_04_run_5fbcd6d5-1.jsonl (13 entries, status=success)
+2026-04-24 06:46:11,757 - INFO - ✅ Task task_mmsearch_04: 1.0/1.0 (100%) - hybrid
+2026-04-24 06:46:11,757 - INFO -    Notes: Agent used web_search tool (web-related tool confirmed). Answer 'June 28, 2024' is semantically equivalent to reference '2024-06-28' - same date, different format. Full credit.
+2026-04-24 06:46:11,757 - INFO - 
+================================================================================
+2026-04-24 06:46:11,757 - INFO - 📋 Task 16/25 (Run 1/1)
+2026-04-24 06:46:11,757 - INFO - ================================================================================
+2026-04-24 06:46:11,757 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_05
+2026-04-24 06:46:11,757 - INFO -    Task: MMSearch - finance_19
+2026-04-24 06:46:11,757 - INFO -    Category: multimodal_search
+2026-04-24 06:46:11,759 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:46:18,690 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:46:18,694 - INFO - Task task_mmsearch_05 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:48:01,060 - INFO - Found transcript via sessions.json: 8b089aa9-aab1-4c83-bd0e-2014a4cd00aa.jsonl (attempt 1)
+2026-04-24 06:48:14,810 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:48:14,811 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:48:40,384 - INFO - Found transcript via sessions.json: 841b6c68-c948-4f3c-aced-7d72a4e5e7fd.jsonl (attempt 1)
+2026-04-24 06:48:40,385 - INFO - Task task_mmsearch_05 attempt 1: status=success score=0.28, running second attempt.
+2026-04-24 06:48:40,386 - INFO -    💾 Session backup saved: task_mmsearch_05_run_5fbcd6d5-1.jsonl (21 entries, status=success)
+2026-04-24 06:48:40,386 - INFO - ⚠️ Task task_mmsearch_05: 0.3/1.0 (28%) - hybrid
+2026-04-24 06:48:40,386 - INFO -    Notes: Agent used web_search multiple times (web-related tool compliance met). However, answer 'Brett Adcock' is incorrect - reference answer is 'Clem Delangue'. Incorrect answer results in 0.0 for correctne
+2026-04-24 06:48:40,386 - INFO - 
+================================================================================
+2026-04-24 06:48:40,386 - INFO - 📋 Task 17/25 (Run 1/1)
+2026-04-24 06:48:40,386 - INFO - ================================================================================
+2026-04-24 06:48:40,386 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_06
+2026-04-24 06:48:40,386 - INFO -    Task: MMSearch - finance_27
+2026-04-24 06:48:40,387 - INFO -    Category: multimodal_search
+2026-04-24 06:48:40,388 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:48:47,513 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:48:47,516 - INFO - Task task_mmsearch_06 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:51:27,012 - INFO - Found transcript via sessions.json: 1d74a7cb-caa5-4524-a337-71e259d52948.jsonl (attempt 1)
+2026-04-24 06:51:40,450 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:51:40,451 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:52:05,639 - INFO - Found transcript via sessions.json: cfa7afe8-e7b1-443c-8d2a-b035edc77979.jsonl (attempt 1)
+2026-04-24 06:52:05,639 - INFO - Task task_mmsearch_06 attempt 1: status=success score=0.28, running second attempt.
+2026-04-24 06:52:05,641 - INFO -    💾 Session backup saved: task_mmsearch_06_run_5fbcd6d5-1.jsonl (27 entries, status=success)
+2026-04-24 06:52:05,641 - INFO - ⚠️ Task task_mmsearch_06: 0.3/1.0 (28%) - hybrid
+2026-04-24 06:52:05,641 - INFO -    Notes: Agent used web_search multiple times (compliance met). However, answer.txt contains 'Yes' while reference answer is 'No' - the agent's answer is incorrect.
+2026-04-24 06:52:05,641 - INFO - 
+================================================================================
+2026-04-24 06:52:05,641 - INFO - 📋 Task 18/25 (Run 1/1)
+2026-04-24 06:52:05,641 - INFO - ================================================================================
+2026-04-24 06:52:05,641 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_07
+2026-04-24 06:52:05,641 - INFO -    Task: MMSearch - entertainment_34
+2026-04-24 06:52:05,641 - INFO -    Category: multimodal_search
+2026-04-24 06:52:05,642 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:52:12,682 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:52:12,687 - INFO - Task task_mmsearch_07 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:53:05,578 - INFO - Found transcript via sessions.json: c296d4ea-ac60-42d1-b385-f583502d3ccf.jsonl (attempt 1)
+2026-04-24 06:53:19,950 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:53:19,951 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:53:48,716 - INFO - Found transcript via sessions.json: 4b3599a2-2c37-4b0b-a2a4-9e18625f5f52.jsonl (attempt 1)
+2026-04-24 06:53:48,717 - INFO -    💾 Session backup saved: task_mmsearch_07_run_5fbcd6d5-1.jsonl (13 entries, status=success)
+2026-04-24 06:53:48,717 - INFO - ✅ Task task_mmsearch_07: 1.0/1.0 (100%) - hybrid
+2026-04-24 06:53:48,717 - INFO -    Notes: Agent used web_search tool (web-related). Answer 'August 12, 2024' is semantically equivalent to reference '2024-08-12'.
+2026-04-24 06:53:48,717 - INFO - 
+================================================================================
+2026-04-24 06:53:48,717 - INFO - 📋 Task 19/25 (Run 1/1)
+2026-04-24 06:53:48,717 - INFO - ================================================================================
+2026-04-24 06:53:48,717 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_08
+2026-04-24 06:53:48,717 - INFO -    Task: MMSearch - general_37
+2026-04-24 06:53:48,717 - INFO -    Category: multimodal_search
+2026-04-24 06:53:48,718 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:53:55,684 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:53:55,689 - INFO - Task task_mmsearch_08 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:54:36,125 - INFO - Found transcript via sessions.json: a1960562-ce18-4100-a701-748128082d93.jsonl (attempt 1)
+2026-04-24 06:54:49,926 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 06:54:49,927 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 06:55:17,660 - INFO - Found transcript via sessions.json: 98ca02b0-45bb-4581-970a-1b0fe6f5b136.jsonl (attempt 1)
+2026-04-24 06:55:17,661 - INFO -    💾 Session backup saved: task_mmsearch_08_run_5fbcd6d5-1.jsonl (11 entries, status=success)
+2026-04-24 06:55:17,661 - INFO - ✅ Task task_mmsearch_08: 1.0/1.0 (100%) - hybrid
+2026-04-24 06:55:17,661 - INFO -    Notes: Agent used web_search tool (web-related tool confirmed). Answer states April 17, 2025 which correctly includes the reference year 2025 with additional specific date detail - semantically equivalent to
+2026-04-24 06:55:17,661 - INFO - 
+================================================================================
+2026-04-24 06:55:17,661 - INFO - 📋 Task 20/25 (Run 1/1)
+2026-04-24 06:55:17,661 - INFO - ================================================================================
+2026-04-24 06:55:17,661 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearch_09
+2026-04-24 06:55:17,661 - INFO -    Task: MMSearch - architecture_0
+2026-04-24 06:55:17,661 - INFO -    Category: multimodal_search
+2026-04-24 06:55:17,663 - INFO - Removed 1 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 06:55:24,793 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 06:55:24,797 - INFO - Task task_mmsearch_09 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:03:24,889 - INFO - Found transcript via sessions.json: 6ad00ba3-7734-4c08-b9f8-18c15b97d9ea.jsonl (attempt 1)
+2026-04-24 07:03:38,789 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 07:03:38,790 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 07:04:21,061 - INFO - Found transcript via sessions.json: 9b147bee-0104-4382-bd5c-b560844d057f.jsonl (attempt 1)
+2026-04-24 07:04:21,061 - INFO - Task task_mmsearch_09 attempt 1: status=timeout score=0.18, running second attempt.
+2026-04-24 07:04:21,065 - INFO -    💾 Session backup saved: task_mmsearch_09_run_5fbcd6d5-1.jsonl (37 entries, status=timeout)
+2026-04-24 07:04:21,065 - INFO - ⚠️ Task task_mmsearch_09: 0.2/1.0 (18%) - hybrid
+2026-04-24 07:04:21,065 - INFO -    Notes: Agent used multiple web-related tools (agent-browser, web_fetch with Google/Yandex image search). However, transcript shows no write tool call to create answer.txt - the agent attempted image search b
+2026-04-24 07:04:21,065 - INFO - 
+================================================================================
+2026-04-24 07:04:21,065 - INFO - 📋 Task 21/25 (Run 1/1)
+2026-04-24 07:04:21,065 - INFO - ================================================================================
+2026-04-24 07:04:21,066 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearchplus_00
+2026-04-24 07:04:21,066 - INFO -    Task: MMSearch-Plus - Academic Research (00)
+2026-04-24 07:04:21,066 - INFO -    Category: multimodal_search
+2026-04-24 07:04:21,067 - INFO - Removed 2 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 07:04:28,027 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:04:28,029 - INFO - Task task_mmsearchplus_00 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:08:46,947 - INFO - Found transcript via sessions.json: 86d498ee-a3e4-4a6f-ae77-ddc18a4495a6.jsonl (attempt 1)
+2026-04-24 07:09:00,712 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 07:09:00,713 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 07:09:30,688 - INFO - Found transcript via sessions.json: 84086555-2a55-40f2-bfde-30634ea0bb24.jsonl (attempt 1)
+2026-04-24 07:09:30,690 - INFO -    💾 Session backup saved: task_mmsearchplus_00_run_5fbcd6d5-1.jsonl (27 entries, status=success)
+2026-04-24 07:09:30,690 - INFO - ✅ Task task_mmsearchplus_00: 1.0/1.0 (100%) - hybrid
+2026-04-24 07:09:30,690 - INFO -    Notes: The answer in answer.txt exactly matches the reference answer: 'Calibrating Pre-trained Language Classifiers on LLM-generated Noisy Labels via Iterative Refinement'. The agent successfully identified 
+2026-04-24 07:09:30,690 - INFO - 
+================================================================================
+2026-04-24 07:09:30,691 - INFO - 📋 Task 22/25 (Run 1/1)
+2026-04-24 07:09:30,691 - INFO - ================================================================================
+2026-04-24 07:09:30,691 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearchplus_01
+2026-04-24 07:09:30,691 - INFO -    Task: MMSearch-Plus - Music (01)
+2026-04-24 07:09:30,691 - INFO -    Category: multimodal_search
+2026-04-24 07:09:30,692 - INFO - Removed 2 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 07:09:37,617 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:09:37,622 - INFO - Task task_mmsearchplus_01 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:17:37,724 - INFO - Found transcript via sessions.json: 34e29181-aef3-4453-b8e1-a87707d217f9.jsonl (attempt 1)
+2026-04-24 07:17:51,607 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 07:17:51,609 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 07:20:51,690 - INFO - Found transcript via sessions.json: a5646ea2-fa19-407d-b80e-6d1bf758d641.jsonl (attempt 1)
+2026-04-24 07:20:51,693 - INFO - Task task_mmsearchplus_01 attempt 1: status=timeout score=0.00, running second attempt.
+2026-04-24 07:20:51,695 - INFO -    💾 Session backup saved: task_mmsearchplus_01_run_5fbcd6d5-1.jsonl (63 entries, status=timeout)
+2026-04-24 07:20:51,695 - INFO - ❌ Task task_mmsearchplus_01: 0.0/1.0 (0%) - hybrid
+2026-04-24 07:20:51,695 - INFO - 
+================================================================================
+2026-04-24 07:20:51,695 - INFO - 📋 Task 23/25 (Run 1/1)
+2026-04-24 07:20:51,695 - INFO - ================================================================================
+2026-04-24 07:20:51,695 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearchplus_02
+2026-04-24 07:20:51,695 - INFO -    Task: MMSearch-Plus - Video Games (02)
+2026-04-24 07:20:51,695 - INFO -    Category: multimodal_search
+2026-04-24 07:20:51,697 - INFO - Removed 3 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 07:20:58,882 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:20:58,886 - INFO - Task task_mmsearchplus_02 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:28:58,933 - INFO - Found transcript via glob fallback: 34e29181-aef3-4453-b8e1-a87707d217f9.jsonl (attempt 1)
+2026-04-24 07:29:13,390 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 07:29:13,392 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 07:30:17,062 - INFO - Found transcript via sessions.json: fe2cdc35-ab03-4c33-bb99-56049ccf85ee.jsonl (attempt 1)
+2026-04-24 07:30:17,063 - INFO - Task task_mmsearchplus_02 attempt 1: status=timeout score=0.10, running second attempt.
+2026-04-24 07:30:17,067 - INFO -    💾 Session backup saved: task_mmsearchplus_02_run_5fbcd6d5-1.jsonl (94 entries, status=timeout)
+2026-04-24 07:30:17,067 - INFO - ⚠️ Task task_mmsearchplus_02: 0.1/1.0 (10%) - hybrid
+2026-04-24 07:30:17,067 - INFO -    Notes: The agent's answer.txt contains 'Levon Helm' (a drummer's name), but the reference answer is '2022.1.19' (a date for promotional video release). The answer is completely incorrect and unrelated to the
+2026-04-24 07:30:17,067 - INFO - 
+================================================================================
+2026-04-24 07:30:17,067 - INFO - 📋 Task 24/25 (Run 1/1)
+2026-04-24 07:30:17,068 - INFO - ================================================================================
+2026-04-24 07:30:17,068 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearchplus_03
+2026-04-24 07:30:17,068 - INFO -    Task: MMSearch-Plus - Film & TV (03)
+2026-04-24 07:30:17,068 - INFO -    Category: multimodal_search
+2026-04-24 07:30:17,069 - INFO - Removed 3 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 07:30:24,061 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:30:24,067 - INFO - Task task_mmsearchplus_03 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:36:38,785 - INFO - Found transcript via glob fallback: 4e8fe4f0-5993-4603-a846-292c8b10955b.jsonl (attempt 1)
+2026-04-24 07:36:52,779 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 07:36:52,780 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 07:37:24,491 - INFO - Found transcript via sessions.json: c48111b7-f027-4143-9e01-c06eb1f6b073.jsonl (attempt 1)
+2026-04-24 07:37:24,492 - INFO - Task task_mmsearchplus_03 attempt 1: status=success score=0.10, running second attempt.
+2026-04-24 07:37:24,493 - INFO -    💾 Session backup saved: task_mmsearchplus_03_run_5fbcd6d5-1.jsonl (25 entries, status=success)
+2026-04-24 07:37:24,494 - INFO - ⚠️ Task task_mmsearchplus_03: 0.1/1.0 (10%) - hybrid
+2026-04-24 07:37:24,494 - INFO -    Notes: The agent wrote only the show name '是真的吗' to answer.txt, but the reference answer requires the specific episode title '是真的吗 20130824 用酒精可以辨别优劣酱油？' which includes the broadcast date and episode topic. 
+2026-04-24 07:37:24,494 - INFO - 
+================================================================================
+2026-04-24 07:37:24,494 - INFO - 📋 Task 25/25 (Run 1/1)
+2026-04-24 07:37:24,494 - INFO - ================================================================================
+2026-04-24 07:37:24,494 - INFO - 🤖 Agent [bench-volcengine-doubao-seed-2-0-pro-260215] starting task: task_mmsearchplus_04
+2026-04-24 07:37:24,494 - INFO -    Task: MMSearch-Plus - Geography (04)
+2026-04-24 07:37:24,494 - INFO -    Category: multimodal_search
+2026-04-24 07:37:24,495 - INFO - Removed 3 old OpenClaw session transcripts for bench-volcengine-doubao-seed-2-0-pro-260215
+2026-04-24 07:37:31,345 - INFO - Agent bench-volcengine-doubao-seed-2-0-pro-260215 workspace from config: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:37:31,351 - INFO - Task task_mmsearchplus_04 will use workspace: /tmp/pinchbench/5fbcd6d5/agent_workspace
+2026-04-24 07:38:54,091 - INFO - Found transcript via sessions.json: 4375407d-b699-4105-847a-809c2216be04.jsonl (attempt 1)
+2026-04-24 07:39:07,819 - INFO - Agent bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215 already exists with correct workspace
+2026-04-24 07:39:07,820 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-doubao-seed-2-0-pro-260215
+2026-04-24 07:39:32,728 - INFO - Found transcript via sessions.json: 82f0c85d-4762-4c5b-b2ea-03dcbda1283c.jsonl (attempt 1)
+2026-04-24 07:39:32,730 - INFO -    💾 Session backup saved: task_mmsearchplus_04_run_5fbcd6d5-1.jsonl (15 entries, status=success)
+2026-04-24 07:39:32,730 - INFO - ✅ Task task_mmsearchplus_04: 1.0/1.0 (100%) - hybrid
+2026-04-24 07:39:32,730 - INFO -    Notes: The agent's answer 'Shinjuku District, Tokyo' is semantically equivalent to the reference answer 'Tokyo Shinjuku'. Both correctly identify Shinjuku as the district and Tokyo as the city. The answer is
+2026-04-24 07:39:32,733 - INFO - Saved results to /root/workspace/skill/logs/openclaw_serial_20260424_055232/volcengine_doubao-seed-2-0-pro-260215/results/5fbcd6d5_volcengine-doubao-seed-2-0-pro-260215.json
+2026-04-24 07:39:32,733 - INFO - 
+================================================================================
+2026-04-24 07:39:32,733 - INFO - 📊 TOKEN EFFICIENCY SUMMARY
+2026-04-24 07:39:32,733 - INFO - ================================================================================
+2026-04-24 07:39:32,733 - INFO -    Total tokens used: 7,218,397 (input: 3,197,160, output: 94,077)
+2026-04-24 07:39:32,733 - INFO -    Total API requests: 233
+2026-04-24 07:39:32,733 - INFO -    Avg tokens/task: 288,736
+2026-04-24 07:39:32,733 - INFO -    Mean score: 0.4264
+2026-04-24 07:39:32,733 - INFO -    Score per 1K tokens: 0.0015 (higher = more efficient)
+2026-04-24 07:39:32,733 - INFO - ================================================================================
+2026-04-24 07:39:35,494 - INFO - Uploaded to leaderboard: rank #1789
+2026-04-24 07:39:35,494 - INFO - View at: https://pinchbench.com/submission/ea7a3720-12e4-43b2-8fcb-806b0451d00c
+[2026-04-24T07:39:35+00:00] exit_code=0

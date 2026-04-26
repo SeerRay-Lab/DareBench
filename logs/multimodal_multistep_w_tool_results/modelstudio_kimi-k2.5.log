@@ -1,0 +1,741 @@
+2026-04-26 01:04:40,187 - INFO - 🦞🦀🦐 PinchBench - OpenClaw Benchmarking
+
+░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░
+▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒
+▓       ▓▓▓▓▓▓  ▓▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓▓       ▓▓▓      ▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓
+█  ███████████  █████  ██    ██  ████  ██  ████  ██  ████  ██  ████████  ██    ██  ████  ██  ████  █
+█  ████████        ██  ███   ███      ███  ████  ██       ███        ██  ███   ███      ███  ████  █
+
+                                                           @%@%%@                       
+                                             %*+#++#@   %+-=-....=@                     
+                                    @@%%%##%--+.....:# @=-=.:-.:-.=                     
+                  #%###%##++=---------+#==+-:+.+%++%==-+:-=-#####+.@                    
+            %+----------------------*%%@@@%-:=:#####+-=+--=.+####.-+=#@                 
+            %+====+*##+=====--------------=--=.-###+.=++##=-..+=.:+--=@                 
+            %+================+*##*+++++**+==+=.....==----=*=---+----=@                 
+            #+========================--------=#=-==-----------------=@                 
+            #+========================-------------------------------=@                 
+            **========================---------------------------++--+@                 
+            @%*+======================------++--=#+--------------==-=#@                 
+            @%%%%%###*+===============------#%--=#+--------=++++#%%###%%@               
+             @@@%@%%%%%%@%###+========------==--=+**+*#%%#######%%%%%%%%%%%@            
+             @@%%@@@%%@@@%%%%%%%%%####+++**#%%########%%%%%%@@%%@  @@@@###%%@@          
+            @@%#%@@%%@@@@%%@@@@@@%%%%%#####%%%%%%@@@@@@@@%%@@%%#%     @@%%#####%@       
+            @%#%%@%##@ @%#%@  @@%%@@@%%%%@@     @@@ @%@ @@%@@@%#%     @@%#######%@      
+            @%%@@%##%@@%##%@ @@%#% @@%#%%@@         @@  @%%@ @%%@     @@%########%@     
+            @@%%@@%%@ @%##%@ @%###@ @@%#####%@@@@       @@  @%%@      @%%#%#######%     
+             @%%@%#%@ @@%%@  @%###@  @@%###%######%%##%%@   @@@       @%#%@%######%     
+              @@ @%%@  @%%@  @@%%@    @@%%%########%######%@          @%%%@@#####%@     
+                  @@@  @@%%@  @%#%      @@%#########@@@@@@%%@         @@%@ %####%@      
+                        @@%@   @%#@       @%###########@@@@%@             @%##%@        
+                                @%%        @%%##############%@            @@            
+                                            @@%%%########%@@                            
+                                               @@@%%%%%@@@                              
+                                                                                        
+                                                                                        
+                                                                                        
+
+2026-04-26 01:04:40,187 - INFO - 🦞🦀🦐 Starting PinchBench 🦐🦀🦞
+2026-04-26 01:04:45,189 - INFO - 🔧 Initializing BenchmarkRunner...
+2026-04-26 01:04:45,190 - INFO - Initialized TaskLoader with directory: /root/workspace/skill/tasks
+2026-04-26 01:04:45,190 - INFO - Initialized BenchmarkRunner
+2026-04-26 01:04:45,190 - INFO - 📂 Loading tasks from directory...
+2026-04-26 01:04:45,190 - INFO - Loading tasks...
+2026-04-26 01:04:45,192 - INFO - Found 234 task files
+2026-04-26 01:04:45,193 - INFO - Successfully loaded task: task_advancedif_00
+2026-04-26 01:04:45,194 - INFO - Successfully loaded task: task_advancedif_01
+2026-04-26 01:04:45,194 - INFO - Successfully loaded task: task_advancedif_02
+2026-04-26 01:04:45,195 - INFO - Successfully loaded task: task_advancedif_03
+2026-04-26 01:04:45,195 - INFO - Successfully loaded task: task_advancedif_04
+2026-04-26 01:04:45,196 - INFO - Successfully loaded task: task_advancedif_05
+2026-04-26 01:04:45,196 - INFO - Successfully loaded task: task_advancedif_06
+2026-04-26 01:04:45,197 - INFO - Successfully loaded task: task_advancedif_07
+2026-04-26 01:04:45,198 - INFO - Successfully loaded task: task_advancedif_08
+2026-04-26 01:04:45,198 - INFO - Successfully loaded task: task_advancedif_09
+2026-04-26 01:04:45,199 - INFO - Successfully loaded task: task_agentvista_00
+2026-04-26 01:04:45,200 - INFO - Successfully loaded task: task_agentvista_01
+2026-04-26 01:04:45,201 - INFO - Successfully loaded task: task_agentvista_02
+2026-04-26 01:04:45,202 - INFO - Successfully loaded task: task_agentvista_03
+2026-04-26 01:04:45,203 - INFO - Successfully loaded task: task_agentvista_04
+2026-04-26 01:04:45,203 - INFO - Successfully loaded task: task_agentvista_05
+2026-04-26 01:04:45,204 - INFO - Successfully loaded task: task_agentvista_06
+2026-04-26 01:04:45,205 - INFO - Successfully loaded task: task_agentvista_07
+2026-04-26 01:04:45,207 - INFO - Successfully loaded task: task_agentvista_08
+2026-04-26 01:04:45,208 - INFO - Successfully loaded task: task_agentvista_09
+2026-04-26 01:04:45,209 - INFO - Successfully loaded task: task_bamboogle_00
+2026-04-26 01:04:45,209 - INFO - Successfully loaded task: task_bamboogle_01
+2026-04-26 01:04:45,210 - INFO - Successfully loaded task: task_bamboogle_02
+2026-04-26 01:04:45,210 - INFO - Successfully loaded task: task_bamboogle_03
+2026-04-26 01:04:45,211 - INFO - Successfully loaded task: task_bamboogle_04
+2026-04-26 01:04:45,212 - INFO - Successfully loaded task: task_bamboogle_05
+2026-04-26 01:04:45,213 - INFO - Successfully loaded task: task_bamboogle_06
+2026-04-26 01:04:45,214 - INFO - Successfully loaded task: task_bamboogle_07
+2026-04-26 01:04:45,214 - INFO - Successfully loaded task: task_bamboogle_08
+2026-04-26 01:04:45,215 - INFO - Successfully loaded task: task_bamboogle_09
+2026-04-26 01:04:45,215 - INFO - Successfully loaded task: task_charxiv_00
+2026-04-26 01:04:45,216 - INFO - Successfully loaded task: task_charxiv_01
+2026-04-26 01:04:45,216 - INFO - Successfully loaded task: task_charxiv_02
+2026-04-26 01:04:45,217 - INFO - Successfully loaded task: task_charxiv_03
+2026-04-26 01:04:45,217 - INFO - Successfully loaded task: task_charxiv_04
+2026-04-26 01:04:45,218 - INFO - Successfully loaded task: task_charxiv_05
+2026-04-26 01:04:45,218 - INFO - Successfully loaded task: task_charxiv_06
+2026-04-26 01:04:45,218 - INFO - Successfully loaded task: task_charxiv_07
+2026-04-26 01:04:45,219 - INFO - Successfully loaded task: task_charxiv_08
+2026-04-26 01:04:45,220 - INFO - Successfully loaded task: task_charxiv_09
+2026-04-26 01:04:45,220 - INFO - Successfully loaded task: task_deepsearchqa_00
+2026-04-26 01:04:45,221 - INFO - Successfully loaded task: task_deepsearchqa_01
+2026-04-26 01:04:45,222 - INFO - Successfully loaded task: task_deepsearchqa_02
+2026-04-26 01:04:45,222 - INFO - Successfully loaded task: task_deepsearchqa_03
+2026-04-26 01:04:45,223 - INFO - Successfully loaded task: task_deepsearchqa_04
+2026-04-26 01:04:45,224 - INFO - Successfully loaded task: task_deepsearchqa_05
+2026-04-26 01:04:45,224 - INFO - Successfully loaded task: task_deepsearchqa_06
+2026-04-26 01:04:45,225 - INFO - Successfully loaded task: task_deepsearchqa_07
+2026-04-26 01:04:45,226 - INFO - Successfully loaded task: task_deepsearchqa_08
+2026-04-26 01:04:45,227 - INFO - Successfully loaded task: task_deepsearchqa_09
+2026-04-26 01:04:45,227 - INFO - Successfully loaded task: task_finqa_00
+2026-04-26 01:04:45,228 - INFO - Successfully loaded task: task_finqa_01
+2026-04-26 01:04:45,228 - INFO - Successfully loaded task: task_finqa_02
+2026-04-26 01:04:45,229 - INFO - Successfully loaded task: task_finqa_03
+2026-04-26 01:04:45,230 - INFO - Successfully loaded task: task_finqa_04
+2026-04-26 01:04:45,230 - INFO - Successfully loaded task: task_finqa_05
+2026-04-26 01:04:45,231 - INFO - Successfully loaded task: task_finqa_06
+2026-04-26 01:04:45,231 - INFO - Successfully loaded task: task_finqa_07
+2026-04-26 01:04:45,232 - INFO - Successfully loaded task: task_finqa_08
+2026-04-26 01:04:45,232 - INFO - Successfully loaded task: task_finqa_09
+2026-04-26 01:04:45,233 - INFO - Successfully loaded task: task_gpqa_00
+2026-04-26 01:04:45,234 - INFO - Successfully loaded task: task_gpqa_01
+2026-04-26 01:04:45,235 - INFO - Successfully loaded task: task_gpqa_02
+2026-04-26 01:04:45,235 - INFO - Successfully loaded task: task_gpqa_03
+2026-04-26 01:04:45,236 - INFO - Successfully loaded task: task_gpqa_04
+2026-04-26 01:04:45,237 - INFO - Successfully loaded task: task_gpqa_05
+2026-04-26 01:04:45,237 - INFO - Successfully loaded task: task_gpqa_06
+2026-04-26 01:04:45,238 - INFO - Successfully loaded task: task_gpqa_07
+2026-04-26 01:04:45,239 - INFO - Successfully loaded task: task_gpqa_08
+2026-04-26 01:04:45,239 - INFO - Successfully loaded task: task_gpqa_09
+2026-04-26 01:04:45,240 - INFO - Successfully loaded task: task_hle_00
+2026-04-26 01:04:45,240 - INFO - Successfully loaded task: task_hle_01
+2026-04-26 01:04:45,241 - INFO - Successfully loaded task: task_hle_02
+2026-04-26 01:04:45,241 - INFO - Successfully loaded task: task_hle_03
+2026-04-26 01:04:45,242 - INFO - Successfully loaded task: task_hle_04
+2026-04-26 01:04:45,242 - INFO - Successfully loaded task: task_hle_05
+2026-04-26 01:04:45,242 - INFO - Successfully loaded task: task_hle_06
+2026-04-26 01:04:45,243 - INFO - Successfully loaded task: task_hle_07
+2026-04-26 01:04:45,243 - INFO - Successfully loaded task: task_hle_08
+2026-04-26 01:04:45,244 - INFO - Successfully loaded task: task_hle_09
+2026-04-26 01:04:45,244 - INFO - Successfully loaded task: task_lexeval_00
+2026-04-26 01:04:45,245 - INFO - Successfully loaded task: task_lexeval_01
+2026-04-26 01:04:45,246 - INFO - Successfully loaded task: task_lexeval_02
+2026-04-26 01:04:45,247 - INFO - Successfully loaded task: task_lexeval_03
+2026-04-26 01:04:45,247 - INFO - Successfully loaded task: task_lexeval_04
+2026-04-26 01:04:45,248 - INFO - Successfully loaded task: task_lexeval_05
+2026-04-26 01:04:45,249 - INFO - Successfully loaded task: task_lexeval_06
+2026-04-26 01:04:45,250 - INFO - Successfully loaded task: task_lexeval_07
+2026-04-26 01:04:45,251 - INFO - Successfully loaded task: task_lexeval_08
+2026-04-26 01:04:45,251 - INFO - Successfully loaded task: task_lexeval_09
+2026-04-26 01:04:45,252 - INFO - Successfully loaded task: task_lexeval_10
+2026-04-26 01:04:45,253 - INFO - Successfully loaded task: task_lexeval_11
+2026-04-26 01:04:45,254 - INFO - Successfully loaded task: task_lexeval_12
+2026-04-26 01:04:45,254 - INFO - Successfully loaded task: task_lexeval_13
+2026-04-26 01:04:45,255 - INFO - Successfully loaded task: task_lexeval_14
+2026-04-26 01:04:45,256 - INFO - Successfully loaded task: task_lexeval_15
+2026-04-26 01:04:45,256 - INFO - Successfully loaded task: task_lexeval_16
+2026-04-26 01:04:45,257 - INFO - Successfully loaded task: task_lexeval_17
+2026-04-26 01:04:45,258 - INFO - Successfully loaded task: task_lexeval_18
+2026-04-26 01:04:45,258 - INFO - Successfully loaded task: task_lexeval_19
+2026-04-26 01:04:45,259 - INFO - Successfully loaded task: task_logiqa_00
+2026-04-26 01:04:45,261 - INFO - Successfully loaded task: task_logiqa_01
+2026-04-26 01:04:45,262 - INFO - Successfully loaded task: task_logiqa_02
+2026-04-26 01:04:45,262 - INFO - Successfully loaded task: task_logiqa_03
+2026-04-26 01:04:45,263 - INFO - Successfully loaded task: task_logiqa_04
+2026-04-26 01:04:45,264 - INFO - Successfully loaded task: task_logiqa_05
+2026-04-26 01:04:45,265 - INFO - Successfully loaded task: task_logiqa_06
+2026-04-26 01:04:45,267 - INFO - Successfully loaded task: task_logiqa_07
+2026-04-26 01:04:45,268 - INFO - Successfully loaded task: task_logiqa_08
+2026-04-26 01:04:45,269 - INFO - Successfully loaded task: task_logiqa_09
+2026-04-26 01:04:45,269 - INFO - Successfully loaded task: task_longbench_00
+2026-04-26 01:04:45,270 - INFO - Successfully loaded task: task_longbench_01
+2026-04-26 01:04:45,270 - INFO - Successfully loaded task: task_longbench_02
+2026-04-26 01:04:45,271 - INFO - Successfully loaded task: task_longbench_03
+2026-04-26 01:04:45,271 - INFO - Successfully loaded task: task_longbench_04
+2026-04-26 01:04:45,272 - INFO - Successfully loaded task: task_longbench_05
+2026-04-26 01:04:45,272 - INFO - Successfully loaded task: task_longbench_06
+2026-04-26 01:04:45,273 - INFO - Successfully loaded task: task_longbench_07
+2026-04-26 01:04:45,274 - INFO - Successfully loaded task: task_longbench_08
+2026-04-26 01:04:45,274 - INFO - Successfully loaded task: task_longbench_09
+2026-04-26 01:04:45,275 - INFO - Successfully loaded task: task_medxpertqa_00
+2026-04-26 01:04:45,275 - INFO - Successfully loaded task: task_medxpertqa_01
+2026-04-26 01:04:45,276 - INFO - Successfully loaded task: task_medxpertqa_02
+2026-04-26 01:04:45,276 - INFO - Successfully loaded task: task_medxpertqa_03
+2026-04-26 01:04:45,277 - INFO - Successfully loaded task: task_medxpertqa_04
+2026-04-26 01:04:45,277 - INFO - Successfully loaded task: task_medxpertqa_05
+2026-04-26 01:04:45,278 - INFO - Successfully loaded task: task_medxpertqa_06
+2026-04-26 01:04:45,278 - INFO - Successfully loaded task: task_medxpertqa_07
+2026-04-26 01:04:45,279 - INFO - Successfully loaded task: task_medxpertqa_08
+2026-04-26 01:04:45,279 - INFO - Successfully loaded task: task_medxpertqa_09
+2026-04-26 01:04:45,280 - INFO - Successfully loaded task: task_medxpertqa_10
+2026-04-26 01:04:45,280 - INFO - Successfully loaded task: task_medxpertqa_11
+2026-04-26 01:04:45,281 - INFO - Successfully loaded task: task_medxpertqa_12
+2026-04-26 01:04:45,282 - INFO - Successfully loaded task: task_medxpertqa_13
+2026-04-26 01:04:45,282 - INFO - Successfully loaded task: task_medxpertqa_14
+2026-04-26 01:04:45,283 - INFO - Successfully loaded task: task_medxpertqa_15
+2026-04-26 01:04:45,283 - INFO - Successfully loaded task: task_mmsearch_00
+2026-04-26 01:04:45,284 - INFO - Successfully loaded task: task_mmsearch_01
+2026-04-26 01:04:45,285 - INFO - Successfully loaded task: task_mmsearch_02
+2026-04-26 01:04:45,286 - INFO - Successfully loaded task: task_mmsearch_03
+2026-04-26 01:04:45,287 - INFO - Successfully loaded task: task_mmsearch_04
+2026-04-26 01:04:45,287 - INFO - Successfully loaded task: task_mmsearch_05
+2026-04-26 01:04:45,289 - INFO - Successfully loaded task: task_mmsearch_06
+2026-04-26 01:04:45,290 - INFO - Successfully loaded task: task_mmsearch_07
+2026-04-26 01:04:45,291 - INFO - Successfully loaded task: task_mmsearch_08
+2026-04-26 01:04:45,292 - INFO - Successfully loaded task: task_mmsearch_09
+2026-04-26 01:04:45,293 - INFO - Successfully loaded task: task_mmsearchplus_00
+2026-04-26 01:04:45,294 - INFO - Successfully loaded task: task_mmsearchplus_01
+2026-04-26 01:04:45,294 - INFO - Successfully loaded task: task_mmsearchplus_02
+2026-04-26 01:04:45,295 - INFO - Successfully loaded task: task_mmsearchplus_03
+2026-04-26 01:04:45,296 - INFO - Successfully loaded task: task_mmsearchplus_04
+2026-04-26 01:04:45,300 - INFO - Successfully loaded task: task_openagentsafety_00
+2026-04-26 01:04:45,300 - INFO - Successfully loaded task: task_openagentsafety_01
+2026-04-26 01:04:45,301 - INFO - Successfully loaded task: task_openagentsafety_02
+2026-04-26 01:04:45,305 - INFO - Successfully loaded task: task_openagentsafety_03
+2026-04-26 01:04:45,306 - INFO - Successfully loaded task: task_openagentsafety_04
+2026-04-26 01:04:45,308 - INFO - Successfully loaded task: task_openagentsafety_05
+2026-04-26 01:04:45,309 - INFO - Successfully loaded task: task_osworld_00
+2026-04-26 01:04:45,310 - INFO - Successfully loaded task: task_osworld_01
+2026-04-26 01:04:45,311 - INFO - Successfully loaded task: task_osworld_02
+2026-04-26 01:04:45,312 - INFO - Successfully loaded task: task_osworld_03
+2026-04-26 01:04:45,313 - INFO - Successfully loaded task: task_osworld_04
+2026-04-26 01:04:45,314 - INFO - Successfully loaded task: task_osworld_05
+2026-04-26 01:04:45,315 - INFO - Successfully loaded task: task_osworld_06
+2026-04-26 01:04:45,315 - INFO - Successfully loaded task: task_osworld_07
+2026-04-26 01:04:45,316 - INFO - Successfully loaded task: task_osworld_08
+2026-04-26 01:04:45,317 - INFO - Successfully loaded task: task_seal0_00
+2026-04-26 01:04:45,317 - INFO - Successfully loaded task: task_seal0_01
+2026-04-26 01:04:45,318 - INFO - Successfully loaded task: task_seal0_02
+2026-04-26 01:04:45,319 - INFO - Successfully loaded task: task_seal0_03
+2026-04-26 01:04:45,319 - INFO - Successfully loaded task: task_seal0_04
+2026-04-26 01:04:45,320 - INFO - Successfully loaded task: task_seal0_05
+2026-04-26 01:04:45,320 - INFO - Successfully loaded task: task_seal0_06
+2026-04-26 01:04:45,321 - INFO - Successfully loaded task: task_seal0_07
+2026-04-26 01:04:45,322 - INFO - Successfully loaded task: task_seal0_08
+2026-04-26 01:04:45,322 - INFO - Successfully loaded task: task_seal0_09
+2026-04-26 01:04:45,323 - INFO - Successfully loaded task: task_simpleqa_00
+2026-04-26 01:04:45,324 - INFO - Successfully loaded task: task_simpleqa_01
+2026-04-26 01:04:45,325 - INFO - Successfully loaded task: task_simpleqa_02
+2026-04-26 01:04:45,326 - INFO - Successfully loaded task: task_simpleqa_03
+2026-04-26 01:04:45,326 - INFO - Successfully loaded task: task_simpleqa_04
+2026-04-26 01:04:45,327 - INFO - Successfully loaded task: task_simpleqa_05
+2026-04-26 01:04:45,328 - INFO - Successfully loaded task: task_simpleqa_06
+2026-04-26 01:04:45,328 - INFO - Successfully loaded task: task_simpleqa_07
+2026-04-26 01:04:45,329 - INFO - Successfully loaded task: task_simpleqa_08
+2026-04-26 01:04:45,330 - INFO - Successfully loaded task: task_simpleqa_09
+2026-04-26 01:04:45,330 - INFO - Successfully loaded task: task_simplevqa_00
+2026-04-26 01:04:45,331 - INFO - Successfully loaded task: task_simplevqa_01
+2026-04-26 01:04:45,331 - INFO - Successfully loaded task: task_simplevqa_02
+2026-04-26 01:04:45,332 - INFO - Successfully loaded task: task_simplevqa_03
+2026-04-26 01:04:45,333 - INFO - Successfully loaded task: task_simplevqa_04
+2026-04-26 01:04:45,333 - INFO - Successfully loaded task: task_simplevqa_05
+2026-04-26 01:04:45,334 - INFO - Successfully loaded task: task_simplevqa_06
+2026-04-26 01:04:45,334 - INFO - Successfully loaded task: task_simplevqa_07
+2026-04-26 01:04:45,335 - INFO - Successfully loaded task: task_simplevqa_08
+2026-04-26 01:04:45,336 - INFO - Successfully loaded task: task_simplevqa_09
+2026-04-26 01:04:45,337 - INFO - Successfully loaded task: task_tablebench_00
+2026-04-26 01:04:45,338 - INFO - Successfully loaded task: task_tablebench_01
+2026-04-26 01:04:45,339 - INFO - Successfully loaded task: task_tablebench_02
+2026-04-26 01:04:45,339 - INFO - Successfully loaded task: task_tablebench_03
+2026-04-26 01:04:45,340 - INFO - Successfully loaded task: task_tablebench_04
+2026-04-26 01:04:45,340 - INFO - Successfully loaded task: task_tablebench_05
+2026-04-26 01:04:45,341 - INFO - Successfully loaded task: task_tablebench_06
+2026-04-26 01:04:45,342 - INFO - Successfully loaded task: task_tablebench_07
+2026-04-26 01:04:45,342 - INFO - Successfully loaded task: task_tablebench_08
+2026-04-26 01:04:45,343 - INFO - Successfully loaded task: task_tablebench_09
+2026-04-26 01:04:45,343 - INFO - Successfully loaded task: task_tablebench_10
+2026-04-26 01:04:45,344 - INFO - Successfully loaded task: task_tablebench_11
+2026-04-26 01:04:45,345 - INFO - Successfully loaded task: task_tablebench_12
+2026-04-26 01:04:45,345 - INFO - Successfully loaded task: task_tablebench_13
+2026-04-26 01:04:45,346 - INFO - Successfully loaded task: task_tablebench_14
+2026-04-26 01:04:45,347 - INFO - Successfully loaded task: task_tablebench_15
+2026-04-26 01:04:45,348 - INFO - Successfully loaded task: task_tablebench_16
+2026-04-26 01:04:45,349 - INFO - Successfully loaded task: task_terminalbench2_00
+2026-04-26 01:04:45,350 - INFO - Successfully loaded task: task_terminalbench2_01
+2026-04-26 01:04:45,350 - INFO - Successfully loaded task: task_terminalbench2_02
+2026-04-26 01:04:45,351 - INFO - Successfully loaded task: task_terminalbench2_03
+2026-04-26 01:04:45,352 - INFO - Successfully loaded task: task_terminalbench2_04
+2026-04-26 01:04:45,353 - INFO - Successfully loaded task: task_terminalbench2_05
+2026-04-26 01:04:45,354 - INFO - Successfully loaded task: task_terminalbench2_06
+2026-04-26 01:04:45,355 - INFO - Successfully loaded task: task_terminalbench2_07
+2026-04-26 01:04:45,356 - INFO - Successfully loaded task: task_terminalbench2_08
+2026-04-26 01:04:45,357 - INFO - Successfully loaded task: task_terminalbench2_09
+2026-04-26 01:04:45,358 - INFO - Successfully loaded task: task_tmp
+2026-04-26 01:04:45,359 - INFO - Successfully loaded task: task_widesearch_00
+2026-04-26 01:04:45,360 - INFO - Successfully loaded task: task_widesearch_01
+2026-04-26 01:04:45,361 - INFO - Successfully loaded task: task_widesearch_02
+2026-04-26 01:04:45,362 - INFO - Successfully loaded task: task_widesearch_03
+2026-04-26 01:04:45,363 - INFO - Successfully loaded task: task_widesearch_04
+2026-04-26 01:04:45,365 - INFO - Successfully loaded task: task_widesearch_05
+2026-04-26 01:04:45,366 - INFO - Successfully loaded task: task_widesearch_06
+2026-04-26 01:04:45,367 - INFO - Successfully loaded task: task_widesearch_07
+2026-04-26 01:04:45,368 - INFO - Successfully loaded task: task_widesearch_08
+2026-04-26 01:04:45,369 - INFO - Successfully loaded task: task_widesearch_09
+2026-04-26 01:04:45,369 - INFO - Successfully loaded 234 tasks
+2026-04-26 01:04:45,369 - INFO - Loaded 234 tasks
+2026-04-26 01:04:58,540 - INFO - Agent bench-modelstudio-kimi-k2-5 exists with stale workspace (/tmp/pinchbench/5408f19a/agent_workspace != /tmp/pinchbench/2faa01d1/agent_workspace), recreating
+2026-04-26 01:05:22,631 - INFO - Creating OpenClaw agent bench-modelstudio-kimi-k2-5
+2026-04-26 01:05:46,912 - INFO - Agent bench-modelstudio-kimi-k2-5 created successfully with workspace /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:05:54,046 - INFO - Workspace confirmed: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:05:54,046 - INFO - 
+================================================================================
+2026-04-26 01:05:54,046 - INFO - 📋 Task 1/25 (Run 1/1)
+2026-04-26 01:05:54,046 - INFO - ================================================================================
+2026-04-26 01:05:54,046 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_00
+2026-04-26 01:05:54,046 - INFO -    Task: AgentVista - society / Health and Culinary
+2026-04-26 01:05:54,046 - INFO -    Category: multimodal_agent
+2026-04-26 01:06:01,137 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:06:01,139 - INFO - Task task_agentvista_00 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:09:52,791 - INFO - Found transcript via sessions.json: 5db230fb-bd14-44dd-9a93-fc60a84dfbd5.jsonl (attempt 1)
+2026-04-26 01:10:06,354 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:10:06,355 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:11:04,282 - INFO - Found transcript via sessions.json: de0785eb-55b5-4bc9-bfca-221e909d3a19.jsonl (attempt 1)
+2026-04-26 01:11:04,283 - INFO - Task task_agentvista_00 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 01:11:04,286 - INFO -    💾 Session backup saved: task_agentvista_00_run_2faa01d1-1.jsonl (33 entries, status=success)
+2026-04-26 01:11:04,287 - INFO - ⚠️ Task task_agentvista_00: 0.1/1.0 (10%) - hybrid
+2026-04-26 01:11:04,287 - INFO -    Notes: Agent answered 'Broccoli and onion (tied)' but ground truth is 'Broccoli' alone. Agent incorrectly identified 4 candidates from the chart when filtering should have yielded fewer options. The conclusi
+2026-04-26 01:11:04,287 - INFO - 
+================================================================================
+2026-04-26 01:11:04,287 - INFO - 📋 Task 2/25 (Run 1/1)
+2026-04-26 01:11:04,287 - INFO - ================================================================================
+2026-04-26 01:11:04,287 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_01
+2026-04-26 01:11:04,287 - INFO -    Task: AgentVista - culture / Artifact Appraisal and Craftsmanship
+2026-04-26 01:11:04,287 - INFO -    Category: multimodal_agent
+2026-04-26 01:11:04,288 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:11:10,992 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:11:10,998 - INFO - Task task_agentvista_01 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:12:09,511 - INFO - Found transcript via sessions.json: a8b7a319-3793-433e-a734-d97d4b97b9a2.jsonl (attempt 1)
+2026-04-26 01:12:22,782 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:12:22,783 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:12:56,983 - INFO - Found transcript via sessions.json: 75032988-6415-406b-b4be-774dc8cb8fea.jsonl (attempt 1)
+2026-04-26 01:12:56,985 - INFO -    💾 Session backup saved: task_agentvista_01_run_2faa01d1-1.jsonl (14 entries, status=success)
+2026-04-26 01:12:56,985 - INFO - ✅ Task task_agentvista_01: 1.0/1.0 (100%) - hybrid
+2026-04-26 01:12:56,985 - INFO -    Notes: Agent correctly identified Marcus Aurelius Probus as the historical figure on the coin, matching the ground truth answer exactly. Used appropriate tools (image read, web search) and wrote accurate ans
+2026-04-26 01:12:56,985 - INFO - 
+================================================================================
+2026-04-26 01:12:56,985 - INFO - 📋 Task 3/25 (Run 1/1)
+2026-04-26 01:12:56,985 - INFO - ================================================================================
+2026-04-26 01:12:56,985 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_02
+2026-04-26 01:12:56,985 - INFO -    Task: AgentVista - culture / Cultural Knowledge and History
+2026-04-26 01:12:56,985 - INFO -    Category: multimodal_agent
+2026-04-26 01:12:56,986 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:13:03,700 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:13:03,704 - INFO - Task task_agentvista_02 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:20:50,303 - INFO - Found transcript via sessions.json: e4eb1925-f100-4250-8c73-cbefaf792bf9.jsonl (attempt 1)
+2026-04-26 01:21:04,067 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:21:04,068 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:21:58,577 - INFO - Found transcript via sessions.json: 33718097-9d0a-427d-9daa-2efc4776f1b8.jsonl (attempt 1)
+2026-04-26 01:21:58,578 - INFO - Task task_agentvista_02 attempt 1: status=success score=0.00, running second attempt.
+2026-04-26 01:21:58,585 - INFO -    💾 Session backup saved: task_agentvista_02_run_2faa01d1-1.jsonl (56 entries, status=success)
+2026-04-26 01:21:58,586 - INFO - ❌ Task task_agentvista_02: 0.0/1.0 (0%) - hybrid
+2026-04-26 01:21:58,586 - INFO -    Notes: Agent transcript is incomplete - shows research searches but no final answer.txt output visible. Cannot verify agent produced the ground truth answer (Donna Tartt, 39 weeks, The Goldfinch). Transcript
+2026-04-26 01:21:58,586 - INFO - 
+================================================================================
+2026-04-26 01:21:58,586 - INFO - 📋 Task 4/25 (Run 1/1)
+2026-04-26 01:21:58,586 - INFO - ================================================================================
+2026-04-26 01:21:58,586 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_03
+2026-04-26 01:21:58,586 - INFO -    Task: AgentVista - entertainment / Video Game Mechanics
+2026-04-26 01:21:58,586 - INFO -    Category: multimodal_agent
+2026-04-26 01:21:58,587 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:22:05,561 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:22:05,564 - INFO - Task task_agentvista_03 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:22:57,684 - INFO - Found transcript via sessions.json: 4506c619-b1f2-42d8-9785-c50ecb49101a.jsonl (attempt 1)
+2026-04-26 01:23:11,409 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:23:11,410 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:23:44,202 - INFO - Found transcript via sessions.json: ec581a49-2d0e-4fe1-860a-6bc78f7efa5a.jsonl (attempt 1)
+2026-04-26 01:23:44,202 - INFO - Task task_agentvista_03 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 01:23:44,203 - INFO -    💾 Session backup saved: task_agentvista_03_run_2faa01d1-1.jsonl (17 entries, status=success)
+2026-04-26 01:23:44,203 - INFO - ⚠️ Task task_agentvista_03: 0.1/1.0 (10%) - hybrid
+2026-04-26 01:23:44,203 - INFO -    Notes: Game identification correct (Monster Hunter Wilds), but percentage calculation incorrect: model answered 53.55% vs ground truth 59.86%. No partial credit per instructions.
+2026-04-26 01:23:44,204 - INFO - 
+================================================================================
+2026-04-26 01:23:44,204 - INFO - 📋 Task 5/25 (Run 1/1)
+2026-04-26 01:23:44,204 - INFO - ================================================================================
+2026-04-26 01:23:44,204 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_04
+2026-04-26 01:23:44,204 - INFO -    Task: AgentVista - commerce / Transaction and Price Calculation
+2026-04-26 01:23:44,204 - INFO -    Category: multimodal_agent
+2026-04-26 01:23:44,205 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:23:50,974 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:23:51,006 - INFO - Task task_agentvista_04 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:24:38,681 - INFO - Found transcript via sessions.json: 15a24f97-de36-44d6-b5a5-01b83d2ddd0c.jsonl (attempt 1)
+2026-04-26 01:24:52,429 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:24:52,430 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:25:28,333 - INFO - Found transcript via sessions.json: 4fdddc40-05f7-4401-bbdd-7808da488c7e.jsonl (attempt 1)
+2026-04-26 01:25:28,334 - INFO - Task task_agentvista_04 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 01:25:28,335 - INFO -    💾 Session backup saved: task_agentvista_04_run_2faa01d1-1.jsonl (17 entries, status=success)
+2026-04-26 01:25:28,335 - INFO - ⚠️ Task task_agentvista_04: 0.1/1.0 (10%) - hybrid
+2026-04-26 01:25:28,335 - INFO -    Notes: Agent answered HK$60 but ground truth is 0. The agent failed to find the correct ticket pricing information - possibly tickets were free due to a promotion, special event, or demographic discounts tha
+2026-04-26 01:25:28,335 - INFO - 
+================================================================================
+2026-04-26 01:25:28,335 - INFO - 📋 Task 6/25 (Run 1/1)
+2026-04-26 01:25:28,335 - INFO - ================================================================================
+2026-04-26 01:25:28,335 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_05
+2026-04-26 01:25:28,335 - INFO -    Task: AgentVista - geography / Thematic Map Interpretation
+2026-04-26 01:25:28,335 - INFO -    Category: multimodal_agent
+2026-04-26 01:25:28,336 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:25:35,303 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:25:35,311 - INFO - Task task_agentvista_05 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:26:07,057 - INFO - Found transcript via sessions.json: c21bbd3a-a4a0-4f4c-8a0f-71251e3f5aa5.jsonl (attempt 1)
+2026-04-26 01:26:20,444 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:26:20,445 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:26:33,873 - INFO - Found transcript via sessions.json: 9718ace5-9832-4bd0-95cd-01a2adb7bbc8.jsonl (attempt 1)
+2026-04-26 01:26:33,873 - INFO - Task task_agentvista_05 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 01:26:33,874 - INFO -    💾 Session backup saved: task_agentvista_05_run_2faa01d1-1.jsonl (11 entries, status=success)
+2026-04-26 01:26:33,874 - INFO - ⚠️ Task task_agentvista_05: 0.1/1.0 (10%) - hybrid
+2026-04-26 01:26:33,874 - INFO -    Notes: Agent answered 1, but ground truth is 4. The answer is incorrect.
+2026-04-26 01:26:33,874 - INFO - 
+================================================================================
+2026-04-26 01:26:33,874 - INFO - 📋 Task 7/25 (Run 1/1)
+2026-04-26 01:26:33,874 - INFO - ================================================================================
+2026-04-26 01:26:33,874 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_06
+2026-04-26 01:26:33,874 - INFO -    Task: AgentVista - society / Manual Assembly and Troubleshooting
+2026-04-26 01:26:33,874 - INFO -    Category: multimodal_agent
+2026-04-26 01:26:33,875 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:26:40,602 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:26:40,605 - INFO - Task task_agentvista_06 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:27:08,177 - INFO - Found transcript via sessions.json: bf8f3826-f133-41ed-9d37-2ce83f8ea88c.jsonl (attempt 1)
+2026-04-26 01:27:21,694 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:27:21,695 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:27:57,399 - INFO - Found transcript via sessions.json: 852875df-51dc-4841-891d-bc9f7aa8a1d7.jsonl (attempt 1)
+2026-04-26 01:27:57,400 - INFO - Task task_agentvista_06 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 01:27:57,401 - INFO -    💾 Session backup saved: task_agentvista_06_run_2faa01d1-1.jsonl (11 entries, status=success)
+2026-04-26 01:27:57,401 - INFO - ⚠️ Task task_agentvista_06: 0.1/1.0 (10%) - hybrid
+2026-04-26 01:27:57,401 - INFO -    Notes: Ground truth identifies only C as incorrect (installed in opposite orientation). Model incorrectly claimed A, B, and C all had errors, over-identifying the problem. Failed to correctly pinpoint the sp
+2026-04-26 01:27:57,401 - INFO - 
+================================================================================
+2026-04-26 01:27:57,401 - INFO - 📋 Task 8/25 (Run 1/1)
+2026-04-26 01:27:57,401 - INFO - ================================================================================
+2026-04-26 01:27:57,401 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_07
+2026-04-26 01:27:57,401 - INFO -    Task: AgentVista - geography / Thematic Map Interpretation
+2026-04-26 01:27:57,401 - INFO -    Category: multimodal_agent
+2026-04-26 01:27:57,403 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:28:04,250 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:28:04,254 - INFO - Task task_agentvista_07 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:28:50,329 - INFO - Found transcript via sessions.json: c308d2c3-e21b-4269-84be-812214467fb4.jsonl (attempt 1)
+2026-04-26 01:29:04,167 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:29:04,168 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:29:19,399 - INFO - Found transcript via sessions.json: a36fd3b8-6065-4ca9-ae6b-1cd7396068ee.jsonl (attempt 1)
+2026-04-26 01:29:19,399 - INFO - Task task_agentvista_07 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 01:29:19,405 - INFO -    💾 Session backup saved: task_agentvista_07_run_2faa01d1-1.jsonl (11 entries, status=success)
+2026-04-26 01:29:19,405 - INFO - ⚠️ Task task_agentvista_07: 0.1/1.0 (10%) - hybrid
+2026-04-26 01:29:19,405 - INFO -    Notes: Agent answered 'North East England' but ground truth is 'Norwich'. These are different answers - Norwich is a specific city/constituency, not the North East England region.
+2026-04-26 01:29:19,405 - INFO - 
+================================================================================
+2026-04-26 01:29:19,405 - INFO - 📋 Task 9/25 (Run 1/1)
+2026-04-26 01:29:19,405 - INFO - ================================================================================
+2026-04-26 01:29:19,405 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_08
+2026-04-26 01:29:19,405 - INFO -    Task: AgentVista - culture / Cultural Knowledge and History
+2026-04-26 01:29:19,406 - INFO -    Category: multimodal_agent
+2026-04-26 01:29:19,407 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:29:26,159 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:29:26,162 - INFO - Task task_agentvista_08 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:30:01,912 - INFO - Found transcript via sessions.json: a4913456-a6d8-4b23-ab1e-a1d1b8095a33.jsonl (attempt 1)
+2026-04-26 01:30:15,313 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:30:15,314 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:30:29,087 - INFO - Found transcript via sessions.json: 022d4d94-01a8-471a-9aac-210bc91632e4.jsonl (attempt 1)
+2026-04-26 01:30:29,087 - INFO - Task task_agentvista_08 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 01:30:29,092 - INFO -    💾 Session backup saved: task_agentvista_08_run_2faa01d1-1.jsonl (11 entries, status=success)
+2026-04-26 01:30:29,093 - INFO - ⚠️ Task task_agentvista_08: 0.1/1.0 (10%) - hybrid
+2026-04-26 01:30:29,093 - INFO -    Notes: Agent answered '6 months' but ground truth is 79 months. Significant calculation or reading error.
+2026-04-26 01:30:29,093 - INFO - 
+================================================================================
+2026-04-26 01:30:29,093 - INFO - 📋 Task 10/25 (Run 1/1)
+2026-04-26 01:30:29,093 - INFO - ================================================================================
+2026-04-26 01:30:29,093 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_agentvista_09
+2026-04-26 01:30:29,093 - INFO -    Task: AgentVista - academics / Scientific Identification and Knowledge
+2026-04-26 01:30:29,093 - INFO -    Category: multimodal_agent
+2026-04-26 01:30:29,094 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:30:35,842 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:30:35,846 - INFO - Task task_agentvista_09 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:35:24,636 - INFO - Found transcript via sessions.json: 20d324ae-fcd1-4298-bb5a-80e1dd3e9d6d.jsonl (attempt 1)
+2026-04-26 01:35:38,316 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:35:38,317 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:36:15,215 - INFO - Found transcript via sessions.json: a195c3f1-c6c8-4ed2-9429-061b1af2de23.jsonl (attempt 1)
+2026-04-26 01:36:15,220 - INFO -    💾 Session backup saved: task_agentvista_09_run_2faa01d1-1.jsonl (39 entries, status=success)
+2026-04-26 01:36:15,220 - INFO - ✅ Task task_agentvista_09: 1.0/1.0 (100%) - hybrid
+2026-04-26 01:36:15,220 - INFO -    Notes: Agent correctly identified OPT-175B as the open-source model with 100B+ parameters closest in release date to GPT-3. Answer matches ground truth exactly.
+2026-04-26 01:36:15,220 - INFO - 
+================================================================================
+2026-04-26 01:36:15,220 - INFO - 📋 Task 11/25 (Run 1/1)
+2026-04-26 01:36:15,220 - INFO - ================================================================================
+2026-04-26 01:36:15,221 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_00
+2026-04-26 01:36:15,221 - INFO -    Task: MMSearch - traditional sports_2
+2026-04-26 01:36:15,221 - INFO -    Category: multimodal_search
+2026-04-26 01:36:15,222 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:36:22,037 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:36:22,041 - INFO - Task task_mmsearch_00 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:36:54,954 - INFO - Found transcript via sessions.json: 5a6bafd5-7181-41de-b4e7-d3e93c7cfd5c.jsonl (attempt 1)
+2026-04-26 01:37:08,796 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:37:08,797 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:37:34,919 - INFO - Found transcript via sessions.json: c03458c8-e9ad-4068-a120-ea55f8f640ce.jsonl (attempt 1)
+2026-04-26 01:37:34,919 - INFO - Task task_mmsearch_00 attempt 1: status=success score=0.82, running second attempt.
+2026-04-26 01:37:34,923 - INFO -    💾 Session backup saved: task_mmsearch_00_run_2faa01d1-1.jsonl (12 entries, status=success)
+2026-04-26 01:37:34,923 - INFO - ⚠️ Task task_mmsearch_00: 0.8/1.0 (82%) - hybrid
+2026-04-26 01:37:34,923 - INFO -    Notes: No web-related tools were used (only read tool for local images). Answer 'LeBron James' exactly matches the reference answer.
+2026-04-26 01:37:34,923 - INFO - 
+================================================================================
+2026-04-26 01:37:34,923 - INFO - 📋 Task 12/25 (Run 1/1)
+2026-04-26 01:37:34,923 - INFO - ================================================================================
+2026-04-26 01:37:34,923 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_01
+2026-04-26 01:37:34,923 - INFO -    Task: MMSearch - paper_0
+2026-04-26 01:37:34,923 - INFO -    Category: multimodal_search
+2026-04-26 01:37:34,924 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:37:42,017 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:37:42,020 - INFO - Task task_mmsearch_01 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:38:12,823 - INFO - Found transcript via sessions.json: 459dd8fc-33b3-4d27-b344-808ab07d4ee1.jsonl (attempt 1)
+2026-04-26 01:38:26,260 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:38:26,261 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:38:54,296 - INFO - Found transcript via sessions.json: f1531e8b-b28e-4590-9079-c312d39d19bf.jsonl (attempt 1)
+2026-04-26 01:38:54,296 - INFO - Task task_mmsearch_01 attempt 1: status=success score=0.82, running second attempt.
+2026-04-26 01:38:54,297 - INFO -    💾 Session backup saved: task_mmsearch_01_run_2faa01d1-1.jsonl (11 entries, status=success)
+2026-04-26 01:38:54,297 - INFO - ⚠️ Task task_mmsearch_01: 0.8/1.0 (82%) - hybrid
+2026-04-26 01:38:54,297 - INFO -    Notes: No web-related tools were used (only read for image and write for answer.txt). The answer correctly states 'Fewer' which matches the reference answer semantically.
+2026-04-26 01:38:54,297 - INFO - 
+================================================================================
+2026-04-26 01:38:54,297 - INFO - 📋 Task 13/25 (Run 1/1)
+2026-04-26 01:38:54,297 - INFO - ================================================================================
+2026-04-26 01:38:54,297 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_02
+2026-04-26 01:38:54,297 - INFO -    Task: MMSearch - paper_9
+2026-04-26 01:38:54,297 - INFO -    Category: multimodal_search
+2026-04-26 01:38:54,299 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:39:01,542 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:39:01,545 - INFO - Task task_mmsearch_02 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:39:23,861 - INFO - Found transcript via sessions.json: 660ab70a-f4dc-42b0-abb1-5bef5d080c62.jsonl (attempt 1)
+2026-04-26 01:39:38,019 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:39:38,020 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:40:04,163 - INFO - Found transcript via sessions.json: 43859d24-a278-45c7-9169-2d1cc13fa707.jsonl (attempt 1)
+2026-04-26 01:40:04,163 - INFO - Task task_mmsearch_02 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 01:40:04,164 - INFO -    💾 Session backup saved: task_mmsearch_02_run_2faa01d1-1.jsonl (11 entries, status=success)
+2026-04-26 01:40:04,164 - INFO - ⚠️ Task task_mmsearch_02: 0.1/1.0 (10%) - hybrid
+2026-04-26 01:40:04,164 - INFO -    Notes: No web-related tools were used in the transcript (only read and write file operations). The answer 'Non neural approach' does not match the reference answer 'NeuTex' and is semantically incorrect.
+2026-04-26 01:40:04,164 - INFO - 
+================================================================================
+2026-04-26 01:40:04,164 - INFO - 📋 Task 14/25 (Run 1/1)
+2026-04-26 01:40:04,164 - INFO - ================================================================================
+2026-04-26 01:40:04,164 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_03
+2026-04-26 01:40:04,164 - INFO -    Task: MMSearch - entertainment_12
+2026-04-26 01:40:04,164 - INFO -    Category: multimodal_search
+2026-04-26 01:40:04,165 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:40:10,780 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:40:10,782 - INFO - Task task_mmsearch_03 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:40:46,184 - INFO - Found transcript via sessions.json: ddb43cfc-19b6-45fb-8e7c-8b03f7165c30.jsonl (attempt 1)
+2026-04-26 01:40:59,918 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:40:59,919 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:41:25,019 - INFO - Found transcript via sessions.json: 0f624804-6584-4c83-95be-110d3af67d1e.jsonl (attempt 1)
+2026-04-26 01:41:25,020 - INFO -    💾 Session backup saved: task_mmsearch_03_run_2faa01d1-1.jsonl (13 entries, status=success)
+2026-04-26 01:41:25,020 - INFO - ✅ Task task_mmsearch_03: 1.0/1.0 (100%) - hybrid
+2026-04-26 01:41:25,020 - INFO -    Notes: Agent used web_search tool to find the English publisher. Answer 'Kodansha USA' in answer.txt matches the reference answer exactly.
+2026-04-26 01:41:25,021 - INFO - 
+================================================================================
+2026-04-26 01:41:25,021 - INFO - 📋 Task 15/25 (Run 1/1)
+2026-04-26 01:41:25,021 - INFO - ================================================================================
+2026-04-26 01:41:25,021 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_04
+2026-04-26 01:41:25,021 - INFO -    Task: MMSearch - technology_12
+2026-04-26 01:41:25,021 - INFO -    Category: multimodal_search
+2026-04-26 01:41:25,022 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:41:31,687 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:41:31,690 - INFO - Task task_mmsearch_04 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:42:13,337 - INFO - Found transcript via sessions.json: 2f65a555-7466-48f7-a0d1-d64c0fb84e52.jsonl (attempt 1)
+2026-04-26 01:42:27,023 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:42:27,024 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:42:53,538 - INFO - Found transcript via sessions.json: 77656426-8069-4e01-9329-1f7dce85801b.jsonl (attempt 1)
+2026-04-26 01:42:53,540 - INFO -    💾 Session backup saved: task_mmsearch_04_run_2faa01d1-1.jsonl (15 entries, status=success)
+2026-04-26 01:42:53,540 - INFO - ✅ Task task_mmsearch_04: 1.0/1.0 (100%) - hybrid
+2026-04-26 01:42:53,540 - INFO -    Notes: Agent used web_search and web_fetch tools to research the Apple Vision Pro release date. The answer.txt contains 'June 28, 2024' which is semantically equivalent to the reference answer '2024-06-28'. 
+2026-04-26 01:42:53,540 - INFO - 
+================================================================================
+2026-04-26 01:42:53,540 - INFO - 📋 Task 16/25 (Run 1/1)
+2026-04-26 01:42:53,540 - INFO - ================================================================================
+2026-04-26 01:42:53,540 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_05
+2026-04-26 01:42:53,540 - INFO -    Task: MMSearch - finance_19
+2026-04-26 01:42:53,540 - INFO -    Category: multimodal_search
+2026-04-26 01:42:53,541 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:43:00,391 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:43:00,396 - INFO - Task task_mmsearch_05 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:44:56,856 - INFO - Found transcript via sessions.json: 82576f2f-81c7-4636-9191-ae67b6e932ac.jsonl (attempt 1)
+2026-04-26 01:45:10,485 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:45:10,487 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:45:48,686 - INFO - Found transcript via sessions.json: 85c8cf8f-577c-471a-b990-5af5c2fb7779.jsonl (attempt 1)
+2026-04-26 01:45:48,687 - INFO - Task task_mmsearch_05 attempt 1: status=success score=0.28, running second attempt.
+2026-04-26 01:45:48,688 - INFO -    💾 Session backup saved: task_mmsearch_05_run_2faa01d1-1.jsonl (33 entries, status=success)
+2026-04-26 01:45:48,688 - INFO - ⚠️ Task task_mmsearch_05: 0.3/1.0 (28%) - hybrid
+2026-04-26 01:45:48,688 - INFO -    Notes: Agent used multiple web-related tools (web_search, web_fetch) satisfying compliance criterion. However, answer.txt contains 'Keerti Melkote' which is incorrect; reference answer is 'Clem Delangue'. In
+2026-04-26 01:45:48,688 - INFO - 
+================================================================================
+2026-04-26 01:45:48,688 - INFO - 📋 Task 17/25 (Run 1/1)
+2026-04-26 01:45:48,688 - INFO - ================================================================================
+2026-04-26 01:45:48,688 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_06
+2026-04-26 01:45:48,688 - INFO -    Task: MMSearch - finance_27
+2026-04-26 01:45:48,688 - INFO -    Category: multimodal_search
+2026-04-26 01:45:48,690 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:45:55,626 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:45:55,629 - INFO - Task task_mmsearch_06 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:51:13,352 - INFO - Found transcript via sessions.json: 30b2bb2f-46c2-44ac-befb-a4014d47585d.jsonl (attempt 1)
+2026-04-26 01:51:27,300 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:51:27,301 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:52:15,000 - INFO - Found transcript via sessions.json: 54b47adf-e5b1-4dda-9728-80191772e3c3.jsonl (attempt 1)
+2026-04-26 01:52:15,001 - INFO - Task task_mmsearch_06 attempt 1: status=success score=0.28, running second attempt.
+2026-04-26 01:52:15,003 - INFO -    💾 Session backup saved: task_mmsearch_06_run_2faa01d1-1.jsonl (75 entries, status=success)
+2026-04-26 01:52:15,004 - INFO - ⚠️ Task task_mmsearch_06: 0.3/1.0 (28%) - hybrid
+2026-04-26 01:52:15,004 - INFO -    Notes: Agent used multiple web-related tools (web_search, web_fetch, agent-browser) throughout the transcript. However, the answer in answer.txt is 'Yes' while the reference answer is 'No' - the agent's answ
+2026-04-26 01:52:15,004 - INFO - 
+================================================================================
+2026-04-26 01:52:15,004 - INFO - 📋 Task 18/25 (Run 1/1)
+2026-04-26 01:52:15,004 - INFO - ================================================================================
+2026-04-26 01:52:15,004 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_07
+2026-04-26 01:52:15,004 - INFO -    Task: MMSearch - entertainment_34
+2026-04-26 01:52:15,004 - INFO -    Category: multimodal_search
+2026-04-26 01:52:15,005 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:52:21,848 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:52:21,853 - INFO - Task task_mmsearch_07 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:52:56,535 - INFO - Found transcript via sessions.json: 86bfa0b1-33cf-41b0-86bf-0aae748cd8c7.jsonl (attempt 1)
+2026-04-26 01:53:10,215 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:53:10,218 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:53:38,479 - INFO - Found transcript via sessions.json: 0061cfec-574e-478e-bbd7-bf19e2b1c635.jsonl (attempt 1)
+2026-04-26 01:53:38,479 - INFO - Task task_mmsearch_07 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 01:53:38,482 - INFO -    💾 Session backup saved: task_mmsearch_07_run_2faa01d1-1.jsonl (12 entries, status=success)
+2026-04-26 01:53:38,482 - INFO - ⚠️ Task task_mmsearch_07: 0.1/1.0 (10%) - hybrid
+2026-04-26 01:53:38,482 - INFO -    Notes: No web-related tools were used (only read/write for images and answer file). Answer 'Aug 13, 2024' is incorrect - reference answer is 2024-08-12 (off by one day).
+2026-04-26 01:53:38,482 - INFO - 
+================================================================================
+2026-04-26 01:53:38,482 - INFO - 📋 Task 19/25 (Run 1/1)
+2026-04-26 01:53:38,482 - INFO - ================================================================================
+2026-04-26 01:53:38,482 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_08
+2026-04-26 01:53:38,482 - INFO -    Task: MMSearch - general_37
+2026-04-26 01:53:38,482 - INFO -    Category: multimodal_search
+2026-04-26 01:53:38,483 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:53:45,515 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:53:45,519 - INFO - Task task_mmsearch_08 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:54:44,737 - INFO - Found transcript via sessions.json: d309a1ae-e733-4193-881a-8a5fbb12d7c2.jsonl (attempt 1)
+2026-04-26 01:54:58,129 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 01:54:58,130 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 01:55:24,851 - INFO - Found transcript via sessions.json: 568d132a-b65f-4b39-bef3-fcf007777168.jsonl (attempt 1)
+2026-04-26 01:55:24,857 - INFO -    💾 Session backup saved: task_mmsearch_08_run_2faa01d1-1.jsonl (14 entries, status=success)
+2026-04-26 01:55:24,857 - INFO - ✅ Task task_mmsearch_08: 1.0/1.0 (100%) - hybrid
+2026-04-26 01:55:24,857 - INFO -    Notes: Agent used web_search tool (web-related). Answer 'April 17, 2025' is semantically correct vs reference '2025' - provides specific date within the correct year.
+2026-04-26 01:55:24,857 - INFO - 
+================================================================================
+2026-04-26 01:55:24,857 - INFO - 📋 Task 20/25 (Run 1/1)
+2026-04-26 01:55:24,857 - INFO - ================================================================================
+2026-04-26 01:55:24,857 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearch_09
+2026-04-26 01:55:24,857 - INFO -    Task: MMSearch - architecture_0
+2026-04-26 01:55:24,857 - INFO -    Category: multimodal_search
+2026-04-26 01:55:24,859 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 01:55:31,623 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 01:55:31,626 - INFO - Task task_mmsearch_09 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:03:31,730 - INFO - Found transcript via sessions.json: 6f3b4ba5-1a78-4a11-95ac-d9d851f6ebc1.jsonl (attempt 1)
+2026-04-26 02:03:45,578 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 02:03:45,579 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 02:04:40,848 - INFO - Found transcript via sessions.json: 37b6ebc9-1711-4eb8-a09f-c675592808d3.jsonl (attempt 1)
+2026-04-26 02:04:40,849 - INFO - Task task_mmsearch_09 attempt 1: status=timeout score=0.18, running second attempt.
+2026-04-26 02:04:40,855 - INFO -    💾 Session backup saved: task_mmsearch_09_run_2faa01d1-1.jsonl (65 entries, status=timeout)
+2026-04-26 02:04:40,856 - INFO - ⚠️ Task task_mmsearch_09: 0.2/1.0 (18%) - hybrid
+2026-04-26 02:04:40,856 - INFO -    Notes: Agent used web_search and web_fetch tools extensively (Criterion 1 met). However, no write operation to answer.txt appears in the transcript, and the searches focused on 2023-2024 dates while the refe
+2026-04-26 02:04:40,856 - INFO - 
+================================================================================
+2026-04-26 02:04:40,856 - INFO - 📋 Task 21/25 (Run 1/1)
+2026-04-26 02:04:40,856 - INFO - ================================================================================
+2026-04-26 02:04:40,856 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearchplus_00
+2026-04-26 02:04:40,856 - INFO -    Task: MMSearch-Plus - Academic Research (00)
+2026-04-26 02:04:40,856 - INFO -    Category: multimodal_search
+2026-04-26 02:04:40,858 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 02:04:47,559 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:04:47,563 - INFO - Task task_mmsearchplus_00 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:06:55,041 - INFO - Found transcript via sessions.json: 1bee172f-418a-47ee-a2a3-a5264a140fa9.jsonl (attempt 1)
+2026-04-26 02:07:08,953 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 02:07:08,955 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 02:07:37,018 - INFO - Found transcript via sessions.json: 204eca13-57fb-460b-a61d-22a27e5fc1bf.jsonl (attempt 1)
+2026-04-26 02:07:37,018 - INFO - Task task_mmsearchplus_00 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 02:07:37,022 - INFO -    💾 Session backup saved: task_mmsearchplus_00_run_2faa01d1-1.jsonl (33 entries, status=success)
+2026-04-26 02:07:37,022 - INFO - ⚠️ Task task_mmsearchplus_00: 0.1/1.0 (10%) - hybrid
+2026-04-26 02:07:37,022 - INFO -    Notes: Agent's answer 'Hide and Seek in Noise Labels: Noise-Robust Collaborative Active Learning with LLM-Powered Assistance' does not match the reference answer 'Calibrating Pre-trained Language Classifiers
+2026-04-26 02:07:37,023 - INFO - 
+================================================================================
+2026-04-26 02:07:37,023 - INFO - 📋 Task 22/25 (Run 1/1)
+2026-04-26 02:07:37,023 - INFO - ================================================================================
+2026-04-26 02:07:37,023 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearchplus_01
+2026-04-26 02:07:37,023 - INFO -    Task: MMSearch-Plus - Music (01)
+2026-04-26 02:07:37,023 - INFO -    Category: multimodal_search
+2026-04-26 02:07:37,024 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 02:07:44,116 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:07:44,119 - INFO - Task task_mmsearchplus_01 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:09:49,272 - INFO - Found transcript via sessions.json: 89c56c1a-d1d3-47c8-8a4d-a05ecbdd1305.jsonl (attempt 1)
+2026-04-26 02:10:03,102 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 02:10:03,103 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 02:10:26,399 - INFO - Found transcript via sessions.json: 1ed69a33-678e-46e7-a38d-879c8bf3b99f.jsonl (attempt 1)
+2026-04-26 02:10:26,400 - INFO - Task task_mmsearchplus_01 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 02:10:26,402 - INFO -    💾 Session backup saved: task_mmsearchplus_01_run_2faa01d1-1.jsonl (28 entries, status=success)
+2026-04-26 02:10:26,402 - INFO - ⚠️ Task task_mmsearchplus_01: 0.1/1.0 (10%) - hybrid
+2026-04-26 02:10:26,402 - INFO -    Notes: Agent answered 'Joe Morello' but the reference answer is 'Chris Brown'. These are different people - the answer is incorrect.
+2026-04-26 02:10:26,402 - INFO - 
+================================================================================
+2026-04-26 02:10:26,402 - INFO - 📋 Task 23/25 (Run 1/1)
+2026-04-26 02:10:26,402 - INFO - ================================================================================
+2026-04-26 02:10:26,402 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearchplus_02
+2026-04-26 02:10:26,402 - INFO -    Task: MMSearch-Plus - Video Games (02)
+2026-04-26 02:10:26,402 - INFO -    Category: multimodal_search
+2026-04-26 02:10:26,404 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 02:10:33,511 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:10:33,518 - INFO - Task task_mmsearchplus_02 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:13:14,955 - INFO - Found transcript via sessions.json: 3af63f93-d7fd-44fb-a6ec-24d0cad533ff.jsonl (attempt 1)
+2026-04-26 02:13:28,941 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 02:13:28,942 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 02:14:08,307 - INFO - Found transcript via sessions.json: f1624203-6aad-4a02-8feb-48749ad05ca7.jsonl (attempt 1)
+2026-04-26 02:14:08,307 - INFO - Task task_mmsearchplus_02 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 02:14:08,309 - INFO -    💾 Session backup saved: task_mmsearchplus_02_run_2faa01d1-1.jsonl (41 entries, status=success)
+2026-04-26 02:14:08,309 - INFO - ⚠️ Task task_mmsearchplus_02: 0.1/1.0 (10%) - hybrid
+2026-04-26 02:14:08,309 - INFO -    Notes: Agent answered 'May 2, 2017' but the reference answer is '2022.1.19'. The agent found an early announcement trailer date from 2017, not the promotional video release date being asked about. Answer is 
+2026-04-26 02:14:08,309 - INFO - 
+================================================================================
+2026-04-26 02:14:08,309 - INFO - 📋 Task 24/25 (Run 1/1)
+2026-04-26 02:14:08,309 - INFO - ================================================================================
+2026-04-26 02:14:08,309 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearchplus_03
+2026-04-26 02:14:08,309 - INFO -    Task: MMSearch-Plus - Film & TV (03)
+2026-04-26 02:14:08,309 - INFO -    Category: multimodal_search
+2026-04-26 02:14:08,310 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 02:14:15,271 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:14:15,278 - INFO - Task task_mmsearchplus_03 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:15:21,683 - INFO - Found transcript via sessions.json: fbff37ec-d9c8-44f3-9f05-686a1742aacb.jsonl (attempt 1)
+2026-04-26 02:15:36,002 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 02:15:36,004 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 02:16:06,074 - INFO - Found transcript via sessions.json: 34f6e7b5-b91d-4c99-8d75-64876594505d.jsonl (attempt 1)
+2026-04-26 02:16:06,075 - INFO - Task task_mmsearchplus_03 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 02:16:06,076 - INFO -    💾 Session backup saved: task_mmsearchplus_03_run_2faa01d1-1.jsonl (18 entries, status=success)
+2026-04-26 02:16:06,076 - INFO - ⚠️ Task task_mmsearchplus_03: 0.1/1.0 (10%) - hybrid
+2026-04-26 02:16:06,076 - INFO -    Notes: Agent answered only the program name '是真的吗' but the reference answer requires the specific episode title with date and topic: '是真的吗 20130824 用酒精可以辨别优劣酱油？'. The question asks for the episode title, not
+2026-04-26 02:16:06,076 - INFO - 
+================================================================================
+2026-04-26 02:16:06,076 - INFO - 📋 Task 25/25 (Run 1/1)
+2026-04-26 02:16:06,076 - INFO - ================================================================================
+2026-04-26 02:16:06,077 - INFO - 🤖 Agent [bench-modelstudio-kimi-k2-5] starting task: task_mmsearchplus_04
+2026-04-26 02:16:06,077 - INFO -    Task: MMSearch-Plus - Geography (04)
+2026-04-26 02:16:06,077 - INFO -    Category: multimodal_search
+2026-04-26 02:16:06,078 - INFO - Removed 1 old OpenClaw session transcripts for bench-modelstudio-kimi-k2-5
+2026-04-26 02:16:13,320 - INFO - Agent bench-modelstudio-kimi-k2-5 workspace from config: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:16:13,326 - INFO - Task task_mmsearchplus_04 will use workspace: /tmp/pinchbench/2faa01d1/agent_workspace
+2026-04-26 02:17:29,126 - INFO - Found transcript via sessions.json: 721ac750-d626-48ff-a330-503bfa38bfef.jsonl (attempt 1)
+2026-04-26 02:17:43,095 - INFO - Agent bench-judge-qwen3-5-plus-for-kimi-k2-5 already exists with correct workspace
+2026-04-26 02:17:43,096 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-kimi-k2-5
+2026-04-26 02:18:08,904 - INFO - Found transcript via sessions.json: 9af037c0-6781-4584-9477-41493a6654d8.jsonl (attempt 1)
+2026-04-26 02:18:08,906 - INFO -    💾 Session backup saved: task_mmsearchplus_04_run_2faa01d1-1.jsonl (19 entries, status=success)
+2026-04-26 02:18:08,906 - INFO - ✅ Task task_mmsearchplus_04: 1.0/1.0 (100%) - hybrid
+2026-04-26 02:18:08,906 - INFO -    Notes: Agent's answer 'Shinjuku district of Tokyo' is semantically equivalent to reference answer 'Tokyo Shinjuku' - both correctly identify the city (Tokyo) and district (Shinjuku).
+2026-04-26 02:18:08,909 - INFO - Saved results to /root/workspace/skill/logs/openclaw_serial_20260425_181850/modelstudio_kimi-k2.5/results/2faa01d1_modelstudio-kimi-k2-5.json
+2026-04-26 02:18:08,909 - INFO - 
+================================================================================
+2026-04-26 02:18:08,909 - INFO - 📊 TOKEN EFFICIENCY SUMMARY
+2026-04-26 02:18:08,909 - INFO - ================================================================================
+2026-04-26 02:18:08,909 - INFO -    Total tokens used: 6,693,950 (input: 4,589,770, output: 26,228)
+2026-04-26 02:18:08,909 - INFO -    Total API requests: 241
+2026-04-26 02:18:08,909 - INFO -    Avg tokens/task: 267,758
+2026-04-26 02:18:08,910 - INFO -    Mean score: 0.3872
+2026-04-26 02:18:08,910 - INFO -    Score per 1K tokens: 0.0014 (higher = more efficient)
+2026-04-26 02:18:08,910 - INFO - ================================================================================
+2026-04-26 02:18:11,832 - INFO - Uploaded to leaderboard: rank #1947
+2026-04-26 02:18:11,832 - INFO - View at: https://pinchbench.com/submission/6e3a9ecf-639c-4969-a872-e7bce23cd202
+[2026-04-26T02:18:11+00:00] exit_code=0

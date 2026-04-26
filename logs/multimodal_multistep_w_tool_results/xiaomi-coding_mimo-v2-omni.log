@@ -1,0 +1,741 @@
+2026-04-26 03:04:13,742 - INFO - 🦞🦀🦐 PinchBench - OpenClaw Benchmarking
+
+░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░░       ░░░        ░░   ░░░  ░░░      ░░░  ░░░░  ░
+▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒
+▓       ▓▓▓▓▓▓  ▓▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓▓       ▓▓▓      ▓▓▓▓  ▓  ▓  ▓▓  ▓▓▓▓▓▓▓▓        ▓
+█  ███████████  █████  ██    ██  ████  ██  ████  ██  ████  ██  ████████  ██    ██  ████  ██  ████  █
+█  ████████        ██  ███   ███      ███  ████  ██       ███        ██  ███   ███      ███  ████  █
+
+                                                           @%@%%@                       
+                                             %*+#++#@   %+-=-....=@                     
+                                    @@%%%##%--+.....:# @=-=.:-.:-.=                     
+                  #%###%##++=---------+#==+-:+.+%++%==-+:-=-#####+.@                    
+            %+----------------------*%%@@@%-:=:#####+-=+--=.+####.-+=#@                 
+            %+====+*##+=====--------------=--=.-###+.=++##=-..+=.:+--=@                 
+            %+================+*##*+++++**+==+=.....==----=*=---+----=@                 
+            #+========================--------=#=-==-----------------=@                 
+            #+========================-------------------------------=@                 
+            **========================---------------------------++--+@                 
+            @%*+======================------++--=#+--------------==-=#@                 
+            @%%%%%###*+===============------#%--=#+--------=++++#%%###%%@               
+             @@@%@%%%%%%@%###+========------==--=+**+*#%%#######%%%%%%%%%%%@            
+             @@%%@@@%%@@@%%%%%%%%%####+++**#%%########%%%%%%@@%%@  @@@@###%%@@          
+            @@%#%@@%%@@@@%%@@@@@@%%%%%#####%%%%%%@@@@@@@@%%@@%%#%     @@%%#####%@       
+            @%#%%@%##@ @%#%@  @@%%@@@%%%%@@     @@@ @%@ @@%@@@%#%     @@%#######%@      
+            @%%@@%##%@@%##%@ @@%#% @@%#%%@@         @@  @%%@ @%%@     @@%########%@     
+            @@%%@@%%@ @%##%@ @%###@ @@%#####%@@@@       @@  @%%@      @%%#%#######%     
+             @%%@%#%@ @@%%@  @%###@  @@%###%######%%##%%@   @@@       @%#%@%######%     
+              @@ @%%@  @%%@  @@%%@    @@%%%########%######%@          @%%%@@#####%@     
+                  @@@  @@%%@  @%#%      @@%#########@@@@@@%%@         @@%@ %####%@      
+                        @@%@   @%#@       @%###########@@@@%@             @%##%@        
+                                @%%        @%%##############%@            @@            
+                                            @@%%%########%@@                            
+                                               @@@%%%%%@@@                              
+                                                                                        
+                                                                                        
+                                                                                        
+
+2026-04-26 03:04:13,742 - INFO - 🦞🦀🦐 Starting PinchBench 🦐🦀🦞
+2026-04-26 03:04:18,745 - INFO - 🔧 Initializing BenchmarkRunner...
+2026-04-26 03:04:18,745 - INFO - Initialized TaskLoader with directory: /root/workspace/skill/tasks
+2026-04-26 03:04:18,745 - INFO - Initialized BenchmarkRunner
+2026-04-26 03:04:18,745 - INFO - 📂 Loading tasks from directory...
+2026-04-26 03:04:18,745 - INFO - Loading tasks...
+2026-04-26 03:04:18,747 - INFO - Found 234 task files
+2026-04-26 03:04:18,748 - INFO - Successfully loaded task: task_advancedif_00
+2026-04-26 03:04:18,749 - INFO - Successfully loaded task: task_advancedif_01
+2026-04-26 03:04:18,749 - INFO - Successfully loaded task: task_advancedif_02
+2026-04-26 03:04:18,750 - INFO - Successfully loaded task: task_advancedif_03
+2026-04-26 03:04:18,750 - INFO - Successfully loaded task: task_advancedif_04
+2026-04-26 03:04:18,751 - INFO - Successfully loaded task: task_advancedif_05
+2026-04-26 03:04:18,751 - INFO - Successfully loaded task: task_advancedif_06
+2026-04-26 03:04:18,752 - INFO - Successfully loaded task: task_advancedif_07
+2026-04-26 03:04:18,752 - INFO - Successfully loaded task: task_advancedif_08
+2026-04-26 03:04:18,753 - INFO - Successfully loaded task: task_advancedif_09
+2026-04-26 03:04:18,754 - INFO - Successfully loaded task: task_agentvista_00
+2026-04-26 03:04:18,755 - INFO - Successfully loaded task: task_agentvista_01
+2026-04-26 03:04:18,756 - INFO - Successfully loaded task: task_agentvista_02
+2026-04-26 03:04:18,756 - INFO - Successfully loaded task: task_agentvista_03
+2026-04-26 03:04:18,757 - INFO - Successfully loaded task: task_agentvista_04
+2026-04-26 03:04:18,759 - INFO - Successfully loaded task: task_agentvista_05
+2026-04-26 03:04:18,760 - INFO - Successfully loaded task: task_agentvista_06
+2026-04-26 03:04:18,761 - INFO - Successfully loaded task: task_agentvista_07
+2026-04-26 03:04:18,762 - INFO - Successfully loaded task: task_agentvista_08
+2026-04-26 03:04:18,764 - INFO - Successfully loaded task: task_agentvista_09
+2026-04-26 03:04:18,765 - INFO - Successfully loaded task: task_bamboogle_00
+2026-04-26 03:04:18,766 - INFO - Successfully loaded task: task_bamboogle_01
+2026-04-26 03:04:18,767 - INFO - Successfully loaded task: task_bamboogle_02
+2026-04-26 03:04:18,767 - INFO - Successfully loaded task: task_bamboogle_03
+2026-04-26 03:04:18,768 - INFO - Successfully loaded task: task_bamboogle_04
+2026-04-26 03:04:18,769 - INFO - Successfully loaded task: task_bamboogle_05
+2026-04-26 03:04:18,769 - INFO - Successfully loaded task: task_bamboogle_06
+2026-04-26 03:04:18,770 - INFO - Successfully loaded task: task_bamboogle_07
+2026-04-26 03:04:18,771 - INFO - Successfully loaded task: task_bamboogle_08
+2026-04-26 03:04:18,771 - INFO - Successfully loaded task: task_bamboogle_09
+2026-04-26 03:04:18,772 - INFO - Successfully loaded task: task_charxiv_00
+2026-04-26 03:04:18,772 - INFO - Successfully loaded task: task_charxiv_01
+2026-04-26 03:04:18,773 - INFO - Successfully loaded task: task_charxiv_02
+2026-04-26 03:04:18,773 - INFO - Successfully loaded task: task_charxiv_03
+2026-04-26 03:04:18,774 - INFO - Successfully loaded task: task_charxiv_04
+2026-04-26 03:04:18,774 - INFO - Successfully loaded task: task_charxiv_05
+2026-04-26 03:04:18,775 - INFO - Successfully loaded task: task_charxiv_06
+2026-04-26 03:04:18,775 - INFO - Successfully loaded task: task_charxiv_07
+2026-04-26 03:04:18,776 - INFO - Successfully loaded task: task_charxiv_08
+2026-04-26 03:04:18,776 - INFO - Successfully loaded task: task_charxiv_09
+2026-04-26 03:04:18,777 - INFO - Successfully loaded task: task_deepsearchqa_00
+2026-04-26 03:04:18,778 - INFO - Successfully loaded task: task_deepsearchqa_01
+2026-04-26 03:04:18,778 - INFO - Successfully loaded task: task_deepsearchqa_02
+2026-04-26 03:04:18,779 - INFO - Successfully loaded task: task_deepsearchqa_03
+2026-04-26 03:04:18,779 - INFO - Successfully loaded task: task_deepsearchqa_04
+2026-04-26 03:04:18,780 - INFO - Successfully loaded task: task_deepsearchqa_05
+2026-04-26 03:04:18,781 - INFO - Successfully loaded task: task_deepsearchqa_06
+2026-04-26 03:04:18,782 - INFO - Successfully loaded task: task_deepsearchqa_07
+2026-04-26 03:04:18,783 - INFO - Successfully loaded task: task_deepsearchqa_08
+2026-04-26 03:04:18,784 - INFO - Successfully loaded task: task_deepsearchqa_09
+2026-04-26 03:04:18,785 - INFO - Successfully loaded task: task_finqa_00
+2026-04-26 03:04:18,785 - INFO - Successfully loaded task: task_finqa_01
+2026-04-26 03:04:18,786 - INFO - Successfully loaded task: task_finqa_02
+2026-04-26 03:04:18,787 - INFO - Successfully loaded task: task_finqa_03
+2026-04-26 03:04:18,787 - INFO - Successfully loaded task: task_finqa_04
+2026-04-26 03:04:18,788 - INFO - Successfully loaded task: task_finqa_05
+2026-04-26 03:04:18,789 - INFO - Successfully loaded task: task_finqa_06
+2026-04-26 03:04:18,789 - INFO - Successfully loaded task: task_finqa_07
+2026-04-26 03:04:18,790 - INFO - Successfully loaded task: task_finqa_08
+2026-04-26 03:04:18,790 - INFO - Successfully loaded task: task_finqa_09
+2026-04-26 03:04:18,791 - INFO - Successfully loaded task: task_gpqa_00
+2026-04-26 03:04:18,792 - INFO - Successfully loaded task: task_gpqa_01
+2026-04-26 03:04:18,793 - INFO - Successfully loaded task: task_gpqa_02
+2026-04-26 03:04:18,793 - INFO - Successfully loaded task: task_gpqa_03
+2026-04-26 03:04:18,794 - INFO - Successfully loaded task: task_gpqa_04
+2026-04-26 03:04:18,795 - INFO - Successfully loaded task: task_gpqa_05
+2026-04-26 03:04:18,795 - INFO - Successfully loaded task: task_gpqa_06
+2026-04-26 03:04:18,796 - INFO - Successfully loaded task: task_gpqa_07
+2026-04-26 03:04:18,797 - INFO - Successfully loaded task: task_gpqa_08
+2026-04-26 03:04:18,798 - INFO - Successfully loaded task: task_gpqa_09
+2026-04-26 03:04:18,798 - INFO - Successfully loaded task: task_hle_00
+2026-04-26 03:04:18,798 - INFO - Successfully loaded task: task_hle_01
+2026-04-26 03:04:18,799 - INFO - Successfully loaded task: task_hle_02
+2026-04-26 03:04:18,799 - INFO - Successfully loaded task: task_hle_03
+2026-04-26 03:04:18,800 - INFO - Successfully loaded task: task_hle_04
+2026-04-26 03:04:18,800 - INFO - Successfully loaded task: task_hle_05
+2026-04-26 03:04:18,801 - INFO - Successfully loaded task: task_hle_06
+2026-04-26 03:04:18,801 - INFO - Successfully loaded task: task_hle_07
+2026-04-26 03:04:18,802 - INFO - Successfully loaded task: task_hle_08
+2026-04-26 03:04:18,802 - INFO - Successfully loaded task: task_hle_09
+2026-04-26 03:04:18,803 - INFO - Successfully loaded task: task_lexeval_00
+2026-04-26 03:04:18,803 - INFO - Successfully loaded task: task_lexeval_01
+2026-04-26 03:04:18,804 - INFO - Successfully loaded task: task_lexeval_02
+2026-04-26 03:04:18,805 - INFO - Successfully loaded task: task_lexeval_03
+2026-04-26 03:04:18,806 - INFO - Successfully loaded task: task_lexeval_04
+2026-04-26 03:04:18,807 - INFO - Successfully loaded task: task_lexeval_05
+2026-04-26 03:04:18,808 - INFO - Successfully loaded task: task_lexeval_06
+2026-04-26 03:04:18,809 - INFO - Successfully loaded task: task_lexeval_07
+2026-04-26 03:04:18,810 - INFO - Successfully loaded task: task_lexeval_08
+2026-04-26 03:04:18,811 - INFO - Successfully loaded task: task_lexeval_09
+2026-04-26 03:04:18,812 - INFO - Successfully loaded task: task_lexeval_10
+2026-04-26 03:04:18,813 - INFO - Successfully loaded task: task_lexeval_11
+2026-04-26 03:04:18,814 - INFO - Successfully loaded task: task_lexeval_12
+2026-04-26 03:04:18,815 - INFO - Successfully loaded task: task_lexeval_13
+2026-04-26 03:04:18,816 - INFO - Successfully loaded task: task_lexeval_14
+2026-04-26 03:04:18,817 - INFO - Successfully loaded task: task_lexeval_15
+2026-04-26 03:04:18,817 - INFO - Successfully loaded task: task_lexeval_16
+2026-04-26 03:04:18,818 - INFO - Successfully loaded task: task_lexeval_17
+2026-04-26 03:04:18,819 - INFO - Successfully loaded task: task_lexeval_18
+2026-04-26 03:04:18,819 - INFO - Successfully loaded task: task_lexeval_19
+2026-04-26 03:04:18,820 - INFO - Successfully loaded task: task_logiqa_00
+2026-04-26 03:04:18,821 - INFO - Successfully loaded task: task_logiqa_01
+2026-04-26 03:04:18,822 - INFO - Successfully loaded task: task_logiqa_02
+2026-04-26 03:04:18,823 - INFO - Successfully loaded task: task_logiqa_03
+2026-04-26 03:04:18,824 - INFO - Successfully loaded task: task_logiqa_04
+2026-04-26 03:04:18,825 - INFO - Successfully loaded task: task_logiqa_05
+2026-04-26 03:04:18,826 - INFO - Successfully loaded task: task_logiqa_06
+2026-04-26 03:04:18,827 - INFO - Successfully loaded task: task_logiqa_07
+2026-04-26 03:04:18,828 - INFO - Successfully loaded task: task_logiqa_08
+2026-04-26 03:04:18,829 - INFO - Successfully loaded task: task_logiqa_09
+2026-04-26 03:04:18,830 - INFO - Successfully loaded task: task_longbench_00
+2026-04-26 03:04:18,830 - INFO - Successfully loaded task: task_longbench_01
+2026-04-26 03:04:18,831 - INFO - Successfully loaded task: task_longbench_02
+2026-04-26 03:04:18,831 - INFO - Successfully loaded task: task_longbench_03
+2026-04-26 03:04:18,832 - INFO - Successfully loaded task: task_longbench_04
+2026-04-26 03:04:18,832 - INFO - Successfully loaded task: task_longbench_05
+2026-04-26 03:04:18,833 - INFO - Successfully loaded task: task_longbench_06
+2026-04-26 03:04:18,833 - INFO - Successfully loaded task: task_longbench_07
+2026-04-26 03:04:18,834 - INFO - Successfully loaded task: task_longbench_08
+2026-04-26 03:04:18,834 - INFO - Successfully loaded task: task_longbench_09
+2026-04-26 03:04:18,835 - INFO - Successfully loaded task: task_medxpertqa_00
+2026-04-26 03:04:18,835 - INFO - Successfully loaded task: task_medxpertqa_01
+2026-04-26 03:04:18,836 - INFO - Successfully loaded task: task_medxpertqa_02
+2026-04-26 03:04:18,836 - INFO - Successfully loaded task: task_medxpertqa_03
+2026-04-26 03:04:18,837 - INFO - Successfully loaded task: task_medxpertqa_04
+2026-04-26 03:04:18,837 - INFO - Successfully loaded task: task_medxpertqa_05
+2026-04-26 03:04:18,838 - INFO - Successfully loaded task: task_medxpertqa_06
+2026-04-26 03:04:18,838 - INFO - Successfully loaded task: task_medxpertqa_07
+2026-04-26 03:04:18,839 - INFO - Successfully loaded task: task_medxpertqa_08
+2026-04-26 03:04:18,839 - INFO - Successfully loaded task: task_medxpertqa_09
+2026-04-26 03:04:18,840 - INFO - Successfully loaded task: task_medxpertqa_10
+2026-04-26 03:04:18,840 - INFO - Successfully loaded task: task_medxpertqa_11
+2026-04-26 03:04:18,841 - INFO - Successfully loaded task: task_medxpertqa_12
+2026-04-26 03:04:18,841 - INFO - Successfully loaded task: task_medxpertqa_13
+2026-04-26 03:04:18,842 - INFO - Successfully loaded task: task_medxpertqa_14
+2026-04-26 03:04:18,842 - INFO - Successfully loaded task: task_medxpertqa_15
+2026-04-26 03:04:18,843 - INFO - Successfully loaded task: task_mmsearch_00
+2026-04-26 03:04:18,844 - INFO - Successfully loaded task: task_mmsearch_01
+2026-04-26 03:04:18,845 - INFO - Successfully loaded task: task_mmsearch_02
+2026-04-26 03:04:18,846 - INFO - Successfully loaded task: task_mmsearch_03
+2026-04-26 03:04:18,847 - INFO - Successfully loaded task: task_mmsearch_04
+2026-04-26 03:04:18,848 - INFO - Successfully loaded task: task_mmsearch_05
+2026-04-26 03:04:18,849 - INFO - Successfully loaded task: task_mmsearch_06
+2026-04-26 03:04:18,850 - INFO - Successfully loaded task: task_mmsearch_07
+2026-04-26 03:04:18,851 - INFO - Successfully loaded task: task_mmsearch_08
+2026-04-26 03:04:18,851 - INFO - Successfully loaded task: task_mmsearch_09
+2026-04-26 03:04:18,852 - INFO - Successfully loaded task: task_mmsearchplus_00
+2026-04-26 03:04:18,853 - INFO - Successfully loaded task: task_mmsearchplus_01
+2026-04-26 03:04:18,854 - INFO - Successfully loaded task: task_mmsearchplus_02
+2026-04-26 03:04:18,855 - INFO - Successfully loaded task: task_mmsearchplus_03
+2026-04-26 03:04:18,856 - INFO - Successfully loaded task: task_mmsearchplus_04
+2026-04-26 03:04:18,859 - INFO - Successfully loaded task: task_openagentsafety_00
+2026-04-26 03:04:18,860 - INFO - Successfully loaded task: task_openagentsafety_01
+2026-04-26 03:04:18,861 - INFO - Successfully loaded task: task_openagentsafety_02
+2026-04-26 03:04:18,864 - INFO - Successfully loaded task: task_openagentsafety_03
+2026-04-26 03:04:18,865 - INFO - Successfully loaded task: task_openagentsafety_04
+2026-04-26 03:04:18,867 - INFO - Successfully loaded task: task_openagentsafety_05
+2026-04-26 03:04:18,868 - INFO - Successfully loaded task: task_osworld_00
+2026-04-26 03:04:18,869 - INFO - Successfully loaded task: task_osworld_01
+2026-04-26 03:04:18,870 - INFO - Successfully loaded task: task_osworld_02
+2026-04-26 03:04:18,871 - INFO - Successfully loaded task: task_osworld_03
+2026-04-26 03:04:18,872 - INFO - Successfully loaded task: task_osworld_04
+2026-04-26 03:04:18,873 - INFO - Successfully loaded task: task_osworld_05
+2026-04-26 03:04:18,874 - INFO - Successfully loaded task: task_osworld_06
+2026-04-26 03:04:18,875 - INFO - Successfully loaded task: task_osworld_07
+2026-04-26 03:04:18,875 - INFO - Successfully loaded task: task_osworld_08
+2026-04-26 03:04:18,876 - INFO - Successfully loaded task: task_seal0_00
+2026-04-26 03:04:18,877 - INFO - Successfully loaded task: task_seal0_01
+2026-04-26 03:04:18,877 - INFO - Successfully loaded task: task_seal0_02
+2026-04-26 03:04:18,878 - INFO - Successfully loaded task: task_seal0_03
+2026-04-26 03:04:18,878 - INFO - Successfully loaded task: task_seal0_04
+2026-04-26 03:04:18,879 - INFO - Successfully loaded task: task_seal0_05
+2026-04-26 03:04:18,880 - INFO - Successfully loaded task: task_seal0_06
+2026-04-26 03:04:18,880 - INFO - Successfully loaded task: task_seal0_07
+2026-04-26 03:04:18,881 - INFO - Successfully loaded task: task_seal0_08
+2026-04-26 03:04:18,881 - INFO - Successfully loaded task: task_seal0_09
+2026-04-26 03:04:18,882 - INFO - Successfully loaded task: task_simpleqa_00
+2026-04-26 03:04:18,883 - INFO - Successfully loaded task: task_simpleqa_01
+2026-04-26 03:04:18,884 - INFO - Successfully loaded task: task_simpleqa_02
+2026-04-26 03:04:18,884 - INFO - Successfully loaded task: task_simpleqa_03
+2026-04-26 03:04:18,885 - INFO - Successfully loaded task: task_simpleqa_04
+2026-04-26 03:04:18,886 - INFO - Successfully loaded task: task_simpleqa_05
+2026-04-26 03:04:18,886 - INFO - Successfully loaded task: task_simpleqa_06
+2026-04-26 03:04:18,887 - INFO - Successfully loaded task: task_simpleqa_07
+2026-04-26 03:04:18,888 - INFO - Successfully loaded task: task_simpleqa_08
+2026-04-26 03:04:18,888 - INFO - Successfully loaded task: task_simpleqa_09
+2026-04-26 03:04:18,889 - INFO - Successfully loaded task: task_simplevqa_00
+2026-04-26 03:04:18,890 - INFO - Successfully loaded task: task_simplevqa_01
+2026-04-26 03:04:18,890 - INFO - Successfully loaded task: task_simplevqa_02
+2026-04-26 03:04:18,891 - INFO - Successfully loaded task: task_simplevqa_03
+2026-04-26 03:04:18,892 - INFO - Successfully loaded task: task_simplevqa_04
+2026-04-26 03:04:18,892 - INFO - Successfully loaded task: task_simplevqa_05
+2026-04-26 03:04:18,893 - INFO - Successfully loaded task: task_simplevqa_06
+2026-04-26 03:04:18,894 - INFO - Successfully loaded task: task_simplevqa_07
+2026-04-26 03:04:18,894 - INFO - Successfully loaded task: task_simplevqa_08
+2026-04-26 03:04:18,895 - INFO - Successfully loaded task: task_simplevqa_09
+2026-04-26 03:04:18,896 - INFO - Successfully loaded task: task_tablebench_00
+2026-04-26 03:04:18,896 - INFO - Successfully loaded task: task_tablebench_01
+2026-04-26 03:04:18,897 - INFO - Successfully loaded task: task_tablebench_02
+2026-04-26 03:04:18,898 - INFO - Successfully loaded task: task_tablebench_03
+2026-04-26 03:04:18,899 - INFO - Successfully loaded task: task_tablebench_04
+2026-04-26 03:04:18,900 - INFO - Successfully loaded task: task_tablebench_05
+2026-04-26 03:04:18,901 - INFO - Successfully loaded task: task_tablebench_06
+2026-04-26 03:04:18,901 - INFO - Successfully loaded task: task_tablebench_07
+2026-04-26 03:04:18,902 - INFO - Successfully loaded task: task_tablebench_08
+2026-04-26 03:04:18,903 - INFO - Successfully loaded task: task_tablebench_09
+2026-04-26 03:04:18,904 - INFO - Successfully loaded task: task_tablebench_10
+2026-04-26 03:04:18,905 - INFO - Successfully loaded task: task_tablebench_11
+2026-04-26 03:04:18,906 - INFO - Successfully loaded task: task_tablebench_12
+2026-04-26 03:04:18,906 - INFO - Successfully loaded task: task_tablebench_13
+2026-04-26 03:04:18,907 - INFO - Successfully loaded task: task_tablebench_14
+2026-04-26 03:04:18,908 - INFO - Successfully loaded task: task_tablebench_15
+2026-04-26 03:04:18,908 - INFO - Successfully loaded task: task_tablebench_16
+2026-04-26 03:04:18,909 - INFO - Successfully loaded task: task_terminalbench2_00
+2026-04-26 03:04:18,910 - INFO - Successfully loaded task: task_terminalbench2_01
+2026-04-26 03:04:18,911 - INFO - Successfully loaded task: task_terminalbench2_02
+2026-04-26 03:04:18,912 - INFO - Successfully loaded task: task_terminalbench2_03
+2026-04-26 03:04:18,913 - INFO - Successfully loaded task: task_terminalbench2_04
+2026-04-26 03:04:18,913 - INFO - Successfully loaded task: task_terminalbench2_05
+2026-04-26 03:04:18,914 - INFO - Successfully loaded task: task_terminalbench2_06
+2026-04-26 03:04:18,915 - INFO - Successfully loaded task: task_terminalbench2_07
+2026-04-26 03:04:18,916 - INFO - Successfully loaded task: task_terminalbench2_08
+2026-04-26 03:04:18,917 - INFO - Successfully loaded task: task_terminalbench2_09
+2026-04-26 03:04:18,917 - INFO - Successfully loaded task: task_tmp
+2026-04-26 03:04:18,918 - INFO - Successfully loaded task: task_widesearch_00
+2026-04-26 03:04:18,919 - INFO - Successfully loaded task: task_widesearch_01
+2026-04-26 03:04:18,920 - INFO - Successfully loaded task: task_widesearch_02
+2026-04-26 03:04:18,921 - INFO - Successfully loaded task: task_widesearch_03
+2026-04-26 03:04:18,921 - INFO - Successfully loaded task: task_widesearch_04
+2026-04-26 03:04:18,922 - INFO - Successfully loaded task: task_widesearch_05
+2026-04-26 03:04:18,923 - INFO - Successfully loaded task: task_widesearch_06
+2026-04-26 03:04:18,924 - INFO - Successfully loaded task: task_widesearch_07
+2026-04-26 03:04:18,925 - INFO - Successfully loaded task: task_widesearch_08
+2026-04-26 03:04:18,926 - INFO - Successfully loaded task: task_widesearch_09
+2026-04-26 03:04:18,926 - INFO - Successfully loaded 234 tasks
+2026-04-26 03:04:18,926 - INFO - Loaded 234 tasks
+2026-04-26 03:04:33,199 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni exists with stale workspace (/tmp/pinchbench/b21d02f9/agent_workspace != /tmp/pinchbench/367bd7e0/agent_workspace), recreating
+2026-04-26 03:04:58,469 - INFO - Creating OpenClaw agent bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:05:23,227 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni created successfully with workspace /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:05:30,179 - INFO - Workspace confirmed: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:05:30,179 - INFO - 
+================================================================================
+2026-04-26 03:05:30,179 - INFO - 📋 Task 1/25 (Run 1/1)
+2026-04-26 03:05:30,179 - INFO - ================================================================================
+2026-04-26 03:05:30,179 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_00
+2026-04-26 03:05:30,179 - INFO -    Task: AgentVista - society / Health and Culinary
+2026-04-26 03:05:30,179 - INFO -    Category: multimodal_agent
+2026-04-26 03:05:37,050 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:05:37,053 - INFO - Task task_agentvista_00 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:07:14,361 - INFO - Found transcript via sessions.json: fa1209f0-dbad-4a00-9459-482bab730d35.jsonl (attempt 1)
+2026-04-26 03:07:28,252 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:07:28,253 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:08:22,759 - INFO - Found transcript via sessions.json: 020ed7d2-0ccb-4db0-bc42-fad2dd86353f.jsonl (attempt 1)
+2026-04-26 03:08:22,759 - INFO - Task task_agentvista_00 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:08:22,762 - INFO -    💾 Session backup saved: task_agentvista_00_run_367bd7e0-1.jsonl (17 entries, status=success)
+2026-04-26 03:08:22,762 - INFO - ⚠️ Task task_agentvista_00: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:08:22,762 - INFO -    Notes: Agent answered 'Carrot' but ground truth is 'Broccoli'. Agent incorrectly excluded broccoli from final consideration by claiming it lacks clinical GI data, when broccoli (GI ~10-15 raw) actually has l
+2026-04-26 03:08:22,762 - INFO - 
+================================================================================
+2026-04-26 03:08:22,762 - INFO - 📋 Task 2/25 (Run 1/1)
+2026-04-26 03:08:22,762 - INFO - ================================================================================
+2026-04-26 03:08:22,762 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_01
+2026-04-26 03:08:22,762 - INFO -    Task: AgentVista - culture / Artifact Appraisal and Craftsmanship
+2026-04-26 03:08:22,762 - INFO -    Category: multimodal_agent
+2026-04-26 03:08:22,764 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:08:29,768 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:08:29,776 - INFO - Task task_agentvista_01 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:09:16,821 - INFO - Found transcript via sessions.json: 38dfcba1-3257-4bfc-bfa5-2d42b6404c44.jsonl (attempt 1)
+2026-04-26 03:09:30,897 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:09:30,898 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:09:56,150 - INFO - Found transcript via sessions.json: 8ff1d9d4-b562-4f82-9c0c-bf1fcf67a2ad.jsonl (attempt 1)
+2026-04-26 03:09:56,151 - INFO - Task task_agentvista_01 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:09:56,153 - INFO -    💾 Session backup saved: task_agentvista_01_run_367bd7e0-1.jsonl (12 entries, status=success)
+2026-04-26 03:09:56,153 - INFO - ⚠️ Task task_agentvista_01: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:09:56,153 - INFO -    Notes: Model identified Elagabalus (Marcus Aurelius Antoninus, ruled 218-222 AD) but the correct answer is Marcus Aurelius Probus (ruled 276-282 AD). These are two different Roman emperors from different tim
+2026-04-26 03:09:56,153 - INFO - 
+================================================================================
+2026-04-26 03:09:56,153 - INFO - 📋 Task 3/25 (Run 1/1)
+2026-04-26 03:09:56,153 - INFO - ================================================================================
+2026-04-26 03:09:56,153 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_02
+2026-04-26 03:09:56,153 - INFO -    Task: AgentVista - culture / Cultural Knowledge and History
+2026-04-26 03:09:56,153 - INFO -    Category: multimodal_agent
+2026-04-26 03:09:56,155 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:10:03,404 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:10:03,409 - INFO - Task task_agentvista_02 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:18:03,512 - INFO - Found transcript via sessions.json: a2feeb24-fc4f-4277-b9c3-92e61d03b274.jsonl (attempt 1)
+2026-04-26 03:18:17,444 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:18:17,446 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:19:28,256 - INFO - Found transcript via sessions.json: 5dccf22a-4f8d-4f85-974a-4010194ab4ea.jsonl (attempt 1)
+2026-04-26 03:19:28,256 - INFO - Task task_agentvista_02 attempt 1: status=timeout score=0.00, running second attempt.
+2026-04-26 03:19:28,268 - INFO -    💾 Session backup saved: task_agentvista_02_run_367bd7e0-1.jsonl (95 entries, status=timeout)
+2026-04-26 03:19:28,268 - INFO - ❌ Task task_agentvista_02: 0.0/1.0 (0%) - hybrid
+2026-04-26 03:19:28,268 - INFO -    Notes: The agent transcript shows extensive research efforts including image analysis, multiple web searches about Authors United and various authors (Donna Tartt, John Grisham, Stephen King), and image crop
+2026-04-26 03:19:28,268 - INFO - 
+================================================================================
+2026-04-26 03:19:28,268 - INFO - 📋 Task 4/25 (Run 1/1)
+2026-04-26 03:19:28,268 - INFO - ================================================================================
+2026-04-26 03:19:28,268 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_03
+2026-04-26 03:19:28,269 - INFO -    Task: AgentVista - entertainment / Video Game Mechanics
+2026-04-26 03:19:28,269 - INFO -    Category: multimodal_agent
+2026-04-26 03:19:28,270 - INFO - Removed 2 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:19:35,049 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:19:35,054 - INFO - Task task_agentvista_03 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:20:28,753 - INFO - Found transcript via sessions.json: 5d2f4bbd-7002-4785-a8d8-1b1831acb8b1.jsonl (attempt 1)
+2026-04-26 03:20:43,514 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:20:43,515 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:21:13,823 - INFO - Found transcript via sessions.json: 9506067a-5530-4427-9c6a-ce1d3d5ea7c9.jsonl (attempt 1)
+2026-04-26 03:21:13,824 - INFO - Task task_agentvista_03 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:21:13,825 - INFO -    💾 Session backup saved: task_agentvista_03_run_367bd7e0-1.jsonl (11 entries, status=success)
+2026-04-26 03:21:13,825 - INFO - ⚠️ Task task_agentvista_03: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:21:13,825 - INFO -    Notes: Game identification correct (Monster Hunter Wilds), but percentage calculation incorrect. Ground truth: 59.86%, Model answered: ~64%. Per rubric 'no partial credit' rule, numerical mismatch means inco
+2026-04-26 03:21:13,825 - INFO - 
+================================================================================
+2026-04-26 03:21:13,825 - INFO - 📋 Task 5/25 (Run 1/1)
+2026-04-26 03:21:13,825 - INFO - ================================================================================
+2026-04-26 03:21:13,825 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_04
+2026-04-26 03:21:13,825 - INFO -    Task: AgentVista - commerce / Transaction and Price Calculation
+2026-04-26 03:21:13,825 - INFO -    Category: multimodal_agent
+2026-04-26 03:21:13,828 - INFO - Removed 2 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:21:20,904 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:21:20,930 - INFO - Task task_agentvista_04 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:22:22,306 - INFO - Found transcript via sessions.json: 600a6289-9709-4edd-9122-0ac78af86fb0.jsonl (attempt 1)
+2026-04-26 03:22:36,238 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:22:36,239 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:23:23,379 - INFO - Found transcript via sessions.json: 0e32f4e6-0e64-48fc-a30d-eb88812acd04.jsonl (attempt 1)
+2026-04-26 03:23:23,379 - INFO - Task task_agentvista_04 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:23:23,381 - INFO -    💾 Session backup saved: task_agentvista_04_run_367bd7e0-1.jsonl (15 entries, status=success)
+2026-04-26 03:23:23,381 - INFO - ⚠️ Task task_agentvista_04: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:23:23,381 - INFO -    Notes: Agent answered HK$60 for three adult tickets at Hong Kong Observation Wheel, but ground truth is 0. The answer is factually incorrect - either the ride was free, there was a special promotion, or some
+2026-04-26 03:23:23,381 - INFO - 
+================================================================================
+2026-04-26 03:23:23,381 - INFO - 📋 Task 6/25 (Run 1/1)
+2026-04-26 03:23:23,381 - INFO - ================================================================================
+2026-04-26 03:23:23,381 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_05
+2026-04-26 03:23:23,381 - INFO -    Task: AgentVista - geography / Thematic Map Interpretation
+2026-04-26 03:23:23,381 - INFO -    Category: multimodal_agent
+2026-04-26 03:23:23,383 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:23:30,382 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:23:30,387 - INFO - Task task_agentvista_05 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:25:07,576 - INFO - Found transcript via sessions.json: 88c7e7db-28e8-4eaa-bb74-ed9a5b7d3699.jsonl (attempt 1)
+2026-04-26 03:25:21,225 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:25:21,227 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:25:41,279 - INFO - Found transcript via sessions.json: c8075b48-ee1c-4cc8-b2fd-8090e98f29b1.jsonl (attempt 1)
+2026-04-26 03:25:41,280 - INFO - Task task_agentvista_05 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:25:41,281 - INFO -    💾 Session backup saved: task_agentvista_05_run_367bd7e0-1.jsonl (13 entries, status=success)
+2026-04-26 03:25:41,281 - INFO - ⚠️ Task task_agentvista_05: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:25:41,281 - INFO -    Notes: Agent answered 1, but ground truth is 4 airports in Taiwan Province. Answer is incorrect.
+2026-04-26 03:25:41,281 - INFO - 
+================================================================================
+2026-04-26 03:25:41,281 - INFO - 📋 Task 7/25 (Run 1/1)
+2026-04-26 03:25:41,281 - INFO - ================================================================================
+2026-04-26 03:25:41,281 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_06
+2026-04-26 03:25:41,281 - INFO -    Task: AgentVista - society / Manual Assembly and Troubleshooting
+2026-04-26 03:25:41,281 - INFO -    Category: multimodal_agent
+2026-04-26 03:25:41,282 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:25:48,158 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:25:48,161 - INFO - Task task_agentvista_06 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:27:21,492 - INFO - Found transcript via sessions.json: 2635c4ae-4fa6-4f0f-8ebc-45131b555f54.jsonl (attempt 1)
+2026-04-26 03:27:35,516 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:27:35,517 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:28:15,723 - INFO - Found transcript via sessions.json: a0353cd1-9b58-4f6a-9832-702d11166216.jsonl (attempt 1)
+2026-04-26 03:28:15,723 - INFO - Task task_agentvista_06 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:28:15,724 - INFO -    💾 Session backup saved: task_agentvista_06_run_367bd7e0-1.jsonl (11 entries, status=success)
+2026-04-26 03:28:15,724 - INFO - ⚠️ Task task_agentvista_06: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:28:15,725 - INFO -    Notes: Agent incorrectly identified position B as the error. Ground truth states the error is at position C (part installed in opposite orientation). Agent explicitly stated C appears correctly oriented, whi
+2026-04-26 03:28:15,725 - INFO - 
+================================================================================
+2026-04-26 03:28:15,725 - INFO - 📋 Task 8/25 (Run 1/1)
+2026-04-26 03:28:15,725 - INFO - ================================================================================
+2026-04-26 03:28:15,725 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_07
+2026-04-26 03:28:15,725 - INFO -    Task: AgentVista - geography / Thematic Map Interpretation
+2026-04-26 03:28:15,725 - INFO -    Category: multimodal_agent
+2026-04-26 03:28:15,726 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:28:22,564 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:28:22,567 - INFO - Task task_agentvista_07 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:29:44,735 - INFO - Found transcript via sessions.json: ecf08f64-3d5b-46ba-85ae-0b9a49b39e37.jsonl (attempt 1)
+2026-04-26 03:29:58,456 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:29:58,458 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:30:13,299 - INFO - Found transcript via sessions.json: 9cf19feb-33ef-4125-8b2f-5952d5199c85.jsonl (attempt 1)
+2026-04-26 03:30:13,299 - INFO - Task task_agentvista_07 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:30:13,303 - INFO -    💾 Session backup saved: task_agentvista_07_run_367bd7e0-1.jsonl (11 entries, status=success)
+2026-04-26 03:30:13,303 - INFO - ⚠️ Task task_agentvista_07: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:30:13,303 - INFO -    Notes: Agent answered 'North East England' but ground truth is 'Norwich'. These are completely different answers - Norwich is a city while North East England is a region. No semantic match.
+2026-04-26 03:30:13,303 - INFO - 
+================================================================================
+2026-04-26 03:30:13,303 - INFO - 📋 Task 9/25 (Run 1/1)
+2026-04-26 03:30:13,303 - INFO - ================================================================================
+2026-04-26 03:30:13,303 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_08
+2026-04-26 03:30:13,303 - INFO -    Task: AgentVista - culture / Cultural Knowledge and History
+2026-04-26 03:30:13,303 - INFO -    Category: multimodal_agent
+2026-04-26 03:30:13,305 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:30:20,077 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:30:20,081 - INFO - Task task_agentvista_08 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:32:36,211 - INFO - Found transcript via sessions.json: bb35673d-f2df-42c8-a8bd-89b53daa9125.jsonl (attempt 1)
+2026-04-26 03:32:50,026 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:32:50,027 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:33:05,154 - INFO - Found transcript via sessions.json: 8edbffdb-d331-4bf9-94ad-88d52600dbf1.jsonl (attempt 1)
+2026-04-26 03:33:05,155 - INFO - Task task_agentvista_08 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:33:05,163 - INFO -    💾 Session backup saved: task_agentvista_08_run_367bd7e0-1.jsonl (13 entries, status=success)
+2026-04-26 03:33:05,163 - INFO - ⚠️ Task task_agentvista_08: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:33:05,163 - INFO -    Notes: Agent answered 82 months but ground truth is 79 months. Answer is incorrect.
+2026-04-26 03:33:05,163 - INFO - 
+================================================================================
+2026-04-26 03:33:05,163 - INFO - 📋 Task 10/25 (Run 1/1)
+2026-04-26 03:33:05,163 - INFO - ================================================================================
+2026-04-26 03:33:05,163 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_agentvista_09
+2026-04-26 03:33:05,163 - INFO -    Task: AgentVista - academics / Scientific Identification and Knowledge
+2026-04-26 03:33:05,163 - INFO -    Category: multimodal_agent
+2026-04-26 03:33:05,165 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:33:12,080 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:33:12,083 - INFO - Task task_agentvista_09 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:33:46,162 - INFO - Found transcript via sessions.json: 433f31dc-39da-4a5c-b685-2b8c23900b9a.jsonl (attempt 1)
+2026-04-26 03:34:00,014 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:34:00,015 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:34:27,153 - INFO - Found transcript via sessions.json: b347dba2-2ae7-407f-849c-625fc1f670ae.jsonl (attempt 1)
+2026-04-26 03:34:27,154 - INFO - Task task_agentvista_09 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:34:27,156 - INFO -    💾 Session backup saved: task_agentvista_09_run_367bd7e0-1.jsonl (13 entries, status=success)
+2026-04-26 03:34:27,156 - INFO - ⚠️ Task task_agentvista_09: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:34:27,156 - INFO -    Notes: Agent answered 'Switch Transformer' but ground truth is 'OPT-175B'. The answer does not match.
+2026-04-26 03:34:27,156 - INFO - 
+================================================================================
+2026-04-26 03:34:27,156 - INFO - 📋 Task 11/25 (Run 1/1)
+2026-04-26 03:34:27,156 - INFO - ================================================================================
+2026-04-26 03:34:27,157 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_00
+2026-04-26 03:34:27,157 - INFO -    Task: MMSearch - traditional sports_2
+2026-04-26 03:34:27,157 - INFO -    Category: multimodal_search
+2026-04-26 03:34:27,158 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:34:34,227 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:34:34,231 - INFO - Task task_mmsearch_00 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:34:59,141 - INFO - Found transcript via sessions.json: 9c9f07dd-cc89-4b1a-a01d-13f021435eca.jsonl (attempt 1)
+2026-04-26 03:35:13,029 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:35:13,030 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:35:46,051 - INFO - Found transcript via sessions.json: 97b42f58-d55c-4c3f-a3f9-142608448c7a.jsonl (attempt 1)
+2026-04-26 03:35:46,051 - INFO - Task task_mmsearch_00 attempt 1: status=success score=0.82, running second attempt.
+2026-04-26 03:35:46,054 - INFO -    💾 Session backup saved: task_mmsearch_00_run_367bd7e0-1.jsonl (12 entries, status=success)
+2026-04-26 03:35:46,054 - INFO - ⚠️ Task task_mmsearch_00: 0.8/1.0 (82%) - hybrid
+2026-04-26 03:35:46,054 - INFO -    Notes: No web-related tools were invoked (only read/write on local files). Answer 'LeBron James' exactly matches the reference answer.
+2026-04-26 03:35:46,055 - INFO - 
+================================================================================
+2026-04-26 03:35:46,055 - INFO - 📋 Task 12/25 (Run 1/1)
+2026-04-26 03:35:46,055 - INFO - ================================================================================
+2026-04-26 03:35:46,055 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_01
+2026-04-26 03:35:46,055 - INFO -    Task: MMSearch - paper_0
+2026-04-26 03:35:46,055 - INFO -    Category: multimodal_search
+2026-04-26 03:35:46,056 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:35:53,081 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:35:53,085 - INFO - Task task_mmsearch_01 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:36:13,359 - INFO - Found transcript via sessions.json: dfbc3668-78ae-4e82-baf1-75cbfb55aa10.jsonl (attempt 1)
+2026-04-26 03:36:27,243 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:36:27,245 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:36:55,787 - INFO - Found transcript via sessions.json: da729dd0-843a-4617-8abc-3344a1e97343.jsonl (attempt 1)
+2026-04-26 03:36:55,788 - INFO - Task task_mmsearch_01 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:36:55,789 - INFO -    💾 Session backup saved: task_mmsearch_01_run_367bd7e0-1.jsonl (11 entries, status=success)
+2026-04-26 03:36:55,789 - INFO - ⚠️ Task task_mmsearch_01: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:36:55,789 - INFO -    Notes: No web-related tools were used (only read and write). The answer in answer.txt states 'V2 expresses more vertices for a face' which directly contradicts the reference answer 'fewer'. The agent's answe
+2026-04-26 03:36:55,789 - INFO - 
+================================================================================
+2026-04-26 03:36:55,789 - INFO - 📋 Task 13/25 (Run 1/1)
+2026-04-26 03:36:55,789 - INFO - ================================================================================
+2026-04-26 03:36:55,789 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_02
+2026-04-26 03:36:55,789 - INFO -    Task: MMSearch - paper_9
+2026-04-26 03:36:55,789 - INFO -    Category: multimodal_search
+2026-04-26 03:36:55,791 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:37:02,931 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:37:02,934 - INFO - Task task_mmsearch_02 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:37:19,021 - INFO - Found transcript via sessions.json: a42a23f2-0f0b-440b-b4b1-4fca83430ded.jsonl (attempt 1)
+2026-04-26 03:37:33,048 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:37:33,050 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:38:00,784 - INFO - Found transcript via sessions.json: 62d8418f-1c90-438d-966c-195ab1fce99d.jsonl (attempt 1)
+2026-04-26 03:38:00,785 - INFO - Task task_mmsearch_02 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:38:00,785 - INFO -    💾 Session backup saved: task_mmsearch_02_run_367bd7e0-1.jsonl (15 entries, status=success)
+2026-04-26 03:38:00,786 - INFO - ⚠️ Task task_mmsearch_02: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:38:00,786 - INFO -    Notes: No web-related tools were used (only read, exec, write). Answer 'Non neural approach' does not match reference answer 'NeuTex' - semantically incorrect.
+2026-04-26 03:38:00,786 - INFO - 
+================================================================================
+2026-04-26 03:38:00,786 - INFO - 📋 Task 14/25 (Run 1/1)
+2026-04-26 03:38:00,786 - INFO - ================================================================================
+2026-04-26 03:38:00,786 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_03
+2026-04-26 03:38:00,786 - INFO -    Task: MMSearch - entertainment_12
+2026-04-26 03:38:00,786 - INFO -    Category: multimodal_search
+2026-04-26 03:38:00,787 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:38:07,668 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:38:07,671 - INFO - Task task_mmsearch_03 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:38:40,883 - INFO - Found transcript via sessions.json: 38cda26d-e7ee-4bbd-9ae6-69c197f44a22.jsonl (attempt 1)
+2026-04-26 03:38:54,919 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:38:54,920 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:39:21,312 - INFO - Found transcript via sessions.json: da907395-afbf-4de7-b589-d18f5c347655.jsonl (attempt 1)
+2026-04-26 03:39:21,314 - INFO -    💾 Session backup saved: task_mmsearch_03_run_367bd7e0-1.jsonl (17 entries, status=success)
+2026-04-26 03:39:21,314 - INFO - ✅ Task task_mmsearch_03: 1.0/1.0 (100%) - hybrid
+2026-04-26 03:39:21,314 - INFO -    Notes: Agent used web_search tool 3 times to identify the manga and find its English publisher. Answer 'Kodansha USA' matches the reference answer exactly.
+2026-04-26 03:39:21,314 - INFO - 
+================================================================================
+2026-04-26 03:39:21,314 - INFO - 📋 Task 15/25 (Run 1/1)
+2026-04-26 03:39:21,314 - INFO - ================================================================================
+2026-04-26 03:39:21,315 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_04
+2026-04-26 03:39:21,315 - INFO -    Task: MMSearch - technology_12
+2026-04-26 03:39:21,315 - INFO -    Category: multimodal_search
+2026-04-26 03:39:21,316 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:39:28,325 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:39:28,328 - INFO - Task task_mmsearch_04 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:39:49,854 - INFO - Found transcript via sessions.json: a82eca8d-4248-47f6-bdc9-5eeab46e63f3.jsonl (attempt 1)
+2026-04-26 03:40:04,828 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:40:04,829 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:40:33,220 - INFO - Found transcript via sessions.json: 7badcd21-39ba-40de-aa14-787b36f8b553.jsonl (attempt 1)
+2026-04-26 03:40:33,222 - INFO -    💾 Session backup saved: task_mmsearch_04_run_367bd7e0-1.jsonl (13 entries, status=success)
+2026-04-26 03:40:33,222 - INFO - ✅ Task task_mmsearch_04: 1.0/1.0 (100%) - hybrid
+2026-04-26 03:40:33,222 - INFO -    Notes: Agent used web_search tool (web-related). Answer 'June 28, 2024' is semantically equivalent to reference '2024-06-28'. Correct product identification (Apple Vision Pro) and correct release date for Ch
+2026-04-26 03:40:33,222 - INFO - 
+================================================================================
+2026-04-26 03:40:33,222 - INFO - 📋 Task 16/25 (Run 1/1)
+2026-04-26 03:40:33,222 - INFO - ================================================================================
+2026-04-26 03:40:33,222 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_05
+2026-04-26 03:40:33,222 - INFO -    Task: MMSearch - finance_19
+2026-04-26 03:40:33,222 - INFO -    Category: multimodal_search
+2026-04-26 03:40:33,224 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:40:40,312 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:40:40,316 - INFO - Task task_mmsearch_05 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:45:06,117 - INFO - Found transcript via sessions.json: 78f5ed1d-6302-4964-920d-cbcc569ef313.jsonl (attempt 1)
+2026-04-26 03:45:19,825 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:45:19,826 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:46:09,377 - INFO - Found transcript via sessions.json: df06fe19-e42f-4a82-a70e-13c94b833027.jsonl (attempt 1)
+2026-04-26 03:46:09,380 - INFO -    💾 Session backup saved: task_mmsearch_05_run_367bd7e0-1.jsonl (83 entries, status=success)
+2026-04-26 03:46:09,380 - INFO - ✅ Task task_mmsearch_05: 1.0/1.0 (100%) - hybrid
+2026-04-26 03:46:09,380 - INFO -    Notes: Agent used multiple web_search calls and agent-browser for reverse image search (web tools confirmed). Answer 'Clément Delangue' is semantically equivalent to reference 'Clem Delangue' (Clément is the
+2026-04-26 03:46:09,380 - INFO - 
+================================================================================
+2026-04-26 03:46:09,380 - INFO - 📋 Task 17/25 (Run 1/1)
+2026-04-26 03:46:09,381 - INFO - ================================================================================
+2026-04-26 03:46:09,381 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_06
+2026-04-26 03:46:09,381 - INFO -    Task: MMSearch - finance_27
+2026-04-26 03:46:09,381 - INFO -    Category: multimodal_search
+2026-04-26 03:46:09,382 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:46:16,265 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:46:16,268 - INFO - Task task_mmsearch_06 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:47:18,893 - INFO - Found transcript via sessions.json: 7668cd21-23e6-4d46-be17-dde97f209b07.jsonl (attempt 1)
+2026-04-26 03:47:33,270 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:47:33,279 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:48:14,999 - INFO - Found transcript via sessions.json: 77d02b7e-e504-44f0-af96-4c1862ece7bb.jsonl (attempt 1)
+2026-04-26 03:48:15,001 - INFO -    💾 Session backup saved: task_mmsearch_06_run_367bd7e0-1.jsonl (29 entries, status=success)
+2026-04-26 03:48:15,001 - INFO - ✅ Task task_mmsearch_06: 1.0/1.0 (100%) - hybrid
+2026-04-26 03:48:15,001 - INFO -    Notes: Agent used web_search and web_fetch tools (criterion 1: 1.0). Answer correctly states 'No' matching the reference answer, with accurate stock prices from yfinance showing August 2 ($207.67) was lower 
+2026-04-26 03:48:15,001 - INFO - 
+================================================================================
+2026-04-26 03:48:15,001 - INFO - 📋 Task 18/25 (Run 1/1)
+2026-04-26 03:48:15,001 - INFO - ================================================================================
+2026-04-26 03:48:15,001 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_07
+2026-04-26 03:48:15,001 - INFO -    Task: MMSearch - entertainment_34
+2026-04-26 03:48:15,001 - INFO -    Category: multimodal_search
+2026-04-26 03:48:15,002 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:48:23,323 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:48:23,328 - INFO - Task task_mmsearch_07 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:48:57,585 - INFO - Found transcript via sessions.json: 07e7926c-805a-49e1-ba9c-6597684f85d5.jsonl (attempt 1)
+2026-04-26 03:49:11,744 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:49:11,745 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:49:45,215 - INFO - Found transcript via sessions.json: 656c56d8-bdcf-44b8-ab49-8fbdc8bc273c.jsonl (attempt 1)
+2026-04-26 03:49:45,216 - INFO - Task task_mmsearch_07 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 03:49:45,218 - INFO -    💾 Session backup saved: task_mmsearch_07_run_367bd7e0-1.jsonl (12 entries, status=success)
+2026-04-26 03:49:45,218 - INFO - ⚠️ Task task_mmsearch_07: 0.1/1.0 (10%) - hybrid
+2026-04-26 03:49:45,218 - INFO -    Notes: No web-related tools were used (only read and write operations). The answer 'August 13, 2024' does not match the reference answer '2024-08-12' (August 12, 2024) - incorrect by one day.
+2026-04-26 03:49:45,219 - INFO - 
+================================================================================
+2026-04-26 03:49:45,219 - INFO - 📋 Task 19/25 (Run 1/1)
+2026-04-26 03:49:45,219 - INFO - ================================================================================
+2026-04-26 03:49:45,219 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_08
+2026-04-26 03:49:45,219 - INFO -    Task: MMSearch - general_37
+2026-04-26 03:49:45,219 - INFO -    Category: multimodal_search
+2026-04-26 03:49:45,220 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:49:52,236 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:49:52,240 - INFO - Task task_mmsearch_08 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:50:51,720 - INFO - Found transcript via sessions.json: 64804dd0-5c82-4abf-b552-f9c44a9cb62e.jsonl (attempt 1)
+2026-04-26 03:51:05,838 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:51:05,839 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 03:51:35,307 - INFO - Found transcript via sessions.json: 08ee9eef-5835-409a-bfbc-3be492a69a67.jsonl (attempt 1)
+2026-04-26 03:51:35,308 - INFO - Task task_mmsearch_08 attempt 1: status=success score=0.28, running second attempt.
+2026-04-26 03:51:35,312 - INFO -    💾 Session backup saved: task_mmsearch_08_run_367bd7e0-1.jsonl (14 entries, status=success)
+2026-04-26 03:51:35,313 - INFO - ⚠️ Task task_mmsearch_08: 0.3/1.0 (28%) - hybrid
+2026-04-26 03:51:35,313 - INFO -    Notes: Agent used web_search tool (compliance met). However, answer states April 17, 2026 which contradicts the reference answer of 2025. Incorrect release year.
+2026-04-26 03:51:35,313 - INFO - 
+================================================================================
+2026-04-26 03:51:35,313 - INFO - 📋 Task 20/25 (Run 1/1)
+2026-04-26 03:51:35,313 - INFO - ================================================================================
+2026-04-26 03:51:35,313 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearch_09
+2026-04-26 03:51:35,313 - INFO -    Task: MMSearch - architecture_0
+2026-04-26 03:51:35,313 - INFO -    Category: multimodal_search
+2026-04-26 03:51:35,315 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 03:51:42,690 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:51:42,696 - INFO - Task task_mmsearch_09 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 03:59:42,805 - INFO - Found transcript via sessions.json: 8d070205-8ec8-4cbc-861d-e0722d04ce4f.jsonl (attempt 1)
+2026-04-26 03:59:57,168 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 03:59:57,178 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 04:01:53,542 - INFO - Found transcript via sessions.json: 4d005fd9-db5e-4eb3-92b9-e55de330d677.jsonl (attempt 1)
+2026-04-26 04:01:53,543 - INFO - Task task_mmsearch_09 attempt 1: status=timeout score=0.18, running second attempt.
+2026-04-26 04:01:53,548 - INFO -    💾 Session backup saved: task_mmsearch_09_run_367bd7e0-1.jsonl (91 entries, status=timeout)
+2026-04-26 04:01:53,548 - INFO - ⚠️ Task task_mmsearch_09: 0.2/1.0 (18%) - hybrid
+2026-04-26 04:01:53,549 - INFO -    Notes: Agent used web-related tools extensively (web_search multiple times, agent-browser for reverse image search on Google/Yandex, navigated to Wikipedia and Soka University pages). However, answer.txt was
+2026-04-26 04:01:53,549 - INFO - 
+================================================================================
+2026-04-26 04:01:53,549 - INFO - 📋 Task 21/25 (Run 1/1)
+2026-04-26 04:01:53,549 - INFO - ================================================================================
+2026-04-26 04:01:53,549 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearchplus_00
+2026-04-26 04:01:53,549 - INFO -    Task: MMSearch-Plus - Academic Research (00)
+2026-04-26 04:01:53,549 - INFO -    Category: multimodal_search
+2026-04-26 04:01:53,550 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 04:02:00,427 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:02:00,430 - INFO - Task task_mmsearchplus_00 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:03:08,520 - INFO - Found transcript via sessions.json: d56576ed-b9b3-49aa-a702-09dda3ee08e1.jsonl (attempt 1)
+2026-04-26 04:03:22,580 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 04:03:22,580 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 04:03:48,402 - INFO - Found transcript via sessions.json: 3ab74df1-81b4-4d20-b5a5-47d6a0cf6c6e.jsonl (attempt 1)
+2026-04-26 04:03:48,404 - INFO -    💾 Session backup saved: task_mmsearchplus_00_run_367bd7e0-1.jsonl (31 entries, status=success)
+2026-04-26 04:03:48,404 - INFO - ✅ Task task_mmsearchplus_00: 1.0/1.0 (100%) - hybrid
+2026-04-26 04:03:48,404 - INFO -    Notes: The agent's answer.txt contains 'Calibrating Pre-trained Language Classifiers on LLM-generated Noisy Labels via Iterative Refinement' which exactly matches the reference answer. The agent successfully
+2026-04-26 04:03:48,404 - INFO - 
+================================================================================
+2026-04-26 04:03:48,405 - INFO - 📋 Task 22/25 (Run 1/1)
+2026-04-26 04:03:48,405 - INFO - ================================================================================
+2026-04-26 04:03:48,405 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearchplus_01
+2026-04-26 04:03:48,405 - INFO -    Task: MMSearch-Plus - Music (01)
+2026-04-26 04:03:48,405 - INFO -    Category: multimodal_search
+2026-04-26 04:03:48,406 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 04:03:55,543 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:03:55,548 - INFO - Task task_mmsearchplus_01 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:04:51,369 - INFO - Found transcript via sessions.json: 10396a24-1d84-4cae-a522-257597657a5f.jsonl (attempt 1)
+2026-04-26 04:05:05,386 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 04:05:05,387 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 04:05:32,350 - INFO - Found transcript via sessions.json: 65695101-a0ea-41e0-afa4-6d79b3e1ebc0.jsonl (attempt 1)
+2026-04-26 04:05:32,350 - INFO - Task task_mmsearchplus_01 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 04:05:32,352 - INFO -    💾 Session backup saved: task_mmsearchplus_01_run_367bd7e0-1.jsonl (20 entries, status=success)
+2026-04-26 04:05:32,352 - INFO - ⚠️ Task task_mmsearchplus_01: 0.1/1.0 (10%) - hybrid
+2026-04-26 04:05:32,352 - INFO -    Notes: Agent answered 'Glenn Davis' but the reference answer is 'Chris Brown'. No acceptable alternatives listed. Answer is incorrect.
+2026-04-26 04:05:32,352 - INFO - 
+================================================================================
+2026-04-26 04:05:32,352 - INFO - 📋 Task 23/25 (Run 1/1)
+2026-04-26 04:05:32,352 - INFO - ================================================================================
+2026-04-26 04:05:32,352 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearchplus_02
+2026-04-26 04:05:32,352 - INFO -    Task: MMSearch-Plus - Video Games (02)
+2026-04-26 04:05:32,352 - INFO -    Category: multimodal_search
+2026-04-26 04:05:32,353 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 04:05:39,261 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:05:39,268 - INFO - Task task_mmsearchplus_02 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:10:27,818 - INFO - Found transcript via sessions.json: 74b456ea-9534-40e1-ae54-466e890efd94.jsonl (attempt 1)
+2026-04-26 04:10:41,683 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 04:10:41,685 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 04:11:35,333 - INFO - Found transcript via sessions.json: 3255c9fe-c147-426f-a9a6-98d5c61b7d96.jsonl (attempt 1)
+2026-04-26 04:11:35,334 - INFO - Task task_mmsearchplus_02 attempt 1: status=success score=0.00, running second attempt.
+2026-04-26 04:11:35,337 - INFO -    💾 Session backup saved: task_mmsearchplus_02_run_367bd7e0-1.jsonl (65 entries, status=success)
+2026-04-26 04:11:35,337 - INFO - ❌ Task task_mmsearchplus_02: 0.0/1.0 (0%) - hybrid
+2026-04-26 04:11:35,338 - INFO -    Notes: The transcript shows extensive web searches but no evidence of the agent writing the correct answer (2022.1.19) to answer.txt. The agent made 20+ searches trying to identify the game but never converg
+2026-04-26 04:11:35,338 - INFO - 
+================================================================================
+2026-04-26 04:11:35,338 - INFO - 📋 Task 24/25 (Run 1/1)
+2026-04-26 04:11:35,338 - INFO - ================================================================================
+2026-04-26 04:11:35,338 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearchplus_03
+2026-04-26 04:11:35,338 - INFO -    Task: MMSearch-Plus - Film & TV (03)
+2026-04-26 04:11:35,338 - INFO -    Category: multimodal_search
+2026-04-26 04:11:35,339 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 04:11:42,241 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:11:42,246 - INFO - Task task_mmsearchplus_03 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:12:00,955 - INFO - Found transcript via sessions.json: 5b003fe3-9feb-4142-9764-1faace83bafa.jsonl (attempt 1)
+2026-04-26 04:12:14,934 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 04:12:14,935 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 04:12:43,072 - INFO - Found transcript via sessions.json: f98acfe3-2b7f-442a-a021-aebbea423554.jsonl (attempt 1)
+2026-04-26 04:12:43,072 - INFO - Task task_mmsearchplus_03 attempt 1: status=success score=0.10, running second attempt.
+2026-04-26 04:12:43,073 - INFO -    💾 Session backup saved: task_mmsearchplus_03_run_367bd7e0-1.jsonl (12 entries, status=success)
+2026-04-26 04:12:43,073 - INFO - ⚠️ Task task_mmsearchplus_03: 0.1/1.0 (10%) - hybrid
+2026-04-26 04:12:43,073 - INFO -    Notes: Agent's answer '是真的吗' only contains the show name but is missing the episode date (20130824) and episode topic (用酒精可以辨别优劣酱油？). The reference answer requires the full episode title with date and topic 
+2026-04-26 04:12:43,074 - INFO - 
+================================================================================
+2026-04-26 04:12:43,074 - INFO - 📋 Task 25/25 (Run 1/1)
+2026-04-26 04:12:43,074 - INFO - ================================================================================
+2026-04-26 04:12:43,074 - INFO - 🤖 Agent [bench-xiaomi-coding-mimo-v2-omni] starting task: task_mmsearchplus_04
+2026-04-26 04:12:43,074 - INFO -    Task: MMSearch-Plus - Geography (04)
+2026-04-26 04:12:43,074 - INFO -    Category: multimodal_search
+2026-04-26 04:12:43,075 - INFO - Removed 1 old OpenClaw session transcripts for bench-xiaomi-coding-mimo-v2-omni
+2026-04-26 04:12:50,150 - INFO - Agent bench-xiaomi-coding-mimo-v2-omni workspace from config: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:12:50,157 - INFO - Task task_mmsearchplus_04 will use workspace: /tmp/pinchbench/367bd7e0/agent_workspace
+2026-04-26 04:13:10,091 - INFO - Found transcript via sessions.json: c6da2d80-d58f-4e50-bfec-7139cd0e5163.jsonl (attempt 1)
+2026-04-26 04:13:23,962 - INFO - Agent bench-judge-qwen3-5-plus-for-mimo-v2-omni already exists with correct workspace
+2026-04-26 04:13:23,964 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-5-plus-for-mimo-v2-omni
+2026-04-26 04:13:38,128 - INFO - Found transcript via sessions.json: b7bad253-2d9f-496e-a821-1b7df04fb2dc.jsonl (attempt 1)
+2026-04-26 04:13:38,130 - INFO -    💾 Session backup saved: task_mmsearchplus_04_run_367bd7e0-1.jsonl (11 entries, status=success)
+2026-04-26 04:13:38,130 - INFO - ✅ Task task_mmsearchplus_04: 1.0/1.0 (100%) - hybrid
+2026-04-26 04:13:38,130 - INFO -    Notes: Agent's answer 'Shinjuku district, Tokyo' is semantically equivalent to reference answer 'Tokyo Shinjuku' - both correctly identify the city (Tokyo) and district (Shinjuku). Answer was properly writte
+2026-04-26 04:13:38,133 - INFO - Saved results to /root/workspace/skill/logs/openclaw_serial_20260425_181850/xiaomi-coding_mimo-v2-omni/results/367bd7e0_xiaomi-coding-mimo-v2-omni.json
+2026-04-26 04:13:38,133 - INFO - 
+================================================================================
+2026-04-26 04:13:38,133 - INFO - 📊 TOKEN EFFICIENCY SUMMARY
+2026-04-26 04:13:38,133 - INFO - ================================================================================
+2026-04-26 04:13:38,133 - INFO -    Total tokens used: 7,092,734 (input: 506,715, output: 108,771)
+2026-04-26 04:13:38,133 - INFO -    Total API requests: 244
+2026-04-26 04:13:38,133 - INFO -    Avg tokens/task: 283,709
+2026-04-26 04:13:38,133 - INFO -    Mean score: 0.3472
+2026-04-26 04:13:38,133 - INFO -    Score per 1K tokens: 0.0012 (higher = more efficient)
+2026-04-26 04:13:38,134 - INFO - ================================================================================
+2026-04-26 04:13:41,386 - INFO - Uploaded to leaderboard: rank #1986
+2026-04-26 04:13:41,386 - INFO - View at: https://pinchbench.com/submission/bc3edaf2-384a-4522-a6b0-e1210b426619
+[2026-04-26T04:13:41+00:00] exit_code=0
