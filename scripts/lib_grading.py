@@ -18,7 +18,7 @@ from lib_tasks import Task
 logger = logging.getLogger(__name__)
 
 
-DEFAULT_JUDGE_MODEL = "custom-dashscope-aliyuncs-com/qwen3-vl-plus"
+DEFAULT_JUDGE_MODEL = "modelstudio/qwen3.5-plus"
 
 
 def _extract_model_name(model_id: str) -> str:

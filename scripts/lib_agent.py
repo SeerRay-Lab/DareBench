@@ -46,17 +46,6 @@ def slugify_model(model_id: str) -> str:
     return model_id.replace("/", "-").replace(".", "-")
 
 
-KNOWN_PROVIDERS = ("openrouter/", "vllm/", "ollama/", "nvidia-api/", "nvidia-nemotron/", "moonshot", "custom-dashscope-aliyuncs-com", "custom-api-shubiaobiao-cn", "vapi", "vapi-openai", "modelstudio")
-
-
-def normalize_model_id(model_id: str) -> str:
-    """Ensure model id is provider-qualified for OpenClaw."""
-    if "/" not in model_id:
-        return model_id
-    if any(model_id.startswith(p) for p in KNOWN_PROVIDERS):
-        return model_id
-    return f"openrouter/{model_id}"
-
 
 def _get_agent_workspace(agent_id: str) -> Path | None:
     """Get the workspace path for an agent from OpenClaw config.
@@ -84,12 +73,18 @@ def _get_agent_workspace_unlocked(agent_id: str) -> Path | None:
             return None
 
         normalized_id = agent_id.replace(":", "-")
+        target_names = {agent_id, normalized_id}
         lines = list_result.stdout.split("\n")
         found_agent = False
         for line in lines:
             stripped = line.strip()
-            if stripped.startswith(f"- {agent_id}") or stripped.startswith(f"- {normalized_id}"):
-                found_agent = True
+            if stripped.startswith("- "):
+                # Parse exact agent entry name from list output.
+                # Example line formats:
+                #   - bench-openrouter-openai-gpt-5-4
+                #   - bench-openrouter-openai-gpt-5-4 (active)
+                entry_name = stripped[2:].split()[0] if stripped[2:].strip() else ""
+                found_agent = entry_name in target_names
             elif found_agent and "Workspace:" in line:
                 workspace_str = line.split("Workspace:")[1].strip()
                 if workspace_str.startswith("~/"):
@@ -165,7 +160,7 @@ def _ensure_agent_exists_locked(agent_id: str, model_id: str, workspace_dir: Pat
                 check=False,
             )
 
-    normalized_model = normalize_model_id(model_id)
+    normalized_model = model_id
     logger.info("Creating OpenClaw agent %s", agent_id)
     try:
         create_result = subprocess.run(
@@ -189,9 +184,11 @@ def _ensure_agent_exists_locked(agent_id: str, model_id: str, workspace_dir: Pat
         return False
 
     if create_result.returncode != 0:
-        logger.warning(
-            "Agent creation returned %s: %s", create_result.returncode, create_result.stderr
+        logger.error(
+            "Agent creation failed with code %s: %s", create_result.returncode, create_result.stderr
         )
+        return False
+    logger.info("Agent %s created successfully with workspace %s", agent_id, workspace_dir)
     return True
 
 
@@ -468,6 +465,7 @@ def execute_openclaw_task(
 
     start_time = time.time()
     workspace = prepare_task_workspace(skill_dir, run_id, task, agent_id)
+    logger.info("Task %s will use workspace: %s", task.task_id, workspace)
     session_id = f"{task.task_id}_{int(time.time() * 1000)}"
     timeout_seconds = task.timeout_seconds * timeout_multiplier
     stdout = ""

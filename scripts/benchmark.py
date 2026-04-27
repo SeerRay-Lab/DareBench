@@ -539,6 +539,13 @@ def main():
     if args.executor == "openclaw":
         ensure_agent_exists(agent_id, args.model, agent_workspace)
         cleanup_agent_sessions(agent_id)
+        # Verify workspace was set correctly
+        from lib_agent import _get_agent_workspace
+        actual_workspace = _get_agent_workspace(agent_id)
+        if actual_workspace != agent_workspace:
+            logger.warning("Workspace mismatch after ensure: expected %s, got %s", agent_workspace, actual_workspace)
+        else:
+            logger.info("Workspace confirmed: %s", actual_workspace)
 
     task_ids = _select_task_ids(runner.tasks, args.suite)
     results = []
