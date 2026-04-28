@@ -2152,3 +2152,358 @@
 2026-04-08 08:45:12,158 - INFO - ================================================================================
 2026-04-08 08:45:12,158 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_00
 2026-04-08 08:45:14,195 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:46:10,881 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:46:10,884 - INFO -    💾 Session backup saved: task_tablebench_00_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:46:10,885 - INFO - ⚠️ Task task_tablebench_00: 0.5/1.0 (50%) - automated
+2026-04-08 08:46:10,885 - INFO - 
+================================================================================
+2026-04-08 08:46:10,885 - INFO - 📋 Task 173/208 (Run 1/1)
+2026-04-08 08:46:10,885 - INFO - ================================================================================
+2026-04-08 08:46:10,885 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_01
+2026-04-08 08:46:12,887 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:46:27,978 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:46:27,981 - INFO -    💾 Session backup saved: task_tablebench_01_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:46:27,981 - INFO - ⚠️ Task task_tablebench_01: 0.5/1.0 (50%) - automated
+2026-04-08 08:46:27,981 - INFO - 
+================================================================================
+2026-04-08 08:46:27,981 - INFO - 📋 Task 174/208 (Run 1/1)
+2026-04-08 08:46:27,981 - INFO - ================================================================================
+2026-04-08 08:46:27,982 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_02
+2026-04-08 08:46:30,000 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:46:45,463 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:46:45,466 - INFO -    💾 Session backup saved: task_tablebench_02_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:46:45,466 - INFO - ✅ Task task_tablebench_02: 1.0/1.0 (100%) - automated
+2026-04-08 08:46:45,466 - INFO - 
+================================================================================
+2026-04-08 08:46:45,466 - INFO - 📋 Task 175/208 (Run 1/1)
+2026-04-08 08:46:45,466 - INFO - ================================================================================
+2026-04-08 08:46:45,466 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_03
+2026-04-08 08:46:47,441 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:47:21,034 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:47:21,037 - INFO -    💾 Session backup saved: task_tablebench_03_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:47:21,037 - INFO - ✅ Task task_tablebench_03: 1.0/1.0 (100%) - automated
+2026-04-08 08:47:21,037 - INFO - 
+================================================================================
+2026-04-08 08:47:21,037 - INFO - 📋 Task 176/208 (Run 1/1)
+2026-04-08 08:47:21,037 - INFO - ================================================================================
+2026-04-08 08:47:21,037 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_04
+2026-04-08 08:47:23,027 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:47:33,432 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:47:33,436 - INFO -    💾 Session backup saved: task_tablebench_04_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:47:33,436 - INFO - ⚠️ Task task_tablebench_04: 0.5/1.0 (50%) - automated
+2026-04-08 08:47:33,436 - INFO - 
+================================================================================
+2026-04-08 08:47:33,436 - INFO - 📋 Task 177/208 (Run 1/1)
+2026-04-08 08:47:33,436 - INFO - ================================================================================
+2026-04-08 08:47:33,436 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_05
+2026-04-08 08:47:35,471 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:47:45,071 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:47:45,074 - INFO -    💾 Session backup saved: task_tablebench_05_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:47:45,074 - INFO - ✅ Task task_tablebench_05: 1.0/1.0 (100%) - automated
+2026-04-08 08:47:45,074 - INFO - 
+================================================================================
+2026-04-08 08:47:45,074 - INFO - 📋 Task 178/208 (Run 1/1)
+2026-04-08 08:47:45,074 - INFO - ================================================================================
+2026-04-08 08:47:45,074 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_06
+2026-04-08 08:47:47,076 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:50:05,506 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:50:05,511 - INFO -    💾 Session backup saved: task_tablebench_06_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:50:05,511 - INFO - ✅ Task task_tablebench_06: 1.0/1.0 (100%) - automated
+2026-04-08 08:50:05,511 - INFO - 
+================================================================================
+2026-04-08 08:50:05,511 - INFO - 📋 Task 179/208 (Run 1/1)
+2026-04-08 08:50:05,511 - INFO - ================================================================================
+2026-04-08 08:50:05,511 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_07
+2026-04-08 08:50:07,486 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:50:19,384 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:50:19,388 - INFO -    💾 Session backup saved: task_tablebench_07_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:50:19,388 - INFO - ✅ Task task_tablebench_07: 1.0/1.0 (100%) - automated
+2026-04-08 08:50:19,388 - INFO - 
+================================================================================
+2026-04-08 08:50:19,388 - INFO - 📋 Task 180/208 (Run 1/1)
+2026-04-08 08:50:19,388 - INFO - ================================================================================
+2026-04-08 08:50:19,388 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_08
+2026-04-08 08:50:21,462 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:50:35,568 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:50:35,571 - INFO -    💾 Session backup saved: task_tablebench_08_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:50:35,571 - INFO - ✅ Task task_tablebench_08: 1.0/1.0 (100%) - automated
+2026-04-08 08:50:35,571 - INFO - 
+================================================================================
+2026-04-08 08:50:35,571 - INFO - 📋 Task 181/208 (Run 1/1)
+2026-04-08 08:50:35,571 - INFO - ================================================================================
+2026-04-08 08:50:35,571 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_09
+2026-04-08 08:50:37,616 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:51:44,458 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:51:44,461 - INFO -    💾 Session backup saved: task_tablebench_09_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:51:44,461 - INFO - ✅ Task task_tablebench_09: 1.0/1.0 (100%) - automated
+2026-04-08 08:51:44,461 - INFO - 
+================================================================================
+2026-04-08 08:51:44,461 - INFO - 📋 Task 182/208 (Run 1/1)
+2026-04-08 08:51:44,461 - INFO - ================================================================================
+2026-04-08 08:51:44,461 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_10
+2026-04-08 08:51:46,446 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:52:20,933 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:52:24,922 - INFO - Agent bench-judge-qwen3-vl-plus-for-glm-4-7 already exists with correct workspace
+2026-04-08 08:52:24,923 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-glm-4-7
+2026-04-08 08:52:41,461 - INFO - Found transcript via sessions.json: 63c73244-03b6-4521-9d2a-7caaf896d4e5.jsonl (attempt 1)
+2026-04-08 08:52:41,462 - INFO -    💾 Session backup saved: task_tablebench_10_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:52:41,462 - INFO - ✅ Task task_tablebench_10: 1.0/1.0 (100%) - llm_judge
+2026-04-08 08:52:41,462 - INFO -    Notes: The agent correctly identified the two anomalies: Dichoeng's area (100000.0 km²) and Ramutla's population (1), matching the reference answer in semantic content and key facts. The output follows the r
+2026-04-08 08:52:41,462 - INFO - 
+================================================================================
+2026-04-08 08:52:41,462 - INFO - 📋 Task 183/208 (Run 1/1)
+2026-04-08 08:52:41,462 - INFO - ================================================================================
+2026-04-08 08:52:41,462 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_11
+2026-04-08 08:52:43,468 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:53:42,625 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:53:46,615 - INFO - Agent bench-judge-qwen3-vl-plus-for-glm-4-7 already exists with correct workspace
+2026-04-08 08:53:46,616 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-glm-4-7
+2026-04-08 08:54:08,933 - INFO - Found transcript via sessions.json: 9bc7a489-16dc-430f-a7ed-a44c84b38e8d.jsonl (attempt 1)
+2026-04-08 08:54:08,934 - INFO -    💾 Session backup saved: task_tablebench_11_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:54:08,934 - INFO - ⚠️ Task task_tablebench_11: 0.8/1.0 (80%) - llm_judge
+2026-04-08 08:54:08,934 - INFO -    Notes: The agent correctly concludes 'Yes' and notes a positive correlation between capacity and completion year (higher capacity → later completion), which aligns with the reference. However, it omits the s
+2026-04-08 08:54:08,934 - INFO - 
+================================================================================
+2026-04-08 08:54:08,934 - INFO - 📋 Task 184/208 (Run 1/1)
+2026-04-08 08:54:08,934 - INFO - ================================================================================
+2026-04-08 08:54:08,934 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_12
+2026-04-08 08:54:10,950 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:55:17,148 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:55:17,151 - INFO -    💾 Session backup saved: task_tablebench_12_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:55:17,151 - INFO - ⚠️ Task task_tablebench_12: 0.5/1.0 (50%) - automated
+2026-04-08 08:55:17,151 - INFO - 
+================================================================================
+2026-04-08 08:55:17,151 - INFO - 📋 Task 185/208 (Run 1/1)
+2026-04-08 08:55:17,151 - INFO - ================================================================================
+2026-04-08 08:55:17,151 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_13
+2026-04-08 08:55:19,172 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:55:48,238 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:55:52,286 - INFO - Agent bench-judge-qwen3-vl-plus-for-glm-4-7 already exists with correct workspace
+2026-04-08 08:55:52,286 - INFO - Removed 1 old OpenClaw session transcripts for bench-judge-qwen3-vl-plus-for-glm-4-7
+2026-04-08 08:56:09,258 - INFO - Found transcript via sessions.json: 54fce746-8f34-4a4c-ba7b-e16f64f8189d.jsonl (attempt 1)
+2026-04-08 08:56:09,258 - INFO -    💾 Session backup saved: task_tablebench_13_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:56:09,258 - INFO - ⚠️ Task task_tablebench_13: 0.9/1.0 (95%) - llm_judge
+2026-04-08 08:56:09,258 - INFO -    Notes: The answer correctly identifies the table as Tallangatta DFL standings, explains all columns accurately, and notes the key trend: correlation between wins/losses and points against (defensive strength
+2026-04-08 08:56:09,258 - INFO - 
+================================================================================
+2026-04-08 08:56:09,258 - INFO - 📋 Task 186/208 (Run 1/1)
+2026-04-08 08:56:09,258 - INFO - ================================================================================
+2026-04-08 08:56:09,258 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_14
+2026-04-08 08:56:11,272 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:59:31,919 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:59:31,922 - INFO -    💾 Session backup saved: task_tablebench_14_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:59:31,922 - INFO - ⚠️ Task task_tablebench_14: 0.5/1.0 (50%) - automated
+2026-04-08 08:59:31,922 - INFO - 
+================================================================================
+2026-04-08 08:59:31,922 - INFO - 📋 Task 187/208 (Run 1/1)
+2026-04-08 08:59:31,922 - INFO - ================================================================================
+2026-04-08 08:59:31,922 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_15
+2026-04-08 08:59:33,942 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 08:59:45,325 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:59:45,328 - INFO -    💾 Session backup saved: task_tablebench_15_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 08:59:45,328 - INFO - ⚠️ Task task_tablebench_15: 0.5/1.0 (50%) - automated
+2026-04-08 08:59:45,328 - INFO - 
+================================================================================
+2026-04-08 08:59:45,328 - INFO - 📋 Task 188/208 (Run 1/1)
+2026-04-08 08:59:45,328 - INFO - ================================================================================
+2026-04-08 08:59:45,328 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_tablebench_16
+2026-04-08 08:59:47,393 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:00:36,831 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:00:36,834 - INFO -    💾 Session backup saved: task_tablebench_16_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:00:36,834 - INFO - ⚠️ Task task_tablebench_16: 0.5/1.0 (50%) - automated
+2026-04-08 09:00:36,834 - INFO - 
+================================================================================
+2026-04-08 09:00:36,834 - INFO - 📋 Task 189/208 (Run 1/1)
+2026-04-08 09:00:36,834 - INFO - ================================================================================
+2026-04-08 09:00:36,834 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_00
+2026-04-08 09:00:38,815 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:02:04,232 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:02:04,235 - INFO -    💾 Session backup saved: task_terminalbench2_00_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:02:04,235 - INFO - ❌ Task task_terminalbench2_00: 0.0/1.0 (0%) - automated
+2026-04-08 09:02:04,235 - INFO - 
+================================================================================
+2026-04-08 09:02:04,235 - INFO - 📋 Task 190/208 (Run 1/1)
+2026-04-08 09:02:04,235 - INFO - ================================================================================
+2026-04-08 09:02:04,235 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_01
+2026-04-08 09:02:06,274 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:03:05,962 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:03:05,963 - INFO -    💾 Session backup saved: task_terminalbench2_01_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:03:05,963 - INFO - ❌ Task task_terminalbench2_01: 0.0/1.0 (0%) - automated
+2026-04-08 09:03:05,963 - INFO - 
+================================================================================
+2026-04-08 09:03:05,963 - INFO - 📋 Task 191/208 (Run 1/1)
+2026-04-08 09:03:05,963 - INFO - ================================================================================
+2026-04-08 09:03:05,963 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_02
+2026-04-08 09:03:07,981 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:07:17,187 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:07:17,189 - INFO -    💾 Session backup saved: task_terminalbench2_02_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:07:17,189 - INFO - ❌ Task task_terminalbench2_02: 0.0/1.0 (0%) - automated
+2026-04-08 09:07:17,189 - INFO - 
+================================================================================
+2026-04-08 09:07:17,189 - INFO - 📋 Task 192/208 (Run 1/1)
+2026-04-08 09:07:17,189 - INFO - ================================================================================
+2026-04-08 09:07:17,189 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_03
+2026-04-08 09:07:19,189 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:07:56,704 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:07:56,705 - INFO -    💾 Session backup saved: task_terminalbench2_03_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:07:56,705 - INFO - ❌ Task task_terminalbench2_03: 0.0/1.0 (0%) - automated
+2026-04-08 09:07:56,705 - INFO - 
+================================================================================
+2026-04-08 09:07:56,705 - INFO - 📋 Task 193/208 (Run 1/1)
+2026-04-08 09:07:56,705 - INFO - ================================================================================
+2026-04-08 09:07:56,705 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_04
+2026-04-08 09:07:58,686 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:08:19,233 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:08:19,234 - INFO -    💾 Session backup saved: task_terminalbench2_04_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:08:19,234 - INFO - ❌ Task task_terminalbench2_04: 0.0/1.0 (0%) - automated
+2026-04-08 09:08:19,235 - INFO - 
+================================================================================
+2026-04-08 09:08:19,235 - INFO - 📋 Task 194/208 (Run 1/1)
+2026-04-08 09:08:19,235 - INFO - ================================================================================
+2026-04-08 09:08:19,235 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_05
+2026-04-08 09:08:21,264 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:08:41,292 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:08:41,294 - INFO -    💾 Session backup saved: task_terminalbench2_05_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:08:41,294 - INFO - ❌ Task task_terminalbench2_05: 0.0/1.0 (0%) - automated
+2026-04-08 09:08:41,294 - INFO - 
+================================================================================
+2026-04-08 09:08:41,294 - INFO - 📋 Task 195/208 (Run 1/1)
+2026-04-08 09:08:41,294 - INFO - ================================================================================
+2026-04-08 09:08:41,294 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_06
+2026-04-08 09:08:43,287 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:10:07,636 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:10:07,637 - INFO -    💾 Session backup saved: task_terminalbench2_06_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:10:07,638 - INFO - ❌ Task task_terminalbench2_06: 0.0/1.0 (0%) - automated
+2026-04-08 09:10:07,638 - INFO - 
+================================================================================
+2026-04-08 09:10:07,638 - INFO - 📋 Task 196/208 (Run 1/1)
+2026-04-08 09:10:07,638 - INFO - ================================================================================
+2026-04-08 09:10:07,638 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_07
+2026-04-08 09:10:09,631 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:11:15,214 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:11:15,216 - INFO -    💾 Session backup saved: task_terminalbench2_07_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:11:15,216 - INFO - ❌ Task task_terminalbench2_07: 0.0/1.0 (0%) - automated
+2026-04-08 09:11:15,216 - INFO - 
+================================================================================
+2026-04-08 09:11:15,216 - INFO - 📋 Task 197/208 (Run 1/1)
+2026-04-08 09:11:15,216 - INFO - ================================================================================
+2026-04-08 09:11:15,216 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_08
+2026-04-08 09:11:17,240 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:12:17,562 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:12:17,565 - INFO -    💾 Session backup saved: task_terminalbench2_08_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:12:17,565 - INFO - ❌ Task task_terminalbench2_08: 0.0/1.0 (0%) - automated
+2026-04-08 09:12:17,565 - INFO - 
+================================================================================
+2026-04-08 09:12:17,565 - INFO - 📋 Task 198/208 (Run 1/1)
+2026-04-08 09:12:17,565 - INFO - ================================================================================
+2026-04-08 09:12:17,565 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_terminalbench2_09
+2026-04-08 09:12:19,598 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:13:01,670 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:13:01,671 - INFO -    💾 Session backup saved: task_terminalbench2_09_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:13:01,671 - INFO - ❌ Task task_terminalbench2_09: 0.0/1.0 (0%) - automated
+2026-04-08 09:13:01,672 - INFO - 
+================================================================================
+2026-04-08 09:13:01,672 - INFO - 📋 Task 199/208 (Run 1/1)
+2026-04-08 09:13:01,672 - INFO - ================================================================================
+2026-04-08 09:13:01,672 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_00
+2026-04-08 09:13:03,635 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:13:34,903 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:13:34,908 - INFO -    💾 Session backup saved: task_widesearch_00_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:13:34,908 - INFO - ⚠️ Task task_widesearch_00: 0.0/1.0 (2%) - automated
+2026-04-08 09:13:34,908 - INFO - 
+================================================================================
+2026-04-08 09:13:34,908 - INFO - 📋 Task 200/208 (Run 1/1)
+2026-04-08 09:13:34,908 - INFO - ================================================================================
+2026-04-08 09:13:34,908 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_01
+2026-04-08 09:13:37,018 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:16:15,928 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:16:15,934 - INFO -    💾 Session backup saved: task_widesearch_01_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:16:15,934 - INFO - ⚠️ Task task_widesearch_01: 0.0/1.0 (4%) - automated
+2026-04-08 09:16:15,934 - INFO - 
+================================================================================
+2026-04-08 09:16:15,934 - INFO - 📋 Task 201/208 (Run 1/1)
+2026-04-08 09:16:15,934 - INFO - ================================================================================
+2026-04-08 09:16:15,934 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_02
+2026-04-08 09:16:17,918 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:16:28,456 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:16:28,459 - INFO -    💾 Session backup saved: task_widesearch_02_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:16:28,459 - INFO - ❌ Task task_widesearch_02: 0.0/1.0 (0%) - automated
+2026-04-08 09:16:28,459 - INFO - 
+================================================================================
+2026-04-08 09:16:28,459 - INFO - 📋 Task 202/208 (Run 1/1)
+2026-04-08 09:16:28,460 - INFO - ================================================================================
+2026-04-08 09:16:28,460 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_03
+2026-04-08 09:16:30,455 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:19:02,935 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:19:02,944 - INFO -    💾 Session backup saved: task_widesearch_03_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:19:02,944 - INFO - ⚠️ Task task_widesearch_03: 0.3/1.0 (32%) - automated
+2026-04-08 09:19:02,945 - INFO - 
+================================================================================
+2026-04-08 09:19:02,945 - INFO - 📋 Task 203/208 (Run 1/1)
+2026-04-08 09:19:02,945 - INFO - ================================================================================
+2026-04-08 09:19:02,945 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_04
+2026-04-08 09:19:05,797 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:20:03,862 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:20:03,875 - INFO -    💾 Session backup saved: task_widesearch_04_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:20:03,875 - INFO - ⚠️ Task task_widesearch_04: 0.2/1.0 (21%) - automated
+2026-04-08 09:20:03,875 - INFO - 
+================================================================================
+2026-04-08 09:20:03,875 - INFO - 📋 Task 204/208 (Run 1/1)
+2026-04-08 09:20:03,876 - INFO - ================================================================================
+2026-04-08 09:20:03,876 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_05
+2026-04-08 09:20:05,916 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:25:04,817 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:25:04,817 - INFO - Retrying request to /v1/messages in 0.392008 seconds
+2026-04-08 09:25:35,387 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:25:35,394 - INFO -    💾 Session backup saved: task_widesearch_05_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:25:35,394 - INFO - ❌ Task task_widesearch_05: 0.0/1.0 (0%) - automated
+2026-04-08 09:25:35,394 - INFO - 
+================================================================================
+2026-04-08 09:25:35,394 - INFO - 📋 Task 205/208 (Run 1/1)
+2026-04-08 09:25:35,394 - INFO - ================================================================================
+2026-04-08 09:25:35,394 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_06
+2026-04-08 09:25:40,878 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:29:54,483 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:29:54,701 - INFO -    💾 Session backup saved: task_widesearch_06_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:29:54,701 - INFO - ❌ Task task_widesearch_06: 0.0/1.0 (0%) - automated
+2026-04-08 09:29:54,701 - INFO - 
+================================================================================
+2026-04-08 09:29:54,701 - INFO - 📋 Task 206/208 (Run 1/1)
+2026-04-08 09:29:54,701 - INFO - ================================================================================
+2026-04-08 09:29:54,701 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_07
+2026-04-08 09:29:56,695 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:31:35,634 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:31:35,639 - INFO -    💾 Session backup saved: task_widesearch_07_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:31:35,639 - INFO - ❌ Task task_widesearch_07: 0.0/1.0 (0%) - automated
+2026-04-08 09:31:35,639 - INFO - 
+================================================================================
+2026-04-08 09:31:35,639 - INFO - 📋 Task 207/208 (Run 1/1)
+2026-04-08 09:31:35,639 - INFO - ================================================================================
+2026-04-08 09:31:35,639 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_08
+2026-04-08 09:31:37,667 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:34:00,013 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:34:00,018 - INFO -    💾 Session backup saved: task_widesearch_08_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:34:00,018 - INFO - ❌ Task task_widesearch_08: 0.0/1.0 (0%) - automated
+2026-04-08 09:34:00,018 - INFO - 
+================================================================================
+2026-04-08 09:34:00,018 - INFO - 📋 Task 208/208 (Run 1/1)
+2026-04-08 09:34:00,018 - INFO - ================================================================================
+2026-04-08 09:34:00,018 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-4.7] starting task: task_widesearch_09
+2026-04-08 09:34:02,042 - WARNING - Could not find agent workspace, using fallback
+2026-04-08 09:34:43,745 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:34:43,749 - INFO -    💾 Session backup saved: task_widesearch_09_run_24b03b59-1.jsonl (3 entries, status=success)
+2026-04-08 09:34:43,749 - INFO - ❌ Task task_widesearch_09: 0.0/1.0 (0%) - automated
+2026-04-08 09:34:43,754 - INFO - Saved results to /root/workspace/skill/logs/basemodel_parallel_20260408_030900/custom-dashscope-aliyuncs-com_glm-4.7/results/24b03b59_custom-dashscope-aliyuncs-com-glm-4-7.json
+2026-04-08 09:34:43,755 - INFO - 
+================================================================================
+2026-04-08 09:34:43,755 - INFO - 📊 TOKEN EFFICIENCY SUMMARY
+2026-04-08 09:34:43,755 - INFO - ================================================================================
+2026-04-08 09:34:43,755 - INFO -    Total tokens used: 1,105,626 (input: 421,816, output: 683,810)
+2026-04-08 09:34:43,755 - INFO -    Total API requests: 203
+2026-04-08 09:34:43,755 - INFO -    Avg tokens/task: 5,316
+2026-04-08 09:34:43,755 - INFO -    Mean score: 0.5547
+2026-04-08 09:34:43,755 - INFO -    Score per 1K tokens: 0.1043 (higher = more efficient)
+2026-04-08 09:34:43,755 - INFO - ================================================================================
+2026-04-08 09:34:46,808 - INFO - Uploaded to leaderboard: rank #1452
+2026-04-08 09:34:46,809 - INFO - View at: https://pinchbench.com/submission/018d57bc-e6f8-45a3-a558-8948a584d08e
+[2026-04-08T09:34:46+00:00] exit_code=0

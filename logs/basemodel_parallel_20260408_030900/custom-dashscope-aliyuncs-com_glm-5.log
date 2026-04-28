@@ -2155,3 +2155,168 @@
 2026-04-08 08:36:55,862 - INFO - Retrying request to /v1/messages in 0.417598 seconds
 2026-04-08 08:41:54,512 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
 2026-04-08 08:41:54,513 - INFO - Retrying request to /v1/messages in 0.803973 seconds
+2026-04-08 08:46:53,552 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 08:46:53,553 - INFO -    💾 Session backup saved: task_terminalbench2_02_run_b16b98b0-1.jsonl (3 entries, status=timeout)
+2026-04-08 08:46:53,553 - INFO - ❌ Task task_terminalbench2_02: 0.0/1.0 (0%) - automated
+2026-04-08 08:46:53,553 - INFO - 
+================================================================================
+2026-04-08 08:46:53,553 - INFO - 📋 Task 192/208 (Run 1/1)
+2026-04-08 08:46:53,553 - INFO - ================================================================================
+2026-04-08 08:46:53,553 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_terminalbench2_03
+2026-04-08 08:47:59,831 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:47:59,832 - INFO -    💾 Session backup saved: task_terminalbench2_03_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:47:59,832 - INFO - ❌ Task task_terminalbench2_03: 0.0/1.0 (0%) - automated
+2026-04-08 08:47:59,833 - INFO - 
+================================================================================
+2026-04-08 08:47:59,833 - INFO - 📋 Task 193/208 (Run 1/1)
+2026-04-08 08:47:59,833 - INFO - ================================================================================
+2026-04-08 08:47:59,833 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_terminalbench2_04
+2026-04-08 08:48:40,919 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:48:40,920 - INFO -    💾 Session backup saved: task_terminalbench2_04_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:48:40,920 - INFO - ❌ Task task_terminalbench2_04: 0.0/1.0 (0%) - automated
+2026-04-08 08:48:40,920 - INFO - 
+================================================================================
+2026-04-08 08:48:40,920 - INFO - 📋 Task 194/208 (Run 1/1)
+2026-04-08 08:48:40,920 - INFO - ================================================================================
+2026-04-08 08:48:40,920 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_terminalbench2_05
+2026-04-08 08:49:26,326 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:49:26,328 - INFO -    💾 Session backup saved: task_terminalbench2_05_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:49:26,328 - INFO - ❌ Task task_terminalbench2_05: 0.0/1.0 (0%) - automated
+2026-04-08 08:49:26,328 - INFO - 
+================================================================================
+2026-04-08 08:49:26,328 - INFO - 📋 Task 195/208 (Run 1/1)
+2026-04-08 08:49:26,328 - INFO - ================================================================================
+2026-04-08 08:49:26,328 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_terminalbench2_06
+2026-04-08 08:50:17,759 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:50:17,761 - INFO -    💾 Session backup saved: task_terminalbench2_06_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:50:17,761 - INFO - ❌ Task task_terminalbench2_06: 0.0/1.0 (0%) - automated
+2026-04-08 08:50:17,761 - INFO - 
+================================================================================
+2026-04-08 08:50:17,761 - INFO - 📋 Task 196/208 (Run 1/1)
+2026-04-08 08:50:17,761 - INFO - ================================================================================
+2026-04-08 08:50:17,761 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_terminalbench2_07
+2026-04-08 08:51:15,039 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:51:15,042 - INFO -    💾 Session backup saved: task_terminalbench2_07_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:51:15,042 - INFO - ❌ Task task_terminalbench2_07: 0.0/1.0 (0%) - automated
+2026-04-08 08:51:15,042 - INFO - 
+================================================================================
+2026-04-08 08:51:15,042 - INFO - 📋 Task 197/208 (Run 1/1)
+2026-04-08 08:51:15,042 - INFO - ================================================================================
+2026-04-08 08:51:15,042 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_terminalbench2_08
+2026-04-08 08:55:57,162 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:55:57,164 - INFO -    💾 Session backup saved: task_terminalbench2_08_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:55:57,164 - INFO - ❌ Task task_terminalbench2_08: 0.0/1.0 (0%) - automated
+2026-04-08 08:55:57,164 - INFO - 
+================================================================================
+2026-04-08 08:55:57,164 - INFO - 📋 Task 198/208 (Run 1/1)
+2026-04-08 08:55:57,164 - INFO - ================================================================================
+2026-04-08 08:55:57,164 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_terminalbench2_09
+2026-04-08 08:57:45,760 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:57:45,762 - INFO -    💾 Session backup saved: task_terminalbench2_09_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:57:45,763 - INFO - ❌ Task task_terminalbench2_09: 0.0/1.0 (0%) - automated
+2026-04-08 08:57:45,763 - INFO - 
+================================================================================
+2026-04-08 08:57:45,763 - INFO - 📋 Task 199/208 (Run 1/1)
+2026-04-08 08:57:45,763 - INFO - ================================================================================
+2026-04-08 08:57:45,763 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_00
+2026-04-08 08:57:55,428 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:57:55,432 - INFO -    💾 Session backup saved: task_widesearch_00_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:57:55,432 - INFO - ❌ Task task_widesearch_00: 0.0/1.0 (0%) - automated
+2026-04-08 08:57:55,432 - INFO - 
+================================================================================
+2026-04-08 08:57:55,432 - INFO - 📋 Task 200/208 (Run 1/1)
+2026-04-08 08:57:55,432 - INFO - ================================================================================
+2026-04-08 08:57:55,432 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_01
+2026-04-08 08:58:07,038 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:58:07,042 - INFO -    💾 Session backup saved: task_widesearch_01_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:58:07,042 - INFO - ❌ Task task_widesearch_01: 0.0/1.0 (0%) - automated
+2026-04-08 08:58:07,042 - INFO - 
+================================================================================
+2026-04-08 08:58:07,042 - INFO - 📋 Task 201/208 (Run 1/1)
+2026-04-08 08:58:07,042 - INFO - ================================================================================
+2026-04-08 08:58:07,042 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_02
+2026-04-08 08:58:18,513 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 08:58:18,516 - INFO -    💾 Session backup saved: task_widesearch_02_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 08:58:18,517 - INFO - ❌ Task task_widesearch_02: 0.0/1.0 (0%) - automated
+2026-04-08 08:58:18,517 - INFO - 
+================================================================================
+2026-04-08 08:58:18,517 - INFO - 📋 Task 202/208 (Run 1/1)
+2026-04-08 08:58:18,517 - INFO - ================================================================================
+2026-04-08 08:58:18,517 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_03
+2026-04-08 09:03:19,435 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:03:19,436 - INFO - Retrying request to /v1/messages in 0.487239 seconds
+2026-04-08 09:08:18,167 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:08:18,168 - INFO - Retrying request to /v1/messages in 0.850973 seconds
+2026-04-08 09:13:17,256 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:13:17,259 - INFO -    💾 Session backup saved: task_widesearch_03_run_b16b98b0-1.jsonl (3 entries, status=timeout)
+2026-04-08 09:13:17,259 - INFO - ❌ Task task_widesearch_03: 0.0/1.0 (0%) - automated
+2026-04-08 09:13:17,259 - INFO - 
+================================================================================
+2026-04-08 09:13:17,259 - INFO - 📋 Task 203/208 (Run 1/1)
+2026-04-08 09:13:17,259 - INFO - ================================================================================
+2026-04-08 09:13:17,259 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_04
+2026-04-08 09:13:34,033 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:13:34,037 - INFO -    💾 Session backup saved: task_widesearch_04_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 09:13:34,037 - INFO - ❌ Task task_widesearch_04: 0.0/1.0 (0%) - automated
+2026-04-08 09:13:34,037 - INFO - 
+================================================================================
+2026-04-08 09:13:34,037 - INFO - 📋 Task 204/208 (Run 1/1)
+2026-04-08 09:13:34,037 - INFO - ================================================================================
+2026-04-08 09:13:34,037 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_05
+2026-04-08 09:15:50,972 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:15:50,980 - INFO -    💾 Session backup saved: task_widesearch_05_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 09:15:50,980 - INFO - ❌ Task task_widesearch_05: 0.0/1.0 (0%) - automated
+2026-04-08 09:15:50,980 - INFO - 
+================================================================================
+2026-04-08 09:15:50,980 - INFO - 📋 Task 205/208 (Run 1/1)
+2026-04-08 09:15:50,980 - INFO - ================================================================================
+2026-04-08 09:15:50,980 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_06
+2026-04-08 09:20:51,833 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:20:51,833 - INFO - Retrying request to /v1/messages in 0.447878 seconds
+2026-04-08 09:25:50,509 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:25:50,509 - INFO - Retrying request to /v1/messages in 0.776981 seconds
+2026-04-08 09:30:49,535 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:30:49,538 - INFO -    💾 Session backup saved: task_widesearch_06_run_b16b98b0-1.jsonl (3 entries, status=timeout)
+2026-04-08 09:30:49,538 - INFO - ❌ Task task_widesearch_06: 0.0/1.0 (0%) - automated
+2026-04-08 09:30:49,538 - INFO - 
+================================================================================
+2026-04-08 09:30:49,538 - INFO - 📋 Task 206/208 (Run 1/1)
+2026-04-08 09:30:49,538 - INFO - ================================================================================
+2026-04-08 09:30:49,538 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_07
+2026-04-08 09:31:48,072 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:31:48,077 - INFO -    💾 Session backup saved: task_widesearch_07_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 09:31:48,077 - INFO - ⚠️ Task task_widesearch_07: 0.1/1.0 (8%) - automated
+2026-04-08 09:31:48,077 - INFO - 
+================================================================================
+2026-04-08 09:31:48,077 - INFO - 📋 Task 207/208 (Run 1/1)
+2026-04-08 09:31:48,077 - INFO - ================================================================================
+2026-04-08 09:31:48,077 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_08
+2026-04-08 09:32:00,551 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 200 OK"
+2026-04-08 09:32:00,554 - INFO -    💾 Session backup saved: task_widesearch_08_run_b16b98b0-1.jsonl (3 entries, status=success)
+2026-04-08 09:32:00,554 - INFO - ❌ Task task_widesearch_08: 0.0/1.0 (0%) - automated
+2026-04-08 09:32:00,555 - INFO - 
+================================================================================
+2026-04-08 09:32:00,555 - INFO - 📋 Task 208/208 (Run 1/1)
+2026-04-08 09:32:00,555 - INFO - ================================================================================
+2026-04-08 09:32:00,555 - INFO - 🤖 BaseModel [custom-dashscope-aliyuncs-com/glm-5] starting task: task_widesearch_09
+2026-04-08 09:37:01,484 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:37:01,484 - INFO - Retrying request to /v1/messages in 0.496339 seconds
+2026-04-08 09:42:00,217 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:42:00,218 - INFO - Retrying request to /v1/messages in 0.884157 seconds
+2026-04-08 09:46:59,336 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/apps/anthropic/v1/messages "HTTP/1.1 504 Gateway Timeout"
+2026-04-08 09:46:59,339 - INFO -    💾 Session backup saved: task_widesearch_09_run_b16b98b0-1.jsonl (3 entries, status=timeout)
+2026-04-08 09:46:59,339 - INFO - ❌ Task task_widesearch_09: 0.0/1.0 (0%) - automated
+2026-04-08 09:46:59,344 - INFO - Saved results to /root/workspace/skill/logs/basemodel_parallel_20260408_030900/custom-dashscope-aliyuncs-com_glm-5/results/b16b98b0_custom-dashscope-aliyuncs-com-glm-5.json
+2026-04-08 09:46:59,345 - INFO - 
+================================================================================
+2026-04-08 09:46:59,345 - INFO - 📊 TOKEN EFFICIENCY SUMMARY
+2026-04-08 09:46:59,345 - INFO - ================================================================================
+2026-04-08 09:46:59,345 - INFO -    Total tokens used: 699,308 (input: 417,744, output: 281,564)
+2026-04-08 09:46:59,345 - INFO -    Total API requests: 200
+2026-04-08 09:46:59,345 - INFO -    Avg tokens/task: 3,362
+2026-04-08 09:46:59,345 - INFO -    Mean score: 0.4764
+2026-04-08 09:46:59,345 - INFO -    Score per 1K tokens: 0.1417 (higher = more efficient)
+2026-04-08 09:46:59,345 - INFO - ================================================================================
+2026-04-08 09:47:02,331 - INFO - Uploaded to leaderboard: rank #1538
+2026-04-08 09:47:02,331 - INFO - View at: https://pinchbench.com/submission/3dac08cc-6a2c-4248-965d-1fe6830521a1
+[2026-04-08T09:47:02+00:00] exit_code=0
