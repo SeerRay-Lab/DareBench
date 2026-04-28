@@ -48,8 +48,6 @@ LLM-judged tasks use a separate model. Edit `scripts/lib_grading.py` and set `DE
 DEFAULT_JUDGE_MODEL = "PROVIDER_NAME/MODEL_NAME"
 ```
 
-The repo default is `modelstudio/qwen3.5-plus`; change it if that ID is not available in your environment.
-
 **2.3 Launch runs**
 
 - **Parallel (multiple models)** — edit the `MODELS=( ... )` array in `scripts/run_parallel.sh`, then:
@@ -60,7 +58,6 @@ The repo default is `modelstudio/qwen3.5-plus`; change it if that ID is not avai
 
   Keep concurrent models modest (about **5 or fewer**) to reduce flaky failures from rate limits or resource contention. Extra `benchmark.py` flags can be appended; they are forwarded to every worker.
 
-  Optional: set `PINCHBENCH_EXECUTOR=openclaw` or `basemodel`, or pass `--executor openclaw|basemodel` to override the default (`openclaw`).
 
 - **Serial (multiple models, one after another)** — same `MODELS=( ... )` idea in `scripts/run_serial.sh`:
 
@@ -74,10 +71,7 @@ The repo default is `modelstudio/qwen3.5-plus`; change it if that ID is not avai
   ./scripts/run.sh --model PROVIDER_NAME/MODEL_NAME
   ```
 
-## Command reference (`scripts/benchmark.py`)
-
-These flags match the current CLI in `scripts/benchmark.py` (invoked via `uv run` from the repo root, or through `./scripts/run.sh`).
-
+## Command reference
 | Flag | Description |
 |------|-------------|
 | `--model MODEL` | Model under test (e.g. `openrouter/anthropic/claude-sonnet-4.6`). Required for `./scripts/run.sh`; parallel/serial scripts set this per entry in `MODELS`. |
