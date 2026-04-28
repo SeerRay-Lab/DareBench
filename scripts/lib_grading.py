@@ -1,5 +1,5 @@
 """
-PinchBench grading engine.
+ClawWorld grading engine.
 """
 
 from __future__ import annotations
@@ -22,13 +22,6 @@ DEFAULT_JUDGE_MODEL = "modelstudio/qwen3.5-plus"
 
 
 def _extract_model_name(model_id: str) -> str:
-    """Extract clean model name without provider prefix.
-    
-    Examples:
-        'custom-dashscope-aliyuncs-com/qwen3-vl-plus' -> 'qwen3-vl-plus'
-        'custom-api-shubiaobiao-cn/gpt-5.2' -> 'gpt-5-2'
-        'gpt-5.2' -> 'gpt-5-2'
-    """
     if "/" in model_id:
         model_id = model_id.split("/")[-1]
     return model_id.replace(".", "-")
@@ -175,7 +168,7 @@ def _grade_llm_judge(
     )
     # Use target model name in workspace path to ensure isolation between parallel runs
     workspace_name = _extract_model_name(target_model) if target_model else task.task_id
-    judge_workspace = Path(f"/tmp/pinchbench/judge/{workspace_name}")
+    judge_workspace = Path(f"/tmp/clawworld/judge/{workspace_name}")
     judge_result = run_openclaw_prompt(
         agent_id=agent_id,
         prompt=prompt,
@@ -340,11 +333,11 @@ def _ensure_judge_agent(
         target_name = _extract_model_name(target_model)  # e.g., "gpt-5.2"
         # Create dedicated judge for this target model: bench-judge-qwen3-vl-plus-for-gpt-5-2
         agent_id = f"{judge_agent_prefix}-{judge_name}-for-{target_name}"
-        workspace = Path(f"/tmp/pinchbench/judge/{target_name}/workspace")
+        workspace = Path(f"/tmp/clawworld/judge/{target_name}/workspace")
     else:
         # Use default judge agent
         agent_id = f"{judge_agent_prefix}-{judge_name}"
-        workspace = Path("/tmp/pinchbench/judge/default/workspace")
+        workspace = Path("/tmp/clawworld/judge/default/workspace")
     
     ensure_agent_exists(agent_id, judge_model, workspace)
     return agent_id

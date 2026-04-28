@@ -1,5 +1,5 @@
 """
-OpenClaw agent execution helpers for PinchBench.
+OpenClaw agent execution helpers for ClawWorld.
 """
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ from lib_tasks import Task
 logger = logging.getLogger(__name__)
 MAX_OPENCLAW_MESSAGE_CHARS = int(os.environ.get("PINCHBENCH_MAX_MSG_CHARS", "4000"))
 
-_AGENT_LOCK_DIR = Path("/tmp/pinchbench")
+_AGENT_LOCK_DIR = Path("/tmp/clawworld")
 _AGENT_LOCK_PATH = _AGENT_LOCK_DIR / ".agent_registry.lock"
 
 
@@ -228,7 +228,7 @@ def prepare_task_workspace(skill_dir: Path, run_id: str, task: Task, agent_id: s
     if workspace is None:
         # Fallback to task-specific workspace if agent workspace not found
         logger.warning("Could not find agent workspace, using fallback")
-        workspace = Path(f"/tmp/pinchbench/{run_id}/{task.task_id}")
+        workspace = Path(f"/tmp/clawworld/{run_id}/{task.task_id}")
 
     # Clear workspace before each task to prevent stale files from prior tasks
     # from contaminating the agent's context.

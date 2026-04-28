@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Aggregate PinchBench parallel run results from a directory like logs/parallel_20260325_123544.
+Aggregate ClawWorld parallel run results from a directory like logs/parallel_20260325_123544.
 
 Each immediate subdirectory with results/*.json is treated as one model run.
 If <model>/sessions/<task>_run_<run_id>-<k>.jsonl exists, the last valid JSON line is parsed:
@@ -490,7 +490,7 @@ def export_csv_by_benchmark(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Summarize parallel PinchBench logs under logs/parallel_*")
+    parser = argparse.ArgumentParser(description="Summarize parallel ClawWorld logs under logs/parallel_*")
     parser.add_argument(
         "parallel_dir",
         type=str,

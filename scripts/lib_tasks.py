@@ -1,7 +1,7 @@
 """
-PinchBench Task Library
+ClawWorld Task Library
 
-This module provides task loading and parsing functionality for the PinchBench
+This module provides task loading and parsing functionality for the ClawWorld
 benchmarking system.
 """
 

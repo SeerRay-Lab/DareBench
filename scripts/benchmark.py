@@ -12,7 +12,6 @@
 import argparse
 import json
 import logging
-import os
 import statistics
 import subprocess
 import sys
@@ -167,7 +166,7 @@ class BenchmarkRunner:
 
 
 def _parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="PinchBench OpenClaw Benchmark Runner")
+    parser = argparse.ArgumentParser(description="ClawWorld OpenClaw Benchmark Runner")
     parser.add_argument(
         "--model",
         required=False,
@@ -182,22 +181,6 @@ def _parse_args() -> argparse.Namespace:
         "--output-dir",
         default="results",
         help="Results directory",
-    )
-    parser.add_argument(
-        "--register",
-        action="store_true",
-        help="Request a new API token and save it to local config",
-    )
-    parser.add_argument(
-        "--no-upload",
-        action="store_true",
-        help="Skip uploading to server",
-    )
-    parser.add_argument(
-        "--upload",
-        type=str,
-        metavar="RESULTS_JSON",
-        help="Upload a previous run's results JSON and exit (skips benchmarking)",
     )
     parser.add_argument(
         "--timeout-multiplier",
@@ -216,12 +199,6 @@ def _parse_args() -> argparse.Namespace:
         "-v",
         action="store_true",
         help="Enable verbose logging (shows transcript contents, workspace files, etc.)",
-    )
-    parser.add_argument(
-        "--official-key",
-        type=str,
-        metavar="KEY",
-        help="Official key to mark submission as official (can also use PINCHBENCH_OFFICIAL_KEY env var)",
     )
     parser.add_argument(
         "--session-backup-dir",
@@ -294,21 +271,6 @@ def _backup_session_transcript(
         logger.warning("   ⚠️ Failed to backup session transcript: %s", exc)
 
 
-def _load_ascii_art(script_dir: Path, filename: str) -> str | None:
-    """Load ASCII art from a local file if available."""
-    art_path = script_dir / filename
-    try:
-        return art_path.read_text(encoding="utf-8").rstrip("\n")
-    except FileNotFoundError:
-        return None
-
-
-def _supports_truecolor() -> bool:
-    if os.environ.get("NO_COLOR"):
-        return False
-    return sys.stdout.isatty()
-
-
 def _get_git_version(script_dir: Path) -> str:
     try:
         result = subprocess.run(
@@ -324,22 +286,6 @@ def _get_git_version(script_dir: Path) -> str:
     if result.returncode != 0:
         return ""
     return result.stdout.strip()
-
-
-def _colorize_gradient(ascii_art: str) -> str:
-    if not _supports_truecolor():
-        return ascii_art
-    lines = ascii_art.splitlines()
-    if not lines:
-        return ascii_art
-    last_index = max(len(lines) - 1, 1)
-    colored_lines = []
-    for idx, line in enumerate(lines):
-        t = idx / last_index
-        green_blue = int(255 * (1 - t))
-        colored_lines.append(f"\x1b[38;2;255;{green_blue};{green_blue}m{line}\x1b[0m")
-    return "\n".join(colored_lines)
-
 
 def _compute_efficiency_summary(
     task_entries: List[Dict[str, Any]],
@@ -470,14 +416,7 @@ def main():
     skill_root = script_dir.parent  # Parent of scripts/ is the skill root
     tasks_dir = skill_root / "tasks"
 
-    logger.info("🦞🦀🦐 PinchBench - OpenClaw Benchmarking")
-    ascii_crab = _load_ascii_art(skill_root, "crab.txt")
-    if ascii_crab:
-        print("\n" + _colorize_gradient(ascii_crab) + "\n")
-    else:
-        print("\n" + "🦀 " * 30)
-        print("🦀 " * 30 + "\n")
-    logger.info("🦞🦀🦐 Starting PinchBench 🦐🦀🦞")
+    logger.info("Starting ClawWorld benchmark")
     time.sleep(5)
 
     if not tasks_dir.exists():
@@ -485,42 +424,9 @@ def main():
         sys.exit(1)
 
     args = _parse_args()
-    if not args.model and not args.register and not args.upload:
-        logger.error("Missing required argument: --model (unless using --register or --upload)")
+    if not args.model:
+        logger.error("Missing required argument: --model")
         sys.exit(2)
-
-    if args.register:
-        try:
-            from lib_upload import UploadError, register_token, save_token_config
-
-            token, claim_url = register_token()
-            config_path = save_token_config(token, claim_url)
-            logger.info("Saved token to %s", config_path)
-            if claim_url:
-                logger.info("Claim URL: %s", claim_url)
-            return
-        except UploadError as exc:
-            logger.error("Registration failed: %s", exc)
-            sys.exit(1)
-
-    if args.upload:
-        results_path = Path(args.upload)
-        if not results_path.exists():
-            logger.error("Results file not found: %s", results_path)
-            sys.exit(1)
-        try:
-            from lib_upload import UploadError, upload_results
-
-            result = upload_results(results_path)
-            if result.rank is not None:
-                logger.info("Uploaded to leaderboard: rank #%s", result.rank)
-            if result.leaderboard_url:
-                logger.info("View at: %s", result.leaderboard_url)
-            logger.info("Upload complete.")
-            return
-        except UploadError as exc:
-            logger.error("Upload failed: %s", exc)
-            sys.exit(1)
 
     logger.info("🔧 Initializing BenchmarkRunner...")
     runner = BenchmarkRunner(tasks_dir)
@@ -529,12 +435,12 @@ def main():
     runner.load_tasks()
 
     model_slug = slugify_model(args.model)
-    run_root = Path("/tmp/pinchbench")
+    run_root = Path("/tmp/clawworld")
     run_id = _next_run_id(run_root)
     skill_dir = skill_root
     agent_id = f"bench-{model_slug}"
     # Use a shared workspace for the agent - we'll copy fixtures per task
-    agent_workspace = Path(f"/tmp/pinchbench/{run_id}/agent_workspace")
+    agent_workspace = Path(f"/tmp/clawworld/{run_id}/agent_workspace")
 
     if args.executor == "openclaw":
         ensure_agent_exists(agent_id, args.model, agent_workspace)
@@ -706,19 +612,6 @@ def main():
 
     logger.info("Saved results to %s", output_path)
     _log_efficiency_summary(efficiency, grades_by_task_id)
-    if args.no_upload:
-        logger.info("Skipping upload (--no-upload)")
-    else:
-        try:
-            from lib_upload import UploadError, upload_results
-
-            result = upload_results(output_path, official_key=args.official_key)
-            if result.rank is not None:
-                logger.info("Uploaded to leaderboard: rank #%s", result.rank)
-            if result.leaderboard_url:
-                logger.info("View at: %s", result.leaderboard_url)
-        except UploadError as exc:
-            logger.warning("Upload failed: %s", exc)
 
 
 if __name__ == "__main__":
