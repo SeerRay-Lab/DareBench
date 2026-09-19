@@ -166,7 +166,7 @@ class BenchmarkRunner:
 
 
 def _parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="ClawWorld OpenClaw Benchmark Runner")
+    parser = argparse.ArgumentParser(description="DareBench OpenClaw Benchmark Runner")
     parser.add_argument(
         "--model",
         required=False,
@@ -416,7 +416,7 @@ def main():
     skill_root = script_dir.parent  # Parent of scripts/ is the skill root
     tasks_dir = skill_root / "tasks"
 
-    logger.info("Starting ClawWorld benchmark")
+    logger.info("Starting DareBench benchmark")
     time.sleep(5)
 
     if not tasks_dir.exists():
@@ -435,12 +435,12 @@ def main():
     runner.load_tasks()
 
     model_slug = slugify_model(args.model)
-    run_root = Path("/tmp/clawworld")
+    run_root = Path("/tmp/darebench")
     run_id = _next_run_id(run_root)
     skill_dir = skill_root
     agent_id = f"bench-{model_slug}"
     # Use a shared workspace for the agent - we'll copy fixtures per task
-    agent_workspace = Path(f"/tmp/clawworld/{run_id}/agent_workspace")
+    agent_workspace = Path(f"/tmp/darebench/{run_id}/agent_workspace")
 
     if args.executor == "openclaw":
         ensure_agent_exists(agent_id, args.model, agent_workspace)

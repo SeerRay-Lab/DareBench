@@ -1,5 +1,5 @@
 """
-Direct base-model execution helpers for ClawWorld.
+Direct base-model execution helpers for DareBench.
 
 This module bypasses OpenClaw agent/tool orchestration and calls an
 OpenAI-compatible chat-completions endpoint directly.
@@ -481,7 +481,7 @@ def _call_model_api(
     model_name, base_url, api_key, api_type = _resolve_model_connection(model_id)
     extra_system = os.environ.get("PINCHBENCH_BASEMODEL_SYSTEM_PROMPT", "").strip()
     system_prompt = (
-        "You are a direct baseline model run for ClawWorld. "
+        "You are a direct baseline model run for DareBench. "
         "Return your best final answer using only the provided prompt and files."
     )
     if extra_system:

@@ -1,7 +1,7 @@
 """
-ClawWorld Task Library
+DareBench Task Library
 
-This module provides task loading and parsing functionality for the ClawWorld
+This module provides task loading and parsing functionality for the DareBench
 benchmarking system.
 """
 

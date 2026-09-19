@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Convenience wrapper for running ClawWorld
+# Convenience wrapper for running DareBench
 # Usage: ./scripts/run.sh --model anthropic/claude-sonnet-4
 
 set -e

@@ -1,4 +1,4 @@
-# ClawWorld
+# DareBench
 
 ## Quick Start
 
@@ -36,8 +36,8 @@ openclaw onboard
 **2.1 Clone this repository**
 
 ```bash
-git clone https://github.com/leozhilin/ClawWorld.git
-cd ClawWorld
+git clone https://github.com/SeerRay-Lab/DareBench.git
+cd DareBench
 ```
 
 **2.2 Configure the judge model**
