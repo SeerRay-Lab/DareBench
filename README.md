@@ -9,6 +9,7 @@
   <a href="https://seerray-lab.github.io/DareBench/"><img src="https://img.shields.io/badge/Page-1b3a5c?style=flat-square&amp;logo=githubpages&amp;logoColor=white" alt="Project page"></a>
   <a href="https://seerray-lab.github.io/DareBench/#leaderboard"><img src="https://img.shields.io/badge/Leaderboard-e8604c?style=flat-square" alt="Interactive leaderboard"></a>
   <a href="https://github.com/SeerRay-Lab/DareBench"><img src="https://img.shields.io/badge/Code-29233f?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub code"></a>
+  <a href="https://huggingface.co/datasets/SeerRay-Lab/DAREBench"><img src="https://img.shields.io/badge/Dataset-e3ad25?style=flat-square&amp;logo=huggingface&amp;logoColor=white" alt="Hugging Face dataset"></a>
   <a href="#citation"><img src="https://img.shields.io/badge/BibTeX-d6336c?style=flat-square" alt="Citation"></a>
 </p>
 
