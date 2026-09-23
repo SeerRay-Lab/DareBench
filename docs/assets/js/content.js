@@ -243,9 +243,12 @@
   function cite() {
     U.$('#bibtex').textContent = M.bibtex;
     var links = h('div', { class: 'cite__links' },
-      h('a', { class: 'btn btn--sm btn--navy', attrs: { href: M.arxivUrl, rel: 'noopener' } }, U.icon('i-paper'), 'arXiv ' + M.arxivId),
-      h('a', { class: 'btn btn--sm btn--ghost', attrs: { href: M.pdfUrl, rel: 'noopener' } }, U.icon('i-pdf'), 'PDF'),
-      h('a', { class: 'btn btn--sm btn--ghost', attrs: { href: M.github, rel: 'noopener' } }, U.icon('i-github'), 'Code'));
+      h('span', { class: 'btn-pair' },
+        h('a', { class: 'btn btn--sm btn--navy', attrs: { href: M.arxivUrl, rel: 'noopener' } }, U.icon('i-paper'), 'arXiv ' + M.arxivId),
+        h('a', { class: 'btn btn--sm btn--ghost', attrs: { href: M.pdfUrl, rel: 'noopener' } }, U.icon('i-pdf'), 'PDF')),
+      h('span', { class: 'btn-pair' },
+        h('a', { class: 'btn btn--sm btn--ghost', attrs: { href: M.github, rel: 'noopener' } }, U.icon('i-github'), 'Code'),
+        M.hfDataset ? h('a', { class: 'btn btn--sm btn--ghost', attrs: { href: M.hfDataset, rel: 'noopener', title: 'DAREBench on Hugging Face' } }, U.icon('i-data'), 'HF Dataset') : null));
     U.$('.cite__body').appendChild(links);
     U.$$('[data-copy-target]').forEach(function (b) {
       b.addEventListener('click', function () { U.copy(document.getElementById(b.getAttribute('data-copy-target')).textContent, b); });

@@ -1637,3 +1637,7 @@ th[aria-sort="descending"] .sort-btn .arr, th[aria-sort="ascending"] .sort-btn .
   .tview__swipe { display: none !important; }
   .tview .table-scroll { -webkit-mask-image: none !important; mask-image: none !important; }
 }
+
+/* Hero and cite link rows wrap in pairs (paper · code and data · this page), so the HF Dataset button never
+   leaves one button alone on a row (homepage/tools/add_hf_links.py) */
+.btn-pair { display: flex; gap: inherit; }

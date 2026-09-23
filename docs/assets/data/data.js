@@ -48,6 +48,7 @@ window.DARE = {
   "pdfUrl": "https://arxiv.org/pdf/2609.06059",
   "htmlUrl": "https://arxiv.org/html/2609.06059v1",
   "github": "https://github.com/SeerRay-Lab/DareBench",
+  "hfDataset": "https://huggingface.co/datasets/SeerRay-Lab/DAREBench",
   "authors": [
    {
     "name": "Yu Liu",

@@ -365,6 +365,7 @@
     <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v7M9 14l3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z" fill="currentColor"/></symbol>
+    <symbol id="i-data" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-quote" viewBox="0 0 24 24"><path d="M6 17c-1.5 0-3-1.2-3-3.5C3 9 6 6.5 9 6l.5 1.2C7.5 8 6.5 9.5 6.5 11c2 0 3.5 1.2 3.5 3s-1.7 3-4 3zm10 0c-1.5 0-3-1.2-3-3.5C13 9 16 6.5 19 6l.5 1.2c-2 .8-3 2.3-3 3.8 2 0 3.5 1.2 3.5 3s-1.7 3-4 3z" fill="currentColor"/></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
@@ -556,11 +557,18 @@
       <ol class="affils" id="affils" aria-label="Affiliations"><li>Institute of Information Engineering, Chinese Academy of Sciences</li><li>School of Cyber Security, University of Chinese Academy of Sciences</li><li>MiLM Plus, Xiaomi Inc.</li><li>Department of Computer Science, Brown University</li></ol>
       <p class="author-notes" id="author-notes"></p>
       <div class="hero__btns">
-        <a class="btn btn--navy" data-href="meta.arxivUrl" href="https://arxiv.org/abs/2609.06059" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>arXiv</a>
-        <a class="btn btn--ghost" data-href="meta.pdfUrl" href="https://arxiv.org/pdf/2609.06059" rel="noopener"><svg aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
-        <a class="btn btn--ghost" data-href="meta.github" href="https://github.com/SeerRay-Lab/DareBench" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code</a>
-        <a class="btn btn--coral" href="#leaderboard"><svg aria-hidden="true"><use href="#i-trophy"/></svg>Leaderboard</a>
-        <a class="btn btn--ghost" href="#cite"><svg aria-hidden="true"><use href="#i-quote"/></svg>BibTeX</a>
+        <span class="btn-pair">
+          <a class="btn btn--navy" data-href="meta.arxivUrl" href="https://arxiv.org/abs/2609.06059" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>arXiv</a>
+          <a class="btn btn--ghost" data-href="meta.pdfUrl" href="https://arxiv.org/pdf/2609.06059" rel="noopener"><svg aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
+        </span>
+        <span class="btn-pair">
+          <a class="btn btn--ghost" data-href="meta.github" href="https://github.com/SeerRay-Lab/DareBench" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code</a>
+          <a class="btn btn--ghost" data-href="meta.hfDataset" href="https://huggingface.co/datasets/SeerRay-Lab/DAREBench" rel="noopener" title="DAREBench on Hugging Face"><svg aria-hidden="true"><use href="#i-data"/></svg>HF Dataset</a>
+        </span>
+        <span class="btn-pair">
+          <a class="btn btn--coral" href="#leaderboard"><svg aria-hidden="true"><use href="#i-trophy"/></svg>Leaderboard</a>
+          <a class="btn btn--ghost" href="#cite"><svg aria-hidden="true"><use href="#i-quote"/></svg>BibTeX</a>
+        </span>
       </div>
     </div>
     <div class="hero__mascot">
@@ -1081,6 +1089,7 @@
           <a data-href="meta.pdfUrl" href="https://arxiv.org/pdf/2609.06059" rel="noopener">PDF</a>
           <a data-href="meta.htmlUrl" href="https://arxiv.org/html/2609.06059v1" rel="noopener">HTML</a>
           <a data-href="meta.github" href="https://github.com/SeerRay-Lab/DareBench" rel="noopener">GitHub</a>
+          <a data-href="meta.hfDataset" href="https://huggingface.co/datasets/SeerRay-Lab/DAREBench" rel="noopener">HF Dataset</a>
         </p>
       </div>
       <div class="footer__col">
