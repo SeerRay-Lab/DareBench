@@ -1,0 +1,156 @@
+/* ==========================================================================
+   DAREBench homepage: color tokens (light theme only)
+   --------------------------------------------------------------------------
+   Visual source: the paper's Fig. 2 panel colors (1 blue / 2 green /
+   3 orange / 4 purple) plus the OpenClaw lobster red.
+   Method: dataviz color formula. Every DATA token below was checked with the
+   official validator (validate_palette.js, --mode light) against both page
+   surfaces, cream #FFF8EC and white #FFFFFF.
+   Verdicts are in palette.json; the usage rules are summarized below.
+
+   RULES FOR CHART AUTHORS
+   - Marks carry series colors. Labels, values, legends and axis text use ink
+     tokens, never a series color.
+   - Color follows the entity, not its rank. Keep the slot order below fixed.
+   - WARN: the light workload steps (--wl-text-ss, --wl-mm-ss) and
+     --pareto-muted are below 3:1 on the surface. Any chart that uses them
+     needs a relief channel: visible direct labels or the table view (every
+     chart ships a table view anyway).
+   - Status colors are reserved for state. Always pair them with an icon and
+     a label. Never use them for a series.
+   - Labels inside a colored mark use the matching --*-on token, which is the
+     one that clears 4.5:1. If a fill has no 4.5:1 on-color, put the label
+     outside the bar end in --ink.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---- Surfaces ---------------------------------------------------------- */
+  --surface-page:   #FFF8EC;  /* cream page plane (validator surface #1) */
+  --surface-card:   #FFFFFF;  /* chart cards / figures (validator surface #2) */
+  --surface-sunken: #F6ECDA;  /* code blocks, table zebra, wells */
+
+  /* ---- Ink (text + cartoon outline) --------------------------------------
+     Contrast on cream / white:
+       ink 14.92 / 15.75, ink-2 7.84 / 8.28, ink-muted 5.89 / 6.22 (all pass AA) */
+  --ink:          #2B2118;    /* primary text, thick cartoon outlines, hard shadows */
+  --ink-2:        #5A4C3D;    /* secondary text */
+  --ink-muted:    #6B5F50;    /* captions, axis tick labels (still >= 4.5:1) */
+  --ink-inverse:  #FFFFFF;
+  --outline:      var(--ink);
+
+  /* ---- Chart chrome (hairlines, recessive) ------------------------------- */
+  --chart-grid:   #ECE3D3;    /* 1px solid gridlines */
+  --chart-axis:   #CDBFA8;    /* 1px baseline / axis rule */
+  --chart-ring:   var(--surface-card); /* 2px surface ring around dots */
+  --chart-gap:    var(--surface-card); /* 2px surface gap between touching bars */
+
+  /* ---- Brand: OpenClaw lobster (UI accent, NOT a data color) -------------- */
+  --lobster:      #EC624A;    /* fills, logo, big shapes; ink text on it 4.81:1 */
+  --lobster-ink:  #B93D27;    /* lobster-colored text/links: 5.29 cream / 5.59 white */
+
+  /* ---- Section chrome (from Fig. 2 panels; UI only, NOT data colors) -----
+     Contrast: fill vs --ink >= 13.6; sec ink vs its fill >= 4.9; edge vs cream >= 3.27;
+     white on badge >= 5.17 */
+  --sec-blue-fill:    #EAF2FD;  --sec-blue-edge:    #4774CA;  --sec-blue-badge:    #1455B8;  --sec-blue-ink:    #1455B8;
+  --sec-green-fill:   #EDF8EA;  --sec-green-edge:   #578E31;  --sec-green-badge:   #29793A;  --sec-green-ink:   #29793A;
+  --sec-orange-fill:  #FDF0E2;  --sec-orange-edge:  #D86C1F;  --sec-orange-badge:  #B0520C;  --sec-orange-ink:  #A94F0A;
+  --sec-purple-fill:  #F1ECFB;  --sec-purple-edge:  #6F2F9F;  --sec-purple-badge:  #6C47AD;  --sec-purple-ink:  #6C47AD;
+
+  /* ======================================================================
+     DATA COLORS
+     ====================================================================== */
+
+  /* (a) Deployment: API vs Local. 2 slots, fixed order.
+     PASS on cream and white: CVD dE 23.7 (deutan), normal dE 31.1, both >= 3:1 */
+  --series-api:     #7444B4;  /* violet, from Fig. 2 panel 4 */
+  --series-local:   #3C8836;  /* green, from Fig. 2 panel 2 */
+  --series-api-on:  #FFFFFF;  /* 6.50:1 */
+  --series-local-on:#FFFFFF;  /* 4.41:1, so bold >= 14pt only; otherwise label outside the bar in --ink */
+
+  /* (b) Modality: Text vs Multimodal. 2 slots, fixed order.
+     PASS on cream and white: CVD dE 28.6 (protan), normal dE 31.6, both >= 3:1.
+     These are the middle steps of the two workload families in (c). */
+  --series-text:    #4A7AE4;  /* blue, from Fig. 2 panel 1 */
+  --series-mm:      #CC580B;  /* orange, from Fig. 2 panel 3 */
+  --series-text-on: #FFFFFF;  /* 4.04:1, so bold >= 14pt only */
+  --series-mm-on:   #FFFFFF;  /* 4.23:1, so bold >= 14pt only */
+  /* (b') Overall = both modalities combined (the leaderboard's aggregate column).
+     A DELIBERATE NEUTRAL, not a third categorical hue: it must not compete with
+     text/mm, and every free hue is taken (violet = API, green = local,
+     raspberry = Pareto, teal = heat ramp, reds/yellows = status).
+     validate_palette "#4A7AE4,#CC580B,#5B6878" (white and #F3FAFB):
+     lightness band PASS, CVD PASS (dE 13.6 protan), normal-vision PASS
+     (dE 21.1), contrast PASS (5.68:1 on white); chroma floor FAIL as expected
+     for a neutral (C 0.03). Distinct from the text token --ink-2 (1.48:1). */
+  --series-overall: #5B6878;
+
+  /* (c) Workload groups. 6 slots in a FIXED order:
+         text-ss, text-ms, text-mt, mm-ss, mm-ms, mm-mt
+     Composite encoding: hue = modality (blue family / orange family) and
+     lightness = execution complexity (single-step light, multi-step mid,
+     multi-step+tools dark), which mirrors the paper's Workload Matrix.
+     Categorical, adjacent pairs: PASS on both surfaces (worst CVD dE 13.6,
+     normal dE 15.7). The same holds on all pairs, so scatter and small
+     multiples are allowed.
+     WARN: contrast. --wl-text-ss (2.21 cream / 2.33 white) and --wl-mm-ss
+     (2.28 / 2.41) are below 3:1 and need relief (direct labels or table view).
+     Each family also PASSES the --ordinal ramp check (monotone L, dL >= 0.06,
+     hue spread 36 deg). */
+  --wl-text-ss:     #18B6F2;
+  --wl-text-ms:     #4A7AE4;
+  --wl-text-mt:     #2C45AE;
+  --wl-mm-ss:       #E29805;
+  --wl-mm-ms:       #CC580B;
+  --wl-mm-mt:       #922B01;
+  /* in-mark label colors (>= 4.5:1 only where noted; else label outside in --ink) */
+  --wl-text-ss-on:  #2B2118;  /* 6.76 */
+  --wl-text-mt-on:  #FFFFFF;  /* 8.17 */
+  --wl-mm-ss-on:    #2B2118;  /* 6.54 */
+  --wl-mm-mt-on:    #FFFFFF;  /* 8.18 */
+  /* --wl-text-ms and --wl-mm-ms: best on-color is 4.04 / 4.23, so use only for
+     bold text >= 14pt (18.66px), otherwise put the label outside the bar */
+
+  /* (d) Sequential heat ramp for leaderboard cells: one hue (teal), light to dark.
+     Teal is not used by any series, so a heat cell never reads as a modality or
+     a deployment type. Lightness is monotone and every step gap is >= 0.06.
+     Full 100-700 ramp: the light end recedes to the surface by design
+     (sequential), so the ordinal "light-end >= 2:1" check FAILS as expected.
+     Steps 400-700 used as an ordinal ramp: PASS on both surfaces. The
+     leaderboard's heat mode uses exactly these four steps (light end 2.16:1
+     on white, validate_palette --ordinal PASS).
+     Always print the number in the cell and show a scale legend, so color never
+     carries the value alone. */
+  --seq-100: #DEFAF7;  --seq-100-on: #2B2118;  /* 14.34 */
+  --seq-200: #B0EBE7;  --seq-200-on: #2B2118;  /* 11.91 */
+  --seq-300: #7EDAD7;  --seq-300-on: #2B2118;  /*  9.67 */
+  --seq-400: #40C2C3;  --seq-400-on: #2B2118;  /*  7.29 */
+  --seq-500: #02A6AD;  --seq-500-on: #2B2118;  /*  5.29 */
+  --seq-600: #0A818B;  --seq-600-on: #FFFFFF;  /*  4.64 */
+  --seq-700: #055F6C;  --seq-700-on: #FFFFFF;  /*  7.34 */
+
+  /* (e) Pareto emphasis: highlight the frontier, mute everything else.
+     The highlight is raspberry, a hue no series uses, so it reads the same in
+     the Text and Multimodal panels.
+     Highlight alone: PASS (L 0.52, C 0.20, 5.84 cream / 6.16 white).
+     Highlight vs muted: CVD dE 17.7 (deutan), normal dE 26.9, PASS. The
+     separation is carried mainly by lightness, which survives CVD.
+     Expected findings on the muted gray: chroma-floor FAIL (it is a
+     de-emphasis gray, not a categorical slot) and a contrast WARN
+     (2.54 cream / 2.68 white), so give muted points hover/focus tooltips
+     plus the table view.
+     All-pairs co-occurrence PASS: with (b) {text, mm, pareto-hi}, worst CVD
+     dE 16.8; with (a) {api, local, pareto-hi}, worst CVD dE 10.1. */
+  --pareto-hi:      #B51C79;
+  --pareto-hi-on:   #FFFFFF;  /* 6.16 */
+  --pareto-muted:   #A59D92;
+  --pareto-muted-on:#2B2118;  /* 5.88 */
+
+  /* ---- Status (fixed, reserved; always icon + label, never a series) ----- */
+  --status-good:     #0CA30C;
+  --status-warning:  #FAB219;
+  --status-serious:  #EC835A;
+  --status-critical: #D03B3B;
+  --status-good-text:#006300; /* success text on light surfaces */
+}
