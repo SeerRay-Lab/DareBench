@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#DDF3F8" stroke="#1E3450" stroke-width="3"/>
+  <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M27 25 C 24 15, 18 11, 12 11 M 37 25 C 40 15, 46 11, 52 11" fill="none" stroke-width="2.6"/>
+    <path d="M9 39 C 5 31, 9 23, 15 23 L 16 30 L 20 24 C 25 27, 25 35, 21 39 C 17 43, 11 43, 9 39 Z" fill="#EC624A" stroke-width="2.4"/>
+    <path d="M55 39 C 59 31, 55 23, 49 23 L 48 30 L 44 24 C 39 27, 39 35, 43 39 C 47 43, 53 43, 55 39 Z" fill="#EC624A" stroke-width="2.4"/>
+    <path d="M32 27 C 44 27, 46 37, 46 43 C 46 53, 40 57, 32 57 C 24 57, 18 53, 18 43 C 18 37, 20 27, 32 27 Z" fill="#EC624A" stroke-width="2.6"/>
+    <circle cx="26" cy="22" r="6.5" fill="#FFFFFF" stroke-width="2.4"/>
+    <circle cx="38" cy="22" r="6.5" fill="#FFFFFF" stroke-width="2.4"/>
+    <circle cx="27.5" cy="23.5" r="2.8" fill="#1E3450" stroke="none"/>
+    <circle cx="39.5" cy="23.5" r="2.8" fill="#1E3450" stroke="none"/>
+    <path d="M27 43 Q 32 48 37 43" fill="none" stroke-width="2.4"/>
+    <path d="M32 51 L 26 48 Q 24 51 26 54 Z M 32 51 L 38 48 Q 40 51 38 54 Z" fill="#7A55C4" stroke-width="1.8"/>
+  </g>
+</svg>

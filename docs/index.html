@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFF8EC">
+<title>DAREBench: Deployment-Aware and Reliable Evaluation of Models as Agents</title>
+<meta name="description" content="DAREBench is a workload- and deployment-aware benchmark for evaluating models as agents: 233 tasks from 22 source benchmarks in a 2×3 workload matrix, one shared OpenClaw runtime with task contracts, and an evidence-based audit of LLM-judge scores.">
+<meta name="author" content="Yu Liu, Zhilin Liu, Zhiwei Yang, Shaojie Zhang, Zheyuan Deng, Tingwei Huang, Zhenbo Luo, Lei Jiang, Yanbing Liu, Pei Fu">
+
+<!-- Open Graph / social cards (absolute URLs for the GitHub Pages deployment at https://seerray-lab.github.io/DareBench/). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DAREBench">
+<meta property="og:title" content="DAREBench: Deployment-Aware and Reliable Evaluation of Models as Agents">
+<meta property="og:description" content="A workload- and deployment-aware benchmark for evaluating models as agents. No single model dominates all workload groups.">
+<meta property="og:image" content="https://seerray-lab.github.io/DareBench/assets/img/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DAREBench project card with the lobster evaluator mascot">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DAREBench: Deployment-Aware and Reliable Evaluation of Models as Agents">
+<meta name="twitter:description" content="A workload- and deployment-aware benchmark for evaluating models as agents.">
+<meta name="twitter:image" content="https://seerray-lab.github.io/DareBench/assets/img/social-card.png">
+
+<!-- Google Scholar -->
+<meta name="citation_title" content="DAREBench: Deployment-Aware and Reliable Evaluation of Models as Agents">
+<meta name="citation_author" content="Liu, Yu">
+<meta name="citation_author" content="Liu, Zhilin">
+<meta name="citation_author" content="Yang, Zhiwei">
+<meta name="citation_author" content="Zhang, Shaojie">
+<meta name="citation_author" content="Deng, Zheyuan">
+<meta name="citation_author" content="Huang, Tingwei">
+<meta name="citation_author" content="Luo, Zhenbo">
+<meta name="citation_author" content="Jiang, Lei">
+<meta name="citation_author" content="Liu, Yanbing">
+<meta name="citation_author" content="Fu, Pei">
+<meta name="citation_publication_date" content="2026/09/05">
+<meta name="citation_arxiv_id" content="2609.06059">
+<meta name="citation_abstract_html_url" content="https://arxiv.org/abs/2609.06059">
+<meta name="citation_pdf_url" content="https://arxiv.org/pdf/2609.06059">
+
+<link rel="canonical" href="https://seerray-lab.github.io/DareBench/">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts/fonts.css" id="fonts-css">
+<script>
+  /* Firefox gives every file:// page its own origin and can refuse web fonts loaded from files.
+     Only in that case, swap in the same fonts embedded as data URIs (fonts.inline.css). */
+  if (location.protocol === 'file:' && /firefox/i.test(navigator.userAgent)) document.getElementById('fonts-css').href = 'assets/fonts/fonts.inline.css';
+</script>
+<link rel="stylesheet" href="assets/css/palette.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <!-- ============ CAMEO CREATURES (viewBox 0 0 120 120) ============ -->
+
+    <!-- Crab walking in circles: "deadlock loop" -->
+    <symbol id="cr-crab" viewBox="0 0 120 120">
+      <path d="M60 12 A 48 48 0 1 1 22 30" fill="none" stroke="#7FB8C9" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="2 9"/>
+      <path d="M14 22 L 22 31 L 31 24" fill="none" stroke="#1E3450" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <g fill="none" stroke-width="3.5">
+          <path d="M36 76 L 24 84 L 22 94"/><path d="M38 84 L 28 94 L 28 102"/>
+          <path d="M84 76 L 96 84 L 98 94"/><path d="M82 84 L 92 94 L 92 102"/>
+          <path d="M38 66 L 26 56"/><path d="M82 66 L 94 56"/>
+          <path d="M52 58 L 48 44"/><path d="M68 58 L 72 44"/>
+        </g>
+        <ellipse cx="60" cy="74" rx="28" ry="19" fill="#F08A4B" stroke-width="3"/>
+        <path d="M44 66 Q 60 58 76 66" fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".5"/>
+        <path d="M14 52 C 10 40, 18 32, 27 34 L 25 43 L 33 39 C 36 48, 30 57, 21 58 C 17 58, 15 56, 14 52 Z" fill="#F08A4B" stroke-width="3"/>
+        <path d="M106 52 C 110 40, 102 32, 93 34 L 95 43 L 87 39 C 84 48, 90 57, 99 58 C 103 58, 105 56, 106 52 Z" fill="#F08A4B" stroke-width="3"/>
+        <circle cx="47" cy="40" r="8" fill="#FFFFFF" stroke-width="3"/>
+        <circle cx="73" cy="40" r="8" fill="#FFFFFF" stroke-width="3"/>
+        <circle cx="50" cy="42" r="3.4" fill="#1E3450" stroke="none"/>
+        <circle cx="76" cy="42" r="3.4" fill="#1E3450" stroke="none"/>
+        <path d="M53 80 Q 60 76 67 80" fill="none" stroke-width="3"/>
+        <path d="M44 88 Q 47 84 50 88 M 70 88 Q 73 84 76 88" fill="none" stroke-width="2" opacity=".45"/>
+      </g>
+    </symbol>
+
+    <!-- Fish peeking at the rubric: "rubric leakage" -->
+    <symbol id="cr-fish" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="rotate(8 92 58)">
+          <rect x="74" y="30" width="36" height="46" rx="5" fill="#FFFFFF" stroke-width="3"/>
+          <path d="M81 42 L 103 42 M 81 51 L 100 51 M 81 60 L 96 60" fill="none" stroke-width="2.6" opacity=".55"/>
+          <path d="M92 67 L 104 67" fill="none" stroke="#7A55C4" stroke-width="3"/>
+        </g>
+        <path d="M86 82 C 86 88, 92 88, 92 82 C 92 78, 89 76, 89 74 C 89 76, 86 78, 86 82 Z" fill="#9B7BD8" stroke-width="2.2"/>
+        <path d="M95 96 C 95 101, 100 101, 100 96 C 100 93, 97.5 91, 97.5 89 C 97.5 91, 95 93, 95 96 Z" fill="#9B7BD8" stroke-width="2.2"/>
+        <path d="M22 64 L 4 48 Q 2 64 4 80 Z" fill="#F2B84B" stroke-width="3"/>
+        <ellipse cx="44" cy="64" rx="30" ry="23" fill="#FFCF5C" stroke-width="3"/>
+        <path d="M36 44 Q 46 30 58 44" fill="#F2B84B" stroke-width="3"/>
+        <path d="M30 60 Q 34 66 30 72 M 38 58 Q 42 66 38 74" fill="none" stroke-width="2.2" opacity=".35"/>
+        <circle cx="58" cy="58" r="10" fill="#FFFFFF" stroke-width="3"/>
+        <circle cx="62" cy="57" r="4.5" fill="#1E3450" stroke="none"/>
+        <circle cx="63.5" cy="55" r="1.6" fill="#FFFFFF" stroke="none"/>
+        <path d="M66 72 Q 70 74 72 70" fill="none" stroke-width="3"/>
+        <path d="M40 84 Q 44 92 50 86" fill="#F2B84B" stroke-width="2.6"/>
+      </g>
+    </symbol>
+
+    <!-- Hermit crab in a cardboard "tool" shell: "pseudo-tool-call credulity" -->
+    <symbol id="cr-hermit" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <g fill="none" stroke-width="3.2">
+          <path d="M42 88 L 34 100"/><path d="M52 90 L 48 102"/><path d="M62 90 L 64 102"/>
+        </g>
+        <rect x="46" y="30" width="62" height="56" rx="6" fill="#EBC792" stroke-width="3" stroke-dasharray="7 5"/>
+        <path d="M46 44 L 108 44" fill="none" stroke-width="2.4" stroke-dasharray="5 5" opacity=".6"/>
+        <path d="M68 70 L 86 52 M 82 50 C 84 46, 90 45, 93 48 L 88 53 L 91 56 L 96 51 C 99 54, 98 60, 94 62 M 72 66 C 70 70, 64 72, 62 68 L 67 63 L 64 60 L 59 65 C 56 62, 57 56, 61 54" fill="none" stroke-width="3" stroke-dasharray="5 4"/>
+        <path d="M22 86 C 16 70, 26 56, 46 58 L 48 88 Z" fill="#F08A4B" stroke-width="3"/>
+        <path d="M30 60 L 26 44 M 40 58 L 40 42" fill="none" stroke-width="3"/>
+        <circle cx="25" cy="39" r="7" fill="#FFFFFF" stroke-width="3"/>
+        <circle cx="40" cy="37" r="7" fill="#FFFFFF" stroke-width="3"/>
+        <circle cx="27" cy="41" r="3" fill="#1E3450" stroke="none"/>
+        <circle cx="42" cy="39" r="3" fill="#1E3450" stroke="none"/>
+        <path d="M8 78 C 4 68, 10 60, 18 62 L 17 69 L 24 66 C 26 73, 22 80, 15 81 C 11 81, 9 80, 8 78 Z" fill="#F08A4B" stroke-width="3"/>
+        <path d="M30 76 Q 34 79 38 76" fill="none" stroke-width="2.6"/>
+      </g>
+    </symbol>
+
+    <!-- Wobbly jellyfish: "output instability" -->
+    <symbol id="cr-jelly" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <g fill="none" stroke-width="3">
+          <path d="M40 66 C 34 76, 46 82, 40 92 C 36 98, 42 104, 40 108"/>
+          <path d="M54 68 L 50 78 M 52 84 L 56 94 M 53 100 L 50 108"/>
+          <path d="M68 68 C 74 78, 62 84, 68 94 C 72 100, 66 104, 68 110"/>
+          <path d="M82 66 L 86 76 M 84 82 L 80 92"/>
+        </g>
+        <path d="M28 64 C 26 34, 94 30, 94 64 Q 86 70 78 64 Q 70 70 61 64 Q 52 70 44 64 Q 36 70 28 64 Z" fill="#CDB8F5" stroke-width="3"/>
+        <path d="M40 44 Q 48 36 58 38" fill="none" stroke="#FFFFFF" stroke-width="4" opacity=".8"/>
+        <circle cx="50" cy="54" r="3.4" fill="#1E3450" stroke="none"/>
+        <circle cx="72" cy="54" r="3.4" fill="#1E3450" stroke="none"/>
+        <path d="M54 60 L 58 57 L 62 61 L 66 57" fill="none" stroke-width="2.6"/>
+        <path d="M100 30 L 106 26 M 102 40 L 110 40 M 12 34 L 18 38" fill="none" stroke="#9B7BD8" stroke-width="3"/>
+      </g>
+    </symbol>
+
+    <!-- Snail with a clock shell and a gold star: "timeout-with-credit" -->
+    <symbol id="cr-snail" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 92 C 10 78, 20 70, 30 70 L 34 70 C 36 82, 46 88, 60 88 L 100 88 C 108 88, 110 96, 102 98 L 18 98 C 12 98, 10 96, 10 92 Z" fill="#9ED3A0" stroke-width="3"/>
+        <path d="M22 72 L 16 52 M 30 70 L 30 50" fill="none" stroke-width="3"/>
+        <circle cx="16" cy="48" r="5" fill="#FFFFFF" stroke-width="2.6"/>
+        <circle cx="30" cy="46" r="5" fill="#FFFFFF" stroke-width="2.6"/>
+        <circle cx="17" cy="49" r="2.2" fill="#1E3450" stroke="none"/>
+        <circle cx="31" cy="47" r="2.2" fill="#1E3450" stroke="none"/>
+        <path d="M18 84 Q 22 87 26 84" fill="none" stroke-width="2.4"/>
+        <circle cx="66" cy="60" r="28" fill="#F2B84B" stroke-width="3"/>
+        <circle cx="66" cy="60" r="20" fill="#FFFFFF" stroke-width="2.6"/>
+        <path d="M66 46 L 66 60 L 76 66" fill="none" stroke-width="3.2"/>
+        <path d="M66 42 L 66 44 M 84 60 L 82 60 M 66 78 L 66 76 M 48 60 L 50 60" fill="none" stroke-width="2.6"/>
+        <path d="M100 14 L 104 24 L 115 25 L 107 32 L 110 43 L 100 37 L 90 43 L 93 32 L 85 25 L 96 24 Z" fill="#FFD166" stroke-width="2.6"/>
+      </g>
+    </symbol>
+
+    <!-- Octopus juggling tools: "shared execution" -->
+    <symbol id="cr-octopus" viewBox="0 0 120 130">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 24 A 44 30 0 0 1 98 24" fill="none" stroke="#9FC9D6" stroke-width="2.6" stroke-dasharray="2 7"/>
+        <g transform="translate(10 18) rotate(-20)">
+          <path d="M0 10 L 14 -4 M 12 -8 C 13 -12, 19 -13, 21 -10 L 17 -6 L 20 -3 L 24 -7 C 27 -4, 26 1, 22 3" fill="none" stroke-width="3"/>
+        </g>
+        <rect x="46" y="2" width="28" height="20" rx="4" fill="#1E3450" stroke-width="2.6"/>
+        <path d="M51 9 L 55 12 L 51 15 M 58 16 L 66 16" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+        <circle cx="100" cy="22" r="11" fill="#BFE9F3" stroke-width="2.6"/>
+        <path d="M89 22 L 111 22 M 100 11 C 94 16, 94 28, 100 33 M 100 11 C 106 16, 106 28, 100 33" fill="none" stroke-width="2"/>
+        <g fill="#B28BE3" stroke-width="3">
+          <path d="M40 92 C 34 104, 22 104, 18 96 C 26 98, 30 92, 32 84 Z"/>
+          <path d="M80 92 C 86 104, 98 104, 102 96 C 94 98, 90 92, 88 84 Z"/>
+          <path d="M48 96 C 46 110, 40 120, 32 118 C 38 112, 40 104, 40 94 Z"/>
+          <path d="M72 96 C 74 110, 80 120, 88 118 C 82 112, 80 104, 80 94 Z"/>
+          <path d="M56 98 C 56 112, 54 122, 48 124 C 52 116, 52 108, 50 98 Z"/>
+          <path d="M64 98 C 64 112, 66 122, 72 124 C 68 116, 68 108, 70 98 Z"/>
+        </g>
+        <path d="M34 50 C 20 44, 14 32, 18 24" fill="none" stroke-width="9"/>
+        <path d="M34 50 C 20 44, 14 32, 18 24" fill="none" stroke="#B28BE3" stroke-width="4.5"/>
+        <path d="M86 50 C 100 44, 106 34, 104 30" fill="none" stroke-width="9"/>
+        <path d="M86 50 C 100 44, 106 34, 104 30" fill="none" stroke="#B28BE3" stroke-width="4.5"/>
+        <path d="M30 78 C 24 46, 40 30, 60 30 C 80 30, 96 46, 90 78 C 88 92, 32 92, 30 78 Z" fill="#B28BE3" stroke-width="3"/>
+        <ellipse cx="46" cy="46" rx="9" ry="5" transform="rotate(-30 46 46)" fill="#FFFFFF" opacity=".45" stroke="none"/>
+        <circle cx="50" cy="64" r="7" fill="#FFFFFF" stroke-width="2.6"/>
+        <circle cx="70" cy="64" r="7" fill="#FFFFFF" stroke-width="2.6"/>
+        <circle cx="51.5" cy="62" r="3.2" fill="#1E3450" stroke="none"/>
+        <circle cx="71.5" cy="62" r="3.2" fill="#1E3450" stroke="none"/>
+        <path d="M54 76 Q 60 81 66 76" fill="none" stroke-width="2.6"/>
+        <ellipse cx="42" cy="74" rx="5" ry="3" fill="#FF9EB5" opacity=".7" stroke="none"/>
+        <ellipse cx="78" cy="74" rx="5" ry="3" fill="#FF9EB5" opacity=".7" stroke="none"/>
+      </g>
+    </symbol>
+
+    <!-- Treasure chest of task cards: "construct" -->
+    <symbol id="ic-chest" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="rotate(-12 44 40)"><rect x="30" y="18" width="30" height="38" rx="4" fill="#FFFFFF" stroke-width="2.6"/><path d="M36 28 L 54 28 M 36 36 L 50 36" fill="none" stroke-width="2.2" opacity=".5"/></g>
+        <g transform="rotate(10 78 38)"><rect x="62" y="14" width="30" height="40" rx="4" fill="#EAF2FD" stroke-width="2.6"/><path d="M68 24 L 86 24 M 68 32 L 82 32" fill="none" stroke-width="2.2" opacity=".5"/></g>
+        <rect x="46" y="10" width="30" height="42" rx="4" fill="#FDF0E2" stroke-width="2.6"/>
+        <path d="M52 20 L 70 20 M 52 28 L 66 28 M 52 36 L 68 36" fill="none" stroke-width="2.2" opacity=".5"/>
+        <path d="M16 56 C 16 42, 104 42, 104 56 L 104 60 L 16 60 Z" fill="#B97A3E" stroke-width="3"/>
+        <rect x="16" y="58" width="88" height="46" rx="6" fill="#D9964F" stroke-width="3"/>
+        <path d="M16 72 L 104 72" fill="none" stroke-width="2.6" opacity=".5"/>
+        <path d="M34 58 L 34 104 M 86 58 L 86 104" fill="none" stroke="#8B5A2B" stroke-width="5"/>
+        <rect x="52" y="64" width="16" height="18" rx="4" fill="#F2B84B" stroke-width="2.6"/>
+        <circle cx="60" cy="72" r="2.6" fill="#1E3450" stroke="none"/>
+        <path d="M104 18 L 104 26 M 100 22 L 108 22 M 14 28 L 14 34 M 11 31 L 17 31" fill="none" stroke="#F2B84B" stroke-width="3"/>
+      </g>
+    </symbol>
+
+    <!-- Balance scale with gear (auto) and speech bubble (judge): "score" -->
+    <symbol id="ic-scale" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M60 22 L 60 100" fill="none" stroke-width="4"/>
+        <path d="M40 104 L 80 104 C 80 96, 40 96, 40 104 Z" fill="#9AA8B8" stroke-width="3"/>
+        <path d="M20 30 L 100 30" fill="none" stroke-width="4"/>
+        <circle cx="60" cy="22" r="6" fill="#F2B84B" stroke-width="3"/>
+        <path d="M20 30 L 8 64 M 20 30 L 32 64 M 100 30 L 88 64 M 100 30 L 112 64" fill="none" stroke-width="2.4"/>
+        <path d="M4 64 L 36 64 C 34 76, 6 76, 4 64 Z" fill="#EAF2FD" stroke-width="3"/>
+        <path d="M84 64 L 116 64 C 114 76, 86 76, 84 64 Z" fill="#FDF0E2" stroke-width="3"/>
+        <g transform="translate(20 52)"><circle r="7" fill="#9AA8B8" stroke-width="2.6"/><circle r="2.5" fill="#FFFFFF" stroke-width="2"/><path d="M0 -10 L 0 -7 M 0 7 L 0 10 M -10 0 L -7 0 M 7 0 L 10 0 M -7 -7 L -5 -5 M 5 5 L 7 7 M -7 7 L -5 5 M 5 -5 L 7 -7" fill="none" stroke-width="2.6"/></g>
+        <path d="M90 44 L 110 44 C 113 44, 114 46, 114 48 L 114 56 C 114 58, 112 60, 110 60 L 98 60 L 93 64 L 94 60 L 90 60 C 88 60, 86 58, 86 56 L 86 48 C 86 46, 88 44, 90 44 Z" fill="#FFFFFF" stroke-width="2.6"/>
+        <path d="M92 52 L 108 52" fill="none" stroke-width="2.2" opacity=".6"/>
+      </g>
+    </symbol>
+
+    <!-- Report board with bars + frontier curve: "report" -->
+    <symbol id="ic-board" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M60 86 L 60 110" fill="none" stroke="#8B5A2B" stroke-width="7"/>
+        <path d="M60 86 L 60 110" fill="none" stroke-width="2" opacity="0"/>
+        <path d="M44 112 Q 60 104 76 112" fill="#F2D9A6" stroke-width="3"/>
+        <rect x="10" y="14" width="100" height="74" rx="10" fill="#FFFFFF" stroke-width="3"/>
+        <path d="M24 74 L 98 74" fill="none" stroke-width="2.4" opacity=".5"/>
+        <rect x="28" y="54" width="10" height="20" rx="2" fill="#4A7AE4" stroke-width="2.4"/>
+        <rect x="44" y="44" width="10" height="30" rx="2" fill="#CC580B" stroke-width="2.4"/>
+        <rect x="60" y="36" width="10" height="38" rx="2" fill="#4A7AE4" stroke-width="2.4"/>
+        <rect x="76" y="48" width="10" height="26" rx="2" fill="#CC580B" stroke-width="2.4"/>
+        <path d="M26 44 Q 44 30, 60 28 T 96 22" fill="none" stroke="#B51C79" stroke-width="3.4"/>
+        <circle cx="60" cy="28" r="3.6" fill="#B51C79" stroke="#FFFFFF" stroke-width="1.6"/>
+        <circle cx="96" cy="22" r="3.6" fill="#B51C79" stroke="#FFFFFF" stroke-width="1.6"/>
+      </g>
+    </symbol>
+
+    <!-- Fishbowl with three fish: "attributable / shared runtime" -->
+    <symbol id="ic-bowl" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M36 20 L 84 20 L 84 26 C 104 36, 112 58, 104 80 C 96 102, 24 102, 16 80 C 8 58, 16 36, 36 26 Z" fill="#E8F7FB" stroke-width="3"/>
+        <path d="M18 56 C 40 50, 80 62, 102 54 C 108 70, 104 84, 96 92 C 80 104, 40 104, 24 92 C 16 84, 12 70, 18 56 Z" fill="#BFE6EF" stroke="none"/>
+        <path d="M36 20 L 84 20 L 84 26 C 104 36, 112 58, 104 80 C 96 102, 24 102, 16 80 C 8 58, 16 36, 36 26 Z" fill="none" stroke-width="3"/>
+        <path d="M30 40 Q 26 50 28 60" fill="none" stroke="#FFFFFF" stroke-width="4" opacity=".9"/>
+        <g transform="translate(40 66)"><path d="M-12 0 L -18 -6 L -18 6 Z" fill="#F08A4B" stroke-width="2.2"/><ellipse rx="10" ry="7" fill="#F08A4B" stroke-width="2.4"/><circle cx="4" cy="-1" r="1.8" fill="#1E3450" stroke="none"/></g>
+        <g transform="translate(76 60) scale(-1 1)"><path d="M-12 0 L -18 -6 L -18 6 Z" fill="#FFCF5C" stroke-width="2.2"/><ellipse rx="10" ry="7" fill="#FFCF5C" stroke-width="2.4"/><circle cx="4" cy="-1" r="1.8" fill="#1E3450" stroke="none"/></g>
+        <g transform="translate(62 84)"><path d="M-12 0 L -18 -6 L -18 6 Z" fill="#B28BE3" stroke-width="2.2"/><ellipse rx="10" ry="7" fill="#B28BE3" stroke-width="2.4"/><circle cx="4" cy="-1" r="1.8" fill="#1E3450" stroke="none"/></g>
+        <circle cx="86" cy="42" r="3" fill="#FFFFFF" stroke-width="1.8"/>
+        <circle cx="92" cy="32" r="2" fill="#FFFFFF" stroke-width="1.6"/>
+      </g>
+    </symbol>
+
+    <!-- Grid under a magnifier: "interpretable" -->
+    <symbol id="ic-grid" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8" y="22" width="26" height="26" rx="6" fill="#18B6F2" stroke-width="2.6"/>
+        <rect x="38" y="22" width="26" height="26" rx="6" fill="#4A7AE4" stroke-width="2.6"/>
+        <rect x="68" y="22" width="26" height="26" rx="6" fill="#2C45AE" stroke-width="2.6"/>
+        <rect x="8" y="52" width="26" height="26" rx="6" fill="#E29805" stroke-width="2.6"/>
+        <rect x="38" y="52" width="26" height="26" rx="6" fill="#CC580B" stroke-width="2.6"/>
+        <rect x="68" y="52" width="26" height="26" rx="6" fill="#922B01" stroke-width="2.6"/>
+        <path d="M86 88 L 108 110" fill="none" stroke-width="11"/>
+        <path d="M86 88 L 108 110" fill="none" stroke="#8B5A2B" stroke-width="6"/>
+        <circle cx="72" cy="72" r="24" fill="#F2B84B" stroke-width="3"/>
+        <circle cx="72" cy="72" r="17" fill="#EAF7FB" fill-opacity=".85" stroke-width="2.6"/>
+        <path d="M62 66 Q 64 60 70 58" fill="none" stroke="#FFFFFF" stroke-width="3.4"/>
+      </g>
+    </symbol>
+
+    <!-- Shield with check and tiny magnifier: "trustworthy" -->
+    <symbol id="ic-shield" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M56 10 C 70 20, 84 22, 98 20 C 100 58, 90 90, 56 108 C 22 90, 12 58, 14 20 C 28 22, 42 20, 56 10 Z" fill="#DCEFD8" stroke-width="3"/>
+        <path d="M56 20 C 66 27, 78 30, 89 29 C 89 58, 80 82, 56 97 Z" fill="#B9DFB1" stroke="none"/>
+        <path d="M36 58 L 50 72 L 78 42" fill="none" stroke="#2E7D46" stroke-width="7"/>
+        <path d="M96 96 L 110 110" fill="none" stroke-width="8"/>
+        <path d="M96 96 L 110 110" fill="none" stroke="#8B5A2B" stroke-width="4"/>
+        <circle cx="88" cy="88" r="13" fill="#F2B84B" stroke-width="2.6"/>
+        <circle cx="88" cy="88" r="8" fill="#EAF7FB" stroke-width="2.2"/>
+      </g>
+    </symbol>
+
+    <!-- Clam with a pearl: "cite" -->
+    <symbol id="ic-clam" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 70 C 14 40, 106 40, 106 70 Z" fill="#F7B7A6" stroke-width="3" transform="rotate(-14 60 70)"/>
+        <path d="M40 60 L 44 44 M 60 56 L 60 38 M 80 60 L 76 44" fill="none" stroke-width="2.4" opacity=".45" transform="rotate(-14 60 70)"/>
+        <path d="M12 72 L 108 72 C 108 100, 12 100, 12 72 Z" fill="#F4A08C" stroke-width="3"/>
+        <path d="M36 76 L 38 92 M 60 76 L 60 96 M 84 76 L 82 92" fill="none" stroke-width="2.4" opacity=".45"/>
+        <circle cx="60" cy="66" r="12" fill="#FFFFFF" stroke-width="3"/>
+        <circle cx="56" cy="62" r="3.6" fill="#EAF2FD" stroke="none"/>
+        <path d="M98 30 L 98 38 M 94 34 L 102 34" fill="none" stroke="#F2B84B" stroke-width="3"/>
+      </g>
+    </symbol>
+
+    <!-- Terminal with bubbles: "quick start" -->
+    <symbol id="ic-terminal" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="10" y="26" width="92" height="70" rx="10" fill="#14293F" stroke-width="3"/>
+        <path d="M10 40 L 102 40" fill="none" stroke="#3A4F66" stroke-width="3"/>
+        <circle cx="20" cy="33" r="2.6" fill="#EC624A" stroke="none"/>
+        <circle cx="29" cy="33" r="2.6" fill="#F2B84B" stroke="none"/>
+        <circle cx="38" cy="33" r="2.6" fill="#7BC47F" stroke="none"/>
+        <path d="M24 56 L 34 64 L 24 72" fill="none" stroke="#7FE0E0" stroke-width="4"/>
+        <path d="M42 74 L 62 74" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+        <circle cx="104" cy="16" r="6" fill="#FFFFFF" stroke-width="2.4"/>
+        <circle cx="112" cy="30" r="3.6" fill="#FFFFFF" stroke-width="2"/>
+      </g>
+    </symbol>
+
+    <!-- ============ DECOR ============ -->
+    <symbol id="dc-star" viewBox="0 0 60 60">
+      <path d="M30 4 C 33 16, 36 20, 56 22 C 42 30, 40 34, 46 54 C 36 44, 30 42, 16 54 C 20 38, 18 32, 4 22 C 22 22, 26 16, 30 4 Z" fill="#F7A072" stroke="#1E3450" stroke-width="2.6" stroke-linejoin="round"/>
+      <circle cx="30" cy="30" r="2" fill="#1E3450"/><circle cx="24" cy="26" r="1.5" fill="#FFFFFF" opacity=".8"/><circle cx="36" cy="36" r="1.5" fill="#FFFFFF" opacity=".8"/>
+    </symbol>
+    <symbol id="dc-shell" viewBox="0 0 60 60">
+      <path d="M30 8 C 50 10, 58 34, 52 48 L 8 48 C 2 34, 10 10, 30 8 Z" fill="#FBD3C4" stroke="#1E3450" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M30 12 L 30 48 M 18 16 L 22 48 M 42 16 L 38 48 M 10 28 L 16 48 M 50 28 L 44 48" fill="none" stroke="#1E3450" stroke-width="2" opacity=".4" stroke-linecap="round"/>
+      <path d="M22 48 L 26 56 L 34 56 L 38 48" fill="#FBD3C4" stroke="#1E3450" stroke-width="2.6" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="dc-weed" viewBox="0 0 60 200">
+      <path d="M30 200 C 20 170, 42 150, 30 120 C 18 90, 42 70, 30 40 C 24 24, 30 10, 34 2" fill="none" stroke="#1E3450" stroke-width="13" stroke-linecap="round"/>
+      <path d="M30 200 C 20 170, 42 150, 30 120 C 18 90, 42 70, 30 40 C 24 24, 30 10, 34 2" fill="none" stroke="#4E9F63" stroke-width="8" stroke-linecap="round"/>
+      <path d="M31 150 C 44 142, 52 130, 50 118 M 29 96 C 16 88, 8 76, 10 64" fill="none" stroke="#1E3450" stroke-width="9" stroke-linecap="round"/>
+      <path d="M31 150 C 44 142, 52 130, 50 118 M 29 96 C 16 88, 8 76, 10 64" fill="none" stroke="#6BBF7A" stroke-width="4.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="dc-fish" viewBox="0 0 60 40">
+      <path d="M14 20 L 2 10 L 3 30 Z" fill="#FFCF5C" stroke="#1E3450" stroke-width="2.4" stroke-linejoin="round"/>
+      <ellipse cx="32" cy="20" rx="20" ry="13" fill="#FFCF5C" stroke="#1E3450" stroke-width="2.4"/>
+      <path d="M26 10 Q 32 4 38 10" fill="#F2B84B" stroke="#1E3450" stroke-width="2.2"/>
+      <circle cx="42" cy="17" r="3.4" fill="#1E3450"/><circle cx="43" cy="16" r="1.2" fill="#FFFFFF"/>
+      <path d="M22 14 Q 25 20 22 26" fill="none" stroke="#1E3450" stroke-width="1.8" opacity=".4"/>
+    </symbol>
+
+    <!-- Logo: lobster face in a bubble -->
+    <symbol id="logo" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" fill="#DDF3F8" stroke="#1E3450" stroke-width="2.5"/>
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M27 24 C 24 14, 18 10, 12 10 M 37 24 C 40 14, 46 10, 52 10" fill="none" stroke-width="2.4"/>
+        <path d="M10 38 C 6 30, 10 22, 16 22 L 17 29 L 21 23 C 26 26, 26 34, 22 38 C 18 42, 12 42, 10 38 Z" fill="#EC624A" stroke-width="2.2"/>
+        <path d="M54 38 C 58 30, 54 22, 48 22 L 47 29 L 43 23 C 38 26, 38 34, 42 38 C 46 42, 52 42, 54 38 Z" fill="#EC624A" stroke-width="2.2"/>
+        <path d="M32 26 C 44 26, 46 36, 46 42 C 46 52, 40 56, 32 56 C 24 56, 18 52, 18 42 C 18 36, 20 26, 32 26 Z" fill="#EC624A" stroke-width="2.4"/>
+        <circle cx="26" cy="22" r="6" fill="#FFFFFF" stroke-width="2.2"/>
+        <circle cx="38" cy="22" r="6" fill="#FFFFFF" stroke-width="2.2"/>
+        <circle cx="27.5" cy="23" r="2.6" fill="#1E3450" stroke="none"/>
+        <circle cx="39.5" cy="23" r="2.6" fill="#1E3450" stroke="none"/>
+        <path d="M27 42 Q 32 47 37 42" fill="none" stroke-width="2.2"/>
+      </g>
+    </symbol>
+
+    <!-- ============ UI ICONS (24x24 line, currentColor) ============ -->
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v7M9 14l3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z" fill="currentColor"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M6 17c-1.5 0-3-1.2-3-3.5C3 9 6 6.5 9 6l.5 1.2C7.5 8 6.5 9.5 6.5 11c2 0 3.5 1.2 3.5 3s-1.7 3-4 3zm10 0c-1.5 0-3-1.2-3-3.5C13 9 16 6.5 19 6l.5 1.2c-2 .8-3 2.3-3 3.8 2 0 3.5 1.2 3.5 3s-1.7 3-4 3z" fill="currentColor"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 9.5h18M3 15h18M9 4v16" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="14" r="1.8" fill="currentColor"/><circle cx="13" cy="10" r="1.8" fill="currentColor"/><circle cx="18" cy="7" r="1.8" fill="currentColor"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5L20 20M10.5 7.5v6M7.5 10.5h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5L3 8z" fill="currentColor" stroke="#1E3450" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v6M12 7.5v.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-bubble" viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8l-4 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mix" viewBox="0 0 24 24"><circle cx="8" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="16" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 7.5h.01M8 16.5h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="6" ry="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7v5c0 1.7 2.7 3 6 3s6-1.3 6-3V7M9 15v2.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V12c0-1.4-2.7-2.5-6-2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-frontier" viewBox="0 0 24 24"><path d="M3 21h18M3 21V3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 15l5-6 4-2 5-1" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="15" r="1.8" fill="currentColor"/><circle cx="11" cy="9" r="1.8" fill="currentColor"/><circle cx="20" cy="6" r="1.8" fill="currentColor"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21V11M12 11C12 7 9 5 5 5c0 4 3 6 7 6zM12 13c0-4 3-6 7-6 0 4-3 6-7 6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-token" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5L20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+
+    <!-- ============ NEW (final page) ============ -->
+    <!-- Mascot peeking over a card edge. The flat bottom of the head sits on y=92 (the card's top edge);
+         the claws hang over the edge. viewBox 0 0 160 104 -->
+    <symbol id="mascot-peek" viewBox="0 0 160 104">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M70 58 C 62 34, 46 16, 22 10 C 12 8, 8 16, 14 20" fill="none" stroke-width="7"/>
+        <path d="M70 58 C 62 34, 46 16, 22 10 C 12 8, 8 16, 14 20" fill="none" stroke="#D9533B" stroke-width="3.2"/>
+        <path d="M90 58 C 98 34, 114 16, 138 10 C 148 8, 152 16, 146 20" fill="none" stroke-width="7"/>
+        <path d="M90 58 C 98 34, 114 16, 138 10 C 148 8, 152 16, 146 20" fill="none" stroke="#D9533B" stroke-width="3.2"/>
+        <path d="M34 92 C 34 50, 126 50, 126 92 Z" fill="#EC624A" stroke-width="3"/>
+        <ellipse cx="62" cy="66" rx="12" ry="6" transform="rotate(-24 62 66)" fill="#FFFFFF" opacity=".35" stroke="none"/>
+        <path d="M68 60 L 62 40" fill="none" stroke-width="11"/>
+        <path d="M68 60 L 62 40" fill="none" stroke="#EC624A" stroke-width="6"/>
+        <path d="M92 60 L 98 40" fill="none" stroke-width="11"/>
+        <path d="M92 60 L 98 40" fill="none" stroke="#EC624A" stroke-width="6"/>
+        <circle cx="60" cy="31" r="15" fill="#FFFFFF" stroke-width="3"/>
+        <circle cx="100" cy="31" r="15" fill="#FFFFFF" stroke-width="3"/>
+        <circle cx="62" cy="37" r="7" fill="#1E3450" stroke="none"/>
+        <circle cx="102" cy="37" r="7" fill="#1E3450" stroke="none"/>
+        <circle cx="64.5" cy="34" r="2.4" fill="#FFFFFF" stroke="none"/>
+        <circle cx="104.5" cy="34" r="2.4" fill="#FFFFFF" stroke="none"/>
+        <path d="M46 14 Q 56 9, 68 13 M 92 13 Q 104 9, 114 14" fill="none" stroke-width="2.6"/>
+        <ellipse cx="54" cy="82" rx="8" ry="4.5" fill="#FF8A8A" opacity=".8" stroke="none"/>
+        <ellipse cx="106" cy="82" rx="8" ry="4.5" fill="#FF8A8A" opacity=".8" stroke="none"/>
+        <path d="M72 80 Q 80 87 88 80" fill="none" stroke-width="2.6"/>
+        <path d="M8 102 C 2 90, 8 78, 18 76 L 20 86 L 26 77 C 36 80, 38 92, 32 100 C 26 107, 12 108, 8 102 Z" fill="#EC624A" stroke-width="3"/>
+        <path d="M152 102 C 158 90, 152 78, 142 76 L 140 86 L 134 77 C 124 80, 122 92, 128 100 C 134 107, 148 108, 152 102 Z" fill="#EC624A" stroke-width="3"/>
+      </g>
+    </symbol>
+
+    <!-- Narrator bust (head + bow tie) for speech bubbles. viewBox 0 0 120 120 -->
+    <symbol id="mascot-bust" viewBox="0 0 120 120">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M50 46 C 44 26, 32 14, 16 10 C 8 8, 4 14, 9 18" fill="none" stroke-width="6.5"/>
+        <path d="M50 46 C 44 26, 32 14, 16 10 C 8 8, 4 14, 9 18" fill="none" stroke="#D9533B" stroke-width="3"/>
+        <path d="M70 46 C 76 26, 88 14, 104 10 C 112 8, 116 14, 111 18" fill="none" stroke-width="6.5"/>
+        <path d="M70 46 C 76 26, 88 14, 104 10 C 112 8, 116 14, 111 18" fill="none" stroke="#D9533B" stroke-width="3"/>
+        <path d="M60 44 C 90 44, 102 66, 102 86 C 102 106, 84 116, 60 116 C 36 116, 18 106, 18 86 C 18 66, 30 44, 60 44 Z" fill="#EC624A" stroke-width="3"/>
+        <ellipse cx="42" cy="64" rx="10" ry="5" transform="rotate(-28 42 64)" fill="#FFFFFF" opacity=".35" stroke="none"/>
+        <path d="M52 50 L 48 34 M 68 50 L 72 34" fill="none" stroke-width="9"/>
+        <path d="M52 50 L 48 34 M 68 50 L 72 34" fill="none" stroke="#EC624A" stroke-width="4.5"/>
+        <circle cx="46" cy="27" r="12" fill="#FFFFFF" stroke-width="2.8"/>
+        <circle cx="74" cy="27" r="12" fill="#FFFFFF" stroke-width="2.8"/>
+        <circle cx="49" cy="29" r="5.5" fill="#1E3450" stroke="none"/>
+        <circle cx="77" cy="29" r="5.5" fill="#1E3450" stroke="none"/>
+        <circle cx="51" cy="26.5" r="1.9" fill="#FFFFFF" stroke="none"/>
+        <circle cx="79" cy="26.5" r="1.9" fill="#FFFFFF" stroke="none"/>
+        <ellipse cx="38" cy="80" rx="7" ry="4" fill="#FF8A8A" opacity=".8" stroke="none"/>
+        <ellipse cx="82" cy="80" rx="7" ry="4" fill="#FF8A8A" opacity=".8" stroke="none"/>
+        <path d="M50 76 Q 60 88 70 76 Q 60 81 50 76 Z" fill="#7A2A1C" stroke-width="2.4"/>
+        <path d="M60 100 L 46 93 Q 42 100 46 107 Z" fill="#7A55C4" stroke-width="2.4"/>
+        <path d="M60 100 L 74 93 Q 78 100 74 107 Z" fill="#7A55C4" stroke-width="2.4"/>
+        <rect x="55" y="95" width="10" height="10" rx="3" fill="#5E3FA3" stroke-width="2.4"/>
+      </g>
+    </symbol>
+
+    <!-- Small UI glyphs -->
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.8l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor" stroke="#1E3450" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0 4.9 4.9l-9 9a2 2 0 0 1-2.8-2.8l9-9a4 4 0 0 0-4.9-4.9l2.3 2.3-.5 2.2-2.2.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-sort" viewBox="0 0 24 24"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" fill="currentColor"/><path d="M4 18l5-5 4 4 3-3 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+
+<header class="nav" id="top">
+  <div class="nav__inner wrap">
+    <a class="nav__brand" href="#hero" aria-label="DAREBench, back to top">
+      <svg class="nav__logo" aria-hidden="true"><use href="#logo"/></svg>
+      <span class="nav__word">DARE<span>Bench</span></span>
+    </a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <svg aria-hidden="true"><use href="#i-menu"/></svg><span class="sr-only">Menu</span>
+    </button>
+    <nav class="nav__menu" id="nav-menu" aria-label="Sections">
+      <ul class="nav__links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#workloads">Workloads</a></li>
+        <li><a href="#leaderboard">Leaderboard</a></li>
+        <li><a href="#cost">Cost</a></li>
+        <li><a href="#reliability">Reliability</a></li>
+        <li><a href="#quickstart">Quick Start</a></li>
+        <li><a href="#cite">Cite</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a class="btn btn--sm btn--ghost" data-href="meta.arxivUrl" href="https://arxiv.org/abs/2609.06059" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>Paper</a>
+        <a class="btn btn--sm btn--navy" data-href="meta.github" href="https://github.com/SeerRay-Lab/DareBench" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+      </div>
+    </nav>
+  </div>
+  <div class="nav__progress" aria-hidden="true"><span></span></div>
+</header>
+
+<noscript>
+  <p class="noscript">This page draws the benchmark tables and charts with JavaScript. Please enable it, or read the paper directly on <a href="https://arxiv.org/abs/2609.06059">arXiv</a> and the code on <a href="https://github.com/SeerRay-Lab/DareBench">GitHub</a>.</p>
+</noscript>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="hero" aria-labelledby="hero-title">
+  <div class="hero__scene" aria-hidden="true">
+    <svg class="hero__sun" viewBox="0 0 120 120"><g class="sun-rays" stroke="#F2B84B" stroke-width="4" stroke-linecap="round"><path d="M60 6v10M60 104v10M6 60h10M104 60h10M22 22l7 7M91 91l7 7M22 98l7-7M91 29l7-7"/></g><circle cx="60" cy="60" r="44" fill="#FFE7B0" opacity=".6"/><circle cx="60" cy="60" r="30" fill="#FFD27A" stroke="#1E3450" stroke-width="2.5"/><path d="M50 60 Q 60 70 70 60" fill="none" stroke="#1E3450" stroke-width="2.5" stroke-linecap="round"/><circle cx="51" cy="53" r="2.6" fill="#1E3450"/><circle cx="69" cy="53" r="2.6" fill="#1E3450"/></svg>
+    <svg class="hero__cloud hero__cloud--a" viewBox="0 0 160 60"><path d="M24 50 C 6 50, 6 28, 24 28 C 26 12, 52 8, 60 22 C 70 6, 104 8, 106 28 C 128 22, 146 34, 136 50 Z" fill="#FFFFFF" stroke="#1E3450" stroke-width="2.5" stroke-linejoin="round"/><path d="M40 40 Q 50 34 60 38" fill="none" stroke="#DDEFF4" stroke-width="3" stroke-linecap="round"/></svg>
+    <svg class="hero__cloud hero__cloud--b" viewBox="0 0 160 60"><path d="M24 50 C 6 50, 6 28, 24 28 C 26 12, 52 8, 60 22 C 70 6, 104 8, 106 28 C 128 22, 146 34, 136 50 Z" fill="#FFFFFF" stroke="#1E3450" stroke-width="2.5" stroke-linejoin="round"/></svg>
+    <svg class="hero__gull" viewBox="0 0 60 24"><path d="M4 16 Q 16 4, 30 14 Q 44 4, 56 16" fill="none" stroke="#1E3450" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg class="hero__surface" viewBox="0 0 1440 48" preserveAspectRatio="none">
+      <path d="M0 22 C 120 6, 240 6, 360 22 S 600 38, 720 22 S 960 6, 1080 22 S 1320 38, 1440 22 L 1440 48 L 0 48 Z" fill="#D9F1F6"/>
+      <path d="M0 22 C 120 6, 240 6, 360 22 S 600 38, 720 22 S 960 6, 1080 22 S 1320 38, 1440 22" fill="none" stroke="#1E3450" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+      <path d="M0 30 C 120 16, 240 16, 360 30 S 600 44, 720 30 S 960 16, 1080 30 S 1320 44, 1440 30" fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".8" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <svg class="hero__rays" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMin slice">
+      <defs><linearGradient id="ray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient></defs>
+      <path d="M180 0 L 250 0 L 120 700 L 20 700 Z" fill="url(#ray)"/>
+      <path d="M390 0 L 420 0 L 360 700 L 300 700 Z" fill="url(#ray)" opacity=".7"/>
+      <path d="M600 0 L 680 0 L 700 700 L 560 700 Z" fill="url(#ray)" opacity=".8"/>
+      <path d="M830 0 L 860 0 L 960 700 L 900 700 Z" fill="url(#ray)" opacity=".6"/>
+    </svg>
+    <svg class="hero__fish hero__fish--a"><use href="#dc-fish"/></svg>
+    <svg class="hero__fish hero__fish--b"><use href="#dc-fish"/></svg>
+    <svg class="hero__fish hero__fish--c"><use href="#dc-fish"/></svg>
+    <div class="bubbles">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <svg class="kelp kelp--l" viewBox="0 0 160 420" preserveAspectRatio="xMidYMax meet">
+      <g class="sway sway--a"><path d="M40 420 C 20 360, 60 320, 40 260 C 22 206, 62 170, 44 110 C 34 76, 44 40, 52 20" fill="none" stroke="#1E3450" stroke-width="17" stroke-linecap="round"/><path d="M40 420 C 20 360, 60 320, 40 260 C 22 206, 62 170, 44 110 C 34 76, 44 40, 52 20" fill="none" stroke="#4E9F63" stroke-width="11" stroke-linecap="round"/><path d="M42 300 C 64 290, 76 272, 74 252 M 40 196 C 18 186, 8 168, 12 148 M 46 132 C 66 122, 74 104, 72 88" fill="none" stroke="#1E3450" stroke-width="11" stroke-linecap="round"/><path d="M42 300 C 64 290, 76 272, 74 252 M 40 196 C 18 186, 8 168, 12 148 M 46 132 C 66 122, 74 104, 72 88" fill="none" stroke="#6BBF7A" stroke-width="5.5" stroke-linecap="round"/></g>
+      <g class="sway sway--b"><path d="M100 420 C 84 380, 118 350, 100 300 C 86 262, 116 236, 104 196" fill="none" stroke="#1E3450" stroke-width="15" stroke-linecap="round"/><path d="M100 420 C 84 380, 118 350, 100 300 C 86 262, 116 236, 104 196" fill="none" stroke="#3E8C55" stroke-width="9" stroke-linecap="round"/><path d="M102 330 C 124 322, 136 306, 134 288" fill="none" stroke="#1E3450" stroke-width="10" stroke-linecap="round"/><path d="M102 330 C 124 322, 136 306, 134 288" fill="none" stroke="#6BBF7A" stroke-width="5" stroke-linecap="round"/></g>
+    </svg>
+    <svg class="kelp kelp--r" viewBox="0 0 160 420" preserveAspectRatio="xMidYMax meet">
+      <g class="sway sway--b"><path d="M110 420 C 130 360, 92 320, 112 260 C 128 212, 96 176, 112 124 C 120 96, 112 60, 104 40" fill="none" stroke="#1E3450" stroke-width="17" stroke-linecap="round"/><path d="M110 420 C 130 360, 92 320, 112 260 C 128 212, 96 176, 112 124 C 120 96, 112 60, 104 40" fill="none" stroke="#4E9F63" stroke-width="11" stroke-linecap="round"/><path d="M110 290 C 88 282, 76 264, 78 244 M 114 200 C 136 190, 146 172, 142 152" fill="none" stroke="#1E3450" stroke-width="11" stroke-linecap="round"/><path d="M110 290 C 88 282, 76 264, 78 244 M 114 200 C 136 190, 146 172, 142 152" fill="none" stroke="#6BBF7A" stroke-width="5.5" stroke-linecap="round"/></g>
+      <g class="sway sway--a"><path d="M52 420 C 66 384, 36 356, 52 316 C 64 284, 44 262, 52 236" fill="none" stroke="#1E3450" stroke-width="15" stroke-linecap="round"/><path d="M52 420 C 66 384, 36 356, 52 316 C 64 284, 44 262, 52 236" fill="none" stroke="#3E8C55" stroke-width="9" stroke-linecap="round"/></g>
+    </svg>
+    <svg class="coral" viewBox="0 0 200 170">
+      <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M100 168 L 100 110 C 100 90, 84 80, 72 60 M 100 124 C 110 104, 130 96, 138 70 M 84 84 C 72 80, 62 70, 58 52 M 128 88 C 142 84, 152 74, 156 58 M 100 110 C 100 90, 104 72, 102 46" fill="none" stroke-width="20"/>
+        <path d="M100 168 L 100 110 C 100 90, 84 80, 72 60 M 100 124 C 110 104, 130 96, 138 70 M 84 84 C 72 80, 62 70, 58 52 M 128 88 C 142 84, 152 74, 156 58 M 100 110 C 100 90, 104 72, 102 46" fill="none" stroke="#F4A08C" stroke-width="14"/>
+        <circle cx="72" cy="60" r="3" fill="#FFFFFF" stroke="none" opacity=".7"/><circle cx="138" cy="70" r="3" fill="#FFFFFF" stroke="none" opacity=".7"/>
+        <path d="M30 168 C 26 140, 50 124, 76 130 C 96 118, 128 124, 132 146 C 150 142, 170 154, 170 168 Z" fill="#9AA8B8" stroke-width="3"/>
+        <path d="M50 146 Q 60 140 70 146 M 110 140 Q 118 136 124 140" fill="none" stroke-width="2.4" opacity=".4"/>
+      </g>
+    </svg>
+    <svg class="hero__sand" viewBox="0 0 1440 140" preserveAspectRatio="none">
+      <path d="M0 52 C 180 20, 360 30, 540 48 S 900 70, 1080 44 S 1340 24, 1440 40 L 1440 140 L 0 140 Z" fill="#F3DCA8"/>
+      <path d="M0 52 C 180 20, 360 30, 540 48 S 900 70, 1080 44 S 1340 24, 1440 40" fill="none" stroke="#1E3450" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+      <path d="M0 76 C 200 60, 420 68, 640 82 S 1040 92, 1440 70 L 1440 140 L 0 140 Z" fill="#EFD198" opacity=".7"/>
+    </svg>
+    <svg class="hero__decor hero__decor--star"><use href="#dc-star"/></svg>
+    <svg class="hero__decor hero__decor--shell"><use href="#dc-shell"/></svg>
+  </div>
+
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <div class="hero__meta">
+        <span class="pill pill--glass" id="hero-arxiv"></span>
+        <button class="motion-toggle" type="button" id="motion-toggle" aria-pressed="false"><svg class="i-pause" aria-hidden="true"><use href="#i-pause"/></svg><svg class="i-play" aria-hidden="true"><use href="#i-play"/></svg><span>Pause animations</span></button>
+      </div>
+      <h1 id="hero-title" class="wordmark" aria-label="DAREBench"><span class="wordmark__a" aria-hidden="true">DARE</span><span class="wordmark__b" aria-hidden="true">Bench</span></h1>
+      <p class="hero__expansion" data-bind="meta.expansion">Deployment-Aware and Reliable Evaluation of Models as Agents</p>
+      <p class="hero__tagline" data-bind="meta.taglines.0">A workload- and deployment-aware benchmark for evaluating models as agents.</p>
+      <ul class="authors" id="authors" aria-label="Authors"><li>Yu Liu,</li><li>Zhilin Liu,</li><li>Zhiwei Yang,</li><li>Shaojie Zhang,</li><li>Zheyuan Deng,</li><li>Tingwei Huang,</li><li>Zhenbo Luo,</li><li>Lei Jiang,</li><li>Yanbing Liu,</li><li>Pei Fu</li></ul>
+      <ol class="affils" id="affils" aria-label="Affiliations"><li>Institute of Information Engineering, Chinese Academy of Sciences</li><li>School of Cyber Security, University of Chinese Academy of Sciences</li><li>MiLM Plus, Xiaomi Inc.</li><li>Department of Computer Science, Brown University</li></ol>
+      <p class="author-notes" id="author-notes"></p>
+      <div class="hero__btns">
+        <a class="btn btn--navy" data-href="meta.arxivUrl" href="https://arxiv.org/abs/2609.06059" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>arXiv</a>
+        <a class="btn btn--ghost" data-href="meta.pdfUrl" href="https://arxiv.org/pdf/2609.06059" rel="noopener"><svg aria-hidden="true"><use href="#i-pdf"/></svg>PDF</a>
+        <a class="btn btn--ghost" data-href="meta.github" href="https://github.com/SeerRay-Lab/DareBench" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code</a>
+        <a class="btn btn--coral" href="#leaderboard"><svg aria-hidden="true"><use href="#i-trophy"/></svg>Leaderboard</a>
+        <a class="btn btn--ghost" href="#cite"><svg aria-hidden="true"><use href="#i-quote"/></svg>BibTeX</a>
+      </div>
+    </div>
+    <div class="hero__mascot">
+      <p class="hero__bubble" aria-hidden="true">checking the evidence&hellip;</p>
+      <svg viewBox="0 0 440 580" class="mascot-svg" role="img" aria-labelledby="mascot-title">
+  <title id="mascot-title">Cartoon lobster evaluator holding a magnifying glass and a clipboard</title>
+  <defs>
+    <radialGradient id="lob-body" cx="38%" cy="32%" r="75%">
+      <stop offset="0" stop-color="#F7876F"/>
+      <stop offset="0.55" stop-color="#EC624A"/>
+      <stop offset="1" stop-color="#D84B33"/>
+    </radialGradient>
+    <linearGradient id="lens-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4FCFE"/>
+      <stop offset="1" stop-color="#BFE9F3"/>
+    </linearGradient>
+  </defs>
+  <!-- rock the lobster stands on (its base hides behind the stat tiles) -->
+  <g stroke="#1E3450" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M40 580 C 34 520, 70 468, 150 458 C 200 450, 262 450, 310 460 C 380 474, 414 520, 408 580 Z" fill="#A9B7C6" stroke-width="3.5"/>
+    <path d="M70 520 C 110 490, 170 482, 226 484 M 300 490 C 330 496, 360 512, 372 530" fill="none" stroke="#FFFFFF" stroke-width="5" opacity=".45"/>
+    <path d="M120 540 Q 140 530 160 540 M 250 530 Q 268 520 288 530 M 330 556 Q 346 548 362 556" fill="none" stroke-width="2.5" opacity=".35"/>
+    <circle cx="96" cy="552" r="5" fill="#8C9BAC" stroke="none"/><circle cx="210" cy="560" r="4" fill="#8C9BAC" stroke="none"/>
+    <path d="M384 500 C 380 480, 392 466, 396 452 M 392 502 C 398 486, 410 478, 418 468" fill="none" stroke="#4E9F63" stroke-width="5"/>
+  </g>
+  <!-- ground shadow -->
+  <ellipse cx="222" cy="462" rx="120" ry="12" fill="#1E3450" opacity=".16"/>
+  <g class="mascot-bob">
+  <g stroke="#1E3450" stroke-linecap="round" stroke-linejoin="round">
+    <!-- antennae: outline + fill strokes -->
+    <path d="M200 150 C 186 96, 160 58, 118 42 C 96 34, 84 50, 96 60" fill="none" stroke-width="9"/>
+    <path d="M200 150 C 186 96, 160 58, 118 42 C 96 34, 84 50, 96 60" fill="none" stroke="#D9533B" stroke-width="4.5"/>
+    <path d="M240 150 C 254 96, 282 58, 324 42 C 346 34, 358 50, 346 60" fill="none" stroke-width="9"/>
+    <path d="M240 150 C 254 96, 282 58, 324 42 C 346 34, 358 50, 346 60" fill="none" stroke="#D9533B" stroke-width="4.5"/>
+    <!-- small antennules -->
+    <path d="M208 150 C 202 128, 196 118, 186 112" fill="none" stroke-width="6"/>
+    <path d="M208 150 C 202 128, 196 118, 186 112" fill="none" stroke="#F58A72" stroke-width="2.5"/>
+    <path d="M232 150 C 238 128, 244 118, 254 112" fill="none" stroke-width="6"/>
+    <path d="M232 150 C 238 128, 244 118, 254 112" fill="none" stroke="#F58A72" stroke-width="2.5"/>
+
+    <!-- tail fan -->
+    <path d="M186 404 L 254 404 L 284 446 Q 270 462 254 450 Q 242 468 228 454 Q 220 470 212 454 Q 198 468 186 450 Q 170 462 156 446 Z" fill="#E4583F" stroke-width="3.5"/>
+    <path d="M212 408 L 212 452 M 228 408 L 232 450 M 196 408 L 190 448 M 242 408 L 256 446 M 182 410 L 168 442" fill="none" stroke-width="2" opacity=".45"/>
+    <!-- abdomen segments (bottom first) -->
+    <rect x="178" y="384" width="84" height="30" rx="15" fill="#E65B42" stroke-width="3.5"/>
+    <rect x="168" y="360" width="104" height="32" rx="16" fill="#EA6149" stroke-width="3.5"/>
+    <rect x="158" y="334" width="124" height="34" rx="17" fill="#EC654D" stroke-width="3.5"/>
+
+    <!-- walking legs (behind body) -->
+    <g fill="none">
+      <path d="M156 292 L 118 306 L 108 334" stroke-width="10"/>
+      <path d="M156 292 L 118 306 L 108 334" stroke="#E4583F" stroke-width="5"/>
+      <path d="M160 312 L 126 332 L 120 356" stroke-width="10"/>
+      <path d="M160 312 L 126 332 L 120 356" stroke="#E4583F" stroke-width="5"/>
+      <path d="M284 292 L 322 306 L 332 334" stroke-width="10"/>
+      <path d="M284 292 L 322 306 L 332 334" stroke="#E4583F" stroke-width="5"/>
+      <path d="M280 312 L 314 332 L 320 356" stroke-width="10"/>
+      <path d="M280 312 L 314 332 L 320 356" stroke="#E4583F" stroke-width="5"/>
+    </g>
+
+    <!-- arms -->
+    <g fill="none">
+      <path d="M160 246 C 132 238, 112 222, 100 196" stroke-width="24"/>
+      <path d="M160 246 C 132 238, 112 222, 100 196" stroke="#E95E46" stroke-width="17"/>
+      <path d="M280 246 C 306 244, 322 236, 334 222" stroke-width="24"/>
+      <path d="M280 246 C 306 244, 322 236, 334 222" stroke="#E95E46" stroke-width="17"/>
+    </g>
+
+    <!-- carapace -->
+    <path d="M220 140 C 278 140, 312 188, 312 246 C 312 304, 272 342, 220 342 C 168 342, 128 304, 128 246 C 128 188, 162 140, 220 140 Z" fill="url(#lob-body)" stroke-width="3.5"/>
+    <!-- belly plate -->
+    <path d="M160 300 Q 220 326 280 300" fill="none" stroke-width="2.5" opacity=".3"/>
+    <path d="M176 318 Q 220 336 264 318" fill="none" stroke-width="2.5" opacity=".22"/>
+    <!-- highlight -->
+    <ellipse cx="180" cy="184" rx="26" ry="13" transform="rotate(-28 180 184)" fill="#FFFFFF" opacity=".35" stroke="none"/>
+    <!-- spots -->
+    <circle cx="276" cy="210" r="5" fill="#D84B33" stroke="none" opacity=".7"/>
+    <circle cx="288" cy="232" r="3.5" fill="#D84B33" stroke="none" opacity=".7"/>
+    <circle cx="160" cy="232" r="4" fill="#D84B33" stroke="none" opacity=".6"/>
+
+    <!-- eye stalks -->
+    <path d="M200 160 L 190 122" fill="none" stroke-width="15"/>
+    <path d="M200 160 L 190 122" fill="none" stroke="#EC624A" stroke-width="9"/>
+    <path d="M240 160 L 250 122" fill="none" stroke-width="15"/>
+    <path d="M240 160 L 250 122" fill="none" stroke="#EC624A" stroke-width="9"/>
+    <!-- eyes -->
+    <circle cx="186" cy="102" r="27" fill="#FFFFFF" stroke-width="3.5"/>
+    <circle cx="254" cy="102" r="27" fill="#FFFFFF" stroke-width="3.5"/>
+    <g class="mascot-pupils" stroke="none">
+      <circle cx="193" cy="108" r="12.5" fill="#1E3450"/>
+      <circle cx="261" cy="108" r="12.5" fill="#1E3450"/>
+      <circle cx="198" cy="102" r="4.5" fill="#FFFFFF"/>
+      <circle cx="266" cy="102" r="4.5" fill="#FFFFFF"/>
+      <circle cx="189" cy="113" r="2" fill="#FFFFFF"/>
+      <circle cx="257" cy="113" r="2" fill="#FFFFFF"/>
+    </g>
+    <!-- brows -->
+    <path d="M168 68 Q 184 60, 200 66" fill="none" stroke-width="3.5"/>
+    <path d="M240 66 Q 256 60, 272 68" fill="none" stroke-width="3.5"/>
+
+    <!-- face -->
+    <ellipse cx="176" cy="226" rx="14" ry="8" fill="#FF8A8A" opacity=".75" stroke="none"/>
+    <ellipse cx="264" cy="226" rx="14" ry="8" fill="#FF8A8A" opacity=".75" stroke="none"/>
+    <path d="M200 218 Q 220 244 240 218 Q 220 228 200 218 Z" fill="#7A2A1C" stroke-width="3"/>
+    <path d="M211 232 Q 220 238 229 232 Q 220 229 211 232 Z" fill="#FF8A8A" stroke="none"/>
+
+    <!-- bow tie -->
+    <path d="M220 266 L 196 254 Q 190 266 196 278 Z" fill="#7A55C4" stroke-width="3"/>
+    <path d="M220 266 L 244 254 Q 250 266 244 278 Z" fill="#7A55C4" stroke-width="3"/>
+    <rect x="212" y="258" width="16" height="16" rx="5" fill="#5E3FA3" stroke-width="3"/>
+
+    <!-- magnifying glass (left claw) -->
+    <path d="M92 170 L 66 124" fill="none" stroke-width="15"/>
+    <path d="M92 170 L 66 124" fill="none" stroke="#8B5A2B" stroke-width="9"/>
+    <circle cx="52" cy="96" r="34" fill="#F2B84B" stroke-width="3.5"/>
+    <circle cx="52" cy="96" r="25" fill="url(#lens-glass)" stroke-width="3"/>
+    <path d="M36 86 Q 40 74, 52 72" fill="none" stroke="#FFFFFF" stroke-width="5" opacity=".95"/>
+    <!-- left claw -->
+    <path d="M70 196 C 62 172, 70 150, 88 144 L 94 168 L 104 146 C 124 150, 132 176, 122 198 C 112 218, 80 218, 70 196 Z" fill="#EC624A" stroke-width="3.5"/>
+    <path d="M84 206 Q 96 212 110 206" fill="none" stroke-width="2.5" opacity=".4"/>
+    <circle cx="80" cy="180" r="3" fill="#D84B33" stroke="none"/>
+
+    <!-- clipboard (right claw) -->
+    <g transform="rotate(9 370 214)">
+      <rect x="322" y="150" width="96" height="124" rx="11" fill="#D9964F" stroke-width="3.5"/>
+      <rect x="331" y="166" width="78" height="100" rx="5" fill="#FFFFFF" stroke-width="2.5"/>
+      <rect x="352" y="140" width="36" height="20" rx="6" fill="#9AA8B8" stroke-width="3"/>
+      <!-- rows -->
+      <rect x="339" y="180" width="13" height="13" rx="3" fill="#FFFFFF" stroke-width="2.2"/>
+      <path d="M341 186 L 345 190 L 352 180" fill="none" stroke="#2E8B57" stroke-width="3.2"/>
+      <path d="M358 187 L 399 187" fill="none" stroke-width="2.4" opacity=".55"/>
+      <rect x="339" y="204" width="13" height="13" rx="3" fill="#FFFFFF" stroke-width="2.2"/>
+      <path d="M341 210 L 345 214 L 352 204" fill="none" stroke="#2E8B57" stroke-width="3.2"/>
+      <path d="M358 211 L 392 211" fill="none" stroke-width="2.4" opacity=".55"/>
+      <rect x="339" y="228" width="13" height="13" rx="3" fill="#FFFFFF" stroke-width="2.2"/>
+      <path d="M341 230 L 350 239 M 350 230 L 341 239" fill="none" stroke="#E0533D" stroke-width="3"/>
+      <path d="M358 235 L 396 235" fill="none" stroke-width="2.4" opacity=".55"/>
+      <path d="M339 254 L 380 254" fill="none" stroke-width="2.4" opacity=".3"/>
+    </g>
+    <!-- right claw gripping the clipboard edge -->
+    <path d="M318 246 C 306 226, 312 204, 330 198 L 338 220 L 348 202 C 368 208, 372 234, 360 250 C 348 266, 326 264, 318 246 Z" fill="#EC624A" stroke-width="3.5"/>
+    <path d="M330 256 Q 342 262 354 256" fill="none" stroke-width="2.5" opacity=".4"/>
+  </g>
+  </g>
+</svg>
+
+    </div>
+  </div>
+  <div class="wrap hero__stats-wrap">
+    <ul class="stat-tiles" id="stat-tiles" aria-label="DAREBench at a glance"></ul>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section id="why" class="sec sec--sand" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__text">
+        <p class="kicker">Motivation</p>
+        <h2 id="why-title">What deployment-oriented agent evaluation must <span class="squiggle">answer</span></h2>
+        <p class="lead" id="why-lead"></p>
+      </div>
+    </div>
+    <ol class="why-grid" id="why-grid"></ol>
+    <div class="tldr card card--blob">
+      <div class="tldr__head">
+        <p class="tldr__label">TL;DR</p>
+      </div>
+      <ul class="tldr__list" id="tldr-list"></ul>
+      <details class="abstract">
+        <summary><span>Read the abstract</span></summary>
+        <p id="abstract-text"></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OVERVIEW ================= -->
+<section id="overview" class="sec sec--sea" aria-labelledby="overview-title">
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path class="wave__back" d="M0 40 C 200 10, 380 10, 560 32 S 940 60, 1120 30 S 1360 14, 1440 26 L 1440 64 L 0 64 Z"/><path class="wave__front" d="M0 44 C 240 24, 420 60, 700 40 S 1100 16, 1440 44 L 1440 64 L 0 64 Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__text">
+        <p class="kicker">Overview</p>
+        <h2 id="overview-title">From source benchmarks to deployment <span class="squiggle">reports</span></h2>
+        <p class="lead" id="overview-lead"></p>
+      </div>
+      <svg class="sec-head__art" aria-hidden="true"><use href="#cr-octopus"/></svg>
+    </div>
+    <figure class="figure-frame card card--blob">
+      <button class="zoomable" type="button" id="overview-zoom" aria-label="Enlarge Figure 2: overview of DAREBench">
+        <img id="overview-img" alt="" width="1259" height="532" decoding="async">
+        <span class="zoomable__hint"><svg aria-hidden="true"><use href="#i-zoom"/></svg><span class="lg-only">Click to enlarge</span><span class="sm-only">Tap to enlarge and pan</span></span>
+      </button>
+      <figcaption id="overview-cap"></figcaption>
+    </figure>
+    <ol class="stages" id="stages"></ol>
+  </div>
+</section>
+
+<!-- ================= WORKLOADS ================= -->
+<section id="workloads" class="sec sec--sand" aria-labelledby="workloads-title">
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path class="wave__back" d="M0 30 C 220 56, 420 56, 640 34 S 1040 8, 1240 30 S 1400 44, 1440 36 L 1440 64 L 0 64 Z"/><path class="wave__front" d="M0 42 C 260 60, 520 20, 780 38 S 1200 58, 1440 38 L 1440 64 L 0 64 Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__text">
+        <p class="kicker">Workload matrix</p>
+        <h2 id="workloads-title">Tasks organized by what the agent has to <span class="squiggle">do</span></h2>
+        <p class="lead">Instead of reporting by source benchmark, DAREBench groups tasks along two workload dimensions: input modality (text or multimodal) and execution form (single-step, multi-step, or multi-step with tools). Each source benchmark maps to exactly one group. Select a cell to see its sources, scoring modes, an example prompt and the strongest models.</p>
+      </div>
+      <svg class="sec-head__art" aria-hidden="true"><use href="#ic-grid"/></svg>
+    </div>
+
+    <div class="matrix-layout">
+      <div class="matrix card card--blob" id="matrix" role="group" aria-label="Workload matrix"></div>
+      <div class="cell-detail card card--blob" id="cell-detail" aria-live="polite"></div>
+    </div>
+
+    <div class="sources card card--blob" id="sources-block">
+      <div class="card-head">
+        <div>
+          <h3 id="sources-title">Source benchmarks</h3>
+          <p class="card-sub" id="sources-sub"></p>
+        </div>
+        <button class="btn btn--sm btn--ghost view-toggle" type="button" data-target="sources"><svg aria-hidden="true"><use href="#i-table"/></svg><span>View as table</span></button>
+      </div>
+      <div class="view view--chart" id="sources-chart">
+        <div class="legend" id="sources-legend"></div>
+        <div class="compbar" id="compbar" aria-hidden="true"></div>
+        <div class="chipwall" id="chipwall"></div>
+        <div class="source-info" id="source-info" aria-live="polite"></div>
+      </div>
+      <div class="view view--table" id="sources-table" hidden></div>
+    </div>
+
+    <details class="explorer card card--blob" id="explorer">
+      <summary>
+        <span class="explorer__title">Browse every task file</span>
+        <span class="explorer__sub" id="explorer-sub"></span>
+      </summary>
+      <div class="explorer__body">
+        <div class="filters" role="group" aria-label="Task filters">
+          <label>Group <select id="f-group"></select></label>
+          <label>Source <select id="f-source"></select></label>
+          <label>Scoring <select id="f-scoring"></select></label>
+          <label class="filters__search">Search id or name <input id="f-q" type="search" autocomplete="off" spellcheck="false"></label>
+        </div>
+        <p class="explorer__count" id="explorer-count" aria-live="polite"></p>
+        <div class="table-scroll table-scroll--tall" tabindex="0" role="region" aria-label="Task metadata table">
+          <table class="data-table" id="task-table"></table>
+        </div>
+        <p class="note">Metadata only (from the task files' frontmatter). Group and scoring follow the paper's source mapping; prompts, answers and rubrics are not shown.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ================= LEADERBOARD ================= -->
+<section id="leaderboard" class="sec sec--sea" aria-labelledby="leaderboard-title">
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path class="wave__back" d="M0 40 C 200 10, 380 10, 560 32 S 940 60, 1120 30 S 1360 14, 1440 26 L 1440 64 L 0 64 Z"/><path class="wave__front" d="M0 44 C 240 24, 420 60, 700 40 S 1100 16, 1440 44 L 1440 64 L 0 64 Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__text">
+        <p class="kicker">Leaderboard</p>
+        <h2 id="leaderboard-title">No single model <span class="squiggle">dominates</span> all workload groups</h2>
+        <p class="lead" id="lb-lead"></p>
+      </div>
+    </div>
+
+    <div class="lb card card--blob has-peek">
+      <svg class="peek" aria-hidden="true"><use href="#mascot-peek"/></svg>
+      <div class="lb__top">
+        <div class="lb__top-left">
+          <div class="controls" role="group" aria-label="Leaderboard controls">
+            <div class="seg" role="radiogroup" aria-label="Track" id="lb-track"></div>
+            <div class="seg" role="radiogroup" aria-label="Deployment" id="lb-deploy"></div>
+            <div class="seg" role="radiogroup" aria-label="Cell style" id="lb-style"></div>
+          </div>
+          <p class="lb__note" id="lb-note"></p>
+          <div class="lb__legend" id="lb-legend"></div>
+        </div>
+        <p class="narrator-bubble" id="lb-bubble"></p>
+      </div>
+      <p class="lb__swipe" aria-hidden="true">swipe the table sideways &rarr;</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-labelledby="lb-caption">
+        <table class="lb-table" id="lb-table"></table>
+      </div>
+      <div class="lb__foot" id="lb-foot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COST ================= -->
+<section id="cost" class="sec sec--sand" aria-labelledby="cost-title">
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path class="wave__back" d="M0 30 C 220 56, 420 56, 640 34 S 1040 8, 1240 30 S 1400 44, 1440 36 L 1440 64 L 0 64 Z"/><path class="wave__front" d="M0 42 C 260 60, 520 20, 780 38 S 1200 58, 1440 38 L 1440 64 L 0 64 Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__text">
+        <p class="kicker">Accuracy &amp; cost</p>
+        <h2 id="cost-title">Text and multimodal workloads have different <span class="squiggle">frontiers</span></h2>
+        <p class="lead" id="cost-lead"></p>
+      </div>
+      <svg class="sec-head__art" aria-hidden="true"><use href="#ic-chest"/></svg>
+    </div>
+
+    <div class="controls controls--bar" role="group" aria-label="Cost view controls">
+      <div class="seg" role="radiogroup" aria-label="Modality" id="cost-mode"></div>
+      <p class="controls__hint">Scopes every chart and note in this section.</p>
+    </div>
+
+    <div class="cost-grid">
+      <figure class="chart-card card card--blob" id="scatter-card">
+        <div class="card-head">
+          <div>
+            <h3 id="scatter-title"></h3>
+            <p class="card-sub" id="scatter-sub"></p>
+          </div>
+          <div class="card-head__btns">
+            <button class="btn btn--sm btn--ghost" type="button" id="fig1-btn"><svg aria-hidden="true"><use href="#i-image"/></svg><span id="fig1-btn-lab">Paper's figure</span></button>
+            <button class="btn btn--sm btn--ghost view-toggle" type="button" data-target="scatter"><svg aria-hidden="true"><use href="#i-table"/></svg><span>View as table</span></button>
+          </div>
+        </div>
+        <div class="view view--chart" id="scatter-chart">
+          <div class="legend" id="scatter-legend"></div>
+          <div class="chart-box" id="scatter-box"></div>
+        </div>
+        <div class="view view--table" id="scatter-table" hidden></div>
+        <figcaption class="note" id="scatter-cap"></figcaption>
+      </figure>
+      <aside class="cost-notes" id="cost-notes" aria-label="Frontier notes"></aside>
+    </div>
+
+    <figure class="chart-card card card--blob" id="tokens-card">
+      <div class="card-head">
+        <div>
+          <h3 id="tokens-title">Tokens and dollars rank models differently</h3>
+          <p class="card-sub" id="tokens-sub"></p>
+        </div>
+        <div class="card-head__btns">
+          <div class="seg seg--sm" role="radiogroup" aria-label="Sort rows" id="tokens-sort"></div>
+          <button class="btn btn--sm btn--ghost view-toggle" type="button" data-target="tokens"><svg aria-hidden="true"><use href="#i-table"/></svg><span>View as table</span></button>
+        </div>
+      </div>
+      <div class="view view--chart" id="tokens-chart">
+        <div class="chart-box" id="tokens-box"></div>
+      </div>
+      <div class="view view--table" id="tokens-table" hidden></div>
+      <figcaption class="tokens-cap" id="tokens-cap"></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= RELIABILITY ================= -->
+<section id="reliability" class="sec sec--sea" aria-labelledby="reliability-title">
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path class="wave__back" d="M0 40 C 200 10, 380 10, 560 32 S 940 60, 1120 30 S 1360 14, 1440 26 L 1440 64 L 0 64 Z"/><path class="wave__front" d="M0 44 C 240 24, 420 60, 700 40 S 1100 16, 1440 44 L 1440 64 L 0 64 Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__text">
+        <p class="kicker">Evidence-based audit</p>
+        <h2 id="reliability-title">Removing credit the <span class="squiggle">evidence</span> does not support</h2>
+        <p class="lead" id="rel-lead"></p>
+      </div>
+      <svg class="sec-head__art" aria-hidden="true"><use href="#ic-shield"/></svg>
+    </div>
+
+    <div class="audit-grid">
+      <div class="funnel card card--blob has-peek">
+        <svg class="peek peek--left" aria-hidden="true"><use href="#mascot-peek"/></svg>
+        <h3>The audit funnel</h3>
+        <ol class="audit-steps" id="funnel"></ol>
+        <div class="funnel__rule" id="audit-rule"></div>
+      </div>
+      <div class="judges card card--blob">
+        <h3>Two judges, two model families</h3>
+        <div class="judges__chain" id="judge-chain"></div>
+        <div class="mae" id="mae"></div>
+      </div>
+    </div>
+
+    <div class="patterns card card--blob">
+      <div class="card-head">
+        <div>
+          <h3>Hallucination patterns caught by the audit</h3>
+          <p class="card-sub" id="patterns-sub"></p>
+        </div>
+        <button class="btn btn--sm btn--ghost view-toggle" type="button" data-target="patterns"><svg aria-hidden="true"><use href="#i-table"/></svg><span>View as table</span></button>
+      </div>
+      <div class="view view--chart" id="patterns-chart">
+        <div class="legend" id="patterns-legend"></div>
+        <ul class="pattern-grid" id="pattern-grid"></ul>
+      </div>
+      <div class="view view--table" id="patterns-table" hidden></div>
+    </div>
+
+    <div class="audit-figs" id="audit-figs"></div>
+  </div>
+</section>
+
+<!-- ================= FINDINGS ================= -->
+<section id="findings" class="sec sec--sand" aria-labelledby="findings-title">
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path class="wave__back" d="M0 30 C 220 56, 420 56, 640 34 S 1040 8, 1240 30 S 1400 44, 1440 36 L 1440 64 L 0 64 Z"/><path class="wave__front" d="M0 42 C 260 60, 520 20, 780 38 S 1200 58, 1440 38 L 1440 64 L 0 64 Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__text">
+        <p class="kicker">Key findings</p>
+        <h2 id="findings-title">What the results say about <span class="squiggle">choosing</span> an agent model</h2>
+        <p class="lead" data-bind="meta.taglines.3">Model selection should consider workload profiles, deployment mode, and accuracy–cost trade-offs rather than a single aggregate score.</p>
+      </div>
+      <svg class="sec-head__art" aria-hidden="true"><use href="#ic-scale"/></svg>
+    </div>
+    <div class="findings-grid" id="findings-grid"></div>
+
+    <div class="taxonomy card card--blob" id="taxonomy">
+      <div class="card-head">
+        <div>
+          <h3>Where agents fail</h3>
+          <p class="card-sub" id="tax-sub"></p>
+        </div>
+        <button class="btn btn--sm btn--ghost view-toggle" type="button" data-target="tax"><svg aria-hidden="true"><use href="#i-table"/></svg><span>View as table</span></button>
+      </div>
+      <div class="view view--chart" id="tax-chart">
+        <div class="legend" id="tax-legend"></div>
+        <div class="chart-box" id="tax-box"></div>
+      </div>
+      <div class="view view--table" id="tax-table" hidden></div>
+    </div>
+
+    <figure class="case card card--blob" id="case-study"></figure>
+  </div>
+</section>
+
+<!-- ================= QUICK START ================= -->
+<section id="quickstart" class="sec sec--sea" aria-labelledby="quickstart-title">
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path class="wave__back" d="M0 40 C 200 10, 380 10, 560 32 S 940 60, 1120 30 S 1360 14, 1440 26 L 1440 64 L 0 64 Z"/><path class="wave__front" d="M0 44 C 240 24, 420 60, 700 40 S 1100 16, 1440 44 L 1440 64 L 0 64 Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__text">
+        <p class="kicker">Quick start</p>
+        <h2 id="quickstart-title">Evaluate your <span class="squiggle">own</span> model</h2>
+        <p class="lead">The commands below are taken verbatim from the repository README. The repository holds the task files, graders and run scripts; by default, runs go through an OpenClaw agent runtime, as in the paper.</p>
+      </div>
+      <svg class="sec-head__art" aria-hidden="true"><use href="#ic-terminal"/></svg>
+    </div>
+    <div class="card card--blob reqs reqs--strip">
+      <h3>Requirements</h3>
+      <ul id="qs-reqs"></ul>
+    </div>
+    <div class="qs-grid">
+      <ol class="steps" id="qs-steps"></ol>
+      <aside class="qs-side">
+        <div class="card card--blob tools-card">
+          <h3>What every model gets in the paper</h3>
+          <p class="card-sub" id="qs-tools-lead"></p>
+          <div id="qs-tools"></div>
+        </div>
+        <details class="card card--blob flags" id="qs-flags-box" open>
+          <summary><h3>Command-line flags</h3></summary>
+          <dl class="flaglist" id="qs-flags"></dl>
+        </details>
+      </aside>
+    </div>
+
+    <div class="anatomy card card--blob">
+      <div class="card-head">
+        <div>
+          <h3>Anatomy of a task file</h3>
+          <p class="card-sub" id="anat-sub"></p>
+        </div>
+      </div>
+      <p class="anatomy__eq" id="anat-eq"></p>
+      <div class="anatomy__grid">
+        <ul class="tuple" id="anat-tuple" aria-label="Task tuple components"></ul>
+        <div class="codefile">
+          <div class="codefile__bar"><span class="codefile__dots" aria-hidden="true"><i></i><i></i><i></i></span><span id="anat-file"></span></div>
+          <pre class="codefile__body" id="anat-code" tabindex="0" aria-label="Task file contents"></pre>
+        </div>
+      </div>
+      <p class="anat-cap" id="anat-cap"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CITE ================= -->
+<section id="cite" class="sec sec--sand" aria-labelledby="cite-title">
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path class="wave__back" d="M0 30 C 220 56, 420 56, 640 34 S 1040 8, 1240 30 S 1400 44, 1440 36 L 1440 64 L 0 64 Z"/><path class="wave__front" d="M0 42 C 260 60, 520 20, 780 38 S 1200 58, 1440 38 L 1440 64 L 0 64 Z"/></svg>
+  <div class="wrap cite-wrap">
+    <div class="cite__art" aria-hidden="true">
+      <p class="cite__bubble">thanks for diving in!</p>
+      <svg><use href="#mascot-bust"/></svg>
+    </div>
+    <div class="cite__body">
+      <p class="kicker">Cite</p>
+      <h2 id="cite-title">If DAREBench helps your <span class="squiggle">work</span></h2>
+      <p class="lead">Please cite the paper:</p>
+      <div class="codeblock">
+        <button class="copy-btn" type="button" data-copy-target="bibtex" aria-label="Copy BibTeX"><svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+        <pre id="bibtex" tabindex="0" aria-label="BibTeX entry"></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="footer" class="footer">
+  <svg class="footer__wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 180 20, 360 30, 540 48 S 900 70, 1080 44 S 1340 24, 1440 40 L 1440 90 L 0 90 Z" fill="#F3DCA8"/><path d="M0 50 C 180 20, 360 30, 540 48 S 900 70, 1080 44 S 1340 24, 1440 40" fill="none" stroke="#1E3450" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg>
+  <div class="footer__floor">
+    <svg class="footer__weed footer__weed--l" aria-hidden="true"><use href="#dc-weed"/></svg>
+    <svg class="footer__weed footer__weed--r" aria-hidden="true"><use href="#dc-weed"/></svg>
+    <svg class="footer__decor footer__decor--star" aria-hidden="true"><use href="#dc-star"/></svg>
+    <svg class="footer__decor footer__decor--shell" aria-hidden="true"><use href="#dc-shell"/></svg>
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <a class="nav__brand" href="#hero"><svg class="nav__logo" aria-hidden="true"><use href="#logo"/></svg><span class="nav__word">DARE<span>Bench</span></span></a>
+        <p data-bind="meta.expansion">Deployment-Aware and Reliable Evaluation of Models as Agents</p>
+        <p class="footer__links">
+          <a data-href="meta.arxivUrl" href="https://arxiv.org/abs/2609.06059" rel="noopener">arXiv</a>
+          <a data-href="meta.pdfUrl" href="https://arxiv.org/pdf/2609.06059" rel="noopener">PDF</a>
+          <a data-href="meta.htmlUrl" href="https://arxiv.org/html/2609.06059v1" rel="noopener">HTML</a>
+          <a data-href="meta.github" href="https://github.com/SeerRay-Lab/DareBench" rel="noopener">GitHub</a>
+        </p>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__h">Affiliations</h2>
+        <ol class="footer__affils" id="footer-affils"></ol>
+      </div>
+      <div class="footer__col footer__col--wide">
+        <h2 class="footer__h">Acknowledgements</h2>
+        <p id="footer-ack"></p>
+        <p class="footer__srcs" id="footer-srcs"></p>
+      </div>
+    </div>
+    <div class="wrap footer__base">
+      <p id="footer-base"></p>
+      <a class="footer__top" href="#hero"><svg aria-hidden="true"><use href="#i-down"/></svg>Back to the surface</a>
+    </div>
+  </div>
+</footer>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-cap">
+  <div class="lightbox__inner">
+    <button class="lightbox__close btn btn--sm btn--ghost" type="button" id="lightbox-close"><svg aria-hidden="true"><use href="#i-close"/></svg>Close</button>
+    <div class="lightbox__img"><img id="lightbox-img" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div>
+    <p id="lightbox-cap" class="lightbox__cap"></p>
+  </div>
+</dialog>
+<div class="sr-only" id="live" aria-live="polite"></div>
+
+<script src="assets/data/data.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/workloads.js"></script>
+<script src="assets/js/leaderboard.js"></script>
+<script src="assets/js/cost.js"></script>
+<script src="assets/js/reliability.js"></script>
+<script src="assets/js/quickstart.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
