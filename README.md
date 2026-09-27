@@ -101,6 +101,8 @@ docs/       Project page (served by GitHub Pages)
 
 ## Quick Start
 
+> **Step-by-step guide:** [RUN_BENCHMARK.md](RUN_BENCHMARK.md) has the up-to-date setup (pinned OpenClaw version, ClawHub skill owners, judge, smoke test, paper-style report). The steps below are the original quick start.
+
 ### Step 1: Install OpenClaw and required skills
 
 ```bash
